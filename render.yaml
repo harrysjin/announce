@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://render.com/schema/render.yaml.json
+services:
+  - type: web
+    name: sori-studio
+    runtime: docker
+    repo: https://github.com/harrysjin/announce
+    branch: main
+    plan: free
+    numInstances: 1
+    autoDeployTrigger: commit
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: STDICT_API_KEY
+        sync: false
+      - key: ANALYSIS_CONCURRENCY
+        value: "1"

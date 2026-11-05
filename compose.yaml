@@ -1,0 +1,15 @@
+services:
+  sori:
+    build:
+      context: .
+    image: sori-studio:local
+    environment:
+      PORT: "8000"
+      STDICT_API_KEY: ${STDICT_API_KEY:-}
+    ports:
+      - "127.0.0.1:${SORI_PORT:-8000}:8000"
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 30s

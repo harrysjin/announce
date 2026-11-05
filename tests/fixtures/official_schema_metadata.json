@@ -1,0 +1,15 @@
+{
+  "source": "https://stdict.korean.go.kr/api/view.do",
+  "purpose": "Actual conju_info subtree excerpts; surrounding test envelope is synthetic. No credentials or request URLs are stored.",
+  "captured_files": [
+    {
+      "filename": "stdict_hada_conjugations.xml",
+      "captured_at": "2026-11-04T17:04:50.709422+00:00"
+    },
+    {
+      "filename": "stdict_nangdok_conjugations.xml",
+      "captured_at": "2026-11-04T17:04:50.710743+00:00"
+    }
+  ],
+  "formatting": "Whitespace-only indentation normalized; source linguistic fields and XML structure retained."
+}

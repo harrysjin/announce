@@ -1,0 +1,1686 @@
+{
+  "눈": [
+    {
+      "id": "409998:338",
+      "target_code": "409998",
+      "sense_code": "338",
+      "word": "눈",
+      "display_word": "눈",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "눈"
+      ],
+      "pronunciation": "눈",
+      "definition": "빛의 자극을 받아 물체를 볼 수 있는 감각 기관. 척추동물의 경우 안구·시각 신경 따위로 되어 있어, 외계에서 들어온 빛은 각막·눈동자·수정체를 지나 유리체를 거쳐 망막에 이르는데, 그 사이에 굴광체(屈光體)에 의하여 굴절되어 망막에 상을 맺는다.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=409998&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:05.441163+00:00"
+    },
+    {
+      "id": "409998:36448",
+      "target_code": "409998",
+      "sense_code": "36448",
+      "word": "눈",
+      "display_word": "눈",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "눈"
+      ],
+      "pronunciation": "눈",
+      "definition": "물체의 존재나 형상을 인식하는 눈의 능력. 눈으로 두 광점을 구별할 수 있는 능력으로, 광도나 그 밖의 조건이 동일할 때, 시각 세포의 분포 밀도가 클수록 시력이 좋다.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=409998&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:05.441186+00:00"
+    },
+    {
+      "id": "409998:63271",
+      "target_code": "409998",
+      "sense_code": "63271",
+      "word": "눈",
+      "display_word": "눈",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "눈"
+      ],
+      "pronunciation": "눈",
+      "definition": "사물을 보고 판단하는 힘.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=409998&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:05.441196+00:00"
+    },
+    {
+      "id": "409998:69467",
+      "target_code": "409998",
+      "sense_code": "69467",
+      "word": "눈",
+      "display_word": "눈",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "눈"
+      ],
+      "pronunciation": "눈",
+      "definition": "무엇을 보는 표정이나 태도.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=409998&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:05.441204+00:00"
+    },
+    {
+      "id": "409998:71717",
+      "target_code": "409998",
+      "sense_code": "71717",
+      "word": "눈",
+      "display_word": "눈",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "눈"
+      ],
+      "pronunciation": "눈",
+      "definition": "사람들의 눈길.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=409998&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:05.441211+00:00"
+    },
+    {
+      "id": "409998:72439",
+      "target_code": "409998",
+      "sense_code": "72439",
+      "word": "눈",
+      "display_word": "눈",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "눈"
+      ],
+      "pronunciation": "눈",
+      "definition": "태풍에서, 중심을 이루는 부분.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=409998&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:05.441219+00:00"
+    },
+    {
+      "id": "71072:119015",
+      "target_code": "71072",
+      "sense_code": "119015",
+      "word": "눈",
+      "display_word": "눈",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "눈"
+      ],
+      "pronunciation": "눈",
+      "definition": "자·저울·온도계 따위에 표시하여 길이·양(量)·도수(度數) 따위를 나타내는 금.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=71072&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:05.940543+00:00"
+    },
+    {
+      "id": "71073:403875",
+      "target_code": "71073",
+      "sense_code": "403875",
+      "word": "눈",
+      "display_word": "눈",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "눈"
+      ],
+      "pronunciation": "눈",
+      "definition": "그물 따위에서 코와 코를 이어 이룬 구멍.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=71073&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:06.330976+00:00"
+    },
+    {
+      "id": "71073:407942",
+      "target_code": "71073",
+      "sense_code": "407942",
+      "word": "눈",
+      "display_word": "눈",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "눈"
+      ],
+      "pronunciation": "눈",
+      "definition": "당혜(唐鞋), 운혜(雲鞋) 따위에서 코와 뒤울의 꾸밈새.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=71073&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:06.330993+00:00"
+    },
+    {
+      "id": "71073:410943",
+      "target_code": "71073",
+      "sense_code": "410943",
+      "word": "눈",
+      "display_word": "눈",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "눈"
+      ],
+      "pronunciation": "눈",
+      "definition": "바둑판에서 가로줄과 세로줄이 만나는 점.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=71073&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:06.330999+00:00"
+    },
+    {
+      "id": "71074:119016",
+      "target_code": "71074",
+      "sense_code": "119016",
+      "word": "눈",
+      "display_word": "눈",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "눈ː"
+      ],
+      "pronunciation": "눈ː",
+      "definition": "대기 중의 수증기가 찬 기운을 만나 얼어서 땅 위로 떨어지는 얼음의 결정체.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=71074&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:06.935184+00:00"
+    },
+    {
+      "id": "71075:119017",
+      "target_code": "71075",
+      "sense_code": "119017",
+      "word": "눈",
+      "display_word": "눈",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "눈"
+      ],
+      "pronunciation": "눈",
+      "definition": "새로 막 터져 돋아나려는 초목의 싹. 꽃눈, 잎눈 따위이다.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=71075&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:07.315733+00:00"
+    }
+  ],
+  "말": [
+    {
+      "id": "419935:6123",
+      "target_code": "419935",
+      "sense_code": "6123",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말ː"
+      ],
+      "pronunciation": "말ː",
+      "definition": "사람의 생각이나 느낌 따위를 표현하고 전달하는 데 쓰는 음성 기호. 곧 사람의 생각이나 느낌 따위를 목구멍을 통하여 조직적으로 나타내는 소리를 가리킨다.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=419935&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:10.004071+00:00"
+    },
+    {
+      "id": "419935:39821",
+      "target_code": "419935",
+      "sense_code": "39821",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말ː"
+      ],
+      "pronunciation": "말ː",
+      "definition": "음성 기호로 생각이나 느낌을 표현하고 전달하는 행위. 또는 그런 결과물.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=419935&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:10.004090+00:00"
+    },
+    {
+      "id": "419935:63872",
+      "target_code": "419935",
+      "sense_code": "63872",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말ː"
+      ],
+      "pronunciation": "말ː",
+      "definition": "일정한 주제나 줄거리를 가진 이야기.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=419935&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:10.004098+00:00"
+    },
+    {
+      "id": "419935:70109",
+      "target_code": "419935",
+      "sense_code": "70109",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말ː"
+      ],
+      "pronunciation": "말ː",
+      "definition": "단어, 구, 문장 따위를 통틀어 이르는 말.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=419935&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:10.004104+00:00"
+    },
+    {
+      "id": "419935:71275",
+      "target_code": "419935",
+      "sense_code": "71275",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말ː"
+      ],
+      "pronunciation": "말ː",
+      "definition": "소문이나 풍문 따위를 이르는 말.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=419935&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:10.004110+00:00"
+    },
+    {
+      "id": "419935:72544",
+      "target_code": "419935",
+      "sense_code": "72544",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말ː"
+      ],
+      "pronunciation": "말ː",
+      "definition": "다시 강조하거나 확인하는 뜻을 나타내는 말.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=419935&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:10.004117+00:00"
+    },
+    {
+      "id": "419935:72427",
+      "target_code": "419935",
+      "sense_code": "72427",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말ː"
+      ],
+      "pronunciation": "말ː",
+      "definition": "‘망정이지’의 뜻을 나타내는 말.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=419935&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:10.004123+00:00"
+    },
+    {
+      "id": "419935:73270",
+      "target_code": "419935",
+      "sense_code": "73270",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말ː"
+      ],
+      "pronunciation": "말ː",
+      "definition": "‘-을 것 같으면’의 뜻을 나타내는 말.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=419935&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:10.004129+00:00"
+    },
+    {
+      "id": "419935:73068",
+      "target_code": "419935",
+      "sense_code": "73068",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말ː"
+      ],
+      "pronunciation": "말ː",
+      "definition": "어떤 행위가 잘 이루어지지 않음을 탄식하는 말.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=419935&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:10.004135+00:00"
+    },
+    {
+      "id": "419935:72775",
+      "target_code": "419935",
+      "sense_code": "72775",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말ː"
+      ],
+      "pronunciation": "말ː",
+      "definition": "앞에서 언급한 사실을 강조하여 말하는 뜻을 나타내는 말.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=419935&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:10.004141+00:00"
+    },
+    {
+      "id": "419935:73031",
+      "target_code": "419935",
+      "sense_code": "73031",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말ː"
+      ],
+      "pronunciation": "말ː",
+      "definition": "어감을 고르게 할 때 쓰는 군말. 상대편의 주의를 끌거나 말을 다짐하는 뜻을 나타낸다.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=419935&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:10.004147+00:00"
+    },
+    {
+      "id": "109620:146726",
+      "target_code": "109620",
+      "sense_code": "146726",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말ː"
+      ],
+      "pronunciation": "말ː",
+      "definition": "톱질을 하거나 먹줄을 그을 때 밑에 받치는 나무.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=109620&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:10.386588+00:00"
+    },
+    {
+      "id": "422786:146727",
+      "target_code": "422786",
+      "sense_code": "146727",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말"
+      ],
+      "pronunciation": "말",
+      "definition": "곡식, 액체, 가루 따위의 분량을 되는 데 쓰는 그릇. 열 되가 들어가게 나무나 쇠붙이를 이용하여 원기둥 모양으로 만든다.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=422786&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:10.893667+00:00"
+    },
+    {
+      "id": "422786:146728",
+      "target_code": "422786",
+      "sense_code": "146728",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말"
+      ],
+      "pronunciation": "말",
+      "definition": "부피의 단위. 곡식, 액체, 가루 따위의 부피를 잴 때 쓴다. 한 말은 한 되의 열 배로 약 18리터에 해당한다.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=422786&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:10.893685+00:00"
+    },
+    {
+      "id": "110168:146729",
+      "target_code": "110168",
+      "sense_code": "146729",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말"
+      ],
+      "pronunciation": "말",
+      "definition": "말과의 포유류. 어깨의 높이는 1.2~1.7미터이며, 갈색·검은색·붉은 갈색·흰색 따위가 있다. 네 다리와 목·얼굴이 길고 목덜미에는 갈기가 있으며, 꼬리는 긴 털로 덮여 있다. 초식성으로 3~4세에 성숙하고 16~20세까지 번식하는데, 4~6월이 번식기이고 수태한 후 335일 만에 한 마리의 새끼를 낳는다. 성질이 온순하고 잘 달리며 힘이 세어 농경, 운반, 승용, 경마 따위에 사용한다. 세계 각지에서 기른다.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=110168&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:11.259564+00:00"
+    },
+    {
+      "id": "110167:457183",
+      "target_code": "110167",
+      "sense_code": "457183",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말"
+      ],
+      "pronunciation": "말",
+      "definition": "십이지에서 ‘오’를 상징적으로 나타내는 말.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=110167&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:11.467207+00:00"
+    },
+    {
+      "id": "110169:6125",
+      "target_code": "110169",
+      "sense_code": "6125",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말"
+      ],
+      "pronunciation": "말",
+      "definition": "고누나 윷놀이 따위를 할 때 말판에서 정해진 규칙에 따라 옮기는 패.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=110169&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:11.695002+00:00"
+    },
+    {
+      "id": "110169:39823",
+      "target_code": "110169",
+      "sense_code": "39823",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말"
+      ],
+      "pronunciation": "말",
+      "definition": "‘馬’ 자를 새긴 장기짝. 한 편에 둘씩 넷이 있고, 앞으로 두 칸 옆으로 한 칸, 또는 앞으로 한 칸 옆으로 두 칸 건너 있는 밭으로 다닌다.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=110169&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:11.695019+00:00"
+    },
+    {
+      "id": "423541:404508",
+      "target_code": "423541",
+      "sense_code": "404508",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말"
+      ],
+      "pronunciation": "말",
+      "definition": "물속에 나는 은화식물을 통틀어 이르는 말.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=423541&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:12.249645+00:00"
+    },
+    {
+      "id": "423541:408307",
+      "target_code": "423541",
+      "sense_code": "408307",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "말"
+      ],
+      "pronunciation": "말",
+      "definition": "가랫과의 여러해살이 수초(水草). 줄기는 길이가 30cm 이상이며, 잎은 어긋나고 선 모양인데 가장자리가 밋밋하다. 5~6월에 꽃줄기가 2cm 정도 되는 황록색 꽃이 잎겨드랑이에서 수상(穗狀) 화서로 피고 열매는 수과(瘦果)를 맺는다. 연한 줄기와 잎은 식용한다. 개울, 도랑가의 물속에 나는데 한국, 일본, 만주 등지에 분포한다.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=423541&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:12.249730+00:00"
+    },
+    {
+      "id": "109266:420223",
+      "target_code": "109266",
+      "sense_code": "420223",
+      "word": "말",
+      "display_word": "말",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [],
+      "pronunciation": "",
+      "definition": "→ 버선.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=109266&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:12.624775+00:00"
+    },
+    {
+      "id": "109319:146732",
+      "target_code": "109319",
+      "sense_code": "146732",
+      "word": "말",
+      "display_word": "말",
+      "origin": "末",
+      "hanja": "末",
+      "pronunciations": [
+        "말"
+      ],
+      "pronunciation": "말",
+      "definition": "어떤 기간의 끝이나 말기.",
+      "pos": "의존 명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=109319&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:13.006760+00:00"
+    },
+    {
+      "id": "109320:420224",
+      "target_code": "109320",
+      "sense_code": "420224",
+      "word": "말",
+      "display_word": "말-",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [],
+      "pronunciation": "",
+      "definition": "‘큰’의 뜻을 더하는 접두사.",
+      "pos": "접사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=109320&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:13.897576+00:00"
+    }
+  ],
+  "낭독": [
+    {
+      "id": "407972:36593",
+      "target_code": "407972",
+      "sense_code": "36593",
+      "word": "낭독",
+      "display_word": "낭독",
+      "origin": "狼毒",
+      "hanja": "狼毒",
+      "pronunciations": [
+        "낭ː독"
+      ],
+      "pronunciation": "낭ː독",
+      "definition": "한라투구꽃의 뿌리를 말린 것. 오랜 체증으로 뱃속에 뭉치가 생기는 징가(癥瘕), 적취(積聚), 헌데, 옴 따위의 치료에 쓴다.",
+      "pos": "명사",
+      "inflections": [
+        {
+          "form": "낭독만",
+          "pronunciations": [
+            "낭ː동만"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=407972&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:14.583608+00:00"
+    },
+    {
+      "id": "407972:63635",
+      "target_code": "407972",
+      "sense_code": "63635",
+      "word": "낭독",
+      "display_word": "낭독",
+      "origin": "狼毒",
+      "hanja": "狼毒",
+      "pronunciations": [
+        "낭ː독"
+      ],
+      "pronunciation": "낭ː독",
+      "definition": "몹시 잔학함.",
+      "pos": "명사",
+      "inflections": [
+        {
+          "form": "낭독만",
+          "pronunciations": [
+            "낭ː동만"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=407972&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:14.583623+00:00"
+    },
+    {
+      "id": "61319:114635",
+      "target_code": "61319",
+      "sense_code": "114635",
+      "word": "낭독",
+      "display_word": "낭독",
+      "origin": "朗讀",
+      "hanja": "朗讀",
+      "pronunciations": [
+        "낭ː독"
+      ],
+      "pronunciation": "낭ː독",
+      "definition": "글을 소리 내어 읽음.",
+      "pos": "명사",
+      "inflections": [
+        {
+          "form": "낭독만",
+          "pronunciations": [
+            "낭ː동만"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=61319&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:14.979038+00:00"
+    }
+  ],
+  "천천히": [
+    {
+      "id": "317664:289974",
+      "target_code": "317664",
+      "sense_code": "289974",
+      "word": "천천히",
+      "display_word": "천천-히",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "천ː천히"
+      ],
+      "pronunciation": "천ː천히",
+      "definition": "동작이나 태도가 급하지 아니하고 느리게.",
+      "pos": "부사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=317664&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:15.615346+00:00"
+    }
+  ],
+  "알다": [
+    {
+      "id": "213588:30277",
+      "target_code": "213588",
+      "sense_code": "30277",
+      "word": "알다",
+      "display_word": "알다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "알ː다"
+      ],
+      "pronunciation": "알ː다",
+      "definition": "교육이나 경험, 사고 행위를 통하여 사물이나 상황에 대한 정보나 지식을 갖추다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "알아",
+          "pronunciations": [
+            "아라"
+          ]
+        },
+        {
+          "form": "아니",
+          "pronunciations": [
+            "아ː니"
+          ]
+        },
+        {
+          "form": "아오",
+          "pronunciations": [
+            "아ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:16.580038+00:00"
+    },
+    {
+      "id": "213588:61910",
+      "target_code": "213588",
+      "sense_code": "61910",
+      "word": "알다",
+      "display_word": "알다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "알ː다"
+      ],
+      "pronunciation": "알ː다",
+      "definition": "어떤 사실이나 존재, 상태에 대해 의식이나 감각으로 깨닫거나 느끼다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "알아",
+          "pronunciations": [
+            "아라"
+          ]
+        },
+        {
+          "form": "아니",
+          "pronunciations": [
+            "아ː니"
+          ]
+        },
+        {
+          "form": "아오",
+          "pronunciations": [
+            "아ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:16.580056+00:00"
+    },
+    {
+      "id": "213588:68368",
+      "target_code": "213588",
+      "sense_code": "68368",
+      "word": "알다",
+      "display_word": "알다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "알ː다"
+      ],
+      "pronunciation": "알ː다",
+      "definition": "심리적 상태를 마음속으로 느끼거나 깨닫다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "알아",
+          "pronunciations": [
+            "아라"
+          ]
+        },
+        {
+          "form": "아니",
+          "pronunciations": [
+            "아ː니"
+          ]
+        },
+        {
+          "form": "아오",
+          "pronunciations": [
+            "아ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:16.580062+00:00"
+    },
+    {
+      "id": "213588:71183",
+      "target_code": "213588",
+      "sense_code": "71183",
+      "word": "알다",
+      "display_word": "알다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "알ː다"
+      ],
+      "pronunciation": "알ː다",
+      "definition": "사람이 어떤 일을 어떻게 할지 스스로 정하거나 판단하다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "알아",
+          "pronunciations": [
+            "아라"
+          ]
+        },
+        {
+          "form": "아니",
+          "pronunciations": [
+            "아ː니"
+          ]
+        },
+        {
+          "form": "아오",
+          "pronunciations": [
+            "아ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:16.580067+00:00"
+    },
+    {
+      "id": "213588:30989",
+      "target_code": "213588",
+      "sense_code": "30989",
+      "word": "알다",
+      "display_word": "알다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "알ː다"
+      ],
+      "pronunciation": "알ː다",
+      "definition": "어떤 일을 할 능력이나 소양이 있다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "알아",
+          "pronunciations": [
+            "아라"
+          ]
+        },
+        {
+          "form": "아니",
+          "pronunciations": [
+            "아ː니"
+          ]
+        },
+        {
+          "form": "아오",
+          "pronunciations": [
+            "아ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:16.580072+00:00"
+    },
+    {
+      "id": "213588:62339",
+      "target_code": "213588",
+      "sense_code": "62339",
+      "word": "알다",
+      "display_word": "알다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "알ː다"
+      ],
+      "pronunciation": "알ː다",
+      "definition": "어떤 일에 대하여 관여하거나 관심을 가지다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "알아",
+          "pronunciations": [
+            "아라"
+          ]
+        },
+        {
+          "form": "아니",
+          "pronunciations": [
+            "아ː니"
+          ]
+        },
+        {
+          "form": "아오",
+          "pronunciations": [
+            "아ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:16.580077+00:00"
+    },
+    {
+      "id": "213588:69305",
+      "target_code": "213588",
+      "sense_code": "69305",
+      "word": "알다",
+      "display_word": "알다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "알ː다"
+      ],
+      "pronunciation": "알ː다",
+      "definition": "잘 모르던 대상에 대하여 그 좋은 점을 깨달아 가까이하려 하다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "알아",
+          "pronunciations": [
+            "아라"
+          ]
+        },
+        {
+          "form": "아니",
+          "pronunciations": [
+            "아ː니"
+          ]
+        },
+        {
+          "form": "아오",
+          "pronunciations": [
+            "아ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:16.580082+00:00"
+    },
+    {
+      "id": "213588:71706",
+      "target_code": "213588",
+      "sense_code": "71706",
+      "word": "알다",
+      "display_word": "알다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "알ː다"
+      ],
+      "pronunciation": "알ː다",
+      "definition": "어떤 사람이나 사물에 대하여 소중히 생각하다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "알아",
+          "pronunciations": [
+            "아라"
+          ]
+        },
+        {
+          "form": "아니",
+          "pronunciations": [
+            "아ː니"
+          ]
+        },
+        {
+          "form": "아오",
+          "pronunciations": [
+            "아ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:16.580087+00:00"
+    },
+    {
+      "id": "213588:72096",
+      "target_code": "213588",
+      "sense_code": "72096",
+      "word": "알다",
+      "display_word": "알다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "알ː다"
+      ],
+      "pronunciation": "알ː다",
+      "definition": "상대편의 어떤 명령이나 요청에 대하여 그대로 하겠다는 동의의 뜻을 나타내는 말.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "알아",
+          "pronunciations": [
+            "아라"
+          ]
+        },
+        {
+          "form": "아니",
+          "pronunciations": [
+            "아ː니"
+          ]
+        },
+        {
+          "form": "아오",
+          "pronunciations": [
+            "아ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:16.580092+00:00"
+    },
+    {
+      "id": "213588:216106",
+      "target_code": "213588",
+      "sense_code": "216106",
+      "word": "알다",
+      "display_word": "알다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "알ː다"
+      ],
+      "pronunciation": "알ː다",
+      "definition": "다른 사람과 사귐이 있거나 안면이 있다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "알아",
+          "pronunciations": [
+            "아라"
+          ]
+        },
+        {
+          "form": "아니",
+          "pronunciations": [
+            "아ː니"
+          ]
+        },
+        {
+          "form": "아오",
+          "pronunciations": [
+            "아ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:16.580098+00:00"
+    },
+    {
+      "id": "213588:216107",
+      "target_code": "213588",
+      "sense_code": "216107",
+      "word": "알다",
+      "display_word": "알다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "알ː다"
+      ],
+      "pronunciation": "알ː다",
+      "definition": "어떤 사물이나 사람에 대하여 그것을 어떠한 성격을 가진 것으로 여기다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "알아",
+          "pronunciations": [
+            "아라"
+          ]
+        },
+        {
+          "form": "아니",
+          "pronunciations": [
+            "아ː니"
+          ]
+        },
+        {
+          "form": "아오",
+          "pronunciations": [
+            "아ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:16.580103+00:00"
+    },
+    {
+      "id": "213588:216108",
+      "target_code": "213588",
+      "sense_code": "216108",
+      "word": "알다",
+      "display_word": "알다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "알ː다"
+      ],
+      "pronunciation": "알ː다",
+      "definition": "어떠한 사실에 대하여 그러하다고 믿거나 생각하다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "알아",
+          "pronunciations": [
+            "아라"
+          ]
+        },
+        {
+          "form": "아니",
+          "pronunciations": [
+            "아ː니"
+          ]
+        },
+        {
+          "form": "아오",
+          "pronunciations": [
+            "아ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:16.580108+00:00"
+    }
+  ],
+  "끌다": [
+    {
+      "id": "403617:30482",
+      "target_code": "403617",
+      "sense_code": "30482",
+      "word": "끌다",
+      "display_word": "끌다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "끌ː다"
+      ],
+      "pronunciation": "끌ː다",
+      "definition": "바닥에 댄 채로 잡아당기다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "끌어",
+          "pronunciations": [
+            "끄ː러"
+          ]
+        },
+        {
+          "form": "끄니",
+          "pronunciations": [
+            "끄ː니"
+          ]
+        },
+        {
+          "form": "끄오",
+          "pronunciations": [
+            "끄ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:17.344504+00:00"
+    },
+    {
+      "id": "403617:60850",
+      "target_code": "403617",
+      "sense_code": "60850",
+      "word": "끌다",
+      "display_word": "끌다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "끌ː다"
+      ],
+      "pronunciation": "끌ː다",
+      "definition": "바퀴 달린 것을 움직이게 하다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "끌어",
+          "pronunciations": [
+            "끄ː러"
+          ]
+        },
+        {
+          "form": "끄니",
+          "pronunciations": [
+            "끄ː니"
+          ]
+        },
+        {
+          "form": "끄오",
+          "pronunciations": [
+            "끄ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:17.344520+00:00"
+    },
+    {
+      "id": "403617:68410",
+      "target_code": "403617",
+      "sense_code": "68410",
+      "word": "끌다",
+      "display_word": "끌다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "끌ː다"
+      ],
+      "pronunciation": "끌ː다",
+      "definition": "짐승을 부리다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "끌어",
+          "pronunciations": [
+            "끄ː러"
+          ]
+        },
+        {
+          "form": "끄니",
+          "pronunciations": [
+            "끄ː니"
+          ]
+        },
+        {
+          "form": "끄오",
+          "pronunciations": [
+            "끄ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:17.344526+00:00"
+    },
+    {
+      "id": "403617:70807",
+      "target_code": "403617",
+      "sense_code": "70807",
+      "word": "끌다",
+      "display_word": "끌다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "끌ː다"
+      ],
+      "pronunciation": "끌ː다",
+      "definition": "남의 관심 따위를 쏠리게 하다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "끌어",
+          "pronunciations": [
+            "끄ː러"
+          ]
+        },
+        {
+          "form": "끄니",
+          "pronunciations": [
+            "끄ː니"
+          ]
+        },
+        {
+          "form": "끄오",
+          "pronunciations": [
+            "끄ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:17.344531+00:00"
+    },
+    {
+      "id": "403617:72350",
+      "target_code": "403617",
+      "sense_code": "72350",
+      "word": "끌다",
+      "display_word": "끌다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "끌ː다"
+      ],
+      "pronunciation": "끌ː다",
+      "definition": "시간이나 일을 늦추거나 미루다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "끌어",
+          "pronunciations": [
+            "끄ː러"
+          ]
+        },
+        {
+          "form": "끄니",
+          "pronunciations": [
+            "끄ː니"
+          ]
+        },
+        {
+          "form": "끄오",
+          "pronunciations": [
+            "끄ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:17.344536+00:00"
+    },
+    {
+      "id": "403617:72636",
+      "target_code": "403617",
+      "sense_code": "72636",
+      "word": "끌다",
+      "display_word": "끌다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "끌ː다"
+      ],
+      "pronunciation": "끌ː다",
+      "definition": "길게 빼어 늘이다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "끌어",
+          "pronunciations": [
+            "끄ː러"
+          ]
+        },
+        {
+          "form": "끄니",
+          "pronunciations": [
+            "끄ː니"
+          ]
+        },
+        {
+          "form": "끄오",
+          "pronunciations": [
+            "끄ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:17.344541+00:00"
+    },
+    {
+      "id": "403617:72938",
+      "target_code": "403617",
+      "sense_code": "72938",
+      "word": "끌다",
+      "display_word": "끌다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "끌ː다"
+      ],
+      "pronunciation": "끌ː다",
+      "definition": "목적하는 곳으로 바로 가도록 같이 가면서 따라오게 하다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "끌어",
+          "pronunciations": [
+            "끄ː러"
+          ]
+        },
+        {
+          "form": "끄니",
+          "pronunciations": [
+            "끄ː니"
+          ]
+        },
+        {
+          "form": "끄오",
+          "pronunciations": [
+            "끄ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:17.344547+00:00"
+    },
+    {
+      "id": "403617:30745",
+      "target_code": "403617",
+      "sense_code": "30745",
+      "word": "끌다",
+      "display_word": "끌다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "끌ː다"
+      ],
+      "pronunciation": "끌ː다",
+      "definition": "어떤 사실이나 글을 옮겨 오거나 옮겨 가다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "끌어",
+          "pronunciations": [
+            "끄ː러"
+          ]
+        },
+        {
+          "form": "끄니",
+          "pronunciations": [
+            "끄ː니"
+          ]
+        },
+        {
+          "form": "끄오",
+          "pronunciations": [
+            "끄ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:17.344551+00:00"
+    },
+    {
+      "id": "403617:62139",
+      "target_code": "403617",
+      "sense_code": "62139",
+      "word": "끌다",
+      "display_word": "끌다",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "끌ː다"
+      ],
+      "pronunciation": "끌ː다",
+      "definition": "어느 곳에서 원하는 곳에 이르도록 전선 따위를 늘리다.",
+      "pos": "동사",
+      "inflections": [
+        {
+          "form": "끌어",
+          "pronunciations": [
+            "끄ː러"
+          ]
+        },
+        {
+          "form": "끄니",
+          "pronunciations": [
+            "끄ː니"
+          ]
+        },
+        {
+          "form": "끄오",
+          "pronunciations": [
+            "끄ː오"
+          ]
+        }
+      ],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:17.344556+00:00"
+    }
+  ],
+  "서울": [
+    {
+      "id": "445661:14098",
+      "target_code": "445661",
+      "sense_code": "14098",
+      "word": "서울",
+      "display_word": "서울",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "서울"
+      ],
+      "pronunciation": "서울",
+      "definition": "한 나라의 중앙 정부가 있는 곳.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=445661&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:19.773969+00:00"
+    },
+    {
+      "id": "445661:45025",
+      "target_code": "445661",
+      "sense_code": "45025",
+      "word": "서울",
+      "display_word": "서울",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "서울"
+      ],
+      "pronunciation": "서울",
+      "definition": "우리나라 중심부에 있는 시. 한강 하류에 위치하며, 북한산·도봉산·인왕산·관악산 따위의 산에 둘러싸여 분지를 이룬다. 일제 강점기에는 경성부로 불리다가 1946년에 이 이름으로 정해졌다. 1949년에 특별시로 승격하여 지금까지 우리나라의 정치, 경제, 교육 따위의 중심지 역할을 하고 있다. 대한민국의 수도이다. 면적은 약 605㎢.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=445661&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:19.773986+00:00"
+    },
+    {
+      "id": "184714:572601",
+      "target_code": "184714",
+      "sense_code": "572601",
+      "word": "서울",
+      "display_word": "서울",
+      "origin": "暑鬱",
+      "hanja": "暑鬱",
+      "pronunciations": [
+        "서ː울"
+      ],
+      "pronunciation": "서ː울",
+      "definition": "한의학에서, 더위가 심할 때 서늘하고 찬 곳에 있음으로써 양기가 속으로 몰리고 밖으로 나가지 못하여 생긴 우울증. 머리와 팔다리의 관절이 아프며 열이 나고 땀이 나지 않는다.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=184714&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:19.985398+00:00"
+    }
+  ],
+  "기쁨": [
+    {
+      "id": "49451:452825",
+      "target_code": "49451",
+      "sense_code": "452825",
+      "word": "기쁨",
+      "display_word": "기쁨",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "기쁨"
+      ],
+      "pronunciation": "기쁨",
+      "definition": "욕구가 충족되었을 때의 흐뭇하고 흡족한 마음이나 느낌.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=49451&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:20.504190+00:00"
+    }
+  ],
+  "아침": [
+    {
+      "id": "458645:516324",
+      "target_code": "458645",
+      "sense_code": "516324",
+      "word": "아침",
+      "display_word": "아침",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "아침"
+      ],
+      "pronunciation": "아침",
+      "definition": "날이 새면서 오전 반나절쯤까지의 동안.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=458645&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:21.058805+00:00"
+    },
+    {
+      "id": "458645:519704",
+      "target_code": "458645",
+      "sense_code": "519704",
+      "word": "아침",
+      "display_word": "아침",
+      "origin": "",
+      "hanja": "",
+      "pronunciations": [
+        "아침"
+      ],
+      "pronunciation": "아침",
+      "definition": "‘「1」’에 끼니로 먹는 음식. 또는 ‘「1」’에 끼니를 먹는 일.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=458645&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:21.058892+00:00"
+    }
+  ],
+  "뉴스": [
+    {
+      "id": "71425:367391",
+      "target_code": "71425",
+      "sense_code": "367391",
+      "word": "뉴스",
+      "display_word": "뉴스",
+      "origin": "news",
+      "hanja": "",
+      "pronunciations": [],
+      "pronunciation": "",
+      "definition": "새로운 소식을 전하여 주는 방송의 프로그램.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=71425&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:21.560940+00:00"
+    },
+    {
+      "id": "71425:371559",
+      "target_code": "71425",
+      "sense_code": "371559",
+      "word": "뉴스",
+      "display_word": "뉴스",
+      "origin": "news",
+      "hanja": "",
+      "pronunciations": [],
+      "pronunciation": "",
+      "definition": "일반에게 잘 알려지지 아니한 새로운 소식.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=71425&searchKeywordTo=3",
+      "queried_at": "2026-11-04T16:56:21.560955+00:00"
+    }
+  ],
+  "낭독만": [],
+  "알아": [],
+  "끌어": [],
+  "눈이": [],
+  "말의": [
+    {
+      "id": "110661:530646",
+      "target_code": "110661",
+      "sense_code": "530646",
+      "word": "말의",
+      "display_word": "말의",
+      "origin": "末意",
+      "hanja": "末意",
+      "pronunciations": [
+        "마릐",
+        "마리"
+      ],
+      "pronunciation": "마릐 / 마리",
+      "definition": "본래의 뜻이 아닌 그 주변의 뜻.",
+      "pos": "명사",
+      "inflections": [],
+      "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=110661&searchKeywordTo=3",
+      "queried_at": "2026-11-04T17:00:33.320847+00:00"
+    }
+  ],
+  "낭독을": [],
+  "기쁨을": [],
+  "서울에": []
+}
