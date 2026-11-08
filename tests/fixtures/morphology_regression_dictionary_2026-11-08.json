@@ -1,0 +1,1579 @@
+{
+  "source": "National Institute of Korean Language Standard Korean Language Dictionary Open API search.do exact + view.do target_code",
+  "captured_at": "2026-11-08T12:46:39.999287+00:00",
+  "credential_values_omitted": true,
+  "entries": {
+    "선발하며": [],
+    "선발하다": [
+      {
+        "id": "184644:193118",
+        "target_code": "184644",
+        "sense_code": "193118",
+        "word": "선발하다",
+        "display_word": "선발-하다",
+        "origin": "先發 · 하다",
+        "hanja": "先發",
+        "pronunciations": [
+          "선발하다"
+        ],
+        "pronunciation": "선발하다",
+        "definition": "남보다 먼저 어떤 일을 시작하거나 길을 떠나다.",
+        "pos": "동사",
+        "inflections": [
+          {
+            "form": "선발하여",
+            "type": "conjugation",
+            "pronunciations": [
+              "선발하여"
+            ]
+          },
+          {
+            "form": "선발해",
+            "type": "abbreviation",
+            "pronunciations": [
+              "선발해"
+            ]
+          },
+          {
+            "form": "선발하니",
+            "type": "conjugation",
+            "pronunciations": [
+              "선발하니"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=184644&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:33.634171+00:00"
+      },
+      {
+        "id": "185215:425388",
+        "target_code": "185215",
+        "sense_code": "425388",
+        "word": "선발하다",
+        "display_word": "선발-하다",
+        "origin": "選拔 · 하다",
+        "hanja": "選拔",
+        "pronunciations": [
+          "선ː발하다"
+        ],
+        "pronunciation": "선ː발하다",
+        "definition": "많은 가운데서 골라 뽑다.",
+        "pos": "동사",
+        "inflections": [
+          {
+            "form": "선발하여",
+            "type": "conjugation",
+            "pronunciations": [
+              "선ː발하여"
+            ]
+          },
+          {
+            "form": "선발해",
+            "type": "abbreviation",
+            "pronunciations": [
+              "선ː발해"
+            ]
+          },
+          {
+            "form": "선발하니",
+            "type": "conjugation",
+            "pronunciations": [
+              "선ː발하니"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=185215&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:34.016601+00:00"
+      }
+    ],
+    "보도부": [
+      {
+        "id": "143839:423001",
+        "target_code": "143839",
+        "sense_code": "423001",
+        "word": "보도부",
+        "display_word": "보도-부",
+        "origin": "報道部",
+        "hanja": "報道部",
+        "pronunciations": [
+          "보ː도부"
+        ],
+        "pronunciation": "보ː도부",
+        "definition": "기관이나 단체에서 대중 매체를 통하여 보도에 관한 일을 맡아보는 부서.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=143839&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:34.455015+00:00"
+      }
+    ],
+    "선발": [
+      {
+        "id": "444830:14327",
+        "target_code": "444830",
+        "sense_code": "14327",
+        "word": "선발",
+        "display_word": "선-발",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "선발"
+        ],
+        "pronunciation": "선발",
+        "definition": "집 안에서 종일 일하느라고 서서 돌아다니는 발.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=444830&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:33.718406+00:00"
+      },
+      {
+        "id": "184643:368941",
+        "target_code": "184643",
+        "sense_code": "368941",
+        "word": "선발",
+        "display_word": "선발",
+        "origin": "先發",
+        "hanja": "先發",
+        "pronunciations": [
+          "선발"
+        ],
+        "pronunciation": "선발",
+        "definition": "남보다 먼저 어떤 일을 시작하거나 길을 떠남.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=184643&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:34.268259+00:00"
+      },
+      {
+        "id": "184643:372368",
+        "target_code": "184643",
+        "sense_code": "372368",
+        "word": "선발",
+        "display_word": "선발",
+        "origin": "先發",
+        "hanja": "先發",
+        "pronunciations": [
+          "선발"
+        ],
+        "pronunciation": "선발",
+        "definition": "야구에서, 경기가 시작되는 1회부터 출전하는 일.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=184643&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:34.268272+00:00"
+      },
+      {
+        "id": "185203:193119",
+        "target_code": "185203",
+        "sense_code": "193119",
+        "word": "선발",
+        "display_word": "선발",
+        "origin": "選拔",
+        "hanja": "選拔",
+        "pronunciations": [
+          "선ː발"
+        ],
+        "pronunciation": "선ː발",
+        "definition": "많은 가운데서 골라 뽑음.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=185203&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:34.653836+00:00"
+      },
+      {
+        "id": "185216:193343",
+        "target_code": "185216",
+        "sense_code": "193343",
+        "word": "선발",
+        "display_word": "선발",
+        "origin": "選發",
+        "hanja": "選發",
+        "pronunciations": [
+          "선ː발"
+        ],
+        "pronunciation": "선ː발",
+        "definition": "유전자형에 대한 인공적인 도태.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=185216&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:34.856384+00:00"
+      }
+    ],
+    "사회혁신융합전공": [],
+    "보도": [
+      {
+        "id": "143217:386205",
+        "target_code": "143217",
+        "sense_code": "386205",
+        "word": "보도",
+        "display_word": "보도",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "보도"
+        ],
+        "pronunciation": "보도",
+        "definition": "동그란 구멍을 뚫는 연장.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=143217&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:34.790318+00:00"
+      },
+      {
+        "id": "143218:533420",
+        "target_code": "143218",
+        "sense_code": "533420",
+        "word": "보도",
+        "display_word": "보도",
+        "origin": "步道",
+        "hanja": "步道",
+        "pronunciations": [
+          "보ː도"
+        ],
+        "pronunciation": "보ː도",
+        "definition": "보행자의 통행에 사용하도록 된 도로.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=143218&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:34.996946+00:00"
+      },
+      {
+        "id": "431798:496800",
+        "target_code": "431798",
+        "sense_code": "496800",
+        "word": "보도",
+        "display_word": "보도",
+        "origin": "保導",
+        "hanja": "保導",
+        "pronunciations": [
+          "보ː도"
+        ],
+        "pronunciation": "보ː도",
+        "definition": "보호하여 지도함.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=431798&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:35.198516+00:00"
+      },
+      {
+        "id": "142963:171014",
+        "target_code": "142963",
+        "sense_code": "171014",
+        "word": "보도",
+        "display_word": "보도",
+        "origin": "報道",
+        "hanja": "報道",
+        "pronunciations": [
+          "보ː도"
+        ],
+        "pronunciation": "보ː도",
+        "definition": "대중 전달 매체를 통하여 일반 사람들에게 새로운 소식을 알림. 또는 그 소식.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=142963&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:35.403678+00:00"
+      },
+      {
+        "id": "431800:386224",
+        "target_code": "431800",
+        "sense_code": "386224",
+        "word": "보도",
+        "display_word": "보도",
+        "origin": "輔導 · / · 補導",
+        "hanja": "輔導 · 補導",
+        "pronunciations": [
+          "보ː도"
+        ],
+        "pronunciation": "보ː도",
+        "definition": "도와서 올바른 데로 이끌어 감.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=431800&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:35.614220+00:00"
+      },
+      {
+        "id": "143564:423000",
+        "target_code": "143564",
+        "sense_code": "423000",
+        "word": "보도",
+        "display_word": "보도",
+        "origin": "寶刀",
+        "hanja": "寶刀",
+        "pronunciations": [
+          "보ː도"
+        ],
+        "pronunciation": "보ː도",
+        "definition": "보배로운 칼. 또는 잘 만든 귀한 칼.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=143564&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:35.994885+00:00"
+      }
+    ],
+    "혁신": [
+      {
+        "id": "505645:319838",
+        "target_code": "505645",
+        "sense_code": "319838",
+        "word": "혁신",
+        "display_word": "혁신",
+        "origin": "革新",
+        "hanja": "革新",
+        "pronunciations": [
+          "혁씬"
+        ],
+        "pronunciation": "혁씬",
+        "definition": "묵은 풍속, 관습, 조직, 방법 따위를 완전히 바꾸어서 새롭게 함.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=505645&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:36.730774+00:00"
+      }
+    ],
+    "사회": [
+      {
+        "id": "162412:12763",
+        "target_code": "162412",
+        "sense_code": "12763",
+        "word": "사회",
+        "display_word": "사회",
+        "origin": "司會",
+        "hanja": "司會",
+        "pronunciations": [
+          "사회",
+          "사훼"
+        ],
+        "pronunciation": "사회 / 사훼",
+        "definition": "회의나 예식 따위를 진행함.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=162412&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:35.755744+00:00"
+      },
+      {
+        "id": "162412:44049",
+        "target_code": "162412",
+        "sense_code": "44049",
+        "word": "사회",
+        "display_word": "사회",
+        "origin": "司會",
+        "hanja": "司會",
+        "pronunciations": [
+          "사회",
+          "사훼"
+        ],
+        "pronunciation": "사회 / 사훼",
+        "definition": "모임이나 예식에서 진행을 맡아보는 사람.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=162412&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:35.755757+00:00"
+      },
+      {
+        "id": "162413:185307",
+        "target_code": "162413",
+        "sense_code": "185307",
+        "word": "사회",
+        "display_word": "사회",
+        "origin": "司會",
+        "hanja": "司會",
+        "pronunciations": [
+          "사회",
+          "사훼"
+        ],
+        "pronunciation": "사회 / 사훼",
+        "definition": "고대 중국에서, 회계를 맡아보던 관아. 또는 그 벼슬.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=162413&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:35.954180+00:00"
+      },
+      {
+        "id": "439331:442204",
+        "target_code": "439331",
+        "sense_code": "442204",
+        "word": "사회",
+        "display_word": "사회",
+        "origin": "司誨",
+        "hanja": "司誨",
+        "pronunciations": [
+          "사회",
+          "사훼"
+        ],
+        "pronunciation": "사회 / 사훼",
+        "definition": "조선 시대에, 종학(宗學)에서 왕족의 교육을 맡아보던 정육품 벼슬.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=439331&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:36.163410+00:00"
+      },
+      {
+        "id": "439331:445786",
+        "target_code": "439331",
+        "sense_code": "445786",
+        "word": "사회",
+        "display_word": "사회",
+        "origin": "司誨",
+        "hanja": "司誨",
+        "pronunciations": [
+          "사회",
+          "사훼"
+        ],
+        "pronunciation": "사회 / 사훼",
+        "definition": "대한 제국 때에, 종인 학교에서 왕족의 교육을 맡아보던 벼슬. 세 사람이 있었는데 두 사람은 주임관, 한 사람은 판임관이었다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=439331&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:36.163423+00:00"
+      },
+      {
+        "id": "162414:12764",
+        "target_code": "162414",
+        "sense_code": "12764",
+        "word": "사회",
+        "display_word": "사회",
+        "origin": "死灰",
+        "hanja": "死灰",
+        "pronunciations": [
+          "사ː회",
+          "사ː훼"
+        ],
+        "pronunciation": "사ː회 / 사ː훼",
+        "definition": "불기운이 사그라진 다 식은 재.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=162414&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:36.370117+00:00"
+      },
+      {
+        "id": "162414:44050",
+        "target_code": "162414",
+        "sense_code": "44050",
+        "word": "사회",
+        "display_word": "사회",
+        "origin": "死灰",
+        "hanja": "死灰",
+        "pronunciations": [
+          "사ː회",
+          "사ː훼"
+        ],
+        "pronunciation": "사ː회 / 사ː훼",
+        "definition": "세력이나 생기가 없는 사람을 비유적으로 이르는 말.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=162414&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:36.370130+00:00"
+      },
+      {
+        "id": "162415:185308",
+        "target_code": "162415",
+        "sense_code": "185308",
+        "word": "사회",
+        "display_word": "사회",
+        "origin": "沙灰",
+        "hanja": "沙灰",
+        "pronunciations": [
+          "사회",
+          "사훼"
+        ],
+        "pronunciation": "사회 / 사훼",
+        "definition": "굴 껍데기를 불에 태워 만든 가루.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=162415&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:36.571432+00:00"
+      },
+      {
+        "id": "162416:185309",
+        "target_code": "162416",
+        "sense_code": "185309",
+        "word": "사회",
+        "display_word": "사회",
+        "origin": "私回",
+        "hanja": "私回",
+        "pronunciations": [],
+        "pronunciation": "",
+        "definition": "‘사회하다’의 어근.",
+        "pos": "품사 없음",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=162416&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:36.782254+00:00"
+      },
+      {
+        "id": "439332:12765",
+        "target_code": "439332",
+        "sense_code": "12765",
+        "word": "사회",
+        "display_word": "사회",
+        "origin": "社會",
+        "hanja": "社會",
+        "pronunciations": [
+          "사회",
+          "사훼"
+        ],
+        "pronunciation": "사회 / 사훼",
+        "definition": "같은 무리끼리 모여 이루는 집단.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=439332&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.000420+00:00"
+      },
+      {
+        "id": "439332:44051",
+        "target_code": "439332",
+        "sense_code": "44051",
+        "word": "사회",
+        "display_word": "사회",
+        "origin": "社會",
+        "hanja": "社會",
+        "pronunciations": [
+          "사회",
+          "사훼"
+        ],
+        "pronunciation": "사회 / 사훼",
+        "definition": "학생이나 군인, 죄수 들이 자기가 속한 영역 이외의 영역을 이르는 말.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=439332&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.000433+00:00"
+      },
+      {
+        "id": "439332:64949",
+        "target_code": "439332",
+        "sense_code": "64949",
+        "word": "사회",
+        "display_word": "사회",
+        "origin": "社會",
+        "hanja": "社會",
+        "pronunciations": [
+          "사회",
+          "사훼"
+        ],
+        "pronunciation": "사회 / 사훼",
+        "definition": "공동생활을 영위하는 모든 형태의 인간 집단. 가족, 마을, 조합, 교회, 계급, 국가, 정당, 회사 따위가 그 주요 형태이다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=439332&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.000437+00:00"
+      },
+      {
+        "id": "439332:69711",
+        "target_code": "439332",
+        "sense_code": "69711",
+        "word": "사회",
+        "display_word": "사회",
+        "origin": "社會",
+        "hanja": "社會",
+        "pronunciations": [
+          "사회",
+          "사훼"
+        ],
+        "pronunciation": "사회 / 사훼",
+        "definition": "촌민(村民)이 입춘이나 입추가 지난 뒤에 다섯째 무일(戊日)인 사일(社日)에 모이던 모임.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=439332&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.000440+00:00"
+      }
+    ],
+    "융합": [
+      {
+        "id": "473637:369527",
+        "target_code": "473637",
+        "sense_code": "369527",
+        "word": "융합",
+        "display_word": "융합",
+        "origin": "融合",
+        "hanja": "融合",
+        "pronunciations": [
+          "융합"
+        ],
+        "pronunciation": "융합",
+        "definition": "다른 종류의 것이 녹아서 서로 구별이 없게 하나로 합하여지거나 그렇게 만듦. 또는 그런 일.",
+        "pos": "명사",
+        "inflections": [
+          {
+            "form": "융합만",
+            "type": "conjugation",
+            "pronunciations": [
+              "융함만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=473637&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.348905+00:00"
+      },
+      {
+        "id": "473637:374750",
+        "target_code": "473637",
+        "sense_code": "374750",
+        "word": "융합",
+        "display_word": "융합",
+        "origin": "融合",
+        "hanja": "融合",
+        "pronunciations": [
+          "융합"
+        ],
+        "pronunciation": "융합",
+        "definition": "둘 이상의 요소가 합쳐져 하나의 통일된 감각을 일으키는 일. 정신 분석에서는 생(生)의 본능과 죽음의 본능을 동시에 충족시키려는 충동을 이른다.",
+        "pos": "명사",
+        "inflections": [
+          {
+            "form": "융합만",
+            "type": "conjugation",
+            "pronunciations": [
+              "융함만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=473637&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.348918+00:00"
+      }
+    ],
+    "첫눈": [
+      {
+        "id": "330923:289590",
+        "target_code": "330923",
+        "sense_code": "289590",
+        "word": "첫눈",
+        "display_word": "첫-눈",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "천눈"
+        ],
+        "pronunciation": "천눈",
+        "definition": "처음 보아서 눈에 뜨이는 느낌이나 인상.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=330923&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.862982+00:00"
+      },
+      {
+        "id": "489489:289591",
+        "target_code": "489489",
+        "sense_code": "289591",
+        "word": "첫눈",
+        "display_word": "첫-눈",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "천눈"
+        ],
+        "pronunciation": "천눈",
+        "definition": "그해 겨울이 시작된 후 처음으로 내리는 눈.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=489489&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.065724+00:00"
+      }
+    ],
+    "밀물": [
+      {
+        "id": "130198:568912",
+        "target_code": "130198",
+        "sense_code": "568912",
+        "word": "밀물",
+        "display_word": "밀-물",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "밀물"
+        ],
+        "pronunciation": "밀물",
+        "definition": "조수의 간만으로 해면이 상승하는 현상. 또는 그 바닷물. 간조에서 만조까지를 이르며 하루에 두 차례씩 밀려 들어온다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=130198&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.835396+00:00"
+      },
+      {
+        "id": "130199:384783",
+        "target_code": "130199",
+        "sense_code": "384783",
+        "word": "밀물",
+        "display_word": "밀물",
+        "origin": "密勿",
+        "hanja": "密勿",
+        "pronunciations": [
+          "밀물"
+        ],
+        "pronunciation": "밀물",
+        "definition": "부지런히 힘씀.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=130199&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.036628+00:00"
+      },
+      {
+        "id": "130201:9082",
+        "target_code": "130201",
+        "sense_code": "9082",
+        "word": "밀물",
+        "display_word": "밀물",
+        "origin": "密勿",
+        "hanja": "密勿",
+        "pronunciations": [
+          "밀물"
+        ],
+        "pronunciation": "밀물",
+        "definition": "제왕과의 사이가 긴밀한 직무.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=130201&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.237907+00:00"
+      },
+      {
+        "id": "130201:41078",
+        "target_code": "130201",
+        "sense_code": "41078",
+        "word": "밀물",
+        "display_word": "밀물",
+        "origin": "密勿",
+        "hanja": "密勿",
+        "pronunciations": [
+          "밀물"
+        ],
+        "pronunciation": "밀물",
+        "definition": "중요한 정사(政事).",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=130201&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.237917+00:00"
+      }
+    ],
+    "전공": [
+      {
+        "id": "281565:266097",
+        "target_code": "281565",
+        "sense_code": "266097",
+        "word": "전공",
+        "display_word": "전공",
+        "origin": "田貢",
+        "hanja": "田貢",
+        "pronunciations": [
+          "전공"
+        ],
+        "pronunciation": "전공",
+        "definition": "‘전결 공물’을 줄여 이르는 말.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=281565&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.675780+00:00"
+      },
+      {
+        "id": "478692:21521",
+        "target_code": "478692",
+        "sense_code": "21521",
+        "word": "전공",
+        "display_word": "전공",
+        "origin": "全功",
+        "hanja": "全功",
+        "pronunciations": [
+          "전공"
+        ],
+        "pronunciation": "전공",
+        "definition": "모든 공로나 공적.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=478692&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.880416+00:00"
+      },
+      {
+        "id": "478692:52254",
+        "target_code": "478692",
+        "sense_code": "52254",
+        "word": "전공",
+        "display_word": "전공",
+        "origin": "全功",
+        "hanja": "全功",
+        "pronunciations": [
+          "전공"
+        ],
+        "pronunciation": "전공",
+        "definition": "결점이 없는 온전한 공로나 공적.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=478692&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.880425+00:00"
+      },
+      {
+        "id": "281566:266098",
+        "target_code": "281566",
+        "sense_code": "266098",
+        "word": "전공",
+        "display_word": "전공",
+        "origin": "典工",
+        "hanja": "典工",
+        "pronunciations": [
+          "전ː공"
+        ],
+        "pronunciation": "전ː공",
+        "definition": "조선 시대에, 육조(六曹) 가운데 산택·공장·영선(營繕)·도야(陶冶)를 맡아보던 정이품 아문. 태조 1년(1392)에 설치하여 고종 31년(1894)에 공무아문으로 이름을 고쳤다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=281566&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.085664+00:00"
+      },
+      {
+        "id": "478693:443181",
+        "target_code": "478693",
+        "sense_code": "443181",
+        "word": "전공",
+        "display_word": "전공",
+        "origin": "前功",
+        "hanja": "前功",
+        "pronunciations": [
+          "전공"
+        ],
+        "pronunciation": "전공",
+        "definition": "이전에 세운 공로나 공적.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=478693&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.305834+00:00"
+      },
+      {
+        "id": "478693:446805",
+        "target_code": "478693",
+        "sense_code": "446805",
+        "word": "전공",
+        "display_word": "전공",
+        "origin": "前功",
+        "hanja": "前功",
+        "pronunciations": [
+          "전공"
+        ],
+        "pronunciation": "전공",
+        "definition": "옛사람이 세운 공로나 공적.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=478693&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.305848+00:00"
+      },
+      {
+        "id": "281567:369754",
+        "target_code": "281567",
+        "sense_code": "369754",
+        "word": "전공",
+        "display_word": "전공",
+        "origin": "專攻",
+        "hanja": "專攻",
+        "pronunciations": [
+          "전공"
+        ],
+        "pronunciation": "전공",
+        "definition": "어느 한 분야를 전문적으로 연구함. 또는 그 분야.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=281567&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.583583+00:00"
+      },
+      {
+        "id": "281567:373256",
+        "target_code": "281567",
+        "sense_code": "373256",
+        "word": "전공",
+        "display_word": "전공",
+        "origin": "專攻",
+        "hanja": "專攻",
+        "pronunciations": [
+          "전공"
+        ],
+        "pronunciation": "전공",
+        "definition": "전문적으로 연구하는 과목.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=281567&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.583596+00:00"
+      },
+      {
+        "id": "285216:266099",
+        "target_code": "285216",
+        "sense_code": "266099",
+        "word": "전공",
+        "display_word": "전공",
+        "origin": "傳供",
+        "hanja": "傳供",
+        "pronunciations": [
+          "전공"
+        ],
+        "pronunciation": "전공",
+        "definition": "몇 사람의 손을 거쳐 부처 앞에 공물(供物)을 바치는 일.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=285216&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.786059+00:00"
+      },
+      {
+        "id": "285218:21522",
+        "target_code": "285218",
+        "sense_code": "21522",
+        "word": "전공",
+        "display_word": "전공",
+        "origin": "電工",
+        "hanja": "電工",
+        "pronunciations": [
+          "전ː공"
+        ],
+        "pronunciation": "전ː공",
+        "definition": "‘전기 공업’을 줄여 이르는 말.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=285218&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.991482+00:00"
+      },
+      {
+        "id": "285218:53182",
+        "target_code": "285218",
+        "sense_code": "53182",
+        "word": "전공",
+        "display_word": "전공",
+        "origin": "電工",
+        "hanja": "電工",
+        "pronunciations": [
+          "전ː공"
+        ],
+        "pronunciation": "전ː공",
+        "definition": "발전, 변전, 전기 장치의 가설 및 수리 따위의 작업에 종사하는 직공.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=285218&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.991492+00:00"
+      },
+      {
+        "id": "476350:266101",
+        "target_code": "476350",
+        "sense_code": "266101",
+        "word": "전공",
+        "display_word": "전공",
+        "origin": "戰功",
+        "hanja": "戰功",
+        "pronunciations": [
+          "전ː공"
+        ],
+        "pronunciation": "전ː공",
+        "definition": "전투에서 세운 공로.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=476350&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.202544+00:00"
+      },
+      {
+        "id": "285219:266102",
+        "target_code": "285219",
+        "sense_code": "266102",
+        "word": "전공",
+        "display_word": "전공",
+        "origin": "戰攻",
+        "hanja": "戰攻",
+        "pronunciations": [
+          "전ː공"
+        ],
+        "pronunciation": "전ː공",
+        "definition": "싸워서 공격함.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=285219&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.401010+00:00"
+      }
+    ],
+    "부": [
+      {
+        "id": "149687:423388",
+        "target_code": "149687",
+        "sense_code": "423388",
+        "word": "부",
+        "display_word": "부",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "공장이나 기선 따위에서 내는 굵고 낮은 소리.",
+        "pos": "부사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149687&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:35.684863+00:00"
+      },
+      {
+        "id": "149690:174782",
+        "target_code": "149690",
+        "sense_code": "174782",
+        "word": "부",
+        "display_word": "부",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [],
+        "pronunciation": "",
+        "definition": "→ 푼.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149690&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:35.885419+00:00"
+      },
+      {
+        "id": "149691:174996",
+        "target_code": "149691",
+        "sense_code": "174996",
+        "word": "부",
+        "display_word": "부",
+        "origin": "夫",
+        "hanja": "夫",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "문어체에서, ‘남편’을 이르는 말.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149691&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:36.257016+00:00"
+      },
+      {
+        "id": "149692:350228",
+        "target_code": "149692",
+        "sense_code": "350228",
+        "word": "부",
+        "display_word": "부",
+        "origin": "夫",
+        "hanja": "夫",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "우리나라 성(姓)의 하나. 본관은 제주(濟州) 하나뿐이다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149692&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:36.457173+00:00"
+      },
+      {
+        "id": "149693:533858",
+        "target_code": "149693",
+        "sense_code": "533858",
+        "word": "부",
+        "display_word": "부",
+        "origin": "父",
+        "hanja": "父",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "문어체에서, ‘아버지’를 이르는 말.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149693&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:36.658347+00:00"
+      },
+      {
+        "id": "155422:174997",
+        "target_code": "155422",
+        "sense_code": "174997",
+        "word": "부",
+        "display_word": "부",
+        "origin": "缶",
+        "hanja": "缶",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "우리나라 타악기의 하나. 진흙으로 구워 화로같이 만든 것으로, 아홉 조각으로 쪼개진 대나무 채로 변죽을 쳐서 소리를 낸다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=155422&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:36.861045+00:00"
+      },
+      {
+        "id": "155423:11390",
+        "target_code": "155423",
+        "sense_code": "11390",
+        "word": "부",
+        "display_word": "부",
+        "origin": "否",
+        "hanja": "否",
+        "pronunciations": [
+          "부ː"
+        ],
+        "pronunciation": "부ː",
+        "definition": "아니라는 뜻을 나타내는 말.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=155423&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.069428+00:00"
+      },
+      {
+        "id": "155423:42095",
+        "target_code": "155423",
+        "sense_code": "42095",
+        "word": "부",
+        "display_word": "부",
+        "origin": "否",
+        "hanja": "否",
+        "pronunciations": [
+          "부ː"
+        ],
+        "pronunciation": "부ː",
+        "definition": "회의 따위에서, 어떤 안건에 대하여 표결을 할 때 불찬성의 의사 표시.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=155423&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.069441+00:00"
+      },
+      {
+        "id": "149897:11391",
+        "target_code": "149897",
+        "sense_code": "11391",
+        "word": "부",
+        "display_word": "부",
+        "origin": "府",
+        "hanja": "府",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "고려 시대에 둔, 지방 행정 구역 단위의 하나. 목(牧) 아래, 군(郡)의 위이다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149897&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.274309+00:00"
+      },
+      {
+        "id": "149897:42096",
+        "target_code": "149897",
+        "sense_code": "42096",
+        "word": "부",
+        "display_word": "부",
+        "origin": "府",
+        "hanja": "府",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "조선 시대에 둔, 도(道)와 같은 등급의 고을. 광주(廣州)·경주·전주·함흥·평양·의주의 여섯 곳이 있었다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149897&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.274322+00:00"
+      },
+      {
+        "id": "149897:65210",
+        "target_code": "149897",
+        "sense_code": "65210",
+        "word": "부",
+        "display_word": "부",
+        "origin": "府",
+        "hanja": "府",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "갑오개혁 때 설치한 가장 큰 지방 행정 구역의 단위. 8도(道)를 23부(府)로 개편하였다가 1년 뒤에 13도로 고쳤다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149897&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.274326+00:00"
+      },
+      {
+        "id": "149897:69937",
+        "target_code": "149897",
+        "sense_code": "69937",
+        "word": "부",
+        "display_word": "부",
+        "origin": "府",
+        "hanja": "府",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "일제 강점기에, 군(郡)보다 위의 등급으로 설치한 지방 행정 구역. 지금의 시(市)에 해당하는 것으로, 전국 열두 곳에 두었다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149897&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.274329+00:00"
+      },
+      {
+        "id": "437669:174998",
+        "target_code": "437669",
+        "sense_code": "174998",
+        "word": "부",
+        "display_word": "부",
+        "origin": "斧",
+        "hanja": "斧",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "도끼 모양으로 된 의장(儀仗).",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=437669&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.473287+00:00"
+      },
+      {
+        "id": "149898:174999",
+        "target_code": "149898",
+        "sense_code": "174999",
+        "word": "부",
+        "display_word": "부",
+        "origin": "負",
+        "hanja": "負",
+        "pronunciations": [
+          "부ː"
+        ],
+        "pronunciation": "부ː",
+        "definition": "‘음’의 전 용어.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149898&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.694298+00:00"
+      },
+      {
+        "id": "149898:175000",
+        "target_code": "149898",
+        "sense_code": "175000",
+        "word": "부",
+        "display_word": "부",
+        "origin": "負",
+        "hanja": "負",
+        "pronunciations": [
+          "부ː"
+        ],
+        "pronunciation": "부ː",
+        "definition": "논밭 넓이의 단위. 세금을 계산할 때 썼다. 한 부는 한 뭇의 열 배, 한 동의 10분의 1로, 그 넓이는 시대에 따라 달랐다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149898&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.694306+00:00"
+      },
+      {
+        "id": "149899:570713",
+        "target_code": "149899",
+        "sense_code": "570713",
+        "word": "부",
+        "display_word": "부",
+        "origin": "婦",
+        "hanja": "婦",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "문어체에서, ‘아내’를 이르는 말.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149899&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:37.897598+00:00"
+      },
+      {
+        "id": "437677:175001",
+        "target_code": "437677",
+        "sense_code": "175001",
+        "word": "부",
+        "display_word": "부",
+        "origin": "桴",
+        "hanja": "桴",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "갈고를 치는 채.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=437677&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.092674+00:00"
+      },
+      {
+        "id": "437671:551387",
+        "target_code": "437671",
+        "sense_code": "551387",
+        "word": "부",
+        "display_word": "부",
+        "origin": "部",
+        "hanja": "部",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "업무 조직에서, 부서의 하나. 일반적으로 과(課)의 위, 실(室)의 아래이다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=437671&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.306998+00:00"
+      },
+      {
+        "id": "437671:554649",
+        "target_code": "437671",
+        "sense_code": "554649",
+        "word": "부",
+        "display_word": "부",
+        "origin": "部",
+        "hanja": "部",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "우리나라 중앙 행정 기관의 분류 단위의 하나. 우두머리는 장관이다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=437671&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.307006+00:00"
+      },
+      {
+        "id": "437671:2481",
+        "target_code": "437671",
+        "sense_code": "2481",
+        "word": "부",
+        "display_word": "부",
+        "origin": "部",
+        "hanja": "部",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "몇 차례로 이루어지는 일의 한 차례.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=437671&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.307010+00:00"
+      },
+      {
+        "id": "437671:31599",
+        "target_code": "437671",
+        "sense_code": "31599",
+        "word": "부",
+        "display_word": "부",
+        "origin": "部",
+        "hanja": "部",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "신문이나 책을 세는 단위.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=437671&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.307013+00:00"
+      },
+      {
+        "id": "149900:175002",
+        "target_code": "149900",
+        "sense_code": "175002",
+        "word": "부",
+        "display_word": "부",
+        "origin": "傅",
+        "hanja": "傅",
+        "pronunciations": [
+          "부"
+        ],
+        "pronunciation": "부",
+        "definition": "고려·조선 시대에, 세자나 세손의 교육을 맡아보던 일품 벼슬. 사(師)의 아래이다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149900&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.767383+00:00"
+      },
+      {
+        "id": "149901:11392",
+        "target_code": "149901",
+        "sense_code": "11392",
+        "word": "부",
+        "display_word": "부",
+        "origin": "富",
+        "hanja": "富",
+        "pronunciations": [
+          "부ː"
+        ],
+        "pronunciation": "부ː",
+        "definition": "넉넉한 생활. 또는 넉넉한 재산.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149901&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.966226+00:00"
+      },
+      {
+        "id": "149901:42097",
+        "target_code": "149901",
+        "sense_code": "42097",
+        "word": "부",
+        "display_word": "부",
+        "origin": "富",
+        "hanja": "富",
+        "pronunciations": [
+          "부ː"
+        ],
+        "pronunciation": "부ː",
+        "definition": "특정한 경제 주체가 가지고 있는 재산의 전체.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149901&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:38.966241+00:00"
+      },
+      {
+        "id": "149902:11393",
+        "target_code": "149902",
+        "sense_code": "11393",
+        "word": "부",
+        "display_word": "부",
+        "origin": "賦",
+        "hanja": "賦",
+        "pronunciations": [
+          "부ː"
+        ],
+        "pronunciation": "부ː",
+        "definition": "≪시경(詩經)≫에서 이르는 시의 육의(六義) 가운데 하나. 사물이나 그에 대한 감상을, 비유를 쓰지 아니하고 직접 서술하는 작법이다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149902&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.167874+00:00"
+      },
+      {
+        "id": "149902:42098",
+        "target_code": "149902",
+        "sense_code": "42098",
+        "word": "부",
+        "display_word": "부",
+        "origin": "賦",
+        "hanja": "賦",
+        "pronunciations": [
+          "부ː"
+        ],
+        "pronunciation": "부ː",
+        "definition": "한문체에서, 글귀 끝에 운을 달고 흔히 대(對)를 맞추어 짓는 글.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149902&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.167887+00:00"
+      },
+      {
+        "id": "149902:65211",
+        "target_code": "149902",
+        "sense_code": "65211",
+        "word": "부",
+        "display_word": "부",
+        "origin": "賦",
+        "hanja": "賦",
+        "pronunciations": [
+          "부ː"
+        ],
+        "pronunciation": "부ː",
+        "definition": "과문(科文)에서, 여섯 글자로 한 글귀를 만들어 짓는 글.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149902&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.167891+00:00"
+      },
+      {
+        "id": "149904:175003",
+        "target_code": "149904",
+        "sense_code": "175003",
+        "word": "부",
+        "display_word": "부-",
+        "origin": "不",
+        "hanja": "不",
+        "pronunciations": [],
+        "pronunciation": "",
+        "definition": "‘아님’, ‘아니함’, ‘어긋남’의 뜻을 더하는 접두사.",
+        "pos": "접사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149904&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.372415+00:00"
+      },
+      {
+        "id": "437683:442071",
+        "target_code": "437683",
+        "sense_code": "442071",
+        "word": "부",
+        "display_word": "-부",
+        "origin": "附",
+        "hanja": "附",
+        "pronunciations": [],
+        "pronunciation": "",
+        "definition": "‘그 날짜에 효력이 발생함’의 뜻을 더하는 접미사.",
+        "pos": "접사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=437683&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.583964+00:00"
+      },
+      {
+        "id": "437683:445564",
+        "target_code": "437683",
+        "sense_code": "445564",
+        "word": "부",
+        "display_word": "-부",
+        "origin": "附",
+        "hanja": "附",
+        "pronunciations": [],
+        "pronunciation": "",
+        "definition": "‘그것이 딸림’의 뜻을 더하는 접미사.",
+        "pos": "접사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=437683&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.583978+00:00"
+      },
+      {
+        "id": "149905:515751",
+        "target_code": "149905",
+        "sense_code": "515751",
+        "word": "부",
+        "display_word": "부-",
+        "origin": "副",
+        "hanja": "副",
+        "pronunciations": [],
+        "pronunciation": "",
+        "definition": "‘버금가는’의 뜻을 더하는 접두사.",
+        "pos": "접사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149905&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.789670+00:00"
+      },
+      {
+        "id": "149905:519177",
+        "target_code": "149905",
+        "sense_code": "519177",
+        "word": "부",
+        "display_word": "부-",
+        "origin": "副",
+        "hanja": "副",
+        "pronunciations": [],
+        "pronunciation": "",
+        "definition": "‘부차적인’의 뜻을 더하는 접두사.",
+        "pos": "접사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149905&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.789684+00:00"
+      },
+      {
+        "id": "149906:423413",
+        "target_code": "149906",
+        "sense_code": "423413",
+        "word": "부",
+        "display_word": "-부",
+        "origin": "部",
+        "hanja": "部",
+        "pronunciations": [],
+        "pronunciation": "",
+        "definition": "‘부분’이나 ‘부문’(部門)의 뜻을 더하는 접미사.",
+        "pos": "접사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149906&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.997128+00:00"
+      },
+      {
+        "id": "149906:598286",
+        "target_code": "149906",
+        "sense_code": "598286",
+        "word": "부",
+        "display_word": "-부",
+        "origin": "部",
+        "hanja": "部",
+        "pronunciations": [],
+        "pronunciation": "",
+        "definition": "‘업무 부서’의 뜻을 더하는 접미사.",
+        "pos": "접사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=149906&searchKeywordTo=3",
+        "queried_at": "2026-11-08T12:46:39.997142+00:00"
+      }
+    ]
+  }
+}
