@@ -5,17 +5,22 @@ rule. They do not claim automatic word-sense disambiguation. The full captured
 candidate sets are tested separately and must abstain when lengths conflict.
 """
 from copy import deepcopy
+from contextlib import contextmanager
+import csv
 import hashlib
+import io
 import json
 from pathlib import Path
+import tempfile
+import time
 import unittest
 from unittest.mock import patch
 
 import fitz
 
 from backend.linguistics import occurrence_plans
-from backend.main import analyze_job
-from backend.pdf import extract, output_pdf, preservation_signature
+from backend.main import SESSIONS, StatePatch, analyze_job, mark_candidate, patch_state
+from backend.pdf import csv_export, extract, output_pdf, preservation_signature, verification
 
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -66,6 +71,23 @@ def plan_for(target, **kwargs):
     return occurrence_plans(job)[job["occurrences"][0]["id"]]
 
 
+@contextmanager
+def stored_job(source, job):
+    with tempfile.TemporaryDirectory() as directory:
+        path = Path(directory) / "original.pdf"
+        path.write_bytes(source)
+        job.update(_path=path, _touched=time.time())
+        SESSIONS[job["id"]] = job
+        try:
+            yield
+        finally:
+            SESSIONS.pop(job["id"], None)
+
+
+def editable_snapshot(job):
+    return {key: deepcopy(job[key]) for key in ("settings", "marks", "occurrences")}
+
+
 class MorphologyPlanTests(unittest.TestCase):
     def test_nominal_derivation_restores_verb_lemma_and_changes_pos(self):
         for surface in ("선발하며", "선발하는"):
@@ -73,6 +95,11 @@ class MorphologyPlanTests(unittest.TestCase):
                 plan = plan_for(surface, context="신입 부원을 " + surface)
                 self.assertEqual(plan["lemma"], "선발하다")
                 self.assertEqual(plan["pos"], "VV", "NNG + XSV is a verb, not the first noun POS")
+
+    def test_nominal_adjectival_derivation_changes_pos(self):
+        plan = plan_for("충실하며")
+        self.assertEqual(plan["lemma"], "충실하다")
+        self.assertEqual(plan["pos"], "VA", "NNG + XSA must use adjective dictionary candidates")
 
     def test_compound_components_retain_original_syllable_offsets(self):
         plan = plan_for("보도부", context="보도부 신입 부원")
@@ -127,6 +154,56 @@ class MorphologyEvidenceTests(unittest.IsolatedAsyncioTestCase):
         self.assertIsNone(occurrence["selected_candidate_id"])
         self.assertEqual(job["marks"], [])
 
+    async def test_user_selected_derived_sense_uses_rule_and_survives_reanalysis(self):
+        _, job = job_for("선발하며")
+        await analyze_job(job)
+        occurrence = job["occurrences"][0]
+        selected = official("선발하다", "選拔 · 하다")[0]
+        mark_candidate(job, occurrence, selected, user_selected=True)
+        self.assertEqual(occurrence["status"], "long")
+        self.assertEqual(occurrence["source"], "manual")
+        self.assertEqual(occurrence["evidence_type"], "rule_inference")
+        self.assertEqual(occurrence["meaning_status"], "user_selected")
+        self.assertEqual(occurrence["selected_candidate_id"], selected["id"])
+        self.assertEqual(job["marks"][0]["glyph_id"], occurrence["glyph_ids"][0])
+        previous = deepcopy(occurrence)
+        previous_marks = deepcopy(job["marks"])
+        await analyze_job(job)
+        self.assertEqual(occurrence, previous)
+        self.assertEqual(job["marks"], previous_marks)
+
+    async def test_selecting_short_derived_homonym_removes_previous_long_marker(self):
+        _, job = job_for("선발하며")
+        await analyze_job(job)
+        occurrence = job["occurrences"][0]
+        mark_candidate(job, occurrence, official("선발하다", "選拔 · 하다")[0], user_selected=True)
+        self.assertEqual(len(job["marks"]), 1)
+        mark_candidate(job, occurrence, official("선발하다", "先發 · 하다")[0], user_selected=True)
+        self.assertEqual(occurrence["status"], "none")
+        self.assertEqual(occurrence["source"], "manual")
+        self.assertEqual(job["marks"], [], "A selected short sense must remove the previous automatic long marker")
+
+    async def test_derived_sense_undo_redo_restores_rule_evidence_and_adjusted_marker(self):
+        source, job = job_for("선발하며")
+        await analyze_job(job)
+        before = editable_snapshot(job)
+        occurrence = job["occurrences"][0]
+        mark_candidate(job, occurrence, official("선발하다", "選拔 · 하다")[0], user_selected=True)
+        job["marks"][0].update(source="manual", dx=1.25, dy=-1.5, scale=1.1)
+        selected = editable_snapshot(job)
+        with stored_job(source, job):
+            patch_state(job["id"], StatePatch(**before, restore=True))
+            self.assertEqual(occurrence["status"], "unresolved")
+            self.assertEqual(job["marks"], [])
+            patch_state(job["id"], StatePatch(**selected, restore=True))
+        expected = selected["occurrences"][0]
+        for key in ("status", "source", "selected_candidate_id", "meaning_status", "evidence_type",
+                    "evidence_candidates", "length_evidence", "applied_rules", "pronunciation_scope", "coverage"):
+            self.assertEqual(occurrence.get(key), expected.get(key), key)
+        self.assertEqual(len(job["marks"]), 1)
+        for key in ("glyph_id", "source", "dx", "dy", "scale"):
+            self.assertEqual(job["marks"][0][key], selected["marks"][0][key], key)
+
     async def test_controlled_compound_fallback_marks_original_first_syllable(self):
         # Whole lookup miss is controlled; component readings remain official.
         overrides = {"보도부": [], "보도": official("보도", "報道"), "부": official("부", "部")}
@@ -146,6 +223,52 @@ class MorphologyEvidenceTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn("사회", job["_dictionary"].queries)
         self.assertEqual(job["occurrences"][0]["status"], "unresolved")
         self.assertEqual(job["marks"], [])
+
+    async def test_partial_component_evidence_has_explicit_original_ranges(self):
+        overrides = {"사회": official("사회", "社會"), "혁신": [], "융합": [], "전공": []}
+        _, job = job_for("사회혁신융합전공", overrides=overrides)
+        await analyze_job(job)
+        occurrence = job["occurrences"][0]
+        coverage = occurrence.get("coverage", {})
+        self.assertFalse(coverage.get("complete", True))
+        self.assertEqual(coverage.get("checked_ranges"), [[0, 2]])
+        # Unverified adjacent components can be represented separately or merged.
+        unresolved = {i for start, end in coverage.get("unresolved_ranges", []) for i in range(start, end)}
+        self.assertEqual(unresolved, set(range(2, 8)))
+        component = next(c for c in occurrence.get("component_results", []) if c["lemma"] == "사회")
+        self.assertEqual((component["start"], component["end"], component["status"]), (0, 2, "none"))
+        for candidate in component["candidates"]:
+            for key in ("pos", "definition", "pronunciations", "url", "queried_at"):
+                self.assertTrue(candidate[key], key)
+        report = verification(job)
+        csv_row = next(csv.DictReader(io.StringIO(csv_export(job).decode("utf-8-sig"))))
+        self.assertIn("[0:2]", report)
+        self.assertIn("[0:2]", csv_row["검증 범위"])
+        for start, end in coverage["unresolved_ranges"]:
+            self.assertIn(f"[{start}:{end}]", report)
+            self.assertIn(f"[{start}:{end}]", csv_row["미확정 범위"])
+        for candidate in component["candidates"]:
+            for key in ("pos", "definition", "url", "queried_at"):
+                self.assertIn(candidate[key], report)
+                self.assertIn(candidate[key], csv_row["구성요소별 근거"])
+
+    async def test_partial_component_memo_edit_and_restore_preserve_evidence(self):
+        overrides = {"사회": official("사회", "社會"), "혁신": [], "융합": [], "전공": []}
+        source, job = job_for("사회혁신융합전공", overrides=overrides)
+        await analyze_job(job)
+        before = editable_snapshot(job)
+        edited = deepcopy(job["occurrences"])
+        edited[0]["note"] = "미확정 구성 요소를 나중에 검토"
+        keys = ("status", "source", "evidence_type", "evidence_candidates", "length_evidence",
+                "component_results", "coverage", "applied_rules", "pronunciations", "pronunciation_scope")
+        with stored_job(source, job):
+            patch_state(job["id"], StatePatch(settings=job["settings"], marks=deepcopy(job["marks"]), occurrences=edited))
+            occurrence = job["occurrences"][0]
+            for key in keys:
+                self.assertEqual(occurrence.get(key), before["occurrences"][0].get(key), key)
+            patch_state(job["id"], StatePatch(**before, restore=True))
+        for key in keys:
+            self.assertEqual(occurrence.get(key), before["occurrences"][0].get(key), key)
 
     async def test_actual_social_compound_never_marks_conflicting_social_prefix_long(self):
         _, job = job_for("사회혁신융합전공")
@@ -186,8 +309,13 @@ class MorphologyEvidenceTests(unittest.IsolatedAsyncioTestCase):
         exported = output_pdf(source, job)
         with fitz.open(stream=source, filetype="pdf") as before, fitz.open(stream=exported, filetype="pdf") as after:
             self.assertEqual(preservation_signature(before), preservation_signature(after))
-            annotation = next(after[0].annots())
+            marked_page = after[0]
+            annotation = next(marked_page.annots())
             self.assertTrue(annotation.rect.intersects(fitz.Rect(glyph["pdf_bbox"])))
+            applied_rules = occurrence.get("applied_rules", [])
+            self.assertTrue(applied_rules)
+            for rule in applied_rules:
+                self.assertIn(rule["url"], annotation.info["content"])
         occurrence.update(source="manual", note="선택한 뜻을 확인함")
         mark.update(source="manual", dx=1.5, dy=-2, scale=1.2)
         before_marks = deepcopy(job["marks"])

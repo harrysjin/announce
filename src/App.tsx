@@ -73,6 +73,12 @@ const copy = (j: Job): Snapshot =>
   });
 const pronunciation = (c: Candidate) =>
   c.pronunciation || c.pronunciations?.join(", ") || "발음 정보 없음";
+const syllableRange = (text: string, start: number, end: number) => {
+  const surface = Array.from(text).filter((c) => /[가-힣]/.test(c)).slice(start, end).join("");
+  return `${surface} (${start + 1}${end === start + 1 ? "" : `–${end}`}음절)`;
+};
+const queryTime = (candidate: Candidate) =>
+  candidate.queried_at ? `조회 ${candidate.queried_at}` : "조회 시각 미기록";
 function Logo() {
   return (
     <a className="brand" href="/" aria-label="소리 홈">
@@ -1654,8 +1660,10 @@ export default function App() {
                               뜻 선택 미확정
                             </span>
                           )}
-                          {o.evidence_type?.includes("rule") && (
-                            <span className="rule-badge">규칙 적용 근거</span>
+                          {o.evidence_type && o.source !== "manual" && (
+                            <span className="rule-badge">
+                              {o.evidence_type.includes("rule") ? "규칙 판정" : "사전 직접 확인"}
+                            </span>
                           )}
                           {active === o.id && (
                             <div
@@ -1696,7 +1704,29 @@ export default function App() {
                                     원문 형태의 발음 근거를 확인합니다.
                                   </div>
                                 )}
-                              {o.evidence_candidates &&
+                              {o.morphology?.components && o.morphology.components.length > 1 && (
+                                <div className="morphology-note">
+                                  형태소 분석: {o.morphology.components.map((component) => syllableRange(o.text, component.start, component.end)).join(" + ")}
+                                  <br />형태소 경계는 조회 후보를 찾는 단서이며, 장단 판정의 근거는 아래 사전·규칙 기록입니다.
+                                </div>
+                              )}
+                              {o.coverage && (
+                                <div className={`coverage-note${o.coverage.complete ? "" : " incomplete"}`}>
+                                  <strong>{o.coverage.complete ? "전체 음절 범위 확인" : "일부 범위만 확인 · 전체 장단 미확정"}</strong>
+                                  {o.coverage.checked_ranges.length > 0 && (
+                                    <p>확인: {o.coverage.checked_ranges.map(([start, end]) => syllableRange(o.text, start, end)).join(" · ")}</p>
+                                  )}
+                                  {o.coverage.unresolved_ranges.length > 0 && (
+                                    <p>미확정: {o.coverage.unresolved_ranges.map(([start, end]) => syllableRange(o.text, start, end)).join(" · ")}</p>
+                                  )}
+                                </div>
+                              )}
+                              {o.pronunciation_scope && o.pronunciation_scope !== o.text && (
+                                <div className="morphology-note">
+                                  아래 발음은 기본형·구성요소의 사전 발음입니다. 원문 전체의 직접 발음으로 간주하지 않습니다.
+                                </div>
+                              )}
+                              {["candidate_consensus", "rule_consensus"].includes(o.evidence_type || "") && o.evidence_candidates &&
                                 o.evidence_candidates.length > 1 && (
                                   <div className="consensus-note">
                                     조회 후보 {o.evidence_candidates.length}개의
@@ -1714,8 +1744,37 @@ export default function App() {
                                 >
                                   <Link2 size={12} />
                                   {rule.label}
+                                  {rule.explanation && <span>{rule.explanation}</span>}
                                 </a>
                               ))}
+                              {o.component_results && o.component_results.length > 0 && (
+                                <section className="component-evidence" aria-label="구성요소별 근거">
+                                  <h4>구성요소별 근거</h4>
+                                  <p>원문 음절 범위별 사전 조회 결과입니다. 구성요소의 뜻을 전체 표현의 뜻으로 자동 선택하지 않습니다.</p>
+                                  {o.component_results.map((component, index) => (
+                                    <details key={`${component.start}-${component.end}-${index}`}>
+                                      <summary>
+                                        <strong>{syllableRange(o.text, component.start, component.end)}</strong>
+                                        <span>{component.status === "unresolved" ? "미확정" : component.status === "long" ? "장음 위치 확인" : "장음 없음"}</span>
+                                      </summary>
+                                      <p>기본형 {component.lemma} · {component.pos}</p>
+                                      {component.reason && <p>{component.reason}</p>}
+                                      {component.candidates.map((candidate) => (
+                                        <div className="candidate component-candidate" key={candidate.id}>
+                                          <div><strong>{candidate.word || component.lemma}</strong><span>{candidate.hanja || String(candidate.origin || "")}</span></div>
+                                          <b>구성요소 [{pronunciation(candidate)}] · {candidate.pos || "품사 미기록"}</b>
+                                          <p>{candidate.definition || candidate.meaning}</p>
+                                          <small>{queryTime(candidate)}</small>
+                                          {(candidate.url || candidate.source_url) && (
+                                            <a href={candidate.url || candidate.source_url} target="_blank" rel="noreferrer"><Link2 size={12} /> 사전 근거</a>
+                                          )}
+                                        </div>
+                                      ))}
+                                      {component.candidates.length === 0 && <p>공식 후보를 확인하지 못했습니다.</p>}
+                                    </details>
+                                  ))}
+                                </section>
+                              )}
                               {o.candidates.map((c) => (
                                 <div className="candidate" key={c.id}>
                                   <div>
@@ -1726,7 +1785,7 @@ export default function App() {
                                       {c.hanja || String(c.origin || "")}
                                     </span>
                                   </div>
-                                  <b>표제어 [{pronunciation(c)}]</b>
+                                  <b>표제어 [{pronunciation(c)}] · {c.pos || "품사 미기록"}</b>
                                   {c.inflections
                                     ?.filter((form) => form.form === o.text)
                                     .map((form, i) => (
@@ -1735,6 +1794,7 @@ export default function App() {
                                       </b>
                                     ))}
                                   <p>{c.definition || c.meaning}</p>
+                                  <small className="candidate-query-time">{queryTime(c)}</small>
                                   <div className="candidate-actions">
                                     {(c.url || c.source_url) && (
                                       <a

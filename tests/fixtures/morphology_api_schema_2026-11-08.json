@@ -1,0 +1,1467 @@
+{
+  "checked_at": "2026-11-08T12:47:45.671104+00:00",
+  "endpoint": "https://stdict.korean.go.kr/api/search.do",
+  "fixed_params": {
+    "advanced": "y",
+    "method": "exact",
+    "type1": "word",
+    "num": 100,
+    "req_type": "xml"
+  },
+  "queries": [
+    {
+      "query": "선발하며",
+      "target": "1 (default)",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "선발하며",
+      "target": "5",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "알아",
+      "target": "1 (default)",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "알아",
+      "target": "5",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "끌어",
+      "target": "1 (default)",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "끌어",
+      "target": "5",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "선발하다",
+      "target": "1 (default)",
+      "status": 200,
+      "total": "2",
+      "items": [
+        {
+          "word": "선발-하다",
+          "target_code": "184644",
+          "pos": "동사",
+          "has_pronunciation": false
+        },
+        {
+          "word": "선발-하다",
+          "target_code": "185215",
+          "pos": "동사",
+          "has_pronunciation": false
+        }
+      ]
+    },
+    {
+      "query": "선발하여",
+      "target": "5",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "선발하니",
+      "target": "5",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "알다",
+      "target": "1 (default)",
+      "status": 200,
+      "total": "1",
+      "items": [
+        {
+          "word": "알다",
+          "target_code": "213588",
+          "pos": "동사",
+          "has_pronunciation": false
+        }
+      ]
+    },
+    {
+      "query": "알고",
+      "target": "5",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "아니",
+      "target": "5",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "끌다",
+      "target": "1 (default)",
+      "status": 200,
+      "total": "1",
+      "items": [
+        {
+          "word": "끌다",
+          "target_code": "403617",
+          "pos": "동사",
+          "has_pronunciation": false
+        }
+      ]
+    },
+    {
+      "query": "끄니",
+      "target": "5",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "끌고",
+      "target": "5",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "보도부",
+      "target": "1 (default)",
+      "status": 200,
+      "total": "1",
+      "items": [
+        {
+          "word": "보도-부",
+          "target_code": "143839",
+          "pos": "명사",
+          "has_pronunciation": false
+        }
+      ]
+    },
+    {
+      "query": "보도",
+      "target": "1 (default)",
+      "status": 200,
+      "total": "6",
+      "items": [
+        {
+          "word": "보도",
+          "target_code": "143217",
+          "pos": "명사",
+          "has_pronunciation": false
+        },
+        {
+          "word": "보도",
+          "target_code": "143218",
+          "pos": "명사",
+          "has_pronunciation": false
+        },
+        {
+          "word": "보도",
+          "target_code": "431798",
+          "pos": "명사",
+          "has_pronunciation": false
+        },
+        {
+          "word": "보도",
+          "target_code": "142963",
+          "pos": "명사",
+          "has_pronunciation": false
+        },
+        {
+          "word": "보도",
+          "target_code": "431800",
+          "pos": "명사",
+          "has_pronunciation": false
+        },
+        {
+          "word": "보도",
+          "target_code": "143564",
+          "pos": "명사",
+          "has_pronunciation": false
+        }
+      ]
+    },
+    {
+      "query": "첫눈",
+      "target": "1 (default)",
+      "status": 200,
+      "total": "2",
+      "items": [
+        {
+          "word": "첫-눈",
+          "target_code": "330923",
+          "pos": "명사",
+          "has_pronunciation": false
+        },
+        {
+          "word": "첫-눈",
+          "target_code": "489489",
+          "pos": "명사",
+          "has_pronunciation": false
+        }
+      ]
+    },
+    {
+      "query": "밀물",
+      "target": "1 (default)",
+      "status": 200,
+      "total": "3",
+      "items": [
+        {
+          "word": "밀-물",
+          "target_code": "130198",
+          "pos": "명사",
+          "has_pronunciation": false
+        },
+        {
+          "word": "밀물",
+          "target_code": "130199",
+          "pos": "명사",
+          "has_pronunciation": false
+        },
+        {
+          "word": "밀물",
+          "target_code": "130201",
+          "pos": "명사",
+          "has_pronunciation": false
+        }
+      ]
+    },
+    {
+      "query": "알아",
+      "target": "5",
+      "method": "include",
+      "type1": "word",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "끌어",
+      "target": "5",
+      "method": "include",
+      "type1": "word",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "선발하며",
+      "target": "5",
+      "method": "include",
+      "type1": "word",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "선발하여",
+      "target": "5",
+      "method": "include",
+      "type1": "word",
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "알아",
+      "target": "5",
+      "method": "exact",
+      "type1": null,
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "알아",
+      "target": "5",
+      "method": "include",
+      "type1": null,
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "선발하여",
+      "target": "5",
+      "method": "exact",
+      "type1": null,
+      "status": 200,
+      "total": "0",
+      "items": []
+    },
+    {
+      "query": "알다",
+      "target": "5",
+      "method": "include",
+      "type1": null,
+      "status": 200,
+      "total": "0",
+      "items": [],
+      "error_code": null
+    },
+    {
+      "query": "아",
+      "target": "5",
+      "method": "include",
+      "type1": null,
+      "status": 200,
+      "total": "0",
+      "items": [],
+      "error_code": null
+    },
+    {
+      "query": "하여",
+      "target": "5",
+      "method": "include",
+      "type1": null,
+      "status": 200,
+      "total": "0",
+      "items": [],
+      "error_code": null
+    },
+    {
+      "query": "알다",
+      "target": "1",
+      "method": "exact",
+      "type1": null,
+      "status": 200,
+      "total": "1",
+      "items": [
+        {
+          "word": "알다",
+          "target_code": "213588",
+          "pos": "동사",
+          "has_pronunciation": false
+        }
+      ],
+      "error_code": null
+    },
+    {
+      "query": "알다",
+      "target": "99",
+      "method": "exact",
+      "type1": null,
+      "status": 200,
+      "total": null,
+      "items": [],
+      "error_code": "101"
+    }
+  ],
+  "details": [
+    {
+      "target_code": "184644",
+      "candidates": [
+        {
+          "id": "184644:193118",
+          "target_code": "184644",
+          "sense_code": "193118",
+          "word": "선발하다",
+          "display_word": "선발-하다",
+          "origin": "先發 · 하다",
+          "hanja": "先發",
+          "pronunciations": [
+            "선발하다"
+          ],
+          "pronunciation": "선발하다",
+          "definition": "남보다 먼저 어떤 일을 시작하거나 길을 떠나다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "선발하여",
+              "type": "conjugation",
+              "pronunciations": [
+                "선발하여"
+              ]
+            },
+            {
+              "form": "선발해",
+              "type": "abbreviation",
+              "pronunciations": [
+                "선발해"
+              ]
+            },
+            {
+              "form": "선발하니",
+              "type": "conjugation",
+              "pronunciations": [
+                "선발하니"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=184644&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:48.319992+00:00"
+        }
+      ]
+    },
+    {
+      "target_code": "185215",
+      "candidates": [
+        {
+          "id": "185215:425388",
+          "target_code": "185215",
+          "sense_code": "425388",
+          "word": "선발하다",
+          "display_word": "선발-하다",
+          "origin": "選拔 · 하다",
+          "hanja": "選拔",
+          "pronunciations": [
+            "선ː발하다"
+          ],
+          "pronunciation": "선ː발하다",
+          "definition": "많은 가운데서 골라 뽑다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "선발하여",
+              "type": "conjugation",
+              "pronunciations": [
+                "선ː발하여"
+              ]
+            },
+            {
+              "form": "선발해",
+              "type": "abbreviation",
+              "pronunciations": [
+                "선ː발해"
+              ]
+            },
+            {
+              "form": "선발하니",
+              "type": "conjugation",
+              "pronunciations": [
+                "선ː발하니"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=185215&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:48.536850+00:00"
+        }
+      ]
+    },
+    {
+      "target_code": "213588",
+      "candidates": [
+        {
+          "id": "213588:30277",
+          "target_code": "213588",
+          "sense_code": "30277",
+          "word": "알다",
+          "display_word": "알다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "알ː다"
+          ],
+          "pronunciation": "알ː다",
+          "definition": "교육이나 경험, 사고 행위를 통하여 사물이나 상황에 대한 정보나 지식을 갖추다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "알아",
+              "type": "conjugation",
+              "pronunciations": [
+                "아라"
+              ]
+            },
+            {
+              "form": "아니",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː니"
+              ]
+            },
+            {
+              "form": "아오",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:50.888925+00:00"
+        },
+        {
+          "id": "213588:61910",
+          "target_code": "213588",
+          "sense_code": "61910",
+          "word": "알다",
+          "display_word": "알다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "알ː다"
+          ],
+          "pronunciation": "알ː다",
+          "definition": "어떤 사실이나 존재, 상태에 대해 의식이나 감각으로 깨닫거나 느끼다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "알아",
+              "type": "conjugation",
+              "pronunciations": [
+                "아라"
+              ]
+            },
+            {
+              "form": "아니",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː니"
+              ]
+            },
+            {
+              "form": "아오",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:50.888939+00:00"
+        },
+        {
+          "id": "213588:68368",
+          "target_code": "213588",
+          "sense_code": "68368",
+          "word": "알다",
+          "display_word": "알다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "알ː다"
+          ],
+          "pronunciation": "알ː다",
+          "definition": "심리적 상태를 마음속으로 느끼거나 깨닫다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "알아",
+              "type": "conjugation",
+              "pronunciations": [
+                "아라"
+              ]
+            },
+            {
+              "form": "아니",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː니"
+              ]
+            },
+            {
+              "form": "아오",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:50.888943+00:00"
+        },
+        {
+          "id": "213588:71183",
+          "target_code": "213588",
+          "sense_code": "71183",
+          "word": "알다",
+          "display_word": "알다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "알ː다"
+          ],
+          "pronunciation": "알ː다",
+          "definition": "사람이 어떤 일을 어떻게 할지 스스로 정하거나 판단하다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "알아",
+              "type": "conjugation",
+              "pronunciations": [
+                "아라"
+              ]
+            },
+            {
+              "form": "아니",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː니"
+              ]
+            },
+            {
+              "form": "아오",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:50.888946+00:00"
+        },
+        {
+          "id": "213588:30989",
+          "target_code": "213588",
+          "sense_code": "30989",
+          "word": "알다",
+          "display_word": "알다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "알ː다"
+          ],
+          "pronunciation": "알ː다",
+          "definition": "어떤 일을 할 능력이나 소양이 있다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "알아",
+              "type": "conjugation",
+              "pronunciations": [
+                "아라"
+              ]
+            },
+            {
+              "form": "아니",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː니"
+              ]
+            },
+            {
+              "form": "아오",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:50.888948+00:00"
+        },
+        {
+          "id": "213588:62339",
+          "target_code": "213588",
+          "sense_code": "62339",
+          "word": "알다",
+          "display_word": "알다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "알ː다"
+          ],
+          "pronunciation": "알ː다",
+          "definition": "어떤 일에 대하여 관여하거나 관심을 가지다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "알아",
+              "type": "conjugation",
+              "pronunciations": [
+                "아라"
+              ]
+            },
+            {
+              "form": "아니",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː니"
+              ]
+            },
+            {
+              "form": "아오",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:50.888951+00:00"
+        },
+        {
+          "id": "213588:69305",
+          "target_code": "213588",
+          "sense_code": "69305",
+          "word": "알다",
+          "display_word": "알다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "알ː다"
+          ],
+          "pronunciation": "알ː다",
+          "definition": "잘 모르던 대상에 대하여 그 좋은 점을 깨달아 가까이하려 하다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "알아",
+              "type": "conjugation",
+              "pronunciations": [
+                "아라"
+              ]
+            },
+            {
+              "form": "아니",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː니"
+              ]
+            },
+            {
+              "form": "아오",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:50.888954+00:00"
+        },
+        {
+          "id": "213588:71706",
+          "target_code": "213588",
+          "sense_code": "71706",
+          "word": "알다",
+          "display_word": "알다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "알ː다"
+          ],
+          "pronunciation": "알ː다",
+          "definition": "어떤 사람이나 사물에 대하여 소중히 생각하다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "알아",
+              "type": "conjugation",
+              "pronunciations": [
+                "아라"
+              ]
+            },
+            {
+              "form": "아니",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː니"
+              ]
+            },
+            {
+              "form": "아오",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:50.888957+00:00"
+        },
+        {
+          "id": "213588:72096",
+          "target_code": "213588",
+          "sense_code": "72096",
+          "word": "알다",
+          "display_word": "알다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "알ː다"
+          ],
+          "pronunciation": "알ː다",
+          "definition": "상대편의 어떤 명령이나 요청에 대하여 그대로 하겠다는 동의의 뜻을 나타내는 말.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "알아",
+              "type": "conjugation",
+              "pronunciations": [
+                "아라"
+              ]
+            },
+            {
+              "form": "아니",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː니"
+              ]
+            },
+            {
+              "form": "아오",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:50.888959+00:00"
+        },
+        {
+          "id": "213588:216106",
+          "target_code": "213588",
+          "sense_code": "216106",
+          "word": "알다",
+          "display_word": "알다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "알ː다"
+          ],
+          "pronunciation": "알ː다",
+          "definition": "다른 사람과 사귐이 있거나 안면이 있다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "알아",
+              "type": "conjugation",
+              "pronunciations": [
+                "아라"
+              ]
+            },
+            {
+              "form": "아니",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː니"
+              ]
+            },
+            {
+              "form": "아오",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:50.888962+00:00"
+        },
+        {
+          "id": "213588:216107",
+          "target_code": "213588",
+          "sense_code": "216107",
+          "word": "알다",
+          "display_word": "알다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "알ː다"
+          ],
+          "pronunciation": "알ː다",
+          "definition": "어떤 사물이나 사람에 대하여 그것을 어떠한 성격을 가진 것으로 여기다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "알아",
+              "type": "conjugation",
+              "pronunciations": [
+                "아라"
+              ]
+            },
+            {
+              "form": "아니",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː니"
+              ]
+            },
+            {
+              "form": "아오",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:50.888965+00:00"
+        },
+        {
+          "id": "213588:216108",
+          "target_code": "213588",
+          "sense_code": "216108",
+          "word": "알다",
+          "display_word": "알다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "알ː다"
+          ],
+          "pronunciation": "알ː다",
+          "definition": "어떠한 사실에 대하여 그러하다고 믿거나 생각하다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "알아",
+              "type": "conjugation",
+              "pronunciations": [
+                "아라"
+              ]
+            },
+            {
+              "form": "아니",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː니"
+              ]
+            },
+            {
+              "form": "아오",
+              "type": "conjugation",
+              "pronunciations": [
+                "아ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=213588&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:50.888967+00:00"
+        }
+      ]
+    },
+    {
+      "target_code": "403617",
+      "candidates": [
+        {
+          "id": "403617:30482",
+          "target_code": "403617",
+          "sense_code": "30482",
+          "word": "끌다",
+          "display_word": "끌다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "끌ː다"
+          ],
+          "pronunciation": "끌ː다",
+          "definition": "바닥에 댄 채로 잡아당기다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "끌어",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː러"
+              ]
+            },
+            {
+              "form": "끄니",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː니"
+              ]
+            },
+            {
+              "form": "끄오",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:53.369242+00:00"
+        },
+        {
+          "id": "403617:60850",
+          "target_code": "403617",
+          "sense_code": "60850",
+          "word": "끌다",
+          "display_word": "끌다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "끌ː다"
+          ],
+          "pronunciation": "끌ː다",
+          "definition": "바퀴 달린 것을 움직이게 하다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "끌어",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː러"
+              ]
+            },
+            {
+              "form": "끄니",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː니"
+              ]
+            },
+            {
+              "form": "끄오",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:53.369255+00:00"
+        },
+        {
+          "id": "403617:68410",
+          "target_code": "403617",
+          "sense_code": "68410",
+          "word": "끌다",
+          "display_word": "끌다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "끌ː다"
+          ],
+          "pronunciation": "끌ː다",
+          "definition": "짐승을 부리다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "끌어",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː러"
+              ]
+            },
+            {
+              "form": "끄니",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː니"
+              ]
+            },
+            {
+              "form": "끄오",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:53.369259+00:00"
+        },
+        {
+          "id": "403617:70807",
+          "target_code": "403617",
+          "sense_code": "70807",
+          "word": "끌다",
+          "display_word": "끌다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "끌ː다"
+          ],
+          "pronunciation": "끌ː다",
+          "definition": "남의 관심 따위를 쏠리게 하다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "끌어",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː러"
+              ]
+            },
+            {
+              "form": "끄니",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː니"
+              ]
+            },
+            {
+              "form": "끄오",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:53.369262+00:00"
+        },
+        {
+          "id": "403617:72350",
+          "target_code": "403617",
+          "sense_code": "72350",
+          "word": "끌다",
+          "display_word": "끌다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "끌ː다"
+          ],
+          "pronunciation": "끌ː다",
+          "definition": "시간이나 일을 늦추거나 미루다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "끌어",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː러"
+              ]
+            },
+            {
+              "form": "끄니",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː니"
+              ]
+            },
+            {
+              "form": "끄오",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:53.369264+00:00"
+        },
+        {
+          "id": "403617:72636",
+          "target_code": "403617",
+          "sense_code": "72636",
+          "word": "끌다",
+          "display_word": "끌다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "끌ː다"
+          ],
+          "pronunciation": "끌ː다",
+          "definition": "길게 빼어 늘이다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "끌어",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː러"
+              ]
+            },
+            {
+              "form": "끄니",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː니"
+              ]
+            },
+            {
+              "form": "끄오",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:53.369267+00:00"
+        },
+        {
+          "id": "403617:72938",
+          "target_code": "403617",
+          "sense_code": "72938",
+          "word": "끌다",
+          "display_word": "끌다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "끌ː다"
+          ],
+          "pronunciation": "끌ː다",
+          "definition": "목적하는 곳으로 바로 가도록 같이 가면서 따라오게 하다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "끌어",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː러"
+              ]
+            },
+            {
+              "form": "끄니",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː니"
+              ]
+            },
+            {
+              "form": "끄오",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:53.369270+00:00"
+        },
+        {
+          "id": "403617:30745",
+          "target_code": "403617",
+          "sense_code": "30745",
+          "word": "끌다",
+          "display_word": "끌다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "끌ː다"
+          ],
+          "pronunciation": "끌ː다",
+          "definition": "어떤 사실이나 글을 옮겨 오거나 옮겨 가다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "끌어",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː러"
+              ]
+            },
+            {
+              "form": "끄니",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː니"
+              ]
+            },
+            {
+              "form": "끄오",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:53.369273+00:00"
+        },
+        {
+          "id": "403617:62139",
+          "target_code": "403617",
+          "sense_code": "62139",
+          "word": "끌다",
+          "display_word": "끌다",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "끌ː다"
+          ],
+          "pronunciation": "끌ː다",
+          "definition": "어느 곳에서 원하는 곳에 이르도록 전선 따위를 늘리다.",
+          "pos": "동사",
+          "inflections": [
+            {
+              "form": "끌어",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː러"
+              ]
+            },
+            {
+              "form": "끄니",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː니"
+              ]
+            },
+            {
+              "form": "끄오",
+              "type": "conjugation",
+              "pronunciations": [
+                "끄ː오"
+              ]
+            }
+          ],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=403617&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:53.369348+00:00"
+        }
+      ]
+    },
+    {
+      "target_code": "143839",
+      "candidates": [
+        {
+          "id": "143839:423001",
+          "target_code": "143839",
+          "sense_code": "423001",
+          "word": "보도부",
+          "display_word": "보도-부",
+          "origin": "報道部",
+          "hanja": "報道部",
+          "pronunciations": [
+            "보ː도부"
+          ],
+          "pronunciation": "보ː도부",
+          "definition": "기관이나 단체에서 대중 매체를 통하여 보도에 관한 일을 맡아보는 부서.",
+          "pos": "명사",
+          "inflections": [],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=143839&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:54.698298+00:00"
+        }
+      ]
+    },
+    {
+      "target_code": "330923",
+      "candidates": [
+        {
+          "id": "330923:289590",
+          "target_code": "330923",
+          "sense_code": "289590",
+          "word": "첫눈",
+          "display_word": "첫-눈",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "천눈"
+          ],
+          "pronunciation": "천눈",
+          "definition": "처음 보아서 눈에 뜨이는 느낌이나 인상.",
+          "pos": "명사",
+          "inflections": [],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=330923&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:55.688832+00:00"
+        }
+      ]
+    },
+    {
+      "target_code": "489489",
+      "candidates": [
+        {
+          "id": "489489:289591",
+          "target_code": "489489",
+          "sense_code": "289591",
+          "word": "첫눈",
+          "display_word": "첫-눈",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "천눈"
+          ],
+          "pronunciation": "천눈",
+          "definition": "그해 겨울이 시작된 후 처음으로 내리는 눈.",
+          "pos": "명사",
+          "inflections": [],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=489489&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:56.066368+00:00"
+        }
+      ]
+    },
+    {
+      "target_code": "130198",
+      "candidates": [
+        {
+          "id": "130198:568912",
+          "target_code": "130198",
+          "sense_code": "568912",
+          "word": "밀물",
+          "display_word": "밀-물",
+          "origin": "",
+          "hanja": "",
+          "pronunciations": [
+            "밀물"
+          ],
+          "pronunciation": "밀물",
+          "definition": "조수의 간만으로 해면이 상승하는 현상. 또는 그 바닷물. 간조에서 만조까지를 이르며 하루에 두 차례씩 밀려 들어온다.",
+          "pos": "명사",
+          "inflections": [],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=130198&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:56.905890+00:00"
+        }
+      ]
+    },
+    {
+      "target_code": "130199",
+      "candidates": [
+        {
+          "id": "130199:384783",
+          "target_code": "130199",
+          "sense_code": "384783",
+          "word": "밀물",
+          "display_word": "밀물",
+          "origin": "密勿",
+          "hanja": "密勿",
+          "pronunciations": [
+            "밀물"
+          ],
+          "pronunciation": "밀물",
+          "definition": "부지런히 힘씀.",
+          "pos": "명사",
+          "inflections": [],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=130199&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:57.110520+00:00"
+        }
+      ]
+    },
+    {
+      "target_code": "130201",
+      "candidates": [
+        {
+          "id": "130201:9082",
+          "target_code": "130201",
+          "sense_code": "9082",
+          "word": "밀물",
+          "display_word": "밀물",
+          "origin": "密勿",
+          "hanja": "密勿",
+          "pronunciations": [
+            "밀물"
+          ],
+          "pronunciation": "밀물",
+          "definition": "제왕과의 사이가 긴밀한 직무.",
+          "pos": "명사",
+          "inflections": [],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=130201&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:57.317254+00:00"
+        },
+        {
+          "id": "130201:41078",
+          "target_code": "130201",
+          "sense_code": "41078",
+          "word": "밀물",
+          "display_word": "밀물",
+          "origin": "密勿",
+          "hanja": "密勿",
+          "pronunciations": [
+            "밀물"
+          ],
+          "pronunciation": "밀물",
+          "definition": "중요한 정사(政事).",
+          "pos": "명사",
+          "inflections": [],
+          "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=130201&searchKeywordTo=3",
+          "queried_at": "2026-11-08T12:47:57.317267+00:00"
+        }
+      ]
+    }
+  ]
+}

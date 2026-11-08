@@ -21,7 +21,7 @@ from fastapi.responses import Response, FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-from .dictionary import DictionaryClient, DictionaryError, long_positions, pronunciation_for
+from .dictionary import DictionaryClient, DictionaryError
 from .pdf import extract, counts, marked_document, output_pdf, csv_export, verification, sample_pdf, circle_for
 from .runtime import ACTIVE_STATES, AnalysisGate, SlidingWindowLimiter, progress_snapshot
 
@@ -178,59 +178,76 @@ def get_progress(job_id: str):
     return progress_snapshot(session_for(job_id), gate=GATE)
 
 
-def mark_candidate(job: dict, occurrence: dict, candidate: dict | None, user_selected: bool = False, consensus_candidates: list[dict] | None = None):
-    from .linguistics import candidate_evidence, consensus_evidence
-    is_consensus = consensus_candidates is not None
-    combined = consensus_evidence(consensus_candidates, occurrence["text"]) if is_consensus else None
-    evidence = combined if is_consensus else candidate_evidence(candidate, occurrence["text"])
-    occurrence["selected_candidate_id"] = None if is_consensus else candidate["id"]
-    occurrence["lemma"] = occurrence.get("morphology", {}).get("lemma", occurrence["text"]) if is_consensus else candidate["word"]
-    occurrence["source"] = "manual" if user_selected else ("dictionary_consensus" if is_consensus else "dictionary")
-    occurrence["meaning_status"] = "unresolved" if is_consensus else ("user_selected" if user_selected else "verified")
-    occurrence["evidence_candidates"] = [c["id"] for c in consensus_candidates] if is_consensus else [candidate["id"]]
-    occurrence["applied_rules"] = []
+def apply_length_evidence(job: dict, occurrence: dict, evidence: dict, source: str, reason: str, reason_code: str, mark_source: str | None = None):
+    """Map only original syllable IDs; partial evidence is never whole-short."""
     occurrence["long_glyph_ids"] = []
     job["marks"] = [m for m in job["marks"] if m.get("occurrence_id") != occurrence["id"] or m["source"] == "manual"]
-    if evidence is None:
-        occurrence.update(status="unresolved", reason="실제 형태의 직접 발음 근거가 없거나, 후보별 장단·음절 연결이 다릅니다. 기본형 발음을 복사하지 않습니다.", reason_code="inflection_unverified", evidence_type=None)
-        if not user_selected:
-            occurrence.update(meaning_status="unresolved", selected_candidate_id=None)
-        return
     positions = evidence["positions"]
     page = job["pages"][occurrence["page"] - 1]
     glyph_map = {g["id"]: g for g in page["glyphs"]}
     ids = [gid for gid in occurrence["glyph_ids"] if re.fullmatch(r"[가-힣]", glyph_map[gid]["text"])]
-    if any(i >= len(ids) for i in positions) or not ids:
+    if any(i < 0 or i >= len(ids) for i in positions) or not ids:
         occurrence.update(status="unresolved", reason="발음과 원문 음절 위치를 연결할 수 없습니다.", reason_code="alignment", evidence_type=None)
         return
     if page["quality"] != "text" or any(not glyph_map[g]["valid"] for g in ids):
         occurrence.update(status="unresolved", reason="문자 좌표 품질을 확인해야 합니다.", reason_code="coordinates", evidence_type=None)
         return
-    occurrence["pronunciations"] = evidence["pronunciations"]
-    occurrence["pronunciation_scope"] = occurrence["text"]
-    occurrence["evidence_type"] = "candidate_consensus" if is_consensus else evidence["evidence_type"]
-    occurrence["length_evidence"] = evidence["evidence"] if is_consensus else [evidence]
-    reason = ("모든 조회 후보의 장단이 일치합니다. 문맥의 뜻 선택은 미확정입니다." if is_consensus else
-              evidence["explanation"] + (" · 사용자 의미 선택" if user_selected else " · 문법·형태와 단일 의미 직접 일치"))
-    occurrence.update(status="long" if positions else "none", reason=reason, reason_code="length_consensus" if is_consensus else "verified")
+    coverage = evidence.get("coverage", {"complete": True, "checked_ranges": [[0, len(ids)]], "unresolved_ranges": []})
+    occurrence.update(pronunciations=evidence["pronunciations"], pronunciation_scope=evidence.get("pronunciation_scope", occurrence["text"]),
+                      evidence_type=evidence["evidence_type"], length_evidence=evidence.get("evidence", [evidence]),
+                      applied_rules=evidence.get("applied_rules", []), coverage=coverage, source=source)
+    occurrence.update(status=("long" if positions else "none") if coverage["complete"] else "unresolved",
+                      reason=reason, reason_code=reason_code)
     occurrence["long_glyph_ids"] = [ids[i] for i in positions]
     existing = {m["glyph_id"] for m in job["marks"]}
     for glyph_id in occurrence["long_glyph_ids"]:
         if glyph_id not in existing:
             job["marks"].append({"id": uuid.uuid4().hex, "page": occurrence["page"], "glyph_id": glyph_id,
-                                 "source": "dictionary_consensus" if is_consensus else "dictionary",
+                                 "source": mark_source or source,
                                  "evidence_type": occurrence["evidence_type"],
                                  "occurrence_id": occurrence["id"], "dx": 0, "dy": 0, "scale": 1})
             existing.add(glyph_id)
 
 
-# These transformations are candidate discovery only. A stripped form never
-# inherits the lemma's length; it stays unresolved without an exact inflection.
-PARTICLES = ("으로부터", "에게서", "이라고", "에서는", "으로는", "까지는", "부터는", "으로", "에서", "에게", "께서", "하고", "처럼", "보다", "까지", "부터", "이며", "이라", "을", "를", "은", "는", "이", "가", "의", "에", "와", "과", "도", "만")
+def evidence_description(evidence: dict, *, consensus: bool, user_selected: bool) -> tuple[str, str]:
+    inferred = evidence["evidence_type"].startswith("rule")
+    automatic_source = "rule" if inferred else ("dictionary_consensus" if consensus else "dictionary")
+    reason = ("모든 허용 후보의 장단이 일치합니다. 문맥의 뜻 선택은 미확정입니다." if consensus else evidence["explanation"])
+    if inferred:
+        reason += " · 사전 기본형과 원문 형태에 대한 규칙 판정 (전체 활용형 직접 발음 아님)"
+    if user_selected:
+        reason += " · 사용자 의미 선택"
+    return automatic_source, reason
+
+
+def mark_candidate(job: dict, occurrence: dict, candidate: dict | None, user_selected: bool = False, consensus_candidates: list[dict] | None = None):
+    from .linguistics import form_evidence, form_consensus
+    plan = occurrence.get("morphology", {})
+    is_consensus = consensus_candidates is not None
+    evidence = form_consensus(consensus_candidates, occurrence["text"], plan) if is_consensus else form_evidence(candidate, occurrence["text"], plan)
+    occurrence["selected_candidate_id"] = None if is_consensus else candidate["id"]
+    occurrence["lemma"] = plan.get("lemma", occurrence["text"]) if is_consensus else candidate["word"]
+    occurrence["meaning_status"] = "unresolved" if is_consensus else ("user_selected" if user_selected else "verified")
+    occurrence["evidence_candidates"] = [c["id"] for c in consensus_candidates] if is_consensus else [candidate["id"]]
+    if evidence is None:
+        occurrence.update(status="unresolved", source="manual" if user_selected else "dictionary",
+                          reason="실제 형태의 직접 발음 또는 적용 범위가 확인된 규칙 근거가 없습니다. 기본형 발음을 무조건 복사하지 않습니다.",
+                          reason_code="inflection_unverified", evidence_type=None, applied_rules=[],
+                          pronunciations=[], length_evidence=[], long_glyph_ids=[], pronunciation_scope=occurrence["text"],
+                          coverage={"complete": False, "checked_ranges": [], "unresolved_ranges": [[0, len(occurrence["text"])]]})
+        job["marks"] = [m for m in job["marks"] if m.get("occurrence_id") != occurrence["id"] or m["source"] == "manual"]
+        if not user_selected:
+            occurrence.update(meaning_status="unresolved", selected_candidate_id=None)
+        return
+    automatic_source, reason = evidence_description(evidence, consensus=is_consensus, user_selected=user_selected)
+    source = "manual" if user_selected else automatic_source
+    # A user's meaning choice is manual; its generated circles are replaceable
+    # rule/dictionary results until the user actually edits their geometry.
+    apply_length_evidence(job, occurrence, evidence, source, reason, "length_consensus" if is_consensus else "verified", mark_source=automatic_source)
 
 
 async def analyze_job(job: dict):
-    from .linguistics import occurrence_plans, candidates_for_plan, consensus_evidence
+    from .linguistics import occurrence_plans, candidates_for_plan, form_consensus, compound_evidence
     client = job["_dictionary"]
     words = list(dict.fromkeys(o["text"] for o in job["occurrences"]))
     failures = 0
@@ -248,35 +265,79 @@ async def analyze_job(job: dict):
                     continue
                 occurrence.update(meaning_status="unresolved", selected_candidate_id=None,
                                   evidence_type=None, evidence_candidates=[], applied_rules=[],
-                                  long_glyph_ids=[], length_evidence=[])
+                                  long_glyph_ids=[], length_evidence=[], pronunciations=[],
+                                  component_results=[], coverage={"complete": False, "checked_ranges": [],
+                                                                 "unresolved_ranges": [[0, len(word)]]})
                 job["marks"] = [m for m in job["marks"] if m.get("occurrence_id") != occurrence["id"] or m["source"] == "manual"]
                 if plan["kind"] in ("number", "foreign") or occurrence["kind"] != "word":
                     occurrence.update(status="unresolved", reason="숫자·단위 또는 외래 표기의 실제 읽기를 확인해 주세요.", reason_code="reading_required")
                     continue
                 try:
-                    queries = list(dict.fromkeys([word, plan["lemma"]]))
-                    found = []
-                    for query in queries:
-                        found.extend(await client.lookup(query))
-                    all_candidates = list({c["id"]: c for c in found}.values())
-                    candidates = candidates_for_plan(all_candidates, plan)
-                    occurrence["all_candidates"] = all_candidates
-                    occurrence["excluded_candidates"] = [c["id"] for c in all_candidates if c["id"] not in {c["id"] for c in candidates}]
-                    occurrence["candidates"] = candidates
+                    whole = await client.lookup(word)
                     occurrence["lemma"] = plan["lemma"]
-                    if plan["kind"] == "proper":
+                    found = list(whole)
+
+                    def keep_candidates(candidates):
+                        occurrence["all_candidates"] = list({c["id"]: c for c in found}.values())
+                        occurrence["candidates"] = list({c["id"]: c for c in candidates}.values())
+                        allowed = {c["id"] for c in occurrence["candidates"]}
+                        occurrence["excluded_candidates"] = [c["id"] for c in occurrence["all_candidates"] if c["id"] not in allowed]
+
+                    # A particle interpretation can collide with a different
+                    # headword (말의). Preserve that existing abstention policy.
+                    if plan["kind"] == "nominal_particle" and plan["lemma"] != word:
+                        found.extend(await client.lookup(plan["lemma"]))
+                        candidates = candidates_for_plan(found, plan)
+                        keep_candidates(candidates)
+                        collision = any(c["word"] == word for c in candidates) and any(c["word"] == plan["lemma"] for c in candidates)
+                        if collision:
+                            occurrence.update(status="unresolved", reason="전체 표제어와 조사 결합 해석이 겹칩니다. 문맥의 뜻과 실제 발음 근거를 확인해 주세요.", reason_code="surface_ambiguous")
+                            continue
+
+                    candidates = candidates_for_plan(whole, plan)
+                    keep_candidates(candidates)
+                    if plan.get("proper_context"):
                         occurrence.update(status="unresolved", reason="인명·고유명사로 분석되었습니다. 비슷한 보통명사의 장음을 옮기지 않습니다.", reason_code="proper_name")
-                    elif len(candidates) == 1:
-                        mark_candidate(job, occurrence, candidates[0])
-                    elif candidates:
-                        combined = consensus_evidence(candidates, word)
-                        if combined is not None:
+                        continue
+                    # Whole-word dictionary evidence wins, including homonym
+                    # conflicts: components cannot override an unknown reading.
+                    if candidates and form_consensus(candidates, word, {}) is not None:
+                        if len(candidates) == 1:
+                            mark_candidate(job, occurrence, candidates[0])
+                        else:
+                            mark_candidate(job, occurrence, None, consensus_candidates=candidates)
+                        continue
+                    if any(c["word"] == word for c in candidates):
+                        occurrence.update(status="unresolved", reason="전체 단어의 후보별 장단이 다르거나 직접 발음 근거가 부족합니다. 구성 요소로 덮어쓰지 않습니다.", reason_code="ambiguous")
+                        continue
+
+                    if plan["lemma"] != word and not any(c["word"] == plan["lemma"] for c in found):
+                        found.extend(await client.lookup(plan["lemma"]))
+                    if (plan["kind"] in ("verb", "derived") and hasattr(client, "lookup_inflections")
+                            and form_consensus(candidates_for_plan(found, plan), word, {}) is None):
+                        found.extend(await client.lookup_inflections(word))
+                    candidates = candidates_for_plan(found, plan)
+                    keep_candidates(candidates)
+                    if candidates:
+                        if len(candidates) == 1:
+                            mark_candidate(job, occurrence, candidates[0])
+                        elif form_consensus(candidates, word, plan) is not None:
                             mark_candidate(job, occurrence, None, consensus_candidates=candidates)
                         else:
-                            surface_ambiguous = plan["kind"] == "nominal_particle" and any(c["word"] == word for c in candidates) and any(c["word"] == plan["lemma"] for c in candidates)
-                            occurrence.update(status="unresolved", reason="문맥에 맞는 후보와 실제 형태의 발음 근거를 확인해야 합니다. 후보 간 장단이 다르거나 직접 근거가 없는 후보가 있습니다.", reason_code="surface_ambiguous" if surface_ambiguous else "ambiguous")
+                            occurrence.update(status="unresolved", reason="문맥에 맞는 후보와 실제 형태의 발음 근거를 확인해야 합니다. 후보 간 장단이 다르거나 적용 근거가 없는 후보가 있습니다.", reason_code="ambiguous")
+                    elif plan.get("components"):
+                        results = []
+                        for component in plan["components"]:
+                            entries = await client.lookup(component["lemma"])
+                            results.append({**component, "candidates": candidates_for_plan(entries, {"pos": component["pos"]})})
+                        occurrence["component_results"] = results
+                        evidence = compound_evidence(results, word)
+                        occurrence["evidence_candidates"] = evidence["evidence_candidates"]
+                        apply_length_evidence(job, occurrence, evidence, "rule",
+                                              "구성 요소의 사전 근거와 원문 범위를 연결했습니다." + (" 전체 범위의 장단은 미확정입니다." if not evidence["coverage"]["complete"] else " 전체 단어 직접 발음과 구별되는 규칙 판정입니다."),
+                                              "compound_verified" if evidence["coverage"]["complete"] else "partial_evidence")
                     else:
-                        occurrence.update(status="unresolved", reason="문법·형태에 맞는 공식 표제어를 찾지 못했습니다. 단음으로 판정하지 않습니다.", reason_code="not_found")
+                        occurrence.update(status="unresolved", reason="문법·형태에 맞는 공식 표제어를 찾지 못했습니다. 단음으로 판정하지 않습니다.", reason_code="proper_name" if plan["kind"] == "proper" else "not_found")
                 except DictionaryError as error:
                     failures += 1
                     occurrence.update(status="unresolved", reason=str(error), reason_code="lookup_failed")
@@ -358,6 +419,51 @@ class StatePatch(BaseModel):
     restore: bool = False
 
 
+def restore_length_evidence(original: dict, edited: dict) -> None:
+    """Recompute history evidence from server-owned candidates and boundaries."""
+    from .linguistics import form_evidence, form_consensus, compound_evidence
+    selected = next((c for c in original["candidates"] if c["id"] == edited["selected_candidate_id"]), None)
+    plan = original.get("morphology", {})
+    evidence = form_evidence(selected, original["text"], plan) if selected else None
+    if not selected and edited.get("evidence_type") in ("candidate_consensus", "rule_consensus"):
+        if set(edited.get("evidence_candidates", [])) == {c["id"] for c in original["candidates"]}:
+            evidence = form_consensus(original["candidates"], original["text"], plan)
+    if not selected and edited.get("evidence_type") == "rule_inference" and original.get("component_results"):
+        components = deepcopy(original["component_results"])
+        evidence = compound_evidence(components, original["text"])
+        original["component_results"] = components
+    user_selected = bool(selected and (edited.get("meaning_status") == "user_selected" or len(original["candidates"]) != 1))
+    original.update(selected_candidate_id=selected["id"] if selected else None,
+                    lemma=selected["word"] if selected else plan.get("lemma", original["text"]),
+                    meaning_status=("user_selected" if user_selected else "verified") if selected and evidence else "unresolved")
+    if evidence is None:
+        original.update(evidence_candidates=[], evidence_type=None, pronunciations=[], length_evidence=[],
+                        applied_rules=[], pronunciation_scope=original["text"], long_glyph_ids=[],
+                        coverage={"complete": False, "checked_ranges": [], "unresolved_ranges": [[0, len(original["text"])]]},
+                        source="manual" if edited.get("source") == "manual" else None)
+        return
+    coverage = evidence.get("coverage", {"complete": True, "checked_ranges": [[0, len(original["text"])]], "unresolved_ranges": []})
+    is_component = not selected and evidence["evidence_type"] == "rule_inference"
+    if is_component:
+        automatic_source = "rule"
+        reason = "구성 요소의 사전 근거와 원문 범위를 연결했습니다." + (" 전체 범위의 장단은 미확정입니다." if not coverage["complete"] else " 전체 단어 직접 발음과 구별되는 규칙 판정입니다.")
+        reason_code = "compound_verified" if coverage["complete"] else "partial_evidence"
+    else:
+        automatic_source, reason = evidence_description(evidence, consensus=not selected, user_selected=user_selected)
+        reason_code = "verified" if selected else "length_consensus"
+    original.update(evidence_candidates=[selected["id"]] if selected else evidence["evidence_candidates"],
+                    evidence_type=evidence["evidence_type"], pronunciations=evidence["pronunciations"],
+                    length_evidence=evidence.get("evidence", [evidence]), applied_rules=evidence.get("applied_rules", []),
+                    pronunciation_scope=evidence.get("pronunciation_scope", original["text"]), coverage=coverage,
+                    source="manual" if edited.get("source") == "manual" or user_selected else automatic_source,
+                    reason=reason, reason_code=reason_code)
+    if edited.get("source") == "manual" and edited.get("reason_code") == "manual":
+        original.update(reason="사용자가 표시를 수정했습니다. 사전 자동 검증과 구별됩니다.", reason_code="manual")
+    # Glyph IDs and geometry were never taken from the snapshot's linguistic
+    # metadata. The immutable server extraction provides the only alignment.
+    original["long_glyph_ids"] = [original["glyph_ids"][i] for i in evidence["positions"]]
+
+
 @app.patch("/api/jobs/{job_id}/state")
 def patch_state(job_id: str, patch: StatePatch):
     job = session_for(job_id)
@@ -414,32 +520,26 @@ def patch_state(job_id: str, patch: StatePatch):
                 original["reason"] = "사용자가 검토 결과를 수정했습니다."
                 original["reason_code"] = "manual"
             if patch.restore and "selected_candidate_id" in edited:
-                original["selected_candidate_id"] = edited["selected_candidate_id"]
-                selected = next((c for c in original["candidates"] if c["id"] == edited["selected_candidate_id"]), None)
-                original["lemma"] = selected["word"] if selected else original["text"]
-                original["meaning_status"] = "user_selected" if selected else "unresolved"
-                # Rebuild evidence from server-owned candidates, never from
-                # client pronunciation strings or an arbitrary consensus subset.
-                from .linguistics import candidate_evidence, consensus_evidence
-                restored = candidate_evidence(selected, original["text"]) if selected else None
-                if selected and restored:
-                    original.update(evidence_candidates=[selected["id"]],
-                                    evidence_type=restored["evidence_type"],
-                                    pronunciations=restored["pronunciations"], length_evidence=[restored])
-                elif (not selected and edited.get("evidence_type") == "candidate_consensus"
-                      and set(edited.get("evidence_candidates", [])) == {c["id"] for c in original["candidates"]}):
-                    agreed = consensus_evidence(original["candidates"], original["text"])
-                    if agreed:
-                        original.update(evidence_candidates=agreed["evidence_candidates"],
-                                        evidence_type="candidate_consensus", pronunciations=agreed["pronunciations"],
-                                        length_evidence=agreed["evidence"])
-                    else:
-                        original.update(evidence_candidates=[], evidence_type=None, pronunciations=[], length_evidence=[])
-                else:
-                    original.update(evidence_candidates=[], evidence_type=None, pronunciations=[], length_evidence=[])
+                restore_length_evidence(original, edited)
     if patch.settings is not None:
         job["settings"] = patch.settings.model_dump()
     if validated_marks is not None:
+        if patch.restore:
+            requested = {str(m.get("id")): m for m in patch.marks}
+            occurrences = {o["id"]: o for o in job["occurrences"]}
+            for mark in validated_marks:
+                raw = requested.get(mark["id"], {})
+                occurrence = occurrences.get(mark.get("occurrence_id"))
+                # Restore automatic provenance only after the server has
+                # rebuilt its evidence and verified the exact original glyph
+                # and unedited geometry. Moved/added manual circles stay manual.
+                if (occurrence and raw.get("source") in ("dictionary", "dictionary_consensus", "rule")
+                        and mark["glyph_id"] in occurrence.get("long_glyph_ids", [])
+                        and mark["dx"] == mark["dy"] == 0 and mark["scale"] == 1
+                        and occurrence.get("evidence_type")):
+                    kind = occurrence["evidence_type"]
+                    mark.update(source="rule" if kind.startswith("rule") else ("dictionary_consensus" if kind == "candidate_consensus" else "dictionary"),
+                                evidence_type=kind)
         old = {m["glyph_id"]: m for m in job["marks"]}
         new = {m["glyph_id"]: m for m in validated_marks}
         semantic_fields = ("id", "glyph_id", "page", "source", "occurrence_id", "dx", "dy", "scale")
@@ -448,11 +548,11 @@ def patch_state(job_id: str, patch: StatePatch):
                    any(old[gid].get(key) != new[gid].get(key) for key in semantic_fields)}
         for occurrence in job["occurrences"]:
             if any(g in changed for g in occurrence["glyph_ids"]):
-                occurrence["source"] = "manual"
                 if not patch.restore:
+                    occurrence["source"] = "manual"
                     occurrence["status"] = "long" if any(g in new for g in occurrence["glyph_ids"]) else "none"
-                occurrence["reason"] = "사용자가 표시를 수정했습니다. 사전 자동 검증과 구별됩니다."
-                occurrence["reason_code"] = "manual"
+                    occurrence["reason"] = "사용자가 표시를 수정했습니다. 사전 자동 검증과 구별됩니다."
+                    occurrence["reason_code"] = "manual"
         job["marks"] = validated_marks
     history(job, "표시 설정·검토 상태 수정")
     job["warnings"] = [w for w in job["warnings"] if not w.startswith("표시 ")]

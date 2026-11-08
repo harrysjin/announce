@@ -152,6 +152,9 @@ def pronunciation_for(candidate: dict, surface: str) -> tuple[list[str], str] | 
 class DictionaryClient:
     def __init__(self):
         self.cache: dict[str, list[dict]] = {}
+        # A headword miss must not hide a later auxiliary search for the same
+        # surface, nor may auxiliary hits replace exact headword evidence.
+        self.inflection_cache: dict[str, list[dict]] = {}
 
     async def _get(self, client, url: str, params: dict):
         # Retry only temporary failures of idempotent reads, once. Never retry
@@ -170,17 +173,35 @@ class DictionaryClient:
                 await asyncio.sleep(0.4)
 
     async def lookup(self, word: str) -> list[dict]:
-        if word in self.cache:
-            return self.cache[word]
+        """Keep the original exact headword search as the primary lookup."""
+        return await self._lookup(word, inflections=False)
+
+    async def lookup_inflections(self, word: str) -> list[dict]:
+        """Search the documented target=5 index for auxiliary lemma candidates.
+
+        The search does not generate arbitrary inflections. A hit establishes
+        candidate discovery only: pronunciation_for must still find the exact
+        requested form in that entry's detail response before calling it direct
+        dictionary pronunciation evidence.
+        """
+        return await self._lookup(word, inflections=True)
+
+    async def _lookup(self, word: str, *, inflections: bool) -> list[dict]:
+        cache = self.inflection_cache if inflections else self.cache
+        if word in cache:
+            return cache[word]
         key = os.environ.get("STDICT_API_KEY")
         if not key:
             raise DictionaryError("표준국어대사전 인증키가 연결되지 않았습니다.")
         try:
             async with httpx.AsyncClient(timeout=20, trust_env=True, follow_redirects=False) as client:
-                response = await self._get(client, f"{BASE}/search.do", params={
+                search_params = {
                     "key": key, "q": word, "req_type": "xml", "num": 100,
                     "advanced": "y", "method": "exact", "type1": "word",
-                })
+                }
+                if inflections:
+                    search_params["target"] = 5
+                response = await self._get(client, f"{BASE}/search.do", params=search_params)
                 response.raise_for_status()
                 codes = parse_search(response.content)
                 # A truncated candidate set must never be treated as unambiguous.
@@ -194,9 +215,15 @@ class DictionaryClient:
                         "key": key, "q": code, "req_type": "xml", "method": "target_code",
                     })
                     detail.raise_for_status()
-                    candidates.extend(parse_detail(detail.content, code))
+                    for candidate in parse_detail(detail.content, code):
+                        candidate["lookup_provenance"] = {
+                            "type": "inflection_search" if inflections else "exact",
+                            "query": word,
+                            "target": 5 if inflections else 1,
+                        }
+                        candidates.append(candidate)
         except (httpx.HTTPError, ValueError):
             # Never propagate exception URLs: they can contain the API key.
             raise DictionaryError("사전 연결에 실패했습니다. 네트워크·인증키·응답 형식을 확인해 주세요.") from None
-        self.cache[word] = candidates
+        cache[word] = candidates
         return candidates

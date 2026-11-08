@@ -24,6 +24,7 @@ export type Candidate = {
   definition?: string;
   meaning?: string;
   pos?: string;
+  queried_at?: string;
   url?: string;
   source_url?: string;
   long_positions?: number[];
@@ -54,12 +55,34 @@ export type Occurrence = {
     kind?: string;
     surface?: string;
     particle?: string;
+    components?: MorphologyComponent[];
+  };
+  pronunciation_scope?: string;
+  component_results?: ComponentResult[];
+  coverage?: {
+    complete: boolean;
+    checked_ranges: [number, number][];
+    unresolved_ranges: [number, number][];
   };
   candidates: Candidate[];
   selected_candidate_id?: string | null;
   note?: string;
   context?: string;
   group?: string;
+};
+export type MorphologyComponent = {
+  lemma: string;
+  pos: string;
+  start: number;
+  end: number;
+  kind?: string;
+};
+export type ComponentResult = MorphologyComponent & {
+  candidates: Candidate[];
+  evidence_candidates?: string[];
+  status: "unresolved" | "long" | "none";
+  long_positions?: number[];
+  reason?: string;
 };
 export type Mark = {
   id: string;

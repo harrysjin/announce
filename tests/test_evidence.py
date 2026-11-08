@@ -83,10 +83,13 @@ class EvidenceTests(unittest.IsolatedAsyncioTestCase):
         await analyze_job(job)
         occurrence = job["occurrences"][0]
         record = verification(job)
+        summary, candidates_record = record.split("## 기본형·전체 단어 후보 조회 기록", 1)
+        self.assertIn("특정 뜻을 선택한 결과가 아닙니다", candidates_record)
         for candidate in SNAPSHOT["낭독"]:
             self.assertIn(candidate["id"], record)
             self.assertIn(candidate["url"], record)
-            self.assertNotIn(candidate["definition"], record, "No meaning was selected")
+            self.assertNotIn(candidate["definition"], summary, "The judgment summary must not claim a selected meaning")
+            self.assertIn(candidate["definition"], candidates_record, "The separate candidate log retains every candidate meaning")
         csv_row = next(csv.DictReader(io.StringIO(csv_export(job).decode("utf-8-sig"))))
         self.assertEqual(csv_row["선택한 뜻"], "")
         self.assertEqual(csv_row["뜻 상태"], "unresolved")

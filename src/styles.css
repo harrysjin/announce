@@ -2605,6 +2605,70 @@ input[type="range"]::-moz-range-thumb {
   line-height: 1.9;
   margin-bottom: 9px;
 }
+.coverage-note {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #dfeaf6;
+  border-radius: 6px;
+  color: #637a95;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.coverage-note.incomplete {
+  background: #fcf8ef;
+  border-color: #e9dec8;
+  color: #806c48;
+}
+.coverage-note p,
+.component-evidence p {
+  margin: 5px 0;
+}
+.component-evidence {
+  margin: 12px 0;
+  font-size: 11px;
+  line-height: 1.7;
+  color: #637085;
+}
+.component-evidence h4 {
+  margin: 0 0 7px;
+  color: #465469;
+}
+.component-evidence details {
+  border-top: 1px solid #e7ebf0;
+  padding: 9px 0;
+}
+.component-evidence summary {
+  cursor: pointer;
+}
+.component-evidence summary > span {
+  display: inline-block;
+  margin-left: 6px;
+  color: #7b899c;
+}
+.component-candidate {
+  background: #f8fafc;
+}
+.candidate-query-time,
+.component-candidate small {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 10px;
+  color: #737e8c;
+  margin: 7px 0;
+}
+.component-candidate > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #547da9;
+}
+.rule-source {
+  flex-wrap: wrap;
+}
+.rule-source > span {
+  flex-basis: 100%;
+  line-height: 1.7;
+}
 .candidate .surface-reading {
   color: #547da9;
   background: #f3f8fe;
