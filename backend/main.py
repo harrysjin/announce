@@ -24,6 +24,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 from .dictionary import DictionaryClient, DictionaryError
 from .pdf import extract, counts, marked_document, output_pdf, csv_export, verification, sample_pdf, circle_for
 from .runtime import ACTIVE_STATES, AnalysisGate, SlidingWindowLimiter, progress_snapshot
+from .release import VERSION, release_identity
 
 MAX_BYTES = 20 * 1024 * 1024
 TTL_SECONDS = 2 * 60 * 60
@@ -64,7 +65,7 @@ async def lifespan(app: FastAPI):
     shutil.rmtree(ROOT, ignore_errors=True)
 
 
-app = FastAPI(title="장음 · PDF 낭독 작업 공간", version="0.1.0", lifespan=lifespan)
+app = FastAPI(title="장음 · PDF 낭독 작업 공간", version=VERSION, lifespan=lifespan)
 
 
 @app.middleware("http")
@@ -115,7 +116,7 @@ def history(job: dict, action: str):
 def health():
     return {"ok": True, "dictionary_configured": bool(os.environ.get("STDICT_API_KEY")),
             "max_upload_bytes": MAX_BYTES, "max_pages": 100, "retention_seconds": TTL_SECONDS,
-            "ocr_supported": False, "version": "0.1.0"}
+            "ocr_supported": False, **release_identity()}
 
 
 @app.get("/api/sample")
@@ -309,7 +310,7 @@ async def analyze_job(job: dict):
                 if plan["kind"] == "number" or occurrence["kind"] == "number":
                     from .numbers import number_plan, evaluate_number
                     try:
-                        result = await evaluate_number(number_plan(word, occurrence.get("context", "")), client)
+                        result = await evaluate_number(number_plan(word, occurrence.get("context", ""), morphology=plan), client)
                         remember_number_result(job, occurrence, result)
                         apply_number_result(job, occurrence, result)
                     except DictionaryError as error:

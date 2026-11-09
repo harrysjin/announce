@@ -38,8 +38,9 @@ python3 tests/live_browser.py --base http://127.0.0.1:8000
 ## 분석기 개선 평가와 운영 검사
 
 `python3 tests/evaluation.py --strict`는 직접 대조한 공식 사전 snapshot과27개 표적의 정답/보류 자료를 재현합니다.
-현재 기본값은 숫자 공식 근거를 보충한 `audited_corpus_numbers_2026-11-09.json`입니다.
-기존 `4개`·`2026년` 보류를 검증 가능한 장음으로 갱신해 정답16항목·보류11항목을 구분합니다.
+현재 기본값은 문장 형태의 근거를 보충한 `audited_corpus_sentence_forms_2026-11-09.json`입니다.
+숫자 버전의 정답16/보류11에서 제한적인 명사+조사 근거가 확인된 낭독을·기쁨을만 갱신해 정답18/보류9를 구분합니다.
+숫자 버전과 최초 평가 원본은 모두 보존합니다.
 이전 `audited_corpus.json`의 정답14/보류13은 원본 그대로 보존하며 새 기능의 정답 분모와 혼동하지 않습니다.
 장음 오탐·누락·판정 범위·보류 준수를 별도로 보고합니다.
 이 자료는 개발 중 확인한 작은 자료로, 독립적인 일반 정확도 시험이 아닙니다.
@@ -66,3 +67,7 @@ macOS Preview와 Adobe Reader의 실행 결과를 대신하지 않습니다.
 
 숫자 근거·미확정 범위는 `docs/number-reading-evidence.md`, 렌더링 방식·전후 차이는
 `docs/pdf-rendering-2026-11-09.md`, 웹앱 검사 결과는 `docs/number-render-browser-results.md`에 기록합니다.
+
+문장 결합 재점검은 `tests/site_sentence_browser.py`와 `tests/test_site_reaudit.py`를 사용합니다.
+`tests/site_live_dictionary_simulation.py --live`는 실제 사전 API를 호출하는 별도 선택 실행입니다.
+실제 운영 구버전 재현과 로컬 수정본의 검증을 `docs/site-analysis-recheck-2026-11-09.md`에서 구분합니다.

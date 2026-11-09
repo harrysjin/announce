@@ -120,7 +120,8 @@ class NominalParticleIntegrationTests(unittest.IsolatedAsyncioTestCase):
         exported = output_pdf(source, job)
         with fitz.open(stream=source, filetype="pdf") as before, fitz.open(stream=exported, filetype="pdf") as after:
             self.assertEqual(preservation_signature(before), preservation_signature(after))
-            annotation = next(after[0].annots())
+            marked_page = after[0]
+            annotation = next(marked_page.annots())
             self.assertTrue(annotation.rect.intersects(fitz.Rect(glyph["pdf_bbox"])))
             self.assertIn("조사", annotation.info["content"])
 

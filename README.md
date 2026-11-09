@@ -74,6 +74,13 @@ OCR, 일반 문맥 의미의 완전 자동 선택, 사전 미제공 활용형의
 
 로그인 없는 단일 임시 작업 공간입니다. 작업 ID는 추측하기 어려운 임의 토큰이며, 파일 목록 API는 없습니다. 파일은 서버 임시 디렉터리에 두고 마지막 접근 후 2시간이 지나면 정리하며(최대 약 1분 정리 주기), ‘작업 삭제’로 즉시 삭제할 수 있습니다. 다른 파일을 열면 이전 작업을 삭제합니다. 서버 재시작 시 복구하지 않습니다. 탭을 닫으면 즉시 삭제되는 방식은 아닙니다. 서버 접근 권한과 HTTPS는 배포 운영자가 관리해야 합니다.
 
+## 적용 버전 확인
+
+`/api/health`의 `engine_version`, `build_commit`, `capabilities`로 실제 서버의 기능을 확인합니다.
+화면 검토 패널 아래에도 엔진 버전이 표시됩니다. 기능 브랜치에 업로드한 것과 운영 사이트에
+배포된 것은 다릅니다. 현재 실제 문장의 조사·띄어 쓴 단위 보완 및 운영 반영 진단은
+[재점검 보고서](docs/site-analysis-recheck-2026-11-09.md)에 기록했습니다.
+
 ## 검증
 
 ```bash
@@ -83,6 +90,7 @@ python3 -m unittest discover -s tests -v
 python3 tests/evaluation.py
 # 저장된 공식 사전 자료로 숫자 읽기·PDF/웹 출력 일치 검사 (Chromium/Playwright 필요)
 python3 tests/number_render_browser.py
+python3 tests/site_sentence_browser.py
 # 서버에 실제 사전 키가 연결됐고 Chromium/Playwright가 있는 경우 (실제 API 호출)
 python3 tests/live_browser.py --base http://127.0.0.1:8000
 ```

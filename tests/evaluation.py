@@ -164,7 +164,7 @@ async def evaluate(corpus_path: Path, output: Path, live: bool = False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--corpus", type=Path, default=FIXTURES / "audited_corpus_numbers_2026-11-09.json")
+    parser.add_argument("--corpus", type=Path, default=FIXTURES / "audited_corpus_sentence_forms_2026-11-09.json")
     parser.add_argument("--output", type=Path, default=REPOSITORY / "test-results/evaluation")
     parser.add_argument("--live", action="store_true")
     parser.add_argument("--strict", action="store_true", help="Fail on false marks, missing audited queries, or required-abstention violations")

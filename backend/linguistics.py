@@ -45,6 +45,32 @@ def line_analysis(line: str) -> list[dict]:
 NOMINAL = {"NNG", "NNP", "NNB", "NP", "NR"}
 
 
+def nominal_particle_span(surface: str, tokens: list[dict]) -> dict | None:
+    """Return the entire unchanged nominal span followed only by literal J*.
+
+    The analyzer may split an ordinary dictionary noun into several nouns, or
+    tag it NNP. Both are hypotheses about a complete span, never permission to
+    try text prefixes. Dictionary noun POS and length evidence are checked later.
+    """
+    end, boundary = 0, None
+    for token in tokens:
+        start, stop = token["start"], token["end"]
+        if start != end or stop <= start or surface[start:stop] != token["form"]:
+            return None
+        if token["tag"].startswith("J"):
+            if start == 0:
+                return None
+            if boundary is None:
+                boundary = start
+        elif boundary is not None or token["tag"] not in NOMINAL:
+            return None
+        end = stop
+    if boundary is None or end != len(surface):
+        return None
+    return {"lemma": surface[:boundary], "base_start": 0, "base_end": boundary,
+            "particle": surface[boundary:]}
+
+
 def nominal_components(surface: str, tokens: list[dict]) -> list[dict]:
     """Use complete, literal Kiwi morphemes, never arbitrary text prefixes.
 
@@ -102,7 +128,11 @@ def occurrence_plans(job: dict) -> dict[str, dict]:
                 continue
             first = tokens[0]
             plan["pos"] = first["tag"]
+            nominal_span = nominal_particle_span(surface, tokens)
             following = [t for t in cache[line] if t["start"] >= end]
+            plan.update(following_tokens=[{**t, "start": t["start"] - start,
+                                           "end": t["end"] - start} for t in following[:8]],
+                        trailing_context=line[end:end + 80])
             if any(c.isdigit() for c in surface):
                 plan["kind"] = "number"
             elif re.search(r"[A-Za-z]", surface):
@@ -125,6 +155,8 @@ def occurrence_plans(job: dict) -> dict[str, dict]:
                     plan["kind"] = "complex"
             elif first["tag"] in ("VV", "VA", "VX"):
                 plan.update(kind="verb", lemma=first["form"] + "다", base_end=first["end"])
+            elif nominal_span:
+                plan.update(kind="nominal_particle", **nominal_span)
             elif plan["components"]:
                 plan.update(kind="compound", pos="NNG")
             elif first["tag"] == "NNP":
@@ -212,15 +244,29 @@ def rule_record(section: str, explanation: str) -> dict:
 
 
 def form_evidence(candidate: dict, surface: str, plan: dict) -> dict | None:
-    """Direct actual-form pronunciation first, then one narrow inflection rule.
+    """Direct actual-form pronunciation first, then restricted literal rules.
 
-    A matching lemma is not sufficient: original stem syllables must be literal
-    and unchanged, and every remaining morpheme must be an ending beginning in
-    a consonant. No fabricated surface pronunciation is returned.
+    A noun requires explicit dictionary noun POS and only unchanged particles.
+    A predicate requires an unchanged stem and consonant-initial endings. No
+    fabricated surface pronunciation is returned by either inference.
     """
     direct = candidate_evidence(candidate, surface)
     if direct is not None:
         return direct
+    if plan.get("kind") == "nominal_particle":
+        span = nominal_particle_span(surface, plan.get("tokens", []))
+        if (span is None or plan.get("proper_context")
+                or candidate.get("pos") not in ("명사", "의존 명사")
+                or candidate["word"] != plan.get("lemma") or candidate["word"] != span["lemma"]
+                or not re.fullmatch(r"[가-힣]+", candidate["word"])):
+            return None
+        base = candidate_evidence(candidate, candidate["word"])
+        if base is None:
+            return None
+        return {**base, "form": candidate["word"], "surface": surface,
+                "evidence_type": "rule_inference", "pronunciation_scope": candidate["word"],
+                "explanation": "사전에서 명사 품사와 발음을 확인한 원문 명사에 형태가 그대로인 조사만 결합하여 명사의 장단을 유지하는 규칙 판정",
+                "applied_rules": [rule_record("6", "사전 명사의 확인된 장음 위치를 원문 명사 음절에 연결합니다. 뒤의 조사 결합은 형태소 분석과 원문 경계로 확인하며, 전체 조사 결합형의 직접 발음으로 제시하지 않습니다.")]}
     if (plan.get("kind") not in ("verb", "derived") or candidate["word"] != plan.get("lemma")
             or not candidate["word"].endswith("다")):
         return None

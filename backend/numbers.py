@@ -10,7 +10,7 @@ from __future__ import annotations
 from copy import deepcopy
 import re
 
-from .linguistics import consensus_evidence, rule_record
+from .linguistics import consensus_evidence, line_analysis, rule_record
 
 SINO = ("영", "일", "이", "삼", "사", "오", "육", "칠", "팔", "구")
 HANJA = ("零", "一", "二", "三", "四", "五", "六", "七", "八", "九")
@@ -133,6 +133,8 @@ def _option(identifier, system, label, segments, *, review_reason=""):
         count = len(re.findall(r"[가-힣]", segment["text"]))
         segment.update(reading_start=syllable, reading_end=syllable + count)
         alignment.append({key: segment[key] for key in ("reading_start", "reading_end", "source_start", "source_end", "exact")})
+        alignment[-1].update({key: segment[key] for key in ("source_location", "context_start", "context_end", "context_text", "reason")
+                              if key in segment})
         if previous is not None and previous != segment["word_group"]:
             words.append(" ")
         words.append(segment["text"])
@@ -153,7 +155,148 @@ def _digit_option(digits: str, start=0, *, zero="공", identifier="digits", labe
     return _option(identifier, "digits", label, segments, review_reason=review_reason)
 
 
-def number_plan(surface: str, context: str = "") -> dict:
+def _unit_particle_boundary(surface: str, morphology: dict | None) -> dict | None:
+    """Use literal Kiwi boundaries, never a unit-looking string prefix.
+
+    Only a known nominal unit followed exclusively by uncontracted particles
+    is accepted. Copulas, endings, lexical suffixes, overlaps and gaps remain
+    outside this rule. Supplied line-context tokens are reused unchanged.
+    """
+    if not re.search(r"[가-힣]$", surface) or not re.match(r"[0-9]", surface):
+        return None
+    tokens = morphology.get("tokens", []) if morphology is not None else line_analysis(surface)
+    if not tokens:
+        return None
+    end = 0
+    for token in tokens:
+        start, stop = token["start"], token["end"]
+        if start != end or stop <= start or surface[start:stop] != token["form"]:
+            return None
+        end = stop
+    if end != len(surface):
+        return None
+    index = len(tokens)
+    while index and tokens[index - 1]["tag"].startswith("J"):
+        index -= 1
+    if not 0 < index < len(tokens):
+        return None
+    unit = tokens[index - 1]
+    if (unit["tag"] not in ("NNB", "NNG")
+            or unit["form"] not in NATIVE_COUNTERS.keys() | SINO_UNITS.keys()
+            or not re.fullmatch(NUMERAL_LITERAL, surface[:unit["start"]])):
+        return None
+    start = tokens[index]["start"]
+    return {"text": surface[start:], "start": start, "end": len(surface),
+            "tokens": deepcopy(tokens[index:]),
+            "unit": {"lemma": unit["form"], "pos": unit["tag"],
+                     "start": unit["start"], "end": unit["end"]},
+            "analyzer": "Kiwi 0.24.1"}
+
+
+def _following_unit_boundary(surface: str, morphology: dict | None) -> dict | None:
+    """Accept only this occurrence's immediate literal next unit word.
+
+    A whole-line keyword search cannot distinguish the two occurrences in
+    '2 번 ... 2 명'. Relative following-token coordinates supplied by the
+    existing line analysis provide that distinction. A plain context string
+    without occurrence coordinates intentionally remains insufficient.
+    """
+    if morphology is None or not re.fullmatch(NUMERAL_LITERAL, surface):
+        return None
+    tokens = morphology.get("following_tokens", [])
+    visible = surface + morphology.get("trailing_context", "")
+    if not tokens:
+        return None
+    unit = tokens[0]
+    start, end = unit["start"], unit["end"]
+    gap = visible[len(surface):start]
+    if (start < len(surface) or not gap or not gap.isspace()
+            or unit["tag"] not in ("NNB", "NNG")
+            or unit["form"] not in NATIVE_COUNTERS.keys() | SINO_UNITS.keys()
+            or end <= start or visible[start:end] != unit["form"]):
+        return None
+    particles = []
+    for token in tokens[1:]:
+        if token["start"] != end:
+            break  # the next word is not part of the unit expression
+        if not token["tag"].startswith("J"):
+            literal = visible[token["start"]:token["end"]]
+            if literal and not any(char.isalnum() for char in literal):
+                break  # punctuation ends this word; it is not a suffix
+            return None  # lexical continuation, copula, or unverified ending
+        if token["end"] <= end or visible[end:token["end"]] != token["form"]:
+            return None
+        particles.append(deepcopy(token))
+        end = token["end"]
+    # A truncated or partially tokenized word is not a verified unit boundary.
+    if end > len(visible) or (end < len(visible) and re.match(r"[가-힣A-Za-z0-9]", visible[end])):
+        return None
+    return {"text": unit["form"], "pos": unit["tag"], "context_start": start,
+            "context_end": unit["end"], "particle_text": "".join(t["form"] for t in particles),
+            "particle_tokens": particles, "analyzer": "Kiwi 0.24.1",
+            "source_location": "following_context"}
+
+
+def _with_following_unit(surface: str, context: str, boundary: dict) -> dict:
+    """Borrow a reading context without claiming external glyphs as digits."""
+    plan = _number_plan_core(surface + boundary["text"], context)
+    plan.update(surface=surface, core_surface=surface, following_unit=deepcopy(boundary))
+    choices = []
+    for option in plan["options"]:
+        parts = deepcopy(option["segments"])
+        for part in parts:
+            if part["role"] == "unit":
+                part.update(source_start=len(surface), source_end=len(surface), exact=False,
+                            source_location="following_context", context_start=boundary["context_start"],
+                            context_end=boundary["context_end"],
+                            context_text=boundary["text"],
+                            reason="뒤에 띄어 쓴 단위이며 숫자 원문 범위의 글자가 아닙니다.")
+        if boundary["particle_tokens"]:
+            particles = boundary["particle_tokens"]
+            particle = _segment(boundary["particle_text"], len(surface), len(surface),
+                                role="particle", pos="조사", group=parts[-1]["word_group"], exact=False)
+            particle.update(query="", tokens=deepcopy(particles), source_location="following_context",
+                            context_start=particles[0]["start"], context_end=particles[-1]["end"],
+                            context_text=boundary["particle_text"],
+                            reason="뒤 단위에 붙은 조사이며 숫자 원문 범위의 글자가 아닙니다.")
+            parts.append(particle)
+        choices.append(_option(option["id"], option["system"], option["label"], parts,
+                               review_reason=option["review_reason"]))
+    plan["options"] = choices
+    return plan
+
+
+def number_plan(surface: str, context: str = "", *, morphology: dict | None = None) -> dict:
+    """Discover readings with a separately recorded nominal-unit particle.
+
+    A counter such as 2명을 must query 명, not invent a 명을 headword. The
+    appended particle is a grammatical alignment record, never a dictionary
+    pronunciation of the entire expression.
+    """
+    following = _following_unit_boundary(surface, morphology)
+    if following is not None:
+        return _with_following_unit(surface, context, following)
+    boundary = _unit_particle_boundary(surface, morphology)
+    if boundary is None:
+        return _number_plan_core(surface, context)
+    core_surface = surface[:boundary["start"]]
+    plan = _number_plan_core(core_surface, context)
+    plan.update(surface=surface, core_surface=core_surface, particle=boundary)
+    choices = []
+    for option in plan["options"]:
+        parts = option["segments"]
+        # A true particle attaches to the unit word; it is not a new spoken
+        # numeral and cannot restart the first-syllable length rule.
+        particle = _segment(boundary["text"], boundary["start"], boundary["end"],
+                            role="particle", pos="조사", group=parts[-1]["word_group"], exact=False)
+        particle.update(query="", tokens=deepcopy(boundary["tokens"]))
+        choices.append(_option(option["id"], option["system"], option["label"],
+                               parts + [particle], review_reason=option["review_reason"]))
+    plan["options"] = choices
+    return plan
+
+
+def _number_plan_core(surface: str, context: str = "") -> dict:
     """Discover explicit reading alternatives without choosing ambiguous ones."""
     plan = {"surface": surface, "kind": "unknown", "options": [], "default_option_id": None,
             "selected_option_id": None, "reason": "숫자 표현의 읽기와 단위 범위를 확인해 주세요."}
@@ -383,6 +526,10 @@ async def evaluate_number(plan: dict, client, option_id: str | None = None) -> d
     rules = []
     groups = {}
     for segment in option["segments"]:
+        if segment["role"] == "particle":
+            # Grammatical attachment was verified against literal source
+            # tokens by number_plan; never query a fabricated inflected unit.
+            continue
         groups.setdefault(segment["word_group"], []).append(segment)
 
     async def lookup(query):
@@ -395,7 +542,21 @@ async def evaluate_number(plan: dict, client, option_id: str | None = None) -> d
     pending = []
     evidence_ids = []
     actual_readings = []
-    any_rule = False
+    any_rule = bool(plan.get("particle") or plan.get("following_unit"))
+    if plan.get("particle"):
+        boundary = plan["particle"]
+        rule = rule_record("6", "원문에서 단위 명사 뒤에만 결합한 조사는 선택한 수사 읽기의 첫음절이나 원문 숫자 위치를 바꾸지 않습니다. 조사 형태를 전체 사전 발음으로 만들지 않습니다.")
+        rule.update(id=rule["id"] + "-numeric-particle", label="단위 뒤 조사 결합 · 숫자 장단 범위",
+                    source_range=[boundary["start"], boundary["end"]],
+                    unit_range=[boundary["unit"]["start"], boundary["unit"]["end"]])
+        rules.append(rule)
+    if plan.get("following_unit"):
+        boundary = plan["following_unit"]
+        rule = rule_record("6", "원문 숫자 바로 뒤에 띄어 쓴 단위와 조사 문맥으로 수사의 읽기를 구분합니다. 단위의 원문 밖 좌표를 숫자 글자로 간주하지 않으며 장음은 숫자에 정확히 대응하는 수사 음절만 표시합니다.")
+        rule.update(id=rule["id"] + "-numeric-following-unit", label="바로 뒤 단위 문맥 · 숫자 장단 범위",
+                    context_range=[boundary["context_start"], boundary["context_end"]],
+                    unit=boundary["text"])
+        rules.append(rule)
     for group_parts in groups.values():
         query = "".join(p["text"] for p in group_parts)
         first = group_parts[0]

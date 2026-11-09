@@ -9,7 +9,7 @@ import unittest
 from backend.main import analyze_job
 from backend.linguistics import occurrence_plans
 from test_morphology_regression import ReplayDictionary, job_for
-from test_numeric_api import NumericReplay
+from test_numeric_api import NumericReplay, numeric_job
 
 
 class CombinedReplay:
@@ -27,6 +27,63 @@ class CombinedReplay:
 
 
 class NaturalSentenceReauditTests(unittest.IsolatedAsyncioTestCase):
+    async def test_spaced_counters_use_their_own_immediately_following_morphemes(self):
+        _, job = numeric_job('신입 부원 2 명을 선발하고 상품 4 개를 준비한다.')
+        job['occurrences'] = [o for o in job['occurrences'] if o['text'] in ('2', '4')]
+        job['_dictionary'] = CombinedReplay()
+        await analyze_job(job)
+        for occurrence, expected in zip(job['occurrences'], ('두 명을', '네 개를')):
+            with self.subTest(surface=occurrence['text']):
+                self.assertEqual(occurrence['status'], 'long')
+                selected = occurrence['numeric']['selected_option_id']
+                reading = next(o for o in occurrence['numeric']['options'] if o['id'] == selected)
+                self.assertEqual(reading['reading'], expected)
+                self.assertEqual(reading['system'], 'native')
+                following = [s for s in reading['segments'] if s['role'] in ('unit', 'particle')]
+                self.assertTrue(following)
+                for segment in following:
+                    self.assertEqual((segment['source_start'], segment['source_end']), (len(occurrence['text']),) * 2)
+                    self.assertFalse(segment['exact'], 'The unit is not a glyph inside the numeric occurrence')
+                    self.assertEqual(segment['source_location'], 'following_context')
+                marks = [m for m in job['marks'] if m.get('occurrence_id') == occurrence['id']]
+                self.assertEqual([m['glyph_id'] for m in marks], [occurrence['glyph_ids'][0]])
+
+    async def test_repeated_identical_digits_do_not_share_a_different_occurrences_unit(self):
+        for sentence, units, states in [
+            ('2 번 방문하고 2 명을 뽑는다.', ('번', '명'), ('unresolved', 'long')),
+            ('2 명을 뽑고 2 번 방문한다.', ('명', '번'), ('long', 'unresolved')),
+        ]:
+            with self.subTest(sentence=sentence):
+                _, job = numeric_job(sentence)
+                job['occurrences'] = [o for o in job['occurrences'] if o['text'] == '2']
+                job['_dictionary'] = CombinedReplay()
+                await analyze_job(job)
+                self.assertEqual(tuple(o['status'] for o in job['occurrences']), states)
+                for occurrence, unit in zip(job['occurrences'], units):
+                    self.assertTrue(occurrence['numeric']['options'])
+                    self.assertTrue(all(any(s['text'] == unit for s in option['segments'] if s['role'] == 'unit')
+                                        for option in occurrence['numeric']['options']))
+
+    async def test_spaced_arbitrary_noun_prefixes_do_not_become_units(self):
+        for sentence in ('2 명예 회장', '4 개발 계획', '4 개구리'):
+            with self.subTest(sentence=sentence):
+                _, job = numeric_job(sentence)
+                job['occurrences'] = [job['occurrences'][0]]
+                job['_dictionary'] = CombinedReplay()
+                await analyze_job(job)
+                self.assertEqual(job['occurrences'][0]['status'], 'unresolved')
+                self.assertEqual(job['marks'], [])
+
+    async def test_punctuation_after_a_spaced_counter_is_a_word_boundary(self):
+        for sentence in ('부원은 2 명을, 상품은 남긴다.', '상품은 4 개를. 다음은 부원이다.'):
+            with self.subTest(sentence=sentence):
+                _, job = numeric_job(sentence)
+                job['occurrences'] = [o for o in job['occurrences'] if o['text'] in ('2', '4')]
+                job['_dictionary'] = CombinedReplay()
+                await analyze_job(job)
+                self.assertEqual(job['occurrences'][0]['status'], 'long')
+                self.assertEqual(len(job['marks']), 1)
+
     async def test_numeric_counter_and_year_particles_keep_verified_digit_evidence(self):
         cases = [
             ('2명을', '신입 부원 2명을 선발하며 활동한다.', 'long', 'native', '명'),

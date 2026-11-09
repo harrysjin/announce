@@ -114,7 +114,13 @@ def numeric_record(occurrence: dict) -> str:
         records.append(f"{option.get('id','')} · {option.get('system','')} · {option.get('reading','')} · " + ("선택" if selected == option.get("id") else "미선택 후보"))
         for item in option.get("alignment", []):
             start, end = item["source_start"], item["source_end"]
-            records.append(f"원문 {occurrence['text'][start:end]} [{start}:{end}] → "
+            if item.get("source_location") == "following_context":
+                source = f"뒤 문맥 {item.get('context_text', '')} [문맥 {item.get('context_start')}:{item.get('context_end')}]"
+            elif start == end:
+                source = f"원문 경계 [{start}:{end}] (대응 글자 없음)"
+            else:
+                source = f"원문 {occurrence['text'][start:end]} [{start}:{end}]"
+            records.append(f"{source} → "
                            f"발음 음절 [{item['reading_start']}:{item['reading_end']}] · exact={str(item.get('exact', False)).lower()}")
     return "\n".join(records)
 

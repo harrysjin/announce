@@ -1050,6 +1050,13 @@ input[type="range"]::-moz-range-thumb {
   background: #fdfdfe;
   flex-shrink: 0;
 }
+.engine-version {
+  flex-shrink: 0;
+  padding: 0 18px 8px;
+  color: #737b88;
+  font-size: 9px;
+  overflow-wrap: anywhere;
+}
 .dictionary-status > span {
   display: flex;
   align-items: center;

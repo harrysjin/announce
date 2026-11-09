@@ -79,6 +79,10 @@ export type NumericAlignment = {
   source_end: number;
   exact: boolean;
   reason?: string;
+  source_location?: "following_context";
+  context_start?: number;
+  context_end?: number;
+  context_text?: string;
 };
 export type NumericOption = {
   id: string;
@@ -92,7 +96,7 @@ export type NumericPlan = {
   options: NumericOption[];
   default_option_id?: string | null;
   selected_option_id?: string | null;
-  choice_source?: "auto" | "user";
+  choice_source?: "automatic" | "user";
   reason?: string;
 };
 export type MorphologyComponent = {

@@ -38,6 +38,7 @@ import {
 } from "lucide-react";
 import type {
   Candidate,
+  NumericAlignment,
   Job,
   Mark,
   Occurrence,
@@ -84,6 +85,11 @@ const originalRange = (o: Occurrence, start: number, end: number) => {
   const surface = Array.from(o.text).slice(start, end).join("");
   return `${surface} (${start + 1}${end === start + 1 ? "" : `–${end}`}번째 글자)`;
 };
+const numericSourceRange = (o: Occurrence, mapping: NumericAlignment) => {
+  if (mapping.source_location === "following_context") return `뒤 문맥 ${mapping.context_text || "단위·조사"}`;
+  if (mapping.source_start === mapping.source_end) return "표기 밖에서 읽는 음절";
+  return originalRange(o, mapping.source_start, mapping.source_end);
+};
 const numericKind = (kind: string) => ({
   integer: "수", bare: "숫자", year: "연도", date: "날짜", time: "시간",
   money: "금액", amount: "금액", percent: "백분율", percentage: "백분율",
@@ -128,6 +134,9 @@ export default function App() {
     [downloads, setDownloads] = useState(false),
     [configured, setConfigured] = useState(false),
     [autoAnalyze, setAutoAnalyze] = useState(true);
+  const [serverRelease, setServerRelease] = useState<{
+    engine_version?: string; build_commit?: string | null; capabilities?: string[];
+  }>({});
   const [filter, setFilter] = useState("all"),
     [query, setQuery] = useState(""),
     [grouped, setGrouped] = useState(false),
@@ -148,8 +157,9 @@ export default function App() {
   useEffect(() => setGlyphFocus(0), [page, edit, job?.id]);
   const running = ["queued", "running"].includes(job?.analysis.state || "");
   useEffect(() => {
-    request<{ dictionary_configured?: boolean }>("/api/health")
-      .then((h) => setConfigured(!!h.dictionary_configured))
+    request<{ dictionary_configured?: boolean; engine_version?: string;
+      build_commit?: string | null; capabilities?: string[] }>("/api/health")
+      .then((h) => { setConfigured(!!h.dictionary_configured); setServerRelease(h); })
       .catch(() =>
         setError(
           "분석 서버에 연결할 수 없습니다. 서버 실행 상태를 확인해 주세요.",
@@ -1756,9 +1766,9 @@ export default function App() {
                                           <thead><tr><th>원문 위치</th><th>읽는 음절</th><th>대응</th></tr></thead>
                                           <tbody>{option.alignment.map((mapping, index) => (
                                             <tr key={index}>
-                                              <td>{Array.from(o.text).slice(mapping.source_start, mapping.source_end).join("")} ({mapping.source_start + 1}{mapping.source_end === mapping.source_start + 1 ? "" : `–${mapping.source_end}`}번째 글자)</td>
+                                              <td>{numericSourceRange(o, mapping)}</td>
                                               <td>{Array.from(option.reading).filter((letter) => /[가-힣]/.test(letter)).slice(mapping.reading_start, mapping.reading_end).join("")}</td>
-                                              <td>{mapping.exact ? "위치 확인" : "위치 검토 필요"}{mapping.reason ? ` · ${mapping.reason}` : ""}</td>
+                                              <td>{mapping.source_location === "following_context" ? "숫자 표시 대상 아님" : mapping.exact ? "위치 확인" : "위치 검토 필요"}{mapping.reason ? ` · ${mapping.reason}` : ""}</td>
                                             </tr>
                                           ))}</tbody>
                                         </table>
@@ -1938,6 +1948,12 @@ export default function App() {
                   <Info size={14} />
                 </button>
               </div>
+              <small className="engine-version" aria-label="분석 엔진 버전"
+                title={serverRelease.build_commit || "배포 커밋 정보 없음"}>
+                {serverRelease.engine_version
+                  ? `분석 엔진 ${serverRelease.engine_version}${serverRelease.build_commit ? ` · ${serverRelease.build_commit.slice(0, 7)}` : ""}`
+                  : "분석 엔진 업데이트 확인 필요"}
+              </small>
             </aside>
           </div>
           <div className="workspace-statusbar">
