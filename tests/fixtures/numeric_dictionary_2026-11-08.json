@@ -1,0 +1,6749 @@
+{
+  "captured_at": "2026-11-08T13:08:54.032575+00:00",
+  "source": "https://stdict.korean.go.kr/api/search.do and view.do; original API exact responses, numeral/counter POS detail subset; no credential values",
+  "entries": {
+    "영": [
+      {
+        "id": "235195:429532",
+        "target_code": "235195",
+        "sense_code": "429532",
+        "word": "영",
+        "display_word": "영",
+        "origin": "令",
+        "hanja": "令",
+        "pronunciations": [
+          "영"
+        ],
+        "pronunciation": "영",
+        "definition": "가죽을 세는 단위.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=235195&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:08:57.391087+00:00"
+      },
+      {
+        "id": "235199:405869",
+        "target_code": "235199",
+        "sense_code": "405869",
+        "word": "영",
+        "display_word": "영",
+        "origin": "零",
+        "hanja": "零",
+        "pronunciations": [
+          "영"
+        ],
+        "pronunciation": "영",
+        "definition": "값이 없는 수. ‘0’으로 표기한다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=235199&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:49.294243+00:00"
+      },
+      {
+        "id": "235199:409318",
+        "target_code": "235199",
+        "sense_code": "409318",
+        "word": "영",
+        "display_word": "영",
+        "origin": "零",
+        "hanja": "零",
+        "pronunciations": [
+          "영"
+        ],
+        "pronunciation": "영",
+        "definition": "점수를 얻는 경기에서 한 점도 얻지 못한 점수.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=235199&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:49.294261+00:00"
+      }
+    ],
+    "공": [
+      {
+        "id": "397991:92140",
+        "target_code": "397991",
+        "sense_code": "92140",
+        "word": "공",
+        "display_word": "공",
+        "origin": "公",
+        "hanja": "公",
+        "pronunciations": [
+          "공"
+        ],
+        "pronunciation": "공",
+        "definition": "그 사람을 높여 부르거나 이르는 말.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=397991&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:08:58.922706+00:00"
+      },
+      {
+        "id": "397991:441066",
+        "target_code": "397991",
+        "sense_code": "441066",
+        "word": "공",
+        "display_word": "공",
+        "origin": "公",
+        "hanja": "公",
+        "pronunciations": [
+          "공"
+        ],
+        "pronunciation": "공",
+        "definition": "‘당신’, ‘그대’의 뜻으로, 듣는 이가 남자일 때, 그 사람을 높여 이르던 이인칭 대명사.",
+        "pos": "대명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=397991&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:08:58.922724+00:00"
+      },
+      {
+        "id": "397991:444332",
+        "target_code": "397991",
+        "sense_code": "444332",
+        "word": "공",
+        "display_word": "공",
+        "origin": "公",
+        "hanja": "公",
+        "pronunciations": [
+          "공"
+        ],
+        "pronunciation": "공",
+        "definition": "말하는 이와 듣는 이가 아닌 남자를 높여 이르던 삼인칭 대명사.",
+        "pos": "대명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=397991&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:08:58.922727+00:00"
+      },
+      {
+        "id": "29085:404113",
+        "target_code": "29085",
+        "sense_code": "404113",
+        "word": "공",
+        "display_word": "공",
+        "origin": "空",
+        "hanja": "空",
+        "pronunciations": [
+          "공"
+        ],
+        "pronunciation": "공",
+        "definition": "값이 없는 수. ‘0’으로 표기한다.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=29085&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:49.527612+00:00"
+      },
+      {
+        "id": "29085:407412",
+        "target_code": "29085",
+        "sense_code": "407412",
+        "word": "공",
+        "display_word": "공",
+        "origin": "空",
+        "hanja": "空",
+        "pronunciations": [
+          "공"
+        ],
+        "pronunciation": "공",
+        "definition": "‘Ο월 Ο일’에서 ‘Ο’과 같이 분명하지 않거나 밝히지 않으려고 할 때 쓰는 ‘Ο’을 이르는 말.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=29085&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:49.527626+00:00"
+      },
+      {
+        "id": "29085:410829",
+        "target_code": "29085",
+        "sense_code": "410829",
+        "word": "공",
+        "display_word": "공",
+        "origin": "空",
+        "hanja": "空",
+        "pronunciations": [
+          "공"
+        ],
+        "pronunciation": "공",
+        "definition": "실체가 없고 자성(自性)이 없음을 이르는 말.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=29085&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:49.527630+00:00"
+      },
+      {
+        "id": "29085:414137",
+        "target_code": "29085",
+        "sense_code": "414137",
+        "word": "공",
+        "display_word": "공",
+        "origin": "空",
+        "hanja": "空",
+        "pronunciations": [
+          "공"
+        ],
+        "pronunciation": "공",
+        "definition": "예전에, 허(虛)의 1억분의 1이 되는 수를 이르던 말. 즉, 10<sup style='font-size:11px;'>-112</sup>을 이른다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=29085&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:49.527632+00:00"
+      }
+    ],
+    "일": [
+      {
+        "id": "272328:253170",
+        "target_code": "272328",
+        "sense_code": "253170",
+        "word": "일",
+        "display_word": "일",
+        "origin": "一 · / · 壹",
+        "hanja": "一 · 壹",
+        "pronunciations": [
+          "일"
+        ],
+        "pronunciation": "일",
+        "definition": "자연수의 맨 처음 수. 아라비아 숫자로는 ‘1’, 로마 숫자로는 ‘Ⅰ’로 쓴다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=272328&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:00.159043+00:00"
+      },
+      {
+        "id": "272328:2915",
+        "target_code": "272328",
+        "sense_code": "2915",
+        "word": "일",
+        "display_word": "일",
+        "origin": "一 · / · 壹",
+        "hanja": "一 · 壹",
+        "pronunciations": [
+          "일"
+        ],
+        "pronunciation": "일",
+        "definition": "그 수량이 하나임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=272328&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:00.159059+00:00"
+      },
+      {
+        "id": "272328:31280",
+        "target_code": "272328",
+        "sense_code": "31280",
+        "word": "일",
+        "display_word": "일",
+        "origin": "一 · / · 壹",
+        "hanja": "一 · 壹",
+        "pronunciations": [
+          "일"
+        ],
+        "pronunciation": "일",
+        "definition": "그 순서가 첫 번째임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=272328&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:00.159063+00:00"
+      }
+    ],
+    "이": [
+      {
+        "id": "270482:247303",
+        "target_code": "270482",
+        "sense_code": "247303",
+        "word": "이",
+        "display_word": "이",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "이"
+        ],
+        "pronunciation": "이",
+        "definition": "‘사람’의 뜻을 나타내는 말.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=270482&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:00.708364+00:00"
+      },
+      {
+        "id": "270486:247307",
+        "target_code": "270486",
+        "sense_code": "247307",
+        "word": "이",
+        "display_word": "이",
+        "origin": "二 · / · 貳",
+        "hanja": "二 · 貳",
+        "pronunciations": [
+          "이ː"
+        ],
+        "pronunciation": "이ː",
+        "definition": "일에 일을 더한 수. 아라비아 숫자로는 ‘2’, 로마 숫자로는 ‘Ⅱ’로 쓴다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=270486&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:01.259914+00:00"
+      },
+      {
+        "id": "270486:404155",
+        "target_code": "270486",
+        "sense_code": "404155",
+        "word": "이",
+        "display_word": "이",
+        "origin": "二 · / · 貳",
+        "hanja": "二 · 貳",
+        "pronunciations": [
+          "이ː"
+        ],
+        "pronunciation": "이ː",
+        "definition": "그 수량이 둘임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=270486&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:01.259930+00:00"
+      },
+      {
+        "id": "270486:407342",
+        "target_code": "270486",
+        "sense_code": "407342",
+        "word": "이",
+        "display_word": "이",
+        "origin": "二 · / · 貳",
+        "hanja": "二 · 貳",
+        "pronunciations": [
+          "이ː"
+        ],
+        "pronunciation": "이ː",
+        "definition": "그 순서가 두 번째임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=270486&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:01.259933+00:00"
+      },
+      {
+        "id": "267400:247312",
+        "target_code": "267400",
+        "sense_code": "247312",
+        "word": "이",
+        "display_word": "이",
+        "origin": "釐",
+        "hanja": "釐",
+        "pronunciations": [
+          "이"
+        ],
+        "pronunciation": "이",
+        "definition": "분(分)의 10분의 1이 되는 수. 즉, 10<sup style='font-size:11px;'>－2</sup>을 이른다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=267400&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:01.636561+00:00"
+      },
+      {
+        "id": "267400:1391970",
+        "target_code": "267400",
+        "sense_code": "1391970",
+        "word": "이",
+        "display_word": "이",
+        "origin": "釐",
+        "hanja": "釐",
+        "pronunciations": [
+          "이"
+        ],
+        "pronunciation": "이",
+        "definition": "분(分)의 10분의 1이 되는 수의. 즉, 10<sup style='font-size:11px;'>－2</sup>을 이른다.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=267400&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:01.636580+00:00"
+      }
+    ],
+    "삼": [
+      {
+        "id": "172341:535343",
+        "target_code": "172341",
+        "sense_code": "535343",
+        "word": "삼",
+        "display_word": "삼",
+        "origin": "三",
+        "hanja": "三",
+        "pronunciations": [
+          "삼"
+        ],
+        "pronunciation": "삼",
+        "definition": "이에 일을 더한 수. 아라비아 숫자로는 ‘3’, 로마 숫자로는 ‘Ⅲ’으로 쓴다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=172341&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:02.074380+00:00"
+      },
+      {
+        "id": "172341:2821",
+        "target_code": "172341",
+        "sense_code": "2821",
+        "word": "삼",
+        "display_word": "삼",
+        "origin": "三",
+        "hanja": "三",
+        "pronunciations": [
+          "삼"
+        ],
+        "pronunciation": "삼",
+        "definition": "그 수량이 셋임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=172341&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:02.074397+00:00"
+      },
+      {
+        "id": "172341:31223",
+        "target_code": "172341",
+        "sense_code": "31223",
+        "word": "삼",
+        "display_word": "삼",
+        "origin": "三",
+        "hanja": "三",
+        "pronunciations": [
+          "삼"
+        ],
+        "pronunciation": "삼",
+        "definition": "그 순서가 세 번째임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=172341&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:02.074414+00:00"
+      }
+    ],
+    "사": [
+      {
+        "id": "437871:181735",
+        "target_code": "437871",
+        "sense_code": "181735",
+        "word": "사",
+        "display_word": "사",
+        "origin": "四",
+        "hanja": "四",
+        "pronunciations": [
+          "사ː"
+        ],
+        "pronunciation": "사ː",
+        "definition": "삼에 일을 더한 수. 아라비아 숫자로는 ‘4’, 로마 숫자로는 ‘Ⅳ’로 쓴다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=437871&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:02.451663+00:00"
+      },
+      {
+        "id": "437871:441013",
+        "target_code": "437871",
+        "sense_code": "441013",
+        "word": "사",
+        "display_word": "사",
+        "origin": "四",
+        "hanja": "四",
+        "pronunciations": [
+          "사ː"
+        ],
+        "pronunciation": "사ː",
+        "definition": "그 수량이 넷임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=437871&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:02.451683+00:00"
+      },
+      {
+        "id": "437871:444346",
+        "target_code": "437871",
+        "sense_code": "444346",
+        "word": "사",
+        "display_word": "사",
+        "origin": "四",
+        "hanja": "四",
+        "pronunciations": [
+          "사ː"
+        ],
+        "pronunciation": "사ː",
+        "definition": "그 순서가 네 번째임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=437871&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:02.451687+00:00"
+      },
+      {
+        "id": "156354:534647",
+        "target_code": "156354",
+        "sense_code": "534647",
+        "word": "사",
+        "display_word": "사",
+        "origin": "沙 · / · 砂",
+        "hanja": "沙 · 砂",
+        "pronunciations": [
+          "사"
+        ],
+        "pronunciation": "사",
+        "definition": "섬(纖)의 10분의 1이 되는 수. 즉, 10<sup style='font-size:11px;'>－8</sup>을 이른다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=156354&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:02.992718+00:00"
+      },
+      {
+        "id": "156354:1393169",
+        "target_code": "156354",
+        "sense_code": "1393169",
+        "word": "사",
+        "display_word": "사",
+        "origin": "沙 · / · 砂",
+        "hanja": "沙 · 砂",
+        "pronunciations": [
+          "사"
+        ],
+        "pronunciation": "사",
+        "definition": "섬(纖)의 10분의 1이 되는 수의. 즉, 10<sup style='font-size:11px;'>－8</sup>을 이른다.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=156354&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:02.992736+00:00"
+      },
+      {
+        "id": "164494:181930",
+        "target_code": "164494",
+        "sense_code": "181930",
+        "word": "사",
+        "display_word": "사",
+        "origin": "事",
+        "hanja": "事",
+        "pronunciations": [
+          "사ː"
+        ],
+        "pronunciation": "사ː",
+        "definition": "‘일’이나 ‘것’ 따위의 뜻을 나타내는 말.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=164494&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:03.528704+00:00"
+      },
+      {
+        "id": "443247:181938",
+        "target_code": "443247",
+        "sense_code": "181938",
+        "word": "사",
+        "display_word": "사",
+        "origin": "絲",
+        "hanja": "絲",
+        "pronunciations": [
+          "사"
+        ],
+        "pronunciation": "사",
+        "definition": "모(毛)의 10분의 1이 되는 수. 즉, 10<sup style='font-size:11px;'>－4</sup>을 이른다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=443247&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:03.903163+00:00"
+      },
+      {
+        "id": "443247:1393170",
+        "target_code": "443247",
+        "sense_code": "1393170",
+        "word": "사",
+        "display_word": "사",
+        "origin": "絲",
+        "hanja": "絲",
+        "pronunciations": [
+          "사"
+        ],
+        "pronunciation": "사",
+        "definition": "모(毛)의 10분의 1이 되는 수의. 즉, 10<sup style='font-size:11px;'>－4</sup>을 이른다.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=443247&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:03.903190+00:00"
+      }
+    ],
+    "오": [
+      {
+        "id": "240767:232844",
+        "target_code": "240767",
+        "sense_code": "232844",
+        "word": "오",
+        "display_word": "오",
+        "origin": "五",
+        "hanja": "五",
+        "pronunciations": [
+          "오ː"
+        ],
+        "pronunciation": "오ː",
+        "definition": "사에 일을 더한 수. 아라비아 숫자로는 ‘5’, 로마 숫자로는 ‘Ⅴ’로 쓴다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=240767&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:04.123583+00:00"
+      },
+      {
+        "id": "240767:404152",
+        "target_code": "240767",
+        "sense_code": "404152",
+        "word": "오",
+        "display_word": "오",
+        "origin": "五",
+        "hanja": "五",
+        "pronunciations": [
+          "오ː"
+        ],
+        "pronunciation": "오ː",
+        "definition": "그 수량이 다섯임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=240767&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:04.123601+00:00"
+      },
+      {
+        "id": "240767:407341",
+        "target_code": "240767",
+        "sense_code": "407341",
+        "word": "오",
+        "display_word": "오",
+        "origin": "五",
+        "hanja": "五",
+        "pronunciations": [
+          "오ː"
+        ],
+        "pronunciation": "오ː",
+        "definition": "그 순서가 다섯 번째임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=240767&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:04.123605+00:00"
+      }
+    ],
+    "육": [
+      {
+        "id": "263760:243501",
+        "target_code": "263760",
+        "sense_code": "243501",
+        "word": "육",
+        "display_word": "육",
+        "origin": "六",
+        "hanja": "六",
+        "pronunciations": [
+          "육"
+        ],
+        "pronunciation": "육",
+        "definition": "오에 일을 더한 수. 아라비아 숫자로는 ‘6’, 로마 숫자로는 ‘Ⅵ’으로 쓴다.",
+        "pos": "수사",
+        "inflections": [
+          {
+            "form": "육만",
+            "type": "conjugation",
+            "pronunciations": [
+              "융만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=263760&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:04.736987+00:00"
+      },
+      {
+        "id": "263760:478073",
+        "target_code": "263760",
+        "sense_code": "478073",
+        "word": "육",
+        "display_word": "육",
+        "origin": "六",
+        "hanja": "六",
+        "pronunciations": [
+          "육"
+        ],
+        "pronunciation": "육",
+        "definition": "그 수량이 여섯임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "육만",
+            "type": "conjugation",
+            "pronunciations": [
+              "융만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=263760&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:04.737004+00:00"
+      },
+      {
+        "id": "263760:481215",
+        "target_code": "263760",
+        "sense_code": "481215",
+        "word": "육",
+        "display_word": "육",
+        "origin": "六",
+        "hanja": "六",
+        "pronunciations": [
+          "육"
+        ],
+        "pronunciation": "육",
+        "definition": "그 순서가 여섯 번째임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "육만",
+            "type": "conjugation",
+            "pronunciations": [
+              "융만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=263760&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:04.737008+00:00"
+      }
+    ],
+    "칠": [
+      {
+        "id": "340228:297611",
+        "target_code": "340228",
+        "sense_code": "297611",
+        "word": "칠",
+        "display_word": "칠",
+        "origin": "七",
+        "hanja": "七",
+        "pronunciations": [
+          "칠"
+        ],
+        "pronunciation": "칠",
+        "definition": "육에 일을 더한 수. 아라비아 숫자로는 ‘7’, 로마 숫자로는 ‘Ⅶ’로 쓴다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=340228&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:05.147979+00:00"
+      },
+      {
+        "id": "340228:367707",
+        "target_code": "340228",
+        "sense_code": "367707",
+        "word": "칠",
+        "display_word": "칠",
+        "origin": "七",
+        "hanja": "七",
+        "pronunciations": [
+          "칠"
+        ],
+        "pronunciation": "칠",
+        "definition": "그 수량이 일곱임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=340228&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:05.147995+00:00"
+      },
+      {
+        "id": "340228:370845",
+        "target_code": "340228",
+        "sense_code": "370845",
+        "word": "칠",
+        "display_word": "칠",
+        "origin": "七",
+        "hanja": "七",
+        "pronunciations": [
+          "칠"
+        ],
+        "pronunciation": "칠",
+        "definition": "그 순서가 일곱 번째임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=340228&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:05.147999+00:00"
+      }
+    ],
+    "팔": [
+      {
+        "id": "353874:308026",
+        "target_code": "353874",
+        "sense_code": "308026",
+        "word": "팔",
+        "display_word": "팔",
+        "origin": "八",
+        "hanja": "八",
+        "pronunciations": [
+          "팔"
+        ],
+        "pronunciation": "팔",
+        "definition": "칠에 일을 더한 수. 아라비아 숫자로는 ‘8’, 로마 숫자로는 ‘Ⅷ’로 쓴다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=353874&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:05.387226+00:00"
+      },
+      {
+        "id": "353874:441062",
+        "target_code": "353874",
+        "sense_code": "441062",
+        "word": "팔",
+        "display_word": "팔",
+        "origin": "八",
+        "hanja": "八",
+        "pronunciations": [
+          "팔"
+        ],
+        "pronunciation": "팔",
+        "definition": "그 수량이 여덟임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=353874&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:05.387245+00:00"
+      },
+      {
+        "id": "353874:444321",
+        "target_code": "353874",
+        "sense_code": "444321",
+        "word": "팔",
+        "display_word": "팔",
+        "origin": "八",
+        "hanja": "八",
+        "pronunciations": [
+          "팔"
+        ],
+        "pronunciation": "팔",
+        "definition": "그 순서가 여덟 번째임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=353874&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:05.387248+00:00"
+      }
+    ],
+    "구": [
+      {
+        "id": "35776:96047",
+        "target_code": "35776",
+        "sense_code": "96047",
+        "word": "구",
+        "display_word": "구",
+        "origin": "九",
+        "hanja": "九",
+        "pronunciations": [
+          "구"
+        ],
+        "pronunciation": "구",
+        "definition": "팔에 일을 더한 수. 아라비아 숫자로는 ‘9’, 로마 숫자로는 ‘Ⅸ’로 쓴다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=35776&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:05.611800+00:00"
+      },
+      {
+        "id": "35776:331055",
+        "target_code": "35776",
+        "sense_code": "331055",
+        "word": "구",
+        "display_word": "구",
+        "origin": "九",
+        "hanja": "九",
+        "pronunciations": [
+          "구"
+        ],
+        "pronunciation": "구",
+        "definition": "그 수량이 아홉임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=35776&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:05.611817+00:00"
+      },
+      {
+        "id": "35776:334240",
+        "target_code": "35776",
+        "sense_code": "334240",
+        "word": "구",
+        "display_word": "구",
+        "origin": "九",
+        "hanja": "九",
+        "pronunciations": [
+          "구"
+        ],
+        "pronunciation": "구",
+        "definition": "그 순서가 아홉 번째임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=35776&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:05.611820+00:00"
+      },
+      {
+        "id": "35346:341333",
+        "target_code": "35346",
+        "sense_code": "341333",
+        "word": "구",
+        "display_word": "구",
+        "origin": "具",
+        "hanja": "具",
+        "pronunciations": [
+          "구"
+        ],
+        "pronunciation": "구",
+        "definition": "시체 따위를 세는 단위.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=35346&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:05.812914+00:00"
+      },
+      {
+        "id": "35575:5456",
+        "target_code": "35575",
+        "sense_code": "5456",
+        "word": "구",
+        "display_word": "구",
+        "origin": "溝",
+        "hanja": "溝",
+        "pronunciations": [
+          "구"
+        ],
+        "pronunciation": "구",
+        "definition": "양(穰)의 만 배가 되는 수. 즉, 10<sup style='font-size:11px;'>32</sup>을 이른다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=35575&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:06.241336+00:00"
+      },
+      {
+        "id": "35575:34272",
+        "target_code": "35575",
+        "sense_code": "34272",
+        "word": "구",
+        "display_word": "구",
+        "origin": "溝",
+        "hanja": "溝",
+        "pronunciations": [
+          "구"
+        ],
+        "pronunciation": "구",
+        "definition": "예전에, 양의 억 배가 되는 수를 이르던 말. 즉, 10<sup style='font-size:11px;'>56</sup>을 이른다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=35575&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:06.241353+00:00"
+      },
+      {
+        "id": "35575:1393496",
+        "target_code": "35575",
+        "sense_code": "1393496",
+        "word": "구",
+        "display_word": "구",
+        "origin": "溝",
+        "hanja": "溝",
+        "pronunciations": [
+          "구"
+        ],
+        "pronunciation": "구",
+        "definition": "양(穰)의 만 배가 되는 수의. 즉, 10<sup style='font-size:11px;'>32</sup>을 이른다.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=35575&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:06.241357+00:00"
+      },
+      {
+        "id": "517869:599952",
+        "target_code": "517869",
+        "sense_code": "599952",
+        "word": "구",
+        "display_word": "구",
+        "origin": "舊",
+        "hanja": "舊",
+        "pronunciations": [
+          "구ː"
+        ],
+        "pronunciation": "구ː",
+        "definition": "지난날의. 지금은 없는.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=517869&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:06.449176+00:00"
+      }
+    ],
+    "십": [
+      {
+        "id": "207207:214394",
+        "target_code": "207207",
+        "sense_code": "214394",
+        "word": "십",
+        "display_word": "십",
+        "origin": "十",
+        "hanja": "十",
+        "pronunciations": [
+          "십"
+        ],
+        "pronunciation": "십",
+        "definition": "구에 일을 더한 수. 아라비아 숫자로는 ‘10’, 로마 숫자로는 ‘X’으로 쓴다.",
+        "pos": "수사",
+        "inflections": [
+          {
+            "form": "십만",
+            "type": "conjugation",
+            "pronunciations": [
+              "심만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=207207&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:07.207218+00:00"
+      },
+      {
+        "id": "207207:404150",
+        "target_code": "207207",
+        "sense_code": "404150",
+        "word": "십",
+        "display_word": "십",
+        "origin": "十",
+        "hanja": "十",
+        "pronunciations": [
+          "십"
+        ],
+        "pronunciation": "십",
+        "definition": "그 수량이 열임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "십만",
+            "type": "conjugation",
+            "pronunciations": [
+              "심만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=207207&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:07.207235+00:00"
+      },
+      {
+        "id": "207207:407335",
+        "target_code": "207207",
+        "sense_code": "407335",
+        "word": "십",
+        "display_word": "십",
+        "origin": "十",
+        "hanja": "十",
+        "pronunciations": [
+          "십"
+        ],
+        "pronunciation": "십",
+        "definition": "그 순서가 열 번째임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "십만",
+            "type": "conjugation",
+            "pronunciations": [
+              "심만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=207207&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:07.207239+00:00"
+      }
+    ],
+    "백": [
+      {
+        "id": "430954:167165",
+        "target_code": "430954",
+        "sense_code": "167165",
+        "word": "백",
+        "display_word": "백",
+        "origin": "百",
+        "hanja": "百",
+        "pronunciations": [
+          "백"
+        ],
+        "pronunciation": "백",
+        "definition": "십의 열 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [
+          {
+            "form": "백만",
+            "type": "conjugation",
+            "pronunciations": [
+              "뱅만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=430954&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:08.039081+00:00"
+      },
+      {
+        "id": "430954:1391826",
+        "target_code": "430954",
+        "sense_code": "1391826",
+        "word": "백",
+        "display_word": "백",
+        "origin": "百",
+        "hanja": "百",
+        "pronunciations": [
+          "백"
+        ],
+        "pronunciation": "백",
+        "definition": "십의 열 배가 되는 수의.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "백만",
+            "type": "conjugation",
+            "pronunciations": [
+              "뱅만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=430954&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:08.039098+00:00"
+      }
+    ],
+    "천": [
+      {
+        "id": "487233:546866",
+        "target_code": "487233",
+        "sense_code": "546866",
+        "word": "천",
+        "display_word": "천",
+        "origin": "千",
+        "hanja": "千",
+        "pronunciations": [
+          "천"
+        ],
+        "pronunciation": "천",
+        "definition": "백의 열 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=487233&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:09.016319+00:00"
+      },
+      {
+        "id": "487233:1392725",
+        "target_code": "487233",
+        "sense_code": "1392725",
+        "word": "천",
+        "display_word": "천",
+        "origin": "千",
+        "hanja": "千",
+        "pronunciations": [
+          "천"
+        ],
+        "pronunciation": "천",
+        "definition": "백의 열 배가 되는 수의.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=487233&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:09.016341+00:00"
+      }
+    ],
+    "만": [
+      {
+        "id": "109060:146473",
+        "target_code": "109060",
+        "sense_code": "146473",
+        "word": "만",
+        "display_word": "만",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "만"
+        ],
+        "pronunciation": "만",
+        "definition": "‘앞말이 가리키는 동안이나 거리’를 나타내는 말.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=109060&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:09.816962+00:00"
+      },
+      {
+        "id": "109060:1374029",
+        "target_code": "109060",
+        "sense_code": "1374029",
+        "word": "만",
+        "display_word": "만",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "만"
+        ],
+        "pronunciation": "만",
+        "definition": "‘앞말이 가리키는 횟수를 끝으로’의 뜻을 나타내는 말.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=109060&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:09.816978+00:00"
+      },
+      {
+        "id": "419756:1143",
+        "target_code": "419756",
+        "sense_code": "1143",
+        "word": "만",
+        "display_word": "만",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "만"
+        ],
+        "pronunciation": "만",
+        "definition": "앞말이 뜻하는 동작이나 행동에 타당한 이유가 있음을 나타내는 말.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=419756&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:10.025434+00:00"
+      },
+      {
+        "id": "419756:40079",
+        "target_code": "419756",
+        "sense_code": "40079",
+        "word": "만",
+        "display_word": "만",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "만"
+        ],
+        "pronunciation": "만",
+        "definition": "앞말이 뜻하는 동작이나 행동이 가능함을 나타내는 말.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=419756&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:10.025498+00:00"
+      },
+      {
+        "id": "109492:383446",
+        "target_code": "109492",
+        "sense_code": "383446",
+        "word": "만",
+        "display_word": "만",
+        "origin": "萬",
+        "hanja": "萬",
+        "pronunciations": [
+          "만ː"
+        ],
+        "pronunciation": "만ː",
+        "definition": "천의 열 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=109492&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:10.254846+00:00"
+      },
+      {
+        "id": "109492:1393704",
+        "target_code": "109492",
+        "sense_code": "1393704",
+        "word": "만",
+        "display_word": "만",
+        "origin": "萬",
+        "hanja": "萬",
+        "pronunciations": [
+          "만ː"
+        ],
+        "pronunciation": "만ː",
+        "definition": "천의 열 배가 되는 수의.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=109492&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:10.254863+00:00"
+      }
+    ],
+    "억": [
+      {
+        "id": "450513:465787",
+        "target_code": "450513",
+        "sense_code": "465787",
+        "word": "억",
+        "display_word": "억",
+        "origin": "億",
+        "hanja": "億",
+        "pronunciations": [
+          "억"
+        ],
+        "pronunciation": "억",
+        "definition": "만(萬)의 만 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [
+          {
+            "form": "억만",
+            "type": "conjugation",
+            "pronunciations": [
+              "엉만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=450513&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:10.759171+00:00"
+      },
+      {
+        "id": "450513:1392818",
+        "target_code": "450513",
+        "sense_code": "1392818",
+        "word": "억",
+        "display_word": "억",
+        "origin": "億",
+        "hanja": "億",
+        "pronunciations": [
+          "억"
+        ],
+        "pronunciation": "억",
+        "definition": "만(萬)의 만 배가 되는 수의.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "억만",
+            "type": "conjugation",
+            "pronunciations": [
+              "엉만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=450513&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:10.759251+00:00"
+      }
+    ],
+    "조": [
+      {
+        "id": "303230:274138",
+        "target_code": "303230",
+        "sense_code": "274138",
+        "word": "조",
+        "display_word": "조",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "조"
+        ],
+        "pronunciation": "조",
+        "definition": "‘저’를 낮잡아 이르거나 귀엽게 이르는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=303230&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:11.837378+00:00"
+      },
+      {
+        "id": "303234:369858",
+        "target_code": "303234",
+        "sense_code": "369858",
+        "word": "조",
+        "display_word": "조",
+        "origin": "兆",
+        "hanja": "兆",
+        "pronunciations": [
+          "조"
+        ],
+        "pronunciation": "조",
+        "definition": "억(億)의 만 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=303234&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:12.054771+00:00"
+      },
+      {
+        "id": "303234:373247",
+        "target_code": "303234",
+        "sense_code": "373247",
+        "word": "조",
+        "display_word": "조",
+        "origin": "兆",
+        "hanja": "兆",
+        "pronunciations": [
+          "조"
+        ],
+        "pronunciation": "조",
+        "definition": "예전에, 억의 억 배가 되는 수를 이르던 말. 즉, 10<sup style='font-size:11px;'>16</sup>을 이른다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=303234&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:12.054789+00:00"
+      },
+      {
+        "id": "303234:1392249",
+        "target_code": "303234",
+        "sense_code": "1392249",
+        "word": "조",
+        "display_word": "조",
+        "origin": "兆",
+        "hanja": "兆",
+        "pronunciations": [
+          "조"
+        ],
+        "pronunciation": "조",
+        "definition": "억(億)의 만 배가 되는 수의.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=303234&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:12.054793+00:00"
+      },
+      {
+        "id": "303239:22654",
+        "target_code": "303239",
+        "sense_code": "22654",
+        "word": "조",
+        "display_word": "조",
+        "origin": "條",
+        "hanja": "條",
+        "pronunciations": [
+          "조"
+        ],
+        "pronunciation": "조",
+        "definition": "내용을 체계적으로 나누어 구분하는 단위의 하나. 보통 가장 큰 단위로 쓰인다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=303239&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:12.269149+00:00"
+      },
+      {
+        "id": "303239:54152",
+        "target_code": "303239",
+        "sense_code": "54152",
+        "word": "조",
+        "display_word": "조",
+        "origin": "條",
+        "hanja": "條",
+        "pronunciations": [
+          "조"
+        ],
+        "pronunciation": "조",
+        "definition": "어떤 명목이나 조건.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=303239&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:12.269165+00:00"
+      },
+      {
+        "id": "303239:1396784",
+        "target_code": "303239",
+        "sense_code": "1396784",
+        "word": "조",
+        "display_word": "조",
+        "origin": "條",
+        "hanja": "條",
+        "pronunciations": [
+          "조"
+        ],
+        "pronunciation": "조",
+        "definition": "법령의 본칙을 구분하는 가장 큰 단위. 항(項)의 위이다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=303239&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:12.269168+00:00"
+      }
+    ],
+    "하나": [
+      {
+        "id": "499690:586038",
+        "target_code": "499690",
+        "sense_code": "586038",
+        "word": "하나",
+        "display_word": "하나",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "하나"
+        ],
+        "pronunciation": "하나",
+        "definition": "수효를 세는 맨 처음 수.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=499690&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:13.028397+00:00"
+      },
+      {
+        "id": "499690:2703",
+        "target_code": "499690",
+        "sense_code": "2703",
+        "word": "하나",
+        "display_word": "하나",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "하나"
+        ],
+        "pronunciation": "하나",
+        "definition": "뜻, 마음, 생각 따위가 한결같거나 일치한 상태.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=499690&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:13.028415+00:00"
+      },
+      {
+        "id": "499690:31804",
+        "target_code": "499690",
+        "sense_code": "31804",
+        "word": "하나",
+        "display_word": "하나",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "하나"
+        ],
+        "pronunciation": "하나",
+        "definition": "여러 가지로 구분한 것들 가운데 어떤 것을 가리키는 말.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=499690&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:13.028418+00:00"
+      },
+      {
+        "id": "499690:62770",
+        "target_code": "499690",
+        "sense_code": "62770",
+        "word": "하나",
+        "display_word": "하나",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "하나"
+        ],
+        "pronunciation": "하나",
+        "definition": "‘오직 그것뿐’의 뜻을 나타내는 말.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=499690&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:13.028422+00:00"
+      },
+      {
+        "id": "499690:69279",
+        "target_code": "499690",
+        "sense_code": "69279",
+        "word": "하나",
+        "display_word": "하나",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "하나"
+        ],
+        "pronunciation": "하나",
+        "definition": "‘전혀’, ‘조금도’의 뜻을 나타내는 말.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=499690&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:13.028425+00:00"
+      },
+      {
+        "id": "499690:71351",
+        "target_code": "499690",
+        "sense_code": "71351",
+        "word": "하나",
+        "display_word": "하나",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "하나"
+        ],
+        "pronunciation": "하나",
+        "definition": "‘일종의’의 뜻을 나타내는 말.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=499690&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:13.028428+00:00"
+      }
+    ],
+    "둘": [
+      {
+        "id": "417176:529293",
+        "target_code": "417176",
+        "sense_code": "529293",
+        "word": "둘",
+        "display_word": "둘",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "둘ː"
+        ],
+        "pronunciation": "둘ː",
+        "definition": "하나에 하나를 더한 수.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=417176&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:13.566775+00:00"
+      }
+    ],
+    "셋": [
+      {
+        "id": "189906:198209",
+        "target_code": "189906",
+        "sense_code": "198209",
+        "word": "셋",
+        "display_word": "셋",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "섿ː"
+        ],
+        "pronunciation": "섿ː",
+        "definition": "둘에 하나를 더한 수.",
+        "pos": "수사",
+        "inflections": [
+          {
+            "form": "셋만",
+            "type": "conjugation",
+            "pronunciations": [
+              "센ː만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=189906&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:14.092267+00:00"
+      }
+    ],
+    "넷": [
+      {
+        "id": "408355:115161",
+        "target_code": "408355",
+        "sense_code": "115161",
+        "word": "넷",
+        "display_word": "넷",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "넫ː"
+        ],
+        "pronunciation": "넫ː",
+        "definition": "셋에 하나를 더한 수.",
+        "pos": "수사",
+        "inflections": [
+          {
+            "form": "넷만",
+            "type": "conjugation",
+            "pronunciations": [
+              "넨ː만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=408355&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:14.582967+00:00"
+      }
+    ],
+    "다섯": [
+      {
+        "id": "73433:380612",
+        "target_code": "73433",
+        "sense_code": "380612",
+        "word": "다섯",
+        "display_word": "다섯",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "다섣"
+        ],
+        "pronunciation": "다섣",
+        "definition": "넷에 하나를 더한 수.",
+        "pos": "수사",
+        "inflections": [
+          {
+            "form": "다섯만",
+            "type": "conjugation",
+            "pronunciations": [
+              "다선만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=73433&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:14.808232+00:00"
+      },
+      {
+        "id": "73433:1393540",
+        "target_code": "73433",
+        "sense_code": "1393540",
+        "word": "다섯",
+        "display_word": "다섯",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "다섣"
+        ],
+        "pronunciation": "다섣",
+        "definition": "넷에 하나를 더한 수의.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "다섯만",
+            "type": "conjugation",
+            "pronunciations": [
+              "다선만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=73433&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:14.808250+00:00"
+      }
+    ],
+    "여섯": [
+      {
+        "id": "459171:226444",
+        "target_code": "459171",
+        "sense_code": "226444",
+        "word": "여섯",
+        "display_word": "여섯",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "여섣"
+        ],
+        "pronunciation": "여섣",
+        "definition": "다섯에 하나를 더한 수.",
+        "pos": "수사",
+        "inflections": [
+          {
+            "form": "여섯만",
+            "type": "conjugation",
+            "pronunciations": [
+              "여선만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=459171&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:15.286329+00:00"
+      },
+      {
+        "id": "459171:1392827",
+        "target_code": "459171",
+        "sense_code": "1392827",
+        "word": "여섯",
+        "display_word": "여섯",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "여섣"
+        ],
+        "pronunciation": "여섣",
+        "definition": "다섯에 하나를 더한 수의.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "여섯만",
+            "type": "conjugation",
+            "pronunciations": [
+              "여선만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=459171&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:15.286347+00:00"
+      }
+    ],
+    "일곱": [
+      {
+        "id": "476489:251321",
+        "target_code": "476489",
+        "sense_code": "251321",
+        "word": "일곱",
+        "display_word": "일곱",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "일곱"
+        ],
+        "pronunciation": "일곱",
+        "definition": "여섯에 하나를 더한 수.",
+        "pos": "수사",
+        "inflections": [
+          {
+            "form": "일곱만",
+            "type": "conjugation",
+            "pronunciations": [
+              "일곰만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=476489&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:15.935722+00:00"
+      },
+      {
+        "id": "476489:1392046",
+        "target_code": "476489",
+        "sense_code": "1392046",
+        "word": "일곱",
+        "display_word": "일곱",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "일곱"
+        ],
+        "pronunciation": "일곱",
+        "definition": "여섯에 하나를 더한 수의.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "일곱만",
+            "type": "conjugation",
+            "pronunciations": [
+              "일곰만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=476489&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:15.935739+00:00"
+      }
+    ],
+    "여덟": [
+      {
+        "id": "459268:229269",
+        "target_code": "459268",
+        "sense_code": "229269",
+        "word": "여덟",
+        "display_word": "여덟",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "여덜"
+        ],
+        "pronunciation": "여덜",
+        "definition": "일곱에 하나를 더한 수.",
+        "pos": "수사",
+        "inflections": [
+          {
+            "form": "여덟이",
+            "type": "conjugation",
+            "pronunciations": [
+              "여덜비"
+            ]
+          },
+          {
+            "form": "여덟만",
+            "type": "conjugation",
+            "pronunciations": [
+              "여덜만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=459268&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:16.432930+00:00"
+      },
+      {
+        "id": "459268:1392824",
+        "target_code": "459268",
+        "sense_code": "1392824",
+        "word": "여덟",
+        "display_word": "여덟",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "여덜"
+        ],
+        "pronunciation": "여덜",
+        "definition": "일곱에 하나를 더한 수의.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "여덟이",
+            "type": "conjugation",
+            "pronunciations": [
+              "여덜비"
+            ]
+          },
+          {
+            "form": "여덟만",
+            "type": "conjugation",
+            "pronunciations": [
+              "여덜만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=459268&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:16.432946+00:00"
+      }
+    ],
+    "아홉": [
+      {
+        "id": "218735:217178",
+        "target_code": "218735",
+        "sense_code": "217178",
+        "word": "아홉",
+        "display_word": "아홉",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "아홉"
+        ],
+        "pronunciation": "아홉",
+        "definition": "여덟에 하나를 더한 수.",
+        "pos": "수사",
+        "inflections": [
+          {
+            "form": "아홉만",
+            "type": "conjugation",
+            "pronunciations": [
+              "아홈만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=218735&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:16.977699+00:00"
+      },
+      {
+        "id": "218735:1392786",
+        "target_code": "218735",
+        "sense_code": "1392786",
+        "word": "아홉",
+        "display_word": "아홉",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "아홉"
+        ],
+        "pronunciation": "아홉",
+        "definition": "여덟에 하나를 더한 수의.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "아홉만",
+            "type": "conjugation",
+            "pronunciations": [
+              "아홈만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=218735&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:16.977717+00:00"
+      }
+    ],
+    "열": [
+      {
+        "id": "460403:231499",
+        "target_code": "460403",
+        "sense_code": "231499",
+        "word": "열",
+        "display_word": "열",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "열ː"
+        ],
+        "pronunciation": "열ː",
+        "definition": "아홉에 하나를 더한 수.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=460403&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:18.028848+00:00"
+      },
+      {
+        "id": "460403:1393286",
+        "target_code": "460403",
+        "sense_code": "1393286",
+        "word": "열",
+        "display_word": "열",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "열ː"
+        ],
+        "pronunciation": "열ː",
+        "definition": "아홉에 하나를 더한 수의.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=460403&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:18.028896+00:00"
+      }
+    ],
+    "스물": [
+      {
+        "id": "197563:207858",
+        "target_code": "197563",
+        "sense_code": "207858",
+        "word": "스물",
+        "display_word": "스물",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "스물"
+        ],
+        "pronunciation": "스물",
+        "definition": "열의 두 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=197563&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:18.484748+00:00"
+      }
+    ],
+    "서른": [
+      {
+        "id": "444733:193246",
+        "target_code": "444733",
+        "sense_code": "193246",
+        "word": "서른",
+        "display_word": "서른",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "서른"
+        ],
+        "pronunciation": "서른",
+        "definition": "열의 세 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=444733&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:18.977629+00:00"
+      },
+      {
+        "id": "444733:1392360",
+        "target_code": "444733",
+        "sense_code": "1392360",
+        "word": "서른",
+        "display_word": "서른",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "서른"
+        ],
+        "pronunciation": "서른",
+        "definition": "열의 세 배가 되는 수의.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=444733&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:18.977646+00:00"
+      }
+    ],
+    "마흔": [
+      {
+        "id": "107355:494063",
+        "target_code": "107355",
+        "sense_code": "494063",
+        "word": "마흔",
+        "display_word": "마흔",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "마흔"
+        ],
+        "pronunciation": "마흔",
+        "definition": "열의 네 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=107355&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:19.456874+00:00"
+      },
+      {
+        "id": "107355:1393471",
+        "target_code": "107355",
+        "sense_code": "1393471",
+        "word": "마흔",
+        "display_word": "마흔",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "마흔"
+        ],
+        "pronunciation": "마흔",
+        "definition": "열의 네 배가 되는 수의.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=107355&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:19.456890+00:00"
+      }
+    ],
+    "쉰": [
+      {
+        "id": "450438:206593",
+        "target_code": "450438",
+        "sense_code": "206593",
+        "word": "쉰",
+        "display_word": "쉰",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "쉰ː"
+        ],
+        "pronunciation": "쉰ː",
+        "definition": "열의 다섯 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=450438&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:19.945083+00:00"
+      },
+      {
+        "id": "450438:1392697",
+        "target_code": "450438",
+        "sense_code": "1392697",
+        "word": "쉰",
+        "display_word": "쉰",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "쉰ː"
+        ],
+        "pronunciation": "쉰ː",
+        "definition": "열의 다섯 배가 되는 수의.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=450438&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:19.945099+00:00"
+      }
+    ],
+    "예순": [
+      {
+        "id": "461180:231907",
+        "target_code": "461180",
+        "sense_code": "231907",
+        "word": "예순",
+        "display_word": "예순",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "예순"
+        ],
+        "pronunciation": "예순",
+        "definition": "열의 여섯 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=461180&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:20.418341+00:00"
+      },
+      {
+        "id": "461180:1393002",
+        "target_code": "461180",
+        "sense_code": "1393002",
+        "word": "예순",
+        "display_word": "예순",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "예순"
+        ],
+        "pronunciation": "예순",
+        "definition": "열의 여섯 배가 되는 수의.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=461180&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:20.418357+00:00"
+      }
+    ],
+    "일흔": [
+      {
+        "id": "473010:579537",
+        "target_code": "473010",
+        "sense_code": "579537",
+        "word": "일흔",
+        "display_word": "일흔",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "일흔"
+        ],
+        "pronunciation": "일흔",
+        "definition": "열의 일곱 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=473010&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:20.889389+00:00"
+      },
+      {
+        "id": "473010:1392113",
+        "target_code": "473010",
+        "sense_code": "1392113",
+        "word": "일흔",
+        "display_word": "일흔",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "일흔"
+        ],
+        "pronunciation": "일흔",
+        "definition": "열의 일곱 배가 되는 수의.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=473010&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:20.889405+00:00"
+      }
+    ],
+    "여든": [
+      {
+        "id": "458812:226209",
+        "target_code": "458812",
+        "sense_code": "226209",
+        "word": "여든",
+        "display_word": "여든",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "여든"
+        ],
+        "pronunciation": "여든",
+        "definition": "열의 여덟 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=458812&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:21.511634+00:00"
+      },
+      {
+        "id": "458812:1392826",
+        "target_code": "458812",
+        "sense_code": "1392826",
+        "word": "여든",
+        "display_word": "여든",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "여든"
+        ],
+        "pronunciation": "여든",
+        "definition": "열의 여덟 배가 되는 수의.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=458812&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:21.511652+00:00"
+      }
+    ],
+    "아흔": [
+      {
+        "id": "454551:575367",
+        "target_code": "454551",
+        "sense_code": "575367",
+        "word": "아흔",
+        "display_word": "아흔",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "아흔"
+        ],
+        "pronunciation": "아흔",
+        "definition": "열의 아홉 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=454551&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:22.002558+00:00"
+      },
+      {
+        "id": "454551:1392787",
+        "target_code": "454551",
+        "sense_code": "1392787",
+        "word": "아흔",
+        "display_word": "아흔",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "아흔"
+        ],
+        "pronunciation": "아흔",
+        "definition": "열의 아홉 배가 되는 수의.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=454551&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:22.002575+00:00"
+      }
+    ],
+    "한": [
+      {
+        "id": "495790:28048",
+        "target_code": "495790",
+        "sense_code": "28048",
+        "word": "한",
+        "display_word": "한",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "한"
+        ],
+        "pronunciation": "한",
+        "definition": "그 수량이 하나임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=495790&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:23.709924+00:00"
+      },
+      {
+        "id": "495790:58097",
+        "target_code": "495790",
+        "sense_code": "58097",
+        "word": "한",
+        "display_word": "한",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "한"
+        ],
+        "pronunciation": "한",
+        "definition": "‘어떤’의 뜻을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=495790&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:23.709941+00:00"
+      },
+      {
+        "id": "495790:1358874",
+        "target_code": "495790",
+        "sense_code": "1358874",
+        "word": "한",
+        "display_word": "한",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "한"
+        ],
+        "pronunciation": "한",
+        "definition": "‘같은’의 뜻을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=495790&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:23.709945+00:00"
+      },
+      {
+        "id": "495790:68629",
+        "target_code": "495790",
+        "sense_code": "68629",
+        "word": "한",
+        "display_word": "한",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "한"
+        ],
+        "pronunciation": "한",
+        "definition": "‘대략’의 뜻을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=495790&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:23.709947+00:00"
+      }
+    ],
+    "두": [
+      {
+        "id": "91168:131101",
+        "target_code": "91168",
+        "sense_code": "131101",
+        "word": "두",
+        "display_word": "두",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "두ː"
+        ],
+        "pronunciation": "두ː",
+        "definition": "그 수량이 둘임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=91168&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:24.007010+00:00"
+      },
+      {
+        "id": "91171:492394",
+        "target_code": "91171",
+        "sense_code": "492394",
+        "word": "두",
+        "display_word": "두",
+        "origin": "斗",
+        "hanja": "斗",
+        "pronunciations": [
+          "두"
+        ],
+        "pronunciation": "두",
+        "definition": "부피의 단위. 곡식, 액체, 가루 따위의 부피를 잴 때 쓴다. 한 두는 한 되의 열 배로 약 18리터에 해당한다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=91171&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:24.220227+00:00"
+      },
+      {
+        "id": "92018:345283",
+        "target_code": "92018",
+        "sense_code": "345283",
+        "word": "두",
+        "display_word": "두",
+        "origin": "頭",
+        "hanja": "頭",
+        "pronunciations": [
+          "두"
+        ],
+        "pronunciation": "두",
+        "definition": "소나 말 따위의 짐승을 세는 단위.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=92018&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:24.420864+00:00"
+      }
+    ],
+    "세": [
+      {
+        "id": "189757:389120",
+        "target_code": "189757",
+        "sense_code": "389120",
+        "word": "세",
+        "display_word": "세",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "세ː"
+        ],
+        "pronunciation": "세ː",
+        "definition": "그 수량이 셋임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=189757&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:25.279830+00:00"
+      },
+      {
+        "id": "189775:197282",
+        "target_code": "189775",
+        "sense_code": "197282",
+        "word": "세",
+        "display_word": "세",
+        "origin": "世",
+        "hanja": "世",
+        "pronunciations": [
+          "세ː"
+        ],
+        "pronunciation": "세ː",
+        "definition": "가계나 지위의 차례, 또는 왕조의 임금 순위를 나타내는 단위.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=189775&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:25.479701+00:00"
+      },
+      {
+        "id": "189778:425851",
+        "target_code": "189778",
+        "sense_code": "425851",
+        "word": "세",
+        "display_word": "세",
+        "origin": "歲",
+        "hanja": "歲",
+        "pronunciations": [
+          "세ː"
+        ],
+        "pronunciation": "세ː",
+        "definition": "나이를 세는 단위.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=189778&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:25.685198+00:00"
+      }
+    ],
+    "네": [
+      {
+        "id": "64701:453677",
+        "target_code": "64701",
+        "sense_code": "453677",
+        "word": "네",
+        "display_word": "네",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "네ː"
+        ],
+        "pronunciation": "네ː",
+        "definition": "그 수량이 넷임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=64701&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:25.901263+00:00"
+      }
+    ],
+    "스무": [
+      {
+        "id": "201944:427044",
+        "target_code": "201944",
+        "sense_code": "427044",
+        "word": "스무",
+        "display_word": "스무",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "스무"
+        ],
+        "pronunciation": "스무",
+        "definition": "그 수량이 스물임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=201944&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:26.102547+00:00"
+      }
+    ],
+    "명": [
+      {
+        "id": "116096:568002",
+        "target_code": "116096",
+        "sense_code": "568002",
+        "word": "명",
+        "display_word": "명",
+        "origin": "名",
+        "hanja": "名",
+        "pronunciations": [
+          "명"
+        ],
+        "pronunciation": "명",
+        "definition": "사람을 세는 단위.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=116096&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:26.822378+00:00"
+      }
+    ],
+    "개": [
+      {
+        "id": "11921:3359",
+        "target_code": "11921",
+        "sense_code": "3359",
+        "word": "개",
+        "display_word": "개",
+        "origin": "個 · / · 箇 · / · 介",
+        "hanja": "個 · 箇 · 介",
+        "pronunciations": [
+          "개"
+        ],
+        "pronunciation": "개",
+        "definition": "낱으로 된 물건을 세는 단위.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=11921&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:28.017978+00:00"
+      },
+      {
+        "id": "11921:32364",
+        "target_code": "11921",
+        "sense_code": "32364",
+        "word": "개",
+        "display_word": "개",
+        "origin": "個 · / · 箇 · / · 介",
+        "hanja": "個 · 箇 · 介",
+        "pronunciations": [
+          "개"
+        ],
+        "pronunciation": "개",
+        "definition": "무게의 단위. 한 개는 지금(地金) 열 냥쭝이다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=11921&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:28.017995+00:00"
+      }
+    ],
+    "번": [
+      {
+        "id": "140777:385534",
+        "target_code": "140777",
+        "sense_code": "385534",
+        "word": "번",
+        "display_word": "번",
+        "origin": "番",
+        "hanja": "番",
+        "pronunciations": [
+          "번"
+        ],
+        "pronunciation": "번",
+        "definition": "차례로 숙직이나 당직을 하는 일.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=140777&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:49.763586+00:00"
+      },
+      {
+        "id": "140777:514787",
+        "target_code": "140777",
+        "sense_code": "514787",
+        "word": "번",
+        "display_word": "번",
+        "origin": "番",
+        "hanja": "番",
+        "pronunciations": [
+          "번"
+        ],
+        "pronunciation": "번",
+        "definition": "일의 차례를 나타내는 말.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=140777&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:49.763603+00:00"
+      },
+      {
+        "id": "140777:517968",
+        "target_code": "140777",
+        "sense_code": "517968",
+        "word": "번",
+        "display_word": "번",
+        "origin": "番",
+        "hanja": "番",
+        "pronunciations": [
+          "번"
+        ],
+        "pronunciation": "번",
+        "definition": "일의 횟수를 세는 단위.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=140777&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:49.763607+00:00"
+      },
+      {
+        "id": "140777:521460",
+        "target_code": "140777",
+        "sense_code": "521460",
+        "word": "번",
+        "display_word": "번",
+        "origin": "番",
+        "hanja": "番",
+        "pronunciations": [
+          "번"
+        ],
+        "pronunciation": "번",
+        "definition": "어떤 범주에 속한 사람이나 사물의 차례를 나타내는 단위.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=140777&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:49.763609+00:00"
+      }
+    ],
+    "년": [
+      {
+        "id": "67505:116651",
+        "target_code": "67505",
+        "sense_code": "116651",
+        "word": "년",
+        "display_word": "년",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "년"
+        ],
+        "pronunciation": "년",
+        "definition": "‘여자’를 낮잡아 이르는 말.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=67505&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:28.981807+00:00"
+      },
+      {
+        "id": "411192:116652",
+        "target_code": "411192",
+        "sense_code": "116652",
+        "word": "년",
+        "display_word": "년",
+        "origin": "年",
+        "hanja": "年",
+        "pronunciations": [
+          "년"
+        ],
+        "pronunciation": "년",
+        "definition": "해를 세는 단위. 1년은 약 365.25일이다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=411192&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:29.180401+00:00"
+      }
+    ],
+    "월": [
+      {
+        "id": "259599:393996",
+        "target_code": "259599",
+        "sense_code": "393996",
+        "word": "월",
+        "display_word": "월",
+        "origin": "月",
+        "hanja": "月",
+        "pronunciations": [
+          "월"
+        ],
+        "pronunciation": "월",
+        "definition": "한 달 동안.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=259599&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:49.983206+00:00"
+      },
+      {
+        "id": "259599:393997",
+        "target_code": "259599",
+        "sense_code": "393997",
+        "word": "월",
+        "display_word": "월",
+        "origin": "月",
+        "hanja": "月",
+        "pronunciations": [
+          "월"
+        ],
+        "pronunciation": "월",
+        "definition": "달을 세는 단위. 기수(基數) 뒤에서는 주로 형을 선고하거나 구형할 때 쓴다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=259599&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:49.983427+00:00"
+      }
+    ],
+    "시": [
+      {
+        "id": "450465:2400",
+        "target_code": "450465",
+        "sense_code": "2400",
+        "word": "시",
+        "display_word": "시",
+        "origin": "時",
+        "hanja": "時",
+        "pronunciations": [
+          "시"
+        ],
+        "pronunciation": "시",
+        "definition": "사람이 태어난 시각.",
+        "pos": "명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=450465&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:50.215491+00:00"
+      },
+      {
+        "id": "450465:2535",
+        "target_code": "450465",
+        "sense_code": "2535",
+        "word": "시",
+        "display_word": "시",
+        "origin": "時",
+        "hanja": "時",
+        "pronunciations": [
+          "시"
+        ],
+        "pronunciation": "시",
+        "definition": "차례가 정하여진 시각을 이르는 말.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=450465&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:50.215512+00:00"
+      },
+      {
+        "id": "450465:31639",
+        "target_code": "450465",
+        "sense_code": "31639",
+        "word": "시",
+        "display_word": "시",
+        "origin": "時",
+        "hanja": "時",
+        "pronunciations": [
+          "시"
+        ],
+        "pronunciation": "시",
+        "definition": "어떤 일이나 현상이 일어날 때나 경우.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=450465&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:50.215515+00:00"
+      },
+      {
+        "id": "450465:62727",
+        "target_code": "450465",
+        "sense_code": "62727",
+        "word": "시",
+        "display_word": "시",
+        "origin": "時",
+        "hanja": "時",
+        "pronunciations": [
+          "시"
+        ],
+        "pronunciation": "시",
+        "definition": "예전에, 주야를 12지(支)에 따라 12등분 한 단위. 자시(子時), 축시(丑時), 인시(寅時), 묘시(卯時), 진시(辰時), 사시(巳時), 오시(午時), 미시(未時), 신시(申時), 유시(酉時), 술시(戌時), 해시(亥時)가 있다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=450465&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:10:50.215518+00:00"
+      }
+    ],
+    "분": [
+      {
+        "id": "435919:479121",
+        "target_code": "435919",
+        "sense_code": "479121",
+        "word": "분",
+        "display_word": "분",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "분"
+        ],
+        "pronunciation": "분",
+        "definition": "사람을 높여서 이르는 말.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=435919&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:31.151230+00:00"
+      },
+      {
+        "id": "435919:482623",
+        "target_code": "435919",
+        "sense_code": "482623",
+        "word": "분",
+        "display_word": "분",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "분"
+        ],
+        "pronunciation": "분",
+        "definition": "높이는 사람을 세는 단위.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=435919&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:31.151312+00:00"
+      },
+      {
+        "id": "435921:2349",
+        "target_code": "435921",
+        "sense_code": "2349",
+        "word": "분",
+        "display_word": "분",
+        "origin": "分",
+        "hanja": "分",
+        "pronunciations": [
+          "분"
+        ],
+        "pronunciation": "분",
+        "definition": "한 시간의 60분의 1에 해당하는 시간. 국제단위계에서 시간의 기본 단위인 초로 나타내면 60초와 같다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=435921&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:31.396218+00:00"
+      },
+      {
+        "id": "435921:31583",
+        "target_code": "435921",
+        "sense_code": "31583",
+        "word": "분",
+        "display_word": "분",
+        "origin": "分",
+        "hanja": "分",
+        "pronunciations": [
+          "분"
+        ],
+        "pronunciation": "분",
+        "definition": "비율을 나타내는 단위. 1푼은 전체 수량의 100분의 1로, 1할의 10분의 1이다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=435921&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:31.396234+00:00"
+      },
+      {
+        "id": "435921:62472",
+        "target_code": "435921",
+        "sense_code": "62472",
+        "word": "분",
+        "display_word": "분",
+        "origin": "分",
+        "hanja": "分",
+        "pronunciations": [
+          "분"
+        ],
+        "pronunciation": "분",
+        "definition": "길이의 단위. 한 푼은 한 치의 10분의 1로, 약 0.3cm에 해당한다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=435921&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:31.396238+00:00"
+      },
+      {
+        "id": "435921:69164",
+        "target_code": "435921",
+        "sense_code": "69164",
+        "word": "분",
+        "display_word": "분",
+        "origin": "分",
+        "hanja": "分",
+        "pronunciations": [
+          "분"
+        ],
+        "pronunciation": "분",
+        "definition": "무게의 단위. 귀금속이나 한약재 따위의 무게를 잴 때 쓴다. 한 푼은 한 돈의 10분의 1로, 약 0.375그램에 해당한다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=435921&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:31.396242+00:00"
+      },
+      {
+        "id": "435921:71306",
+        "target_code": "435921",
+        "sense_code": "71306",
+        "word": "분",
+        "display_word": "분",
+        "origin": "分",
+        "hanja": "分",
+        "pronunciations": [
+          "분"
+        ],
+        "pronunciation": "분",
+        "definition": "각도의 단위. 1분은 1도의 60분의 1이다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=435921&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:31.396245+00:00"
+      },
+      {
+        "id": "435921:72274",
+        "target_code": "435921",
+        "sense_code": "72274",
+        "word": "분",
+        "display_word": "분",
+        "origin": "分",
+        "hanja": "分",
+        "pronunciations": [
+          "분"
+        ],
+        "pronunciation": "분",
+        "definition": "위도나 경도를 나타내는 단위. 1분은 1도의 60분의 1이다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=435921&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:31.396248+00:00"
+      },
+      {
+        "id": "435921:177033",
+        "target_code": "435921",
+        "sense_code": "177033",
+        "word": "분",
+        "display_word": "분",
+        "origin": "分",
+        "hanja": "分",
+        "pronunciations": [
+          "분"
+        ],
+        "pronunciation": "분",
+        "definition": "일의 10분의 1이 되는 수. 즉 10<sup style='font-size:11px;'>－1</sup>을 이른다.",
+        "pos": "수사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=435921&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:31.396251+00:00"
+      },
+      {
+        "id": "435921:1391871",
+        "target_code": "435921",
+        "sense_code": "1391871",
+        "word": "분",
+        "display_word": "분",
+        "origin": "分",
+        "hanja": "分",
+        "pronunciations": [
+          "분"
+        ],
+        "pronunciation": "분",
+        "definition": "일의 10분의 1이 되는 수의. 즉 10<sup style='font-size:11px;'>－1</sup>을 이른다.",
+        "pos": "관형사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=435921&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:31.396254+00:00"
+      }
+    ],
+    "초": [
+      {
+        "id": "332572:546629",
+        "target_code": "332572",
+        "sense_code": "546629",
+        "word": "초",
+        "display_word": "초",
+        "origin": "初",
+        "hanja": "初",
+        "pronunciations": [
+          "초"
+        ],
+        "pronunciation": "초",
+        "definition": "어떤 기간의 처음이나 초기.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=332572&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:32.369002+00:00"
+      },
+      {
+        "id": "488936:25145",
+        "target_code": "488936",
+        "sense_code": "25145",
+        "word": "초",
+        "display_word": "초",
+        "origin": "秒",
+        "hanja": "秒",
+        "pronunciations": [
+          "초"
+        ],
+        "pronunciation": "초",
+        "definition": "한 시간의 3,600분의 1에 해당하는 시간. 국제단위계에서 시간의 기본 단위로, 세슘-133 원자의 섭동이 없는 바닥상태의 초미세 전이 주파수가 91억 9263만 1770헤르츠가 되도록 정의된 시간이다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=488936&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:32.573238+00:00"
+      },
+      {
+        "id": "488936:56630",
+        "target_code": "488936",
+        "sense_code": "56630",
+        "word": "초",
+        "display_word": "초",
+        "origin": "秒",
+        "hanja": "秒",
+        "pronunciations": [
+          "초"
+        ],
+        "pronunciation": "초",
+        "definition": "각도를 나타내는 단위. 1초는 1분의 60분의 1이다. 기호는 \".",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=488936&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:32.573254+00:00"
+      },
+      {
+        "id": "488936:67665",
+        "target_code": "488936",
+        "sense_code": "67665",
+        "word": "초",
+        "display_word": "초",
+        "origin": "秒",
+        "hanja": "秒",
+        "pronunciations": [
+          "초"
+        ],
+        "pronunciation": "초",
+        "definition": "위도나 경도를 나타내는 단위. 1초는 1분의 60분의 1이다. 기호는 \".",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=488936&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:32.573258+00:00"
+      }
+    ],
+    "원": [
+      {
+        "id": "465171:467570",
+        "target_code": "465171",
+        "sense_code": "467570",
+        "word": "원",
+        "display_word": "원",
+        "origin": "",
+        "hanja": "",
+        "pronunciations": [
+          "원"
+        ],
+        "pronunciation": "원",
+        "definition": "우리나라의 화폐 단위. 1원은 1전의 100배이다. 1962년 6월 10일부터 시행되었다. 기호는 ￦.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=465171&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:33.465159+00:00"
+      },
+      {
+        "id": "253823:19758",
+        "target_code": "253823",
+        "sense_code": "19758",
+        "word": "원",
+        "display_word": "원",
+        "origin": "元",
+        "hanja": "元",
+        "pronunciations": [
+          "원"
+        ],
+        "pronunciation": "원",
+        "definition": "대한 제국 때의 화폐 단위.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=253823&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:34.170070+00:00"
+      },
+      {
+        "id": "253823:50215",
+        "target_code": "253823",
+        "sense_code": "50215",
+        "word": "원",
+        "display_word": "원",
+        "origin": "元",
+        "hanja": "元",
+        "pronunciations": [
+          "원"
+        ],
+        "pronunciation": "원",
+        "definition": "중국의 화폐 단위인 ‘위안’을 우리 한자음으로 읽은 이름.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=253823&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:34.170087+00:00"
+      },
+      {
+        "id": "254151:19761",
+        "target_code": "254151",
+        "sense_code": "19761",
+        "word": "원",
+        "display_word": "원",
+        "origin": "圓",
+        "hanja": "圓",
+        "pronunciations": [
+          "원"
+        ],
+        "pronunciation": "원",
+        "definition": "우리나라의 옛 화폐 단위. 1원은 1전의 100배이다. 1910년부터 1953년 2월 14일까지 통용되었다.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=254151&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:34.373742+00:00"
+      },
+      {
+        "id": "254151:50218",
+        "target_code": "254151",
+        "sense_code": "50218",
+        "word": "원",
+        "display_word": "원",
+        "origin": "圓",
+        "hanja": "圓",
+        "pronunciations": [
+          "원"
+        ],
+        "pronunciation": "원",
+        "definition": "일본의 화폐 단위인 ‘엔’을 우리 한자음으로 읽은 이름.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=254151&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:34.373759+00:00"
+      }
+    ],
+    "퍼센트": [
+      {
+        "id": "497971:307492",
+        "target_code": "497971",
+        "sense_code": "307492",
+        "word": "퍼센트",
+        "display_word": "퍼센트",
+        "origin": "percent",
+        "hanja": "",
+        "pronunciations": [],
+        "pronunciation": "",
+        "definition": "백분율을 나타내는 단위. 기호는 %.",
+        "pos": "의존 명사",
+        "inflections": [],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=497971&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:34.850425+00:00"
+      }
+    ],
+    "이십": [
+      {
+        "id": "263631:251757",
+        "target_code": "263631",
+        "sense_code": "251757",
+        "word": "이십",
+        "display_word": "이십",
+        "origin": "二十",
+        "hanja": "二十",
+        "pronunciations": [
+          "이ː십"
+        ],
+        "pronunciation": "이ː십",
+        "definition": "십의 두 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [
+          {
+            "form": "이십만",
+            "type": "conjugation",
+            "pronunciations": [
+              "이ː심만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=263631&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:35.348117+00:00"
+      },
+      {
+        "id": "263631:2877",
+        "target_code": "263631",
+        "sense_code": "2877",
+        "word": "이십",
+        "display_word": "이십",
+        "origin": "二十",
+        "hanja": "二十",
+        "pronunciations": [
+          "이ː십"
+        ],
+        "pronunciation": "이ː십",
+        "definition": "그 수량이 스물임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "이십만",
+            "type": "conjugation",
+            "pronunciations": [
+              "이ː심만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=263631&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:35.348134+00:00"
+      },
+      {
+        "id": "263631:31278",
+        "target_code": "263631",
+        "sense_code": "31278",
+        "word": "이십",
+        "display_word": "이십",
+        "origin": "二十",
+        "hanja": "二十",
+        "pronunciations": [
+          "이ː십"
+        ],
+        "pronunciation": "이ː십",
+        "definition": "그 순서가 스무 번째임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "이십만",
+            "type": "conjugation",
+            "pronunciations": [
+              "이ː심만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=263631&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:35.348137+00:00"
+      }
+    ],
+    "사십": [
+      {
+        "id": "440008:185858",
+        "target_code": "440008",
+        "sense_code": "185858",
+        "word": "사십",
+        "display_word": "사십",
+        "origin": "四十",
+        "hanja": "四十",
+        "pronunciations": [
+          "사ː십"
+        ],
+        "pronunciation": "사ː십",
+        "definition": "십의 네 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [
+          {
+            "form": "사십만",
+            "type": "conjugation",
+            "pronunciations": [
+              "사ː심만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=440008&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:35.877262+00:00"
+      },
+      {
+        "id": "440008:2484",
+        "target_code": "440008",
+        "sense_code": "2484",
+        "word": "사십",
+        "display_word": "사십",
+        "origin": "四十",
+        "hanja": "四十",
+        "pronunciations": [
+          "사ː십"
+        ],
+        "pronunciation": "사ː십",
+        "definition": "그 수량이 마흔임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "사십만",
+            "type": "conjugation",
+            "pronunciations": [
+              "사ː심만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=440008&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:35.877281+00:00"
+      },
+      {
+        "id": "440008:31602",
+        "target_code": "440008",
+        "sense_code": "31602",
+        "word": "사십",
+        "display_word": "사십",
+        "origin": "四十",
+        "hanja": "四十",
+        "pronunciations": [
+          "사ː십"
+        ],
+        "pronunciation": "사ː십",
+        "definition": "그 순서가 마흔 번째임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "사십만",
+            "type": "conjugation",
+            "pronunciations": [
+              "사ː심만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=440008&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:35.877285+00:00"
+      }
+    ],
+    "오십": [
+      {
+        "id": "461815:234961",
+        "target_code": "461815",
+        "sense_code": "234961",
+        "word": "오십",
+        "display_word": "오십",
+        "origin": "五十",
+        "hanja": "五十",
+        "pronunciations": [
+          "오ː십"
+        ],
+        "pronunciation": "오ː십",
+        "definition": "십의 다섯 배가 되는 수.",
+        "pos": "수사",
+        "inflections": [
+          {
+            "form": "오십만",
+            "type": "conjugation",
+            "pronunciations": [
+              "오ː심만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=461815&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:36.377579+00:00"
+      },
+      {
+        "id": "461815:2545",
+        "target_code": "461815",
+        "sense_code": "2545",
+        "word": "오십",
+        "display_word": "오십",
+        "origin": "五十",
+        "hanja": "五十",
+        "pronunciations": [
+          "오ː십"
+        ],
+        "pronunciation": "오ː십",
+        "definition": "그 수량이 쉰임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "오십만",
+            "type": "conjugation",
+            "pronunciations": [
+              "오ː심만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=461815&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:36.377597+00:00"
+      },
+      {
+        "id": "461815:31678",
+        "target_code": "461815",
+        "sense_code": "31678",
+        "word": "오십",
+        "display_word": "오십",
+        "origin": "五十",
+        "hanja": "五十",
+        "pronunciations": [
+          "오ː십"
+        ],
+        "pronunciation": "오ː십",
+        "definition": "그 순서가 오십 번째임을 나타내는 말.",
+        "pos": "관형사",
+        "inflections": [
+          {
+            "form": "오십만",
+            "type": "conjugation",
+            "pronunciations": [
+              "오ː심만"
+            ]
+          }
+        ],
+        "url": "https://stdict.korean.go.kr/search/searchView.do?word_no=461815&searchKeywordTo=3",
+        "queried_at": "2026-11-08T13:09:36.377611+00:00"
+      }
+    ],
+    "이십사": [],
+    "이십오": [],
+    "사십오": []
+  },
+  "searches": {
+    "영": {
+      "queried_at": "2026-11-08T13:08:56.850145+00:00",
+      "total": "28",
+      "items": [
+        {
+          "target_code": "234897",
+          "word": "영",
+          "pos": "명사",
+          "definition": "‘이엉’의 준말.",
+          "origin": ""
+        },
+        {
+          "target_code": "234898",
+          "word": "영",
+          "pos": "명사",
+          "definition": "깨끗하고 맵시 있게 꾸민 집 안이나 방 안에서 느껴지는 산뜻하고 생기 있는 밝은 기운.",
+          "origin": ""
+        },
+        {
+          "target_code": "234899",
+          "word": "영",
+          "pos": "부사",
+          "definition": "전혀 또는 도무지.",
+          "origin": ""
+        },
+        {
+          "target_code": "459648",
+          "word": "영",
+          "pos": "명사",
+          "definition": "윗사람이나 상위 조직이 아랫사람이나 하위 조직에 무엇을 하게 함. 또는 그런 내용.",
+          "origin": "令"
+        },
+        {
+          "target_code": "518955",
+          "word": "영",
+          "pos": "명사",
+          "definition": "해마다 정기적으로 열려 약재를 사고팔던 장. 공주, 대구, 대전, 전주, 청주 등지에 서며 조선 효종 때부터 시작되었다고 한다.",
+          "origin": "令"
+        },
+        {
+          "target_code": "234925",
+          "word": "영",
+          "pos": "명사",
+          "definition": "제정 러시아 소설가 도스토옙스키가 지은 장편 소설. 무신론적 혁명 사상을 악령으로 보고 그것에 홀린 사람들의 파멸을 표현하였다. 혁명가 네차예프가 전향자를 참살한 실재 사건에서 취재한 것이다. 1871년에서 1872년에 걸쳐 발표하였다.",
+          "origin": "令"
+        },
+        {
+          "target_code": "460090",
+          "word": "영",
+          "pos": "명사",
+          "definition": "신라 때 중앙 관아의 으뜸 벼슬 가운데 하나. 병부, 조부, 예부, 사정부, 좌·우이방부, 경성주작전, 사천왕사성전, 감은사성전, 봉은사성전, 봉성사성전, 창부, 승부, 예작부, 선부, 영객부, 위화부 따위에 두었다.",
+          "origin": "令"
+        },
+        {
+          "target_code": "235194",
+          "word": "영",
+          "pos": "명사",
+          "definition": "사(詞)의 한 형식. 대체로 빠르고 가락이 많이 들어가는 음악 형태이다.",
+          "origin": "令"
+        },
+        {
+          "target_code": "235195",
+          "word": "영",
+          "pos": "의존 명사",
+          "definition": "가죽을 세는 단위.",
+          "origin": "令"
+        },
+        {
+          "target_code": "235196",
+          "word": "영",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 평해(平海), 경주(慶州) 등이 현존한다.",
+          "origin": "永"
+        },
+        {
+          "target_code": "235197",
+          "word": "영",
+          "pos": "부사",
+          "definition": "영원히 언제까지나.",
+          "origin": "永"
+        },
+        {
+          "target_code": "235198",
+          "word": "영",
+          "pos": "명사",
+          "definition": "인도·유럽 어족 게르만 어파의 서게르만 어군에 속한 언어. 미국, 영국, 캐나다, 오스트레일리아 등을 비롯하여 세계 여러 나라에서 사용하는 국제어의 구실을 하고 있다.",
+          "origin": "英"
+        },
+        {
+          "target_code": "235199",
+          "word": "영",
+          "pos": "명사",
+          "definition": "값이 없는 수. ‘0’으로 표기한다.",
+          "origin": "零"
+        },
+        {
+          "target_code": "235200",
+          "word": "영",
+          "pos": "명사",
+          "definition": "경(經)을 읽을 때 치는, 놋쇠나 구리로 만든 물건.",
+          "origin": "鈴"
+        },
+        {
+          "target_code": "460091",
+          "word": "영",
+          "pos": "명사",
+          "definition": "신라 때 시위부의 무관 벼슬. 대두(隊頭)의 아래로, 위계는 대나마에서 사지(舍知)까지이다.",
+          "origin": "領"
+        },
+        {
+          "target_code": "235201",
+          "word": "영",
+          "pos": "품사 없음",
+          "definition": "‘영하다’의 어근.",
+          "origin": "領"
+        },
+        {
+          "target_code": "235204",
+          "word": "영",
+          "pos": "명사",
+          "definition": "길이 나 있어서 넘어 다닐 수 있는, 높은 산의 고개.",
+          "origin": "嶺"
+        },
+        {
+          "target_code": "235511",
+          "word": "영",
+          "pos": "명사",
+          "definition": "병영의 문.",
+          "origin": "營"
+        },
+        {
+          "target_code": "235521",
+          "word": "영",
+          "pos": "명사",
+          "definition": "혈맥 속으로 온몸을 돌면서 영양 작용을 하는 정미한 기운.",
+          "origin": "營/榮"
+        },
+        {
+          "target_code": "235522",
+          "word": "영",
+          "pos": "명사",
+          "definition": "누에가 뽕을 먹고 발육하는 시기.",
+          "origin": "齡"
+        },
+        {
+          "target_code": "235523",
+          "word": "영",
+          "pos": "명사",
+          "definition": "신으로 받들어지는 영혼 또는 자연물.",
+          "origin": "靈"
+        },
+        {
+          "target_code": "235525",
+          "word": "영",
+          "pos": "품사 없음",
+          "definition": "‘영하다’의 어근.",
+          "origin": "靈"
+        },
+        {
+          "target_code": "235526",
+          "word": "영",
+          "pos": "명사",
+          "definition": "영국의 시인(1683~1765). 작품에 <밤의 상념(想念)>이 있다.",
+          "origin": "Young, Edward"
+        },
+        {
+          "target_code": "235527",
+          "word": "영",
+          "pos": "명사",
+          "definition": "영국의 농업 경제학자(1741~1820). 18세기 말 농업 혁명기에 각지의 농업 사정을 시찰하고, 농업 기술의 개선과 새로운 경영 방법의 보급에 공헌하였다. 저서에 ≪농민의 연중행사≫가 있다.",
+          "origin": "Young, Arthur"
+        },
+        {
+          "target_code": "459319",
+          "word": "영",
+          "pos": "명사",
+          "definition": "영국의 의학자·물리학자·고고학자(1773~1829). 빛의 간섭 원리, 탄성에 관한 영률(young率), 생리 발광(生理發光), 난시(亂視) 따위를 발견하였으며, 로제타석의 이집트 상형 문자를 해독하는 데 공헌하였다.",
+          "origin": "Young, Thomas"
+        },
+        {
+          "target_code": "235528",
+          "word": "영",
+          "pos": "명사",
+          "definition": "미국의 실업가·법률가(1874~1962). 제일 차 세계 대전 후 독일의 배상 문제에 관한 영안(Young案)을 입안하여 지불 기간을 한정하고 액수를 감하였다.",
+          "origin": "Young, Owen D."
+        },
+        {
+          "target_code": "235797",
+          "word": "영",
+          "pos": "명사",
+          "definition": "미국의 영화 음악 작곡가·지휘자(1900~1956). 할리우드에 진출하여 대중음악의 제1인자로 활약하였다. 작품에 <셴>, <80일간의 세계 일주> 따위가 있다.",
+          "origin": "Young, Victor"
+        },
+        {
+          "target_code": "459320",
+          "word": "영",
+          "pos": "명사",
+          "definition": "미국의 테너 색소폰 연주자(1909~1959). 즉흥 연주에 의한 독특한 솔로 연주로 모던 재즈의 기초를 마련하였다.",
+          "origin": "Young, Lester Willis"
+        }
+      ]
+    },
+    "공": {
+      "queried_at": "2026-11-08T13:08:58.539041+00:00",
+      "total": "18",
+      "items": [
+        {
+          "target_code": "397989",
+          "word": "공",
+          "pos": "명사",
+          "definition": "가죽이나 고무, 플라스틱 따위로 둥글게 만들어 던지거나 치거나 차거나 굴릴 수 있도록 만든 운동 기구. 운동 경기나 놀이에 따라 축구공, 야구공, 탁구공, 럭비공, 골프공, 당구공 따위 여러 가지가 있다.",
+          "origin": ""
+        },
+        {
+          "target_code": "28584",
+          "word": "공",
+          "pos": "명사",
+          "definition": "원료를 인력이나 기계력으로 가공하여 유용한 물자를 만드는 산업. 예전에는 주로 가내 공업이었으나 기계의 발달에 따라 대규모로 되었다. 제조업, 건설업 따위의 제이차 산업을 이르는 말이다.",
+          "origin": "工"
+        },
+        {
+          "target_code": "28585",
+          "word": "공",
+          "pos": "명사",
+          "definition": "공척보(工尺譜)에서, 이칙(夷則)·남려(南呂) 두 음을 이르는 말.",
+          "origin": "工"
+        },
+        {
+          "target_code": "28586",
+          "word": "공",
+          "pos": "명사",
+          "definition": "여러 사람에 관계되는 국가나 사회의 일.",
+          "origin": "公"
+        },
+        {
+          "target_code": "28588",
+          "word": "공",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 김포(金浦) 하나뿐이다.",
+          "origin": "公"
+        },
+        {
+          "target_code": "28589",
+          "word": "공",
+          "pos": "명사",
+          "definition": "다섯 등급으로 나눈 귀족의 작위 가운데 첫째 작위. 후작의 위이다.",
+          "origin": "公"
+        },
+        {
+          "target_code": "397991",
+          "word": "공",
+          "pos": "의존 명사",
+          "definition": "그 사람을 높여 부르거나 이르는 말.",
+          "origin": "公"
+        },
+        {
+          "target_code": "28590",
+          "word": "공",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 곡부(曲阜), 창원(昌原) 등이 현존한다.",
+          "origin": "孔"
+        },
+        {
+          "target_code": "28591",
+          "word": "공",
+          "pos": "명사",
+          "definition": "일을 마치거나 목적을 이루는 데 들인 노력과 수고. 또는 일을 마치거나 그 목적을 이룬 결과로서의 공적.",
+          "origin": "功"
+        },
+        {
+          "target_code": "516044",
+          "word": "공",
+          "pos": "명사",
+          "definition": "‘공화국’의 뜻을 나타내는 말.",
+          "origin": "共"
+        },
+        {
+          "target_code": "29084",
+          "word": "공",
+          "pos": "명사",
+          "definition": "부처 앞에 공양을 드림. 또는 그런 일.",
+          "origin": "供"
+        },
+        {
+          "target_code": "29085",
+          "word": "공",
+          "pos": "명사",
+          "definition": "값이 없는 수. ‘0’으로 표기한다.",
+          "origin": "空"
+        },
+        {
+          "target_code": "28679",
+          "word": "공",
+          "pos": "명사",
+          "definition": "중앙 관서와 궁중의 수요를 충당하기 위하여 여러 군현에 부과하여 상납하게 한 특산물. 전통 세제(稅制)인 조(租)·용(庸)·조(調) 가운데 조(調)에 해당하는 것으로, 중간 관리의 부정으로 문란해지자 16세기에 이이, 유성룡 등이 쌀로 받게 하는 수미법을 주장하였으나 실시되지 않았고 광해군 즉위년(1608)에 이르러 경기 지역부터 대동법이 처음 실시되었고, 숙종34년(1708)에 전국적으로 실시되었다.",
+          "origin": "貢"
+        },
+        {
+          "target_code": "28681",
+          "word": "공",
+          "pos": "명사",
+          "definition": "‘축’을 달리 이르는 말.",
+          "origin": "控"
+        },
+        {
+          "target_code": "28734",
+          "word": "공",
+          "pos": "명사",
+          "definition": "권투 따위의 경기에서, 경기의 시작과 종료를 알리는 종.",
+          "origin": "gong"
+        },
+        {
+          "target_code": "397545",
+          "word": "-공",
+          "pos": "접사",
+          "definition": "‘기술직 노동자’의 뜻을 더하는 접미사.",
+          "origin": "工"
+        },
+        {
+          "target_code": "28735",
+          "word": "-공",
+          "pos": "접사",
+          "definition": "‘높임’의 뜻을 더하는 접미사.",
+          "origin": "公"
+        },
+        {
+          "target_code": "397546",
+          "word": "공-",
+          "pos": "접사",
+          "definition": "‘힘이나 돈이 들지 않은’의 뜻을 더하는 접두사.",
+          "origin": "空"
+        }
+      ]
+    },
+    "일": {
+      "queried_at": "2026-11-08T13:08:58.923516+00:00",
+      "total": "7",
+      "items": [
+        {
+          "target_code": "472953",
+          "word": "일",
+          "pos": "명사",
+          "definition": "무엇을 이루거나 적절한 대가를 받기 위하여 어떤 장소에서 일정한 시간 동안 몸을 움직이거나 머리를 쓰는 활동. 또는 그 활동의 대상.",
+          "origin": ""
+        },
+        {
+          "target_code": "272327",
+          "word": "일",
+          "pos": "명사",
+          "definition": "공척보에서, 협종(夾鍾)과 고선(姑洗) 두 음을 이르는 말.",
+          "origin": "一"
+        },
+        {
+          "target_code": "272328",
+          "word": "일",
+          "pos": "수사",
+          "definition": "자연수의 맨 처음 수. 아라비아 숫자로는 ‘1’, 로마 숫자로는 ‘Ⅰ’로 쓴다.",
+          "origin": "一/壹"
+        },
+        {
+          "target_code": "272089",
+          "word": "일",
+          "pos": "명사",
+          "definition": "‘일요일’을 이르는 말.",
+          "origin": "日"
+        },
+        {
+          "target_code": "272090",
+          "word": "일",
+          "pos": "명사",
+          "definition": "하루 동안.",
+          "origin": "日"
+        },
+        {
+          "target_code": "272621",
+          "word": "일",
+          "pos": "명사",
+          "definition": "‘일본’을 이르는 말.",
+          "origin": "日"
+        },
+        {
+          "target_code": "272622",
+          "word": "-일",
+          "pos": "접사",
+          "definition": "‘날’의 뜻을 더하는 접미사.",
+          "origin": "日"
+        }
+      ]
+    },
+    "이": {
+      "queried_at": "2026-11-08T13:09:00.160554+00:00",
+      "total": "31",
+      "items": [
+        {
+          "target_code": "469619",
+          "word": "이",
+          "pos": "명사",
+          "definition": "이목의 곤충을 통틀어 이르는 말. 몸의 길이는 1~4mm이고 편평한 방추형이다. 날개는 없고 머리 양쪽에 홑눈이 한 개씩 있다. 사람의 몸에 기생하면서 피를 빨아 먹는다. 잇과, 짐승닛과, 털닛과 따위가 있다.",
+          "origin": ""
+        },
+        {
+          "target_code": "270480",
+          "word": "이",
+          "pos": "명사",
+          "definition": "한글 자모 ‘ㅣ’의 이름.",
+          "origin": ""
+        },
+        {
+          "target_code": "270481",
+          "word": "이",
+          "pos": "명사",
+          "definition": "척추동물의 입안에 있으며 무엇을 물거나 음식물을 씹는 역할을 하는 기관.",
+          "origin": ""
+        },
+        {
+          "target_code": "270482",
+          "word": "이",
+          "pos": "의존 명사",
+          "definition": "‘사람’의 뜻을 나타내는 말.",
+          "origin": ""
+        },
+        {
+          "target_code": "469620",
+          "word": "이",
+          "pos": "대명사",
+          "definition": "말하는 이에게 가까이 있거나 말하는 이가 생각하고 있는 대상을 가리키는 지시 대명사.",
+          "origin": ""
+        },
+        {
+          "target_code": "270483",
+          "word": "이",
+          "pos": "감탄사",
+          "definition": "다른 사람이 위태한 지경에 있을 때, 그 사람의 주의를 환기하기 위하여 급히 지르는 소리.",
+          "origin": ""
+        },
+        {
+          "target_code": "270486",
+          "word": "이",
+          "pos": "수사",
+          "definition": "일에 일을 더한 수. 아라비아 숫자로는 ‘2’, 로마 숫자로는 ‘Ⅱ’로 쓴다.",
+          "origin": "二/貳"
+        },
+        {
+          "target_code": "270487",
+          "word": "이",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 태원(太原), 은천(銀川) 등이 현존한다.",
+          "origin": "伊"
+        },
+        {
+          "target_code": "270488",
+          "word": "이",
+          "pos": "명사",
+          "definition": "‘이탈리아’의 음역어.",
+          "origin": "伊"
+        },
+        {
+          "target_code": "469621",
+          "word": "이",
+          "pos": "명사",
+          "definition": "이익이나 이득.",
+          "origin": "利"
+        },
+        {
+          "target_code": "267128",
+          "word": "이",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 전주(全州), 경주(慶州), 성주(星州), 광주(廣州), 연안(延安), 한산(韓山), 전의(全義), 덕수(德水), 수안(遂安) 등 240여 본이 현존한다.",
+          "origin": "李"
+        },
+        {
+          "target_code": "267394",
+          "word": "이",
+          "pos": "명사",
+          "definition": "지방 행정의 말단 구역. 몇 개의 촌락이 모여 이루어지며, 읍과 면(面)의 아래에 둔다. 어말에 붙어 특정 동리의 이름을 나타낼 때에는 ‘리’로 바뀐다.",
+          "origin": "里"
+        },
+        {
+          "target_code": "471061",
+          "word": "이",
+          "pos": "명사",
+          "definition": "만물의 이치, 원리, 질서. 이(理)란 원래 옥(玉)에 나타나는 무늬를 가리켰는데, 나중에 철학적 개념으로 발전하여 ‘사물에 내재하는 원리’, ‘우주의 근본이 되는 도리’ 따위를 지칭하게 되었다. 특히 성리학에서는 사물의 질료적 측면을 기(氣)라 하고 원리적 측면을 이(理)라 한다.",
+          "origin": "理"
+        },
+        {
+          "target_code": "267396",
+          "word": "이",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 밀양(密陽), 남원(南原) 등이 현존한다.",
+          "origin": "異"
+        },
+        {
+          "target_code": "267397",
+          "word": "이",
+          "pos": "명사",
+          "definition": "중국 한대(漢代)의 공문서 가운데 같은 등급의 관아 사이에 주고받던 공문서. 때로는 격(檄)과 더불어 포고문의 성격을 띠기도 하였다.",
+          "origin": "移"
+        },
+        {
+          "target_code": "267398",
+          "word": "이",
+          "pos": "명사",
+          "definition": "명제의 가정과 결론을 부정하여 만든 명제를 본디의 명제에 대하여 이르는 말. <I>‘p→q’</I>의 이는 <I>‘∼p→∼q’</I>이다.",
+          "origin": "裏"
+        },
+        {
+          "target_code": "267399",
+          "word": "이",
+          "pos": "명사",
+          "definition": "육십사괘의 하나. 건괘와 태괘가 거듭된 것으로 위는 하늘, 아래는 못을 상징한다.",
+          "origin": "履"
+        },
+        {
+          "target_code": "471062",
+          "word": "이",
+          "pos": "명사",
+          "definition": "육십사괘의 하나. 간괘와 진괘가 거듭된 것으로 위는 산, 아래는 우레를 상징한다.",
+          "origin": "頥"
+        },
+        {
+          "target_code": "471063",
+          "word": "이",
+          "pos": "명사",
+          "definition": "종묘 제사 때, 강신(降神)에 쓰는 물이나 술을 담는 그릇. 계이(鷄彝), 조이(鳥彝), 호이(虎彝), 유이(蜼彝), 가이(斝彝), 황이(黃彝)의 육이(六彝)가 있다.",
+          "origin": "彝"
+        },
+        {
+          "target_code": "267400",
+          "word": "이",
+          "pos": "수사",
+          "definition": "분(分)의 10분의 1이 되는 수. 즉, 10<sup style='font-size:11px;'>－2</sup>을 이른다.",
+          "origin": "釐"
+        },
+        {
+          "target_code": "267395",
+          "word": "이",
+          "pos": "명사",
+          "definition": "팔방의 하나. 정남(正南)을 중심으로 한 45도 각도 안의 방향이다.",
+          "origin": "離/离"
+        },
+        {
+          "target_code": "267401",
+          "word": "이",
+          "pos": "명사",
+          "definition": "전칭 부정 판단을 뜻하는 기호.",
+          "origin": "E"
+        },
+        {
+          "target_code": "267402",
+          "word": "이",
+          "pos": "명사",
+          "definition": "영어 알파벳의 다섯 번째 자모 이름.",
+          "origin": "E / e"
+        },
+        {
+          "target_code": "267403",
+          "word": "이",
+          "pos": "명사",
+          "definition": "서양 음악의 칠음 체계에서, 세 번째 음이름.",
+          "origin": "E"
+        },
+        {
+          "target_code": "471254",
+          "word": "이",
+          "pos": "조사",
+          "definition": "어떤 상태를 보이는 대상이나 일정한 상태나 상황을 겪는 경험주 또는 일정한 동작의 주체임을 나타내는 격 조사. 문법적으로는 앞말이 서술어와 호응하는 주어임을 나타낸다.",
+          "origin": ""
+        },
+        {
+          "target_code": "267404",
+          "word": "-이",
+          "pos": "어미",
+          "definition": "하게할 자리에 쓰여, 상태의 서술이나 느낌을 나타내는 종결 어미.",
+          "origin": ""
+        },
+        {
+          "target_code": "267417",
+          "word": "-이",
+          "pos": "접사",
+          "definition": "명사를 만드는 접미사.",
+          "origin": ""
+        },
+        {
+          "target_code": "267418",
+          "word": "-이",
+          "pos": "접사",
+          "definition": "어조를 고르는 접미사.",
+          "origin": ""
+        },
+        {
+          "target_code": "267419",
+          "word": "-이-",
+          "pos": "접사",
+          "definition": "‘사동’의 뜻을 더하는 접미사.",
+          "origin": ""
+        },
+        {
+          "target_code": "267689",
+          "word": "-이",
+          "pos": "접사",
+          "definition": "부사를 만드는 접미사.",
+          "origin": ""
+        },
+        {
+          "target_code": "517763",
+          "word": "-이",
+          "pos": "접사",
+          "definition": "‘그 수량의 사람’을 뜻하는 접미사.",
+          "origin": ""
+        }
+      ]
+    },
+    "삼": {
+      "queried_at": "2026-11-08T13:09:01.638025+00:00",
+      "total": "9",
+      "items": [
+        {
+          "target_code": "172060",
+          "word": "삼",
+          "pos": "명사",
+          "definition": "태아를 싸고 있는 막과 태반.",
+          "origin": ""
+        },
+        {
+          "target_code": "172061",
+          "word": "삼",
+          "pos": "명사",
+          "definition": "배의 바닥에 댄 널.",
+          "origin": ""
+        },
+        {
+          "target_code": "441330",
+          "word": "삼",
+          "pos": "명사",
+          "definition": "거칠고 긴 마섬유가 채취되는 식물을 통틀어 이르는 말. 대마, 아마, 저마, 마닐라삼 따위가 있다.",
+          "origin": ""
+        },
+        {
+          "target_code": "172062",
+          "word": "삼",
+          "pos": "명사",
+          "definition": "눈동자에 좁쌀만 하게 생기는 희거나 붉은 점.",
+          "origin": ""
+        },
+        {
+          "target_code": "172063",
+          "word": "삼",
+          "pos": "품사 없음",
+          "definition": "‘삼하다’의 어근.",
+          "origin": ""
+        },
+        {
+          "target_code": "172341",
+          "word": "삼",
+          "pos": "수사",
+          "definition": "이에 일을 더한 수. 아라비아 숫자로는 ‘3’, 로마 숫자로는 ‘Ⅲ’으로 쓴다.",
+          "origin": "三"
+        },
+        {
+          "target_code": "441331",
+          "word": "삼",
+          "pos": "명사",
+          "definition": "이십팔수 가운데 스물한째 별자리의 별들. 오리온자리에 있으며, 중앙에 나란히 있는 세 개의 큰 별을 ‘삼형제별’이라 한다.",
+          "origin": "參"
+        },
+        {
+          "target_code": "172342",
+          "word": "삼",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 삼가(三嘉) 하나뿐이다.",
+          "origin": "森"
+        },
+        {
+          "target_code": "172343",
+          "word": "삼",
+          "pos": "명사",
+          "definition": "인삼과 산삼을 통틀어 이르는 말.",
+          "origin": "蔘"
+        }
+      ]
+    },
+    "사": {
+      "queried_at": "2026-11-08T13:09:02.076695+00:00",
+      "total": "43",
+      "items": [
+        {
+          "target_code": "160401",
+          "word": "사",
+          "pos": "명사",
+          "definition": "올이 풀리지 아니하도록 단춧구멍이나 꿰맨 솔기 따위의 가장자리를 실로 감치는 일.",
+          "origin": ""
+        },
+        {
+          "target_code": "160403",
+          "word": "사",
+          "pos": "명사",
+          "definition": "서양 음악의 칠음 체계에서, 다섯 번째 음이름.",
+          "origin": ""
+        },
+        {
+          "target_code": "160405",
+          "word": "사",
+          "pos": "명사",
+          "definition": "‘士’ 자를 새긴 장기짝. 한 편에 둘씩 넷이 있고, 궁 안에서만 한 칸을 움직이며 왕을 보호한다.",
+          "origin": "士"
+        },
+        {
+          "target_code": "156327",
+          "word": "사",
+          "pos": "명사",
+          "definition": "조선 시대에, 양반 계층인 선비를 이르던 말.",
+          "origin": "士"
+        },
+        {
+          "target_code": "156331",
+          "word": "사",
+          "pos": "명사",
+          "definition": "십이지(十二支)의 여섯째. 뱀을 상징한다.",
+          "origin": "巳"
+        },
+        {
+          "target_code": "156348",
+          "word": "사",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 청주(淸州), 거창(居昌), 경주(慶州) 등 10여 본이 현존한다.",
+          "origin": "史"
+        },
+        {
+          "target_code": "156349",
+          "word": "사",
+          "pos": "명사",
+          "definition": "인류 사회의 변천과 흥망의 과정. 또는 그 기록.",
+          "origin": "史"
+        },
+        {
+          "target_code": "440549",
+          "word": "사",
+          "pos": "명사",
+          "definition": "조선 전기에 둔 중앙 군사 조직의 편제 단위.",
+          "origin": "司"
+        },
+        {
+          "target_code": "156351",
+          "word": "사",
+          "pos": "명사",
+          "definition": "공척보에서, 대려(大呂)·태주(太蔟) 두 음을 나타내는 말.",
+          "origin": "四"
+        },
+        {
+          "target_code": "437871",
+          "word": "사",
+          "pos": "수사",
+          "definition": "삼에 일을 더한 수. 아라비아 숫자로는 ‘4’, 로마 숫자로는 ‘Ⅳ’로 쓴다.",
+          "origin": "四"
+        },
+        {
+          "target_code": "156352",
+          "word": "사",
+          "pos": "명사",
+          "definition": "죽는 일. 생물의 생명이 없어지는 현상을 이른다.",
+          "origin": "死"
+        },
+        {
+          "target_code": "156354",
+          "word": "사",
+          "pos": "수사",
+          "definition": "섬(纖)의 10분의 1이 되는 수. 즉, 10<sup style='font-size:11px;'>－8</sup>을 이른다.",
+          "origin": "沙/砂"
+        },
+        {
+          "target_code": "164492",
+          "word": "사",
+          "pos": "명사",
+          "definition": "바르지 못함.",
+          "origin": "邪"
+        },
+        {
+          "target_code": "164493",
+          "word": "사",
+          "pos": "명사",
+          "definition": "개인이나 개인의 집안에 관한 사사로운 것.",
+          "origin": "私"
+        },
+        {
+          "target_code": "164494",
+          "word": "사",
+          "pos": "의존 명사",
+          "definition": "‘일’이나 ‘것’ 따위의 뜻을 나타내는 말.",
+          "origin": "事"
+        },
+        {
+          "target_code": "164495",
+          "word": "사",
+          "pos": "명사",
+          "definition": "고려 시대에 둔 삼사, 밀직사, 자정원, 풍저창, 광흥창, 의영고, 요물고 따위의 으뜸 벼슬.",
+          "origin": "使"
+        },
+        {
+          "target_code": "443039",
+          "word": "사",
+          "pos": "명사",
+          "definition": "상행위 또는 그 밖의 영리 행위를 목적으로 하는 사단 법인. 주식회사, 유한 회사, 합자 회사, 합명 회사의 네 가지가 있다.",
+          "origin": "社"
+        },
+        {
+          "target_code": "164496",
+          "word": "사",
+          "pos": "명사",
+          "definition": "지신(地神)에게 지내던 제사. 사직, 산천, 서낭 따위의 제사를 이른다.",
+          "origin": "祀"
+        },
+        {
+          "target_code": "164497",
+          "word": "사",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 부평(富平), 태안(泰安) 등이 현존한다.",
+          "origin": "舍"
+        },
+        {
+          "target_code": "164498",
+          "word": "사",
+          "pos": "명사",
+          "definition": "풍수지리에서, 정기(精氣)가 모인 자리의 주변 생김새.",
+          "origin": "砂"
+        },
+        {
+          "target_code": "164499",
+          "word": "사",
+          "pos": "명사",
+          "definition": "육예(六藝)의 하나. 활을 쏘는 일이다.",
+          "origin": "射"
+        },
+        {
+          "target_code": "443040",
+          "word": "사",
+          "pos": "명사",
+          "definition": "육십사괘의 하나. 곤괘(坤卦)와 감괘(坎卦)가 거듭된 것으로 땅속에 물이 있음을 상징한다.",
+          "origin": "師"
+        },
+        {
+          "target_code": "164500",
+          "word": "사",
+          "pos": "명사",
+          "definition": "생사로 짠 얇고 가벼운 비단. 여름 옷감으로 많이 쓴다.",
+          "origin": "紗"
+        },
+        {
+          "target_code": "164501",
+          "word": "사",
+          "pos": "명사",
+          "definition": "죄를 용서하여 형벌을 면제함.",
+          "origin": "赦"
+        },
+        {
+          "target_code": "164754",
+          "word": "사",
+          "pos": "명사",
+          "definition": "팔음의 하나. 금, 당비파, 슬, 아쟁, 월금 따위의 울림통에다 명주실로 꼰 줄을 얹어 만든 악기를 통틀어 이른다.",
+          "origin": "絲"
+        },
+        {
+          "target_code": "443247",
+          "word": "사",
+          "pos": "수사",
+          "definition": "모(毛)의 10분의 1이 되는 수. 즉, 10<sup style='font-size:11px;'>－4</sup>을 이른다.",
+          "origin": "絲"
+        },
+        {
+          "target_code": "164755",
+          "word": "사",
+          "pos": "명사",
+          "definition": "중국 운문의 한 형식. 민간 가곡에서 발달하여 당나라 이후 오대(五代)를 거쳐 송나라에서 크게 성행하였다. 시형에 장단구가 섞여 장단구라고도 하며, 시여(詩餘)·의성(倚聲)·전사(塡詞)라고도 한다.",
+          "origin": "詞"
+        },
+        {
+          "target_code": "443248",
+          "word": "사",
+          "pos": "명사",
+          "definition": "집안의 대를 잇는 일.",
+          "origin": "嗣"
+        },
+        {
+          "target_code": "164756",
+          "word": "사",
+          "pos": "품사 없음",
+          "definition": "‘사하다’의 어근.",
+          "origin": "賜"
+        },
+        {
+          "target_code": "443249",
+          "word": "사",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 진주(晉州), 한산(韓山) 등이 현존한다.",
+          "origin": "謝"
+        },
+        {
+          "target_code": "164770",
+          "word": "사",
+          "pos": "품사 없음",
+          "definition": "‘사하다’의 어근.",
+          "origin": "謝"
+        },
+        {
+          "target_code": "164771",
+          "word": "사",
+          "pos": "품사 없음",
+          "definition": "‘사하다’의 어근.",
+          "origin": "瀉"
+        },
+        {
+          "target_code": "164762",
+          "word": "사",
+          "pos": "명사",
+          "definition": "사상을 말이나 글로써 나타낸 것.",
+          "origin": "辭"
+        },
+        {
+          "target_code": "164763",
+          "word": "사",
+          "pos": "품사 없음",
+          "definition": "‘사하다’의 어근.",
+          "origin": "辭"
+        },
+        {
+          "target_code": "164765",
+          "word": "-사",
+          "pos": "어미",
+          "definition": "(예스러운 표현으로) ‘-시어’의 뜻을 나타내는 어미.",
+          "origin": ""
+        },
+        {
+          "target_code": "440476",
+          "word": "-사",
+          "pos": "접사",
+          "definition": "‘직업’의 뜻을 더하는 접미사.",
+          "origin": "士"
+        },
+        {
+          "target_code": "164766",
+          "word": "-사",
+          "pos": "접사",
+          "definition": "‘역사(歷史)’의 뜻을 더하는 접미사.",
+          "origin": "史"
+        },
+        {
+          "target_code": "440477",
+          "word": "-사",
+          "pos": "접사",
+          "definition": "‘절’의 뜻을 더하는 접미사.",
+          "origin": "寺"
+        },
+        {
+          "target_code": "164767",
+          "word": "-사",
+          "pos": "접사",
+          "definition": "‘일’의 뜻을 더하는 접미사.",
+          "origin": "事"
+        },
+        {
+          "target_code": "164768",
+          "word": "-사",
+          "pos": "접사",
+          "definition": "‘회사’(會社)의 뜻을 더하는 접미사.",
+          "origin": "社"
+        },
+        {
+          "target_code": "440478",
+          "word": "-사",
+          "pos": "접사",
+          "definition": "‘그것을 직업으로 하는 사람’의 뜻을 더하는 접미사.",
+          "origin": "師"
+        },
+        {
+          "target_code": "164769",
+          "word": "-사",
+          "pos": "접사",
+          "definition": "‘품사’의 뜻을 더하는 접미사.",
+          "origin": "詞"
+        },
+        {
+          "target_code": "440479",
+          "word": "-사",
+          "pos": "접사",
+          "definition": "‘말’의 뜻을 더하는 접미사.",
+          "origin": "辭"
+        }
+      ]
+    },
+    "오": {
+      "queried_at": "2026-11-08T13:09:03.905398+00:00",
+      "total": "20",
+      "items": [
+        {
+          "target_code": "240765",
+          "word": "오",
+          "pos": "명사",
+          "definition": "한글 자모 ‘ㅗ’의 이름.",
+          "origin": ""
+        },
+        {
+          "target_code": "461436",
+          "word": "오",
+          "pos": "감탄사",
+          "definition": "상대편의 말이나 행동을 인정하는 뜻으로 내는 소리.",
+          "origin": ""
+        },
+        {
+          "target_code": "240766",
+          "word": "오",
+          "pos": "명사",
+          "definition": "공척보에서, 청대려·청태주·청협종의 세 음을 이르는 말.",
+          "origin": "五"
+        },
+        {
+          "target_code": "240767",
+          "word": "오",
+          "pos": "수사",
+          "definition": "사에 일을 더한 수. 아라비아 숫자로는 ‘5’, 로마 숫자로는 ‘Ⅴ’로 쓴다.",
+          "origin": "五"
+        },
+        {
+          "target_code": "241010",
+          "word": "오",
+          "pos": "명사",
+          "definition": "십이지(十二支)의 일곱째. 말을 상징한다.",
+          "origin": "午"
+        },
+        {
+          "target_code": "241011",
+          "word": "오",
+          "pos": "명사",
+          "definition": "대열에서 종대로 늘어섰을 때 옆으로의 한 조. 또는 횡대로 늘어섰을 때 앞뒤로의 한 조.",
+          "origin": "伍"
+        },
+        {
+          "target_code": "241012",
+          "word": "오",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 해주(海州), 보성(寶城), 동복(同福) 등 60여 본이 현존한다.",
+          "origin": "吳"
+        },
+        {
+          "target_code": "461437",
+          "word": "오",
+          "pos": "명사",
+          "definition": "중국 춘추 시대에, 주나라 문왕(文王)의 백부 태백(太白)이 세운 나라. 양쯔강 하류 지역을 영유하였고, 황허강 중류 유역의 주민과 풍속이 달라 만이(蠻夷)로 취급받았는데 기원전 473년에 월(越)나라의 구천(句踐)에게 멸망하였다.",
+          "origin": "吳"
+        },
+        {
+          "target_code": "241013",
+          "word": "오",
+          "pos": "명사",
+          "definition": "중국 삼국 시대에, 222년에 손권이 건업(建業)에 도읍하고 강남에 세운 나라. 280년 서진(西晉)에게 멸망하였다.",
+          "origin": "吳"
+        },
+        {
+          "target_code": "241014",
+          "word": "오",
+          "pos": "명사",
+          "definition": "중국 오대십국 가운데 902년에 양행밀(楊行密)이 양저우(揚州)에 도읍하고 화이난(淮南), 장둥(江東)에 세운 나라. 937년에 남당(南唐)에 멸망하였다.",
+          "origin": "吳"
+        },
+        {
+          "target_code": "461438",
+          "word": "오",
+          "pos": "명사",
+          "definition": "신라 때에 이문(泥文)이 지은 가야금곡.",
+          "origin": "烏"
+        },
+        {
+          "target_code": "241305",
+          "word": "오",
+          "pos": "명사",
+          "definition": "‘오스트리아’를 이르는 말.",
+          "origin": "墺"
+        },
+        {
+          "target_code": "241306",
+          "word": "오",
+          "pos": "명사",
+          "definition": "문제의 답이 맞았다는 표시.",
+          "origin": "O"
+        },
+        {
+          "target_code": "241307",
+          "word": "오",
+          "pos": "명사",
+          "definition": "해석 기하학에서, 두 개의 좌표축이 교차하는 원점을 이르는 말.",
+          "origin": "O / o"
+        },
+        {
+          "target_code": "241308",
+          "word": "오",
+          "pos": "명사",
+          "definition": "영어 알파벳의 열다섯 번째 자모 이름.",
+          "origin": "O / o"
+        },
+        {
+          "target_code": "241318",
+          "word": "오",
+          "pos": "명사",
+          "definition": "에이비오식(ABO式) 혈액형의 하나. 같은 혈액형을 비롯하여 에이형(A型), 비형(B型), 에이비형(AB型) 모두에게 수혈이 가능하나, 같은 혈액형에게서만 수혈받을 수 있다.",
+          "origin": "O"
+        },
+        {
+          "target_code": "241319",
+          "word": "오",
+          "pos": "명사",
+          "definition": "‘산소’의 원소 기호.",
+          "origin": "O"
+        },
+        {
+          "target_code": "241320",
+          "word": "-오-",
+          "pos": "어미",
+          "definition": "(예스러운 표현으로) 서술이나 의문에 공손함을 더하여 주는 어미.",
+          "origin": ""
+        },
+        {
+          "target_code": "241321",
+          "word": "-오",
+          "pos": "어미",
+          "definition": "하오할 자리에 쓰여, 설명·의문·명령의 뜻을 나타내는 종결 어미.",
+          "origin": ""
+        },
+        {
+          "target_code": "241322",
+          "word": "오-",
+          "pos": "접사",
+          "definition": "‘올-’의 준말.",
+          "origin": ""
+        }
+      ]
+    },
+    "육": {
+      "queried_at": "2026-11-08T13:09:04.125825+00:00",
+      "total": "4",
+      "items": [
+        {
+          "target_code": "263759",
+          "word": "육",
+          "pos": "명사",
+          "definition": "공척보에서, 청황종 음을 이르는 말.",
+          "origin": "六"
+        },
+        {
+          "target_code": "263760",
+          "word": "육",
+          "pos": "수사",
+          "definition": "오에 일을 더한 수. 아라비아 숫자로는 ‘6’, 로마 숫자로는 ‘Ⅵ’으로 쓴다.",
+          "origin": "六"
+        },
+        {
+          "target_code": "263761",
+          "word": "육",
+          "pos": "명사",
+          "definition": "짐승의 살.",
+          "origin": "肉"
+        },
+        {
+          "target_code": "263762",
+          "word": "육",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 옥천(沃川) 하나뿐이다.",
+          "origin": "陸"
+        }
+      ]
+    },
+    "칠": {
+      "queried_at": "2026-11-08T13:09:04.738756+00:00",
+      "total": "2",
+      "items": [
+        {
+          "target_code": "340228",
+          "word": "칠",
+          "pos": "수사",
+          "definition": "육에 일을 더한 수. 아라비아 숫자로는 ‘7’, 로마 숫자로는 ‘Ⅶ’로 쓴다.",
+          "origin": "七"
+        },
+        {
+          "target_code": "339986",
+          "word": "칠",
+          "pos": "명사",
+          "definition": "가구나 나무 그릇 따위에 윤을 내기 위하여 옻을 바르는 일.",
+          "origin": "漆"
+        }
+      ]
+    },
+    "팔": {
+      "queried_at": "2026-11-08T13:09:05.149694+00:00",
+      "total": "2",
+      "items": [
+        {
+          "target_code": "499580",
+          "word": "팔",
+          "pos": "명사",
+          "definition": "어깨와 손목 사이의 부분.",
+          "origin": ""
+        },
+        {
+          "target_code": "353874",
+          "word": "팔",
+          "pos": "수사",
+          "definition": "칠에 일을 더한 수. 아라비아 숫자로는 ‘8’, 로마 숫자로는 ‘Ⅷ’로 쓴다.",
+          "origin": "八"
+        }
+      ]
+    },
+    "구": {
+      "queried_at": "2026-11-08T13:09:05.389772+00:00",
+      "total": "25",
+      "items": [
+        {
+          "target_code": "35776",
+          "word": "구",
+          "pos": "수사",
+          "definition": "팔에 일을 더한 수. 아라비아 숫자로는 ‘9’, 로마 숫자로는 ‘Ⅸ’로 쓴다.",
+          "origin": "九"
+        },
+        {
+          "target_code": "393477",
+          "word": "구",
+          "pos": "명사",
+          "definition": "거문고를 연주할 때에, 술대로 줄을 안쪽으로 떠내는 기법.",
+          "origin": "勾"
+        },
+        {
+          "target_code": "35339",
+          "word": "구",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 평해(平海) 하나뿐이다.",
+          "origin": "丘"
+        },
+        {
+          "target_code": "35340",
+          "word": "구",
+          "pos": "명사",
+          "definition": "직각 삼각형에서, 직각을 낀 두 변 가운데 짧은 변.",
+          "origin": "勾/句"
+        },
+        {
+          "target_code": "393669",
+          "word": "구",
+          "pos": "명사",
+          "definition": "둘 이상의 단어가 모여 절이나 문장의 일부분을 이루는 토막. 종류에 따라 명사구, 동사구, 형용사구, 관형사구, 부사구 따위로 구분한다.",
+          "origin": "句"
+        },
+        {
+          "target_code": "35341",
+          "word": "구",
+          "pos": "품사 없음",
+          "definition": "‘구하다’의 어근.",
+          "origin": "求"
+        },
+        {
+          "target_code": "35502",
+          "word": "구",
+          "pos": "명사",
+          "definition": "병을 치료하는 방법의 하나. 약쑥을 비벼서 쌀알 크기로 빚어 살 위의 혈(穴)에 놓고 불을 붙여서 열기가 살 속으로 퍼지게 한다.",
+          "origin": "灸"
+        },
+        {
+          "target_code": "35345",
+          "word": "구",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 능성(綾城), 창원(昌原), 평해(平海) 등 10여 본이 현존한다.",
+          "origin": "具"
+        },
+        {
+          "target_code": "35346",
+          "word": "구",
+          "pos": "의존 명사",
+          "definition": "시체 따위를 세는 단위.",
+          "origin": "具"
+        },
+        {
+          "target_code": "35409",
+          "word": "구",
+          "pos": "명사",
+          "definition": "온몸의 근육이 오그라들고 팔과 다리를 펴지 못하는 증상.",
+          "origin": "拘"
+        },
+        {
+          "target_code": "35410",
+          "word": "구",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 주요 본관은 은진(恩津)이 현존한다.",
+          "origin": "邱"
+        },
+        {
+          "target_code": "35411",
+          "word": "구",
+          "pos": "명사",
+          "definition": "육십사괘의 하나. 건괘(乾卦)와 손괘(巽卦)가 거듭한 것으로, 하늘과 바람을 상징한다.",
+          "origin": "姤"
+        },
+        {
+          "target_code": "393643",
+          "word": "구",
+          "pos": "명사",
+          "definition": "나무나 쇠를 이용하여 90도 각도로 만든 ‘ㄱ’ 자 모양의 자.",
+          "origin": "矩"
+        },
+        {
+          "target_code": "35571",
+          "word": "구",
+          "pos": "품사 없음",
+          "definition": "‘구하다’의 어근.",
+          "origin": "救"
+        },
+        {
+          "target_code": "35572",
+          "word": "구",
+          "pos": "명사",
+          "definition": "넓은 범위의 것을 일정한 기준에 따라 몇으로 나눈 하나하나의 구획.",
+          "origin": "區"
+        },
+        {
+          "target_code": "35573",
+          "word": "구",
+          "pos": "명사",
+          "definition": "격구(擊毬), 타구(打毬), 모구(毛毬)를 할 때 쓰는 공. 나무, 마노(瑪瑙), 녹비, 저피(豬皮) 따위로 만든다.",
+          "origin": "毬"
+        },
+        {
+          "target_code": "393645",
+          "word": "구",
+          "pos": "명사",
+          "definition": "공처럼 둥글게 생긴 물체. 또는 그런 모양.",
+          "origin": "球"
+        },
+        {
+          "target_code": "35574",
+          "word": "구",
+          "pos": "명사",
+          "definition": "그릇의 아가리에 둘러 씌운 테.",
+          "origin": "釦"
+        },
+        {
+          "target_code": "35575",
+          "word": "구",
+          "pos": "수사",
+          "definition": "양(穰)의 만 배가 되는 수. 즉, 10<sup style='font-size:11px;'>32</sup>을 이른다.",
+          "origin": "溝"
+        },
+        {
+          "target_code": "393646",
+          "word": "구",
+          "pos": "명사",
+          "definition": "흙을 사용하여 단지 모양으로 구워 만든 옛 타악기. 부(缶)와 비슷하며, 열두 개를 한 짝으로 그 안에 물을 담아 십이율 음에 맞추었다고 한다.",
+          "origin": "甌"
+        },
+        {
+          "target_code": "517869",
+          "word": "구",
+          "pos": "관형사",
+          "definition": "지난날의. 지금은 없는.",
+          "origin": "舊"
+        },
+        {
+          "target_code": "35576",
+          "word": "-구-",
+          "pos": "접사",
+          "definition": "‘사동’의 뜻을 더하는 접미사.",
+          "origin": ""
+        },
+        {
+          "target_code": "393647",
+          "word": "-구",
+          "pos": "접사",
+          "definition": "‘구멍’ 또는 ‘구멍이 나 있는 장소’의 뜻을 더하는 접미사.",
+          "origin": "口"
+        },
+        {
+          "target_code": "35577",
+          "word": "-구",
+          "pos": "접사",
+          "definition": "‘용구’ 또는 ‘도구’의 뜻을 더하는 접미사.",
+          "origin": "具"
+        },
+        {
+          "target_code": "36121",
+          "word": "구-",
+          "pos": "접사",
+          "definition": "‘묵은’ 또는 ‘낡은’의 뜻을 더하는 접두사.",
+          "origin": "舊"
+        }
+      ]
+    },
+    "십": {
+      "queried_at": "2026-11-08T13:09:06.946857+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "207207",
+          "word": "십",
+          "pos": "수사",
+          "definition": "구에 일을 더한 수. 아라비아 숫자로는 ‘10’, 로마 숫자로는 ‘X’으로 쓴다.",
+          "origin": "十"
+        }
+      ]
+    },
+    "백": {
+      "queried_at": "2026-11-08T13:09:07.772365+00:00",
+      "total": "9",
+      "items": [
+        {
+          "target_code": "138573",
+          "word": "백",
+          "pos": "명사",
+          "definition": "눈이나 우유의 빛깔과 같이 밝고 선명한 색.",
+          "origin": "白"
+        },
+        {
+          "target_code": "138574",
+          "word": "백",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 수원(水原), 남포(藍浦), 직산(稷山), 임천(林川), 태인(泰仁), 청도(淸道) 등 10여 본이 현존한다.",
+          "origin": "白"
+        },
+        {
+          "target_code": "138575",
+          "word": "백",
+          "pos": "명사",
+          "definition": "판소리의 아니리, 탈춤 따위에서의 덕담이나 재담에 해당하는 사설을 이르는 말.",
+          "origin": "白"
+        },
+        {
+          "target_code": "430954",
+          "word": "백",
+          "pos": "수사",
+          "definition": "십의 열 배가 되는 수.",
+          "origin": "百"
+        },
+        {
+          "target_code": "143623",
+          "word": "백",
+          "pos": "명사",
+          "definition": "다섯 등급으로 나눈 귀족의 작위 가운데 셋째 작위. 후작의 아래, 자작의 위이다.",
+          "origin": "伯"
+        },
+        {
+          "target_code": "143624",
+          "word": "백",
+          "pos": "명사",
+          "definition": "차량 따위를 뒤로 물러가게 함.",
+          "origin": "back"
+        },
+        {
+          "target_code": "143899",
+          "word": "백",
+          "pos": "명사",
+          "definition": "손에 들고 다닐 수 있는 가방이나 주머니.",
+          "origin": "bag"
+        },
+        {
+          "target_code": "143900",
+          "word": "백-",
+          "pos": "접사",
+          "definition": "‘흰’의 뜻을 더하는 접두사.",
+          "origin": "白"
+        },
+        {
+          "target_code": "434055",
+          "word": "-백",
+          "pos": "접사",
+          "definition": "‘말씀드리다’는 뜻을 더하는 접미사.",
+          "origin": "白"
+        }
+      ]
+    },
+    "천": {
+      "queried_at": "2026-11-08T13:09:08.641242+00:00",
+      "total": "10",
+      "items": [
+        {
+          "target_code": "322990",
+          "word": "천",
+          "pos": "명사",
+          "definition": "실로 짠, 옷이나 이부자리 따위의 감이 되는 물건.",
+          "origin": ""
+        },
+        {
+          "target_code": "487232",
+          "word": "천",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 영양(穎陽), 언양(彦陽), 개성(開城) 등 30여 본이 현존한다.",
+          "origin": "千"
+        },
+        {
+          "target_code": "487233",
+          "word": "천",
+          "pos": "수사",
+          "definition": "백의 열 배가 되는 수.",
+          "origin": "千"
+        },
+        {
+          "target_code": "322991",
+          "word": "천",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 연안(延安), 충주(忠州) 등이 현존한다.",
+          "origin": "天"
+        },
+        {
+          "target_code": "322992",
+          "word": "천",
+          "pos": "명사",
+          "definition": "미계(迷界)인 오취(五趣)나 육도(六道) 가운데 가장 나은 유정(有情). 또는 그 유정이 생존하는 세계. 욕계(欲界)의 육욕천과 색계(色界)의 사선천 따위이다.",
+          "origin": "天"
+        },
+        {
+          "target_code": "322993",
+          "word": "천",
+          "pos": "명사",
+          "definition": "고대의 팔찌.",
+          "origin": "釧"
+        },
+        {
+          "target_code": "322994",
+          "word": "천",
+          "pos": "품사 없음",
+          "definition": "‘천하다’의 어근.",
+          "origin": "賤"
+        },
+        {
+          "target_code": "322996",
+          "word": "천",
+          "pos": "명사",
+          "definition": "강가나 바닷가에 있는 벼랑.",
+          "origin": "遷"
+        },
+        {
+          "target_code": "322997",
+          "word": "천",
+          "pos": "명사",
+          "definition": "사람을 어떤 자리에 추천함.",
+          "origin": "薦"
+        },
+        {
+          "target_code": "322999",
+          "word": "-천",
+          "pos": "접사",
+          "definition": "‘내’의 이름을 나타내는 접미사.",
+          "origin": "川"
+        }
+      ]
+    },
+    "만": {
+      "queried_at": "2026-11-08T13:09:09.613335+00:00",
+      "total": "13",
+      "items": [
+        {
+          "target_code": "109060",
+          "word": "만",
+          "pos": "의존 명사",
+          "definition": "‘앞말이 가리키는 동안이나 거리’를 나타내는 말.",
+          "origin": ""
+        },
+        {
+          "target_code": "419756",
+          "word": "만",
+          "pos": "의존 명사",
+          "definition": "앞말이 뜻하는 동작이나 행동에 타당한 이유가 있음을 나타내는 말.",
+          "origin": ""
+        },
+        {
+          "target_code": "422412",
+          "word": "만",
+          "pos": "명사",
+          "definition": "인도에서 전하여 오는 길상(吉祥)의 징표. 불보살의 가슴·손·발 따위에 나타나는, 공덕이 원만함을 나타내는 상(相)으로, 불교나 절의 표지로 쓰인다.",
+          "origin": "卍"
+        },
+        {
+          "target_code": "109123",
+          "word": "만",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 개성(開城), 강화(江華) 등이 현존한다.",
+          "origin": "萬"
+        },
+        {
+          "target_code": "109492",
+          "word": "만",
+          "pos": "수사",
+          "definition": "천의 열 배가 되는 수.",
+          "origin": "萬"
+        },
+        {
+          "target_code": "422416",
+          "word": "만",
+          "pos": "명사",
+          "definition": "시기나 햇수를 꽉 차게 헤아림을 이르는 말.",
+          "origin": "滿"
+        },
+        {
+          "target_code": "109493",
+          "word": "만",
+          "pos": "명사",
+          "definition": "→ 여민락만.",
+          "origin": "慢"
+        },
+        {
+          "target_code": "109222",
+          "word": "만",
+          "pos": "명사",
+          "definition": "예전에, 중국에서 남쪽의 오랑캐라는 뜻으로 남쪽 지방에 사는 민족을 낮잡아 이르던 말.",
+          "origin": "蠻"
+        },
+        {
+          "target_code": "109223",
+          "word": "만",
+          "pos": "명사",
+          "definition": "바다가 육지 속으로 파고들어 와 있는 곳.",
+          "origin": "灣"
+        },
+        {
+          "target_code": "109224",
+          "word": "만",
+          "pos": "명사",
+          "definition": "독일의 소설가·수필가(1871~1950). 표현주의의 선구자로, 빌헬름 이세 치하의 독일의 전체적인 사회 구조를 비난하는 작품들을 썼다. 저서에 ≪운라트 교수≫, ≪가난한 사람들≫ 따위가 있다.",
+          "origin": "Mann, Heinrich"
+        },
+        {
+          "target_code": "422417",
+          "word": "만",
+          "pos": "명사",
+          "definition": "독일의 소설가·평론가(1875~1955). 만(Mann, H)의 동생으로, 심리 분석과 문화 비판을 바탕으로, 신휴머니즘의 확립을 추구하였다. 현대 독일의 양심을 대표하는 최대 작가로 꼽히며, 제일 차 세계 대전 후 <마(魔)의 산>으로 1929년에 노벨 문학상을 받았다. 작품에 <요셉과 그 형제>, <파우스트 박사> 따위가 있다.",
+          "origin": "Mann, Thomas"
+        },
+        {
+          "target_code": "422624",
+          "word": "만",
+          "pos": "조사",
+          "definition": "다른 것으로부터 제한하여 어느 것을 한정함을 나타내는 보조사.",
+          "origin": ""
+        },
+        {
+          "target_code": "109285",
+          "word": "만",
+          "pos": "조사",
+          "definition": "‘마는’의 준말.",
+          "origin": ""
+        }
+      ]
+    },
+    "억": {
+      "queried_at": "2026-11-08T13:09:10.551676+00:00",
+      "total": "3",
+      "items": [
+        {
+          "target_code": "227464",
+          "word": "억",
+          "pos": "감탄사",
+          "definition": "갑자기 몹시 놀라거나 쓰러질 때 내는 소리.",
+          "origin": ""
+        },
+        {
+          "target_code": "227465",
+          "word": "억",
+          "pos": "품사 없음",
+          "definition": "‘억하다’의 어근.",
+          "origin": ""
+        },
+        {
+          "target_code": "450513",
+          "word": "억",
+          "pos": "수사",
+          "definition": "만(萬)의 만 배가 되는 수.",
+          "origin": "億"
+        }
+      ]
+    },
+    "조": {
+      "queried_at": "2026-11-08T13:09:11.637296+00:00",
+      "total": "27",
+      "items": [
+        {
+          "target_code": "484821",
+          "word": "조",
+          "pos": "명사",
+          "definition": "볏과의 한해살이풀. 줄기는 높이가 1~1.5미터이며, 잎은 어긋나고 좁고 길다. 9월에 줄기 끝에 이삭이 나와 원통 모양의 가는 꽃이 피고 열매는 노란색의 작은 구형(球形)이다. 오곡의 하나로 밥을 짓기도 하고 떡, 과자, 엿, 술 따위의 원료로 쓴다. 동아시아가 원산지로 유럽, 아시아 각지에 분포한다.",
+          "origin": ""
+        },
+        {
+          "target_code": "303230",
+          "word": "조",
+          "pos": "관형사",
+          "definition": "‘저’를 낮잡아 이르거나 귀엽게 이르는 말.",
+          "origin": ""
+        },
+        {
+          "target_code": "303231",
+          "word": "조",
+          "pos": "품사 없음",
+          "definition": "‘조하다’의 어근.",
+          "origin": ""
+        },
+        {
+          "target_code": "303234",
+          "word": "조",
+          "pos": "수사",
+          "definition": "억(億)의 만 배가 되는 수.",
+          "origin": "兆"
+        },
+        {
+          "target_code": "485306",
+          "word": "조",
+          "pos": "명사",
+          "definition": "신라 때에, 각 궁원(宮園)에 둔 맨 아래 벼슬.",
+          "origin": "助"
+        },
+        {
+          "target_code": "303235",
+          "word": "조",
+          "pos": "명사",
+          "definition": "제사(祭祀) 때에 고기를 얹어 놓는 그릇.",
+          "origin": "俎"
+        },
+        {
+          "target_code": "485318",
+          "word": "조",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 창녕(昌寧), 능성(綾城), 남평(南平), 옥주(玉州), 장흥(長興), 안동(安東) 등 20여 본이 현존한다.",
+          "origin": "曺"
+        },
+        {
+          "target_code": "303236",
+          "word": "조",
+          "pos": "명사",
+          "definition": "어떤 사물을 창시(創始)한 사람.",
+          "origin": "祖"
+        },
+        {
+          "target_code": "303237",
+          "word": "조",
+          "pos": "명사",
+          "definition": "귀족이 국가에서 받은 토지를 백성에게 소작하게 하여 그 수확물을 일정한 비율로 나누어 받던 일.",
+          "origin": "租"
+        },
+        {
+          "target_code": "303238",
+          "word": "조",
+          "pos": "명사",
+          "definition": "‘彫’ 자를 나무에 새겨 수결(手決) 대신으로 쓰던 큰 도장.",
+          "origin": "彫"
+        },
+        {
+          "target_code": "485319",
+          "word": "조",
+          "pos": "명사",
+          "definition": "중국에서, 주나라 무왕의 아우 숙진탁(叔振鐸)에게 봉(封)하여진 나라. 지금의 산둥성(山東省) 딩타오현(定陶縣)에 도읍하였는데, 춘추 시대 중기에 송나라에 망하였다.",
+          "origin": "曹"
+        },
+        {
+          "target_code": "303239",
+          "word": "조",
+          "pos": "의존 명사",
+          "definition": "내용을 체계적으로 나누어 구분하는 단위의 하나. 보통 가장 큰 단위로 쓰인다.",
+          "origin": "條"
+        },
+        {
+          "target_code": "485320",
+          "word": "조",
+          "pos": "명사",
+          "definition": "과거를 볼 때나 서당에서 글을 욀 때, 성적을 매기던 다섯 등급 가운데 넷째 등급.",
+          "origin": "粗"
+        },
+        {
+          "target_code": "485321",
+          "word": "조",
+          "pos": "명사",
+          "definition": "일정한 목적을 위하여 조직된, 적은 사람들의 집단.",
+          "origin": "組"
+        },
+        {
+          "target_code": "303240",
+          "word": "조",
+          "pos": "명사",
+          "definition": "임금의 명령을 일반에게 알릴 목적으로 적은 문서.",
+          "origin": "詔"
+        },
+        {
+          "target_code": "303241",
+          "word": "조",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 풍양(豐壤), 한양(漢陽), 양주(楊州), 임천(林川), 함안(咸安), 순창(淳昌), 횡성(橫城), 김제(金堤) 등 50여 본이 현존한다.",
+          "origin": "趙"
+        },
+        {
+          "target_code": "303242",
+          "word": "조",
+          "pos": "명사",
+          "definition": "중국에서, 전국 칠웅 가운데 기원전 403년에 진(晉)나라의 유력한 귀족인 조 씨(趙氏)가 한 씨(韓氏), 위 씨(魏氏)와 함께 진나라의 영지(領地)를 삼분(三分)하여 세운 나라. 산시성(山西省) 북부에서 허베이성(河北省) 동남부까지를 차지하여 무령왕 때 전성기를 맞이하였으나 기원전 228년에 진(秦)나라에 망하였다.",
+          "origin": "趙"
+        },
+        {
+          "target_code": "303248",
+          "word": "조",
+          "pos": "품사 없음",
+          "definition": "‘조하다’의 어근.",
+          "origin": "遭"
+        },
+        {
+          "target_code": "481720",
+          "word": "조",
+          "pos": "명사",
+          "definition": "품격을 높고 깨끗하게 가지려는 행동.",
+          "origin": "調"
+        },
+        {
+          "target_code": "303250",
+          "word": "조",
+          "pos": "명사",
+          "definition": "중국을 중심으로 한 동양의 옛날 조세 제도 가운데 각지의 특산물인 모시, 베, 명주, 모피, 지물(紙物) 따위를 나라에 바치던 일. 또는 그 물건.",
+          "origin": "調"
+        },
+        {
+          "target_code": "303251",
+          "word": "조",
+          "pos": "명사",
+          "definition": "깨끗이 가지는 몸과 굳게 잡은 마음.",
+          "origin": "操"
+        },
+        {
+          "target_code": "303558",
+          "word": "조",
+          "pos": "품사 없음",
+          "definition": "‘조하다’의 어근.",
+          "origin": "燥"
+        },
+        {
+          "target_code": "303560",
+          "word": "조",
+          "pos": "명사",
+          "definition": "부엌을 맡는다는 신. 늘 부엌에 있으면서 모든 길흉을 판단한다고 한다.",
+          "origin": "竈"
+        },
+        {
+          "target_code": "303561",
+          "word": "조",
+          "pos": "품사 없음",
+          "definition": "‘조하다’의 어근.",
+          "origin": "躁"
+        },
+        {
+          "target_code": "303826",
+          "word": "조-",
+          "pos": "접사",
+          "definition": "‘보조적인’ 또는 ‘버금가는’의 뜻을 더하는 접두사.",
+          "origin": "助"
+        },
+        {
+          "target_code": "481834",
+          "word": "-조",
+          "pos": "접사",
+          "definition": "‘조상’의 뜻을 더하는 접미사.",
+          "origin": "祖"
+        },
+        {
+          "target_code": "303827",
+          "word": "-조",
+          "pos": "접사",
+          "definition": "‘통치 기간’ 또는 ‘왕조’의 뜻을 더하는 접미사.",
+          "origin": "朝"
+        }
+      ]
+    },
+    "하나": {
+      "queried_at": "2026-11-08T13:09:12.723726+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "499690",
+          "word": "하나",
+          "pos": "수사",
+          "definition": "수효를 세는 맨 처음 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "둘": {
+      "queried_at": "2026-11-08T13:09:13.347863+00:00",
+      "total": "3",
+      "items": [
+        {
+          "target_code": "417176",
+          "word": "둘",
+          "pos": "수사",
+          "definition": "하나에 하나를 더한 수.",
+          "origin": ""
+        },
+        {
+          "target_code": "92586",
+          "word": "둘-",
+          "pos": "접사",
+          "definition": "‘새끼나 알을 낳지 못하는’의 뜻을 더하는 접두사.",
+          "origin": ""
+        },
+        {
+          "target_code": "417177",
+          "word": "둘",
+          "pos": "품사 없음",
+          "definition": "‘둘하다’의 어근.",
+          "origin": ""
+        }
+      ]
+    },
+    "셋": {
+      "queried_at": "2026-11-08T13:09:13.878428+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "189906",
+          "word": "셋",
+          "pos": "수사",
+          "definition": "둘에 하나를 더한 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "넷": {
+      "queried_at": "2026-11-08T13:09:14.359333+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "408355",
+          "word": "넷",
+          "pos": "수사",
+          "definition": "셋에 하나를 더한 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "다섯": {
+      "queried_at": "2026-11-08T13:09:14.586138+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "73433",
+          "word": "다섯",
+          "pos": "수사",
+          "definition": "넷에 하나를 더한 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "여섯": {
+      "queried_at": "2026-11-08T13:09:15.077394+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "459171",
+          "word": "여섯",
+          "pos": "수사",
+          "definition": "다섯에 하나를 더한 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "일곱": {
+      "queried_at": "2026-11-08T13:09:15.557860+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "476489",
+          "word": "일곱",
+          "pos": "수사",
+          "definition": "여섯에 하나를 더한 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "여덟": {
+      "queried_at": "2026-11-08T13:09:16.213344+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "459268",
+          "word": "여덟",
+          "pos": "수사",
+          "definition": "일곱에 하나를 더한 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "아홉": {
+      "queried_at": "2026-11-08T13:09:16.741245+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "218735",
+          "word": "아홉",
+          "pos": "수사",
+          "definition": "여덟에 하나를 더한 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "열": {
+      "queried_at": "2026-11-08T13:09:17.604597+00:00",
+      "total": "5",
+      "items": [
+        {
+          "target_code": "460799",
+          "word": "열",
+          "pos": "명사",
+          "definition": "도리깨나 채찍 따위의 끝에 달려 있는 회초리나 끈을 통틀어 이르는 말.",
+          "origin": ""
+        },
+        {
+          "target_code": "235073",
+          "word": "열",
+          "pos": "명사",
+          "definition": "긴 원통 모양의 강철로 되어 있는, 총의 한 부분. 총알이 나가는 방향을 잡아 준다.",
+          "origin": ""
+        },
+        {
+          "target_code": "460403",
+          "word": "열",
+          "pos": "수사",
+          "definition": "아홉에 하나를 더한 수.",
+          "origin": ""
+        },
+        {
+          "target_code": "235076",
+          "word": "열",
+          "pos": "명사",
+          "definition": "사람이나 물건이 죽 벌여 늘어선 줄.",
+          "origin": "列"
+        },
+        {
+          "target_code": "460404",
+          "word": "열",
+          "pos": "명사",
+          "definition": "병으로 인하여 오르는 몸의 열.",
+          "origin": "熱"
+        }
+      ]
+    },
+    "스물": {
+      "queried_at": "2026-11-08T13:09:18.286851+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "197563",
+          "word": "스물",
+          "pos": "수사",
+          "definition": "열의 두 배가 되는 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "서른": {
+      "queried_at": "2026-11-08T13:09:18.760875+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "444733",
+          "word": "서른",
+          "pos": "수사",
+          "definition": "열의 세 배가 되는 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "마흔": {
+      "queried_at": "2026-11-08T13:09:19.250241+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "107355",
+          "word": "마흔",
+          "pos": "수사",
+          "definition": "열의 네 배가 되는 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "쉰": {
+      "queried_at": "2026-11-08T13:09:19.733230+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "450438",
+          "word": "쉰",
+          "pos": "수사",
+          "definition": "열의 다섯 배가 되는 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "예순": {
+      "queried_at": "2026-11-08T13:09:20.211496+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "461180",
+          "word": "예순",
+          "pos": "수사",
+          "definition": "열의 여섯 배가 되는 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "일흔": {
+      "queried_at": "2026-11-08T13:09:20.684441+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "473010",
+          "word": "일흔",
+          "pos": "수사",
+          "definition": "열의 일곱 배가 되는 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "여든": {
+      "queried_at": "2026-11-08T13:09:21.230255+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "458812",
+          "word": "여든",
+          "pos": "수사",
+          "definition": "열의 여덟 배가 되는 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "아흔": {
+      "queried_at": "2026-11-08T13:09:21.788350+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "454551",
+          "word": "아흔",
+          "pos": "수사",
+          "definition": "열의 아홉 배가 되는 수.",
+          "origin": ""
+        }
+      ]
+    },
+    "한": {
+      "queried_at": "2026-11-08T13:09:23.064366+00:00",
+      "total": "15",
+      "items": [
+        {
+          "target_code": "495790",
+          "word": "한",
+          "pos": "관형사",
+          "definition": "그 수량이 하나임을 나타내는 말.",
+          "origin": ""
+        },
+        {
+          "target_code": "361883",
+          "word": "한",
+          "pos": "명사",
+          "definition": "‘간’의 원말.",
+          "origin": "干"
+        },
+        {
+          "target_code": "361884",
+          "word": "한",
+          "pos": "명사",
+          "definition": "삼한·삼국 시대에, 족장·임금·으뜸 벼슬 따위를 이르던 말.",
+          "origin": "汗/翰/韓"
+        },
+        {
+          "target_code": "361885",
+          "word": "한",
+          "pos": "명사",
+          "definition": "‘칸’의 음역어.",
+          "origin": "汗"
+        },
+        {
+          "target_code": "361886",
+          "word": "한",
+          "pos": "명사",
+          "definition": "몹시 원망스럽고 억울하거나 안타깝고 슬퍼 응어리진 마음.",
+          "origin": "恨"
+        },
+        {
+          "target_code": "503856",
+          "word": "한",
+          "pos": "명사",
+          "definition": "시간, 공간, 수량, 정도 따위의 끝을 나타내는 말.",
+          "origin": "限"
+        },
+        {
+          "target_code": "362139",
+          "word": "한",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 충주(忠州), 담양(潭陽) 등이 현존한다.",
+          "origin": "漢"
+        },
+        {
+          "target_code": "362140",
+          "word": "한",
+          "pos": "명사",
+          "definition": "중국에서 역대로 존재하였던 전한, 후한, 촉한, 성한, 북한, 남한 따위를 두루 이르는 말.",
+          "origin": "漢"
+        },
+        {
+          "target_code": "362152",
+          "word": "한",
+          "pos": "명사",
+          "definition": "장기에서, ‘漢’ 자를 새긴 장수 격인 궁(宮)의 하나.",
+          "origin": "漢"
+        },
+        {
+          "target_code": "362153",
+          "word": "한",
+          "pos": "명사",
+          "definition": "우리나라의 성(姓)의 하나. 본관은 청주(淸州) 등 40여 본이 현존한다.",
+          "origin": "韓"
+        },
+        {
+          "target_code": "362154",
+          "word": "한",
+          "pos": "명사",
+          "definition": "‘대한 제국’을 줄여 이르는 말.",
+          "origin": "韓"
+        },
+        {
+          "target_code": "362155",
+          "word": "한",
+          "pos": "명사",
+          "definition": "독일의 물리학자·화학자(1879~1968). 우라늄·토륨 따위의 핵분열을 연구하여 원자 폭탄의 기초를 만들었다. 1944년 노벨 화학상을 받았다.",
+          "origin": "Hahn, Otto"
+        },
+        {
+          "target_code": "362156",
+          "word": "한-",
+          "pos": "접사",
+          "definition": "‘큰’의 뜻을 더하는 접두사.",
+          "origin": ""
+        },
+        {
+          "target_code": "503857",
+          "word": "한-",
+          "pos": "접사",
+          "definition": "‘바깥’의 뜻을 더하는 접두사.",
+          "origin": ""
+        },
+        {
+          "target_code": "517393",
+          "word": "-한",
+          "pos": "접사",
+          "definition": "그와 관련된 사람의 뜻을 더하는 접미사.",
+          "origin": "漢"
+        }
+      ]
+    },
+    "두": {
+      "queried_at": "2026-11-08T13:09:23.713189+00:00",
+      "total": "9",
+      "items": [
+        {
+          "target_code": "91168",
+          "word": "두",
+          "pos": "관형사",
+          "definition": "그 수량이 둘임을 나타내는 말.",
+          "origin": ""
+        },
+        {
+          "target_code": "91169",
+          "word": "두",
+          "pos": "감탄사",
+          "definition": "돼지 따위의 짐승을 몰아 쫓을 때 내는 소리.",
+          "origin": ""
+        },
+        {
+          "target_code": "91170",
+          "word": "두",
+          "pos": "명사",
+          "definition": "이십팔수의 여덟째 별자리.",
+          "origin": "斗"
+        },
+        {
+          "target_code": "91171",
+          "word": "두",
+          "pos": "의존 명사",
+          "definition": "부피의 단위. 곡식, 액체, 가루 따위의 부피를 잴 때 쓴다. 한 두는 한 되의 열 배로 약 18리터에 해당한다.",
+          "origin": "斗"
+        },
+        {
+          "target_code": "414200",
+          "word": "두",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 두릉(杜陵) 하나뿐이다.",
+          "origin": "杜"
+        },
+        {
+          "target_code": "91172",
+          "word": "두",
+          "pos": "명사",
+          "definition": "두껍고 굽이 높으며 뚜껑이 있어서 고기붙이, 국 따위를 담는 데 쓰는 나무로 된 제기(祭器).",
+          "origin": "豆"
+        },
+        {
+          "target_code": "91173",
+          "word": "두",
+          "pos": "명사",
+          "definition": "‘머리’를 속되게 이르는 말.",
+          "origin": "頭"
+        },
+        {
+          "target_code": "92018",
+          "word": "두",
+          "pos": "의존 명사",
+          "definition": "소나 말 따위의 짐승을 세는 단위.",
+          "origin": "頭"
+        },
+        {
+          "target_code": "92019",
+          "word": "두",
+          "pos": "조사",
+          "definition": "→ 도.",
+          "origin": ""
+        }
+      ]
+    },
+    "세": {
+      "queried_at": "2026-11-08T13:09:24.988083+00:00",
+      "total": "11",
+      "items": [
+        {
+          "target_code": "189757",
+          "word": "세",
+          "pos": "관형사",
+          "definition": "그 수량이 셋임을 나타내는 말.",
+          "origin": ""
+        },
+        {
+          "target_code": "189762",
+          "word": "세",
+          "pos": "명사",
+          "definition": "지질 시대를 구분하는 단위. 기(紀)보다 작은 단위로 갱신세, 최신세, 충적세 따위가 있다.",
+          "origin": "世"
+        },
+        {
+          "target_code": "189775",
+          "word": "세",
+          "pos": "의존 명사",
+          "definition": "가계나 지위의 차례, 또는 왕조의 임금 순위를 나타내는 단위.",
+          "origin": "世"
+        },
+        {
+          "target_code": "445277",
+          "word": "세",
+          "pos": "명사",
+          "definition": "칠성사(七聖事) 가운데 가장 먼저 받는 성사. 가톨릭교의 입교 성사이며, 주로 물로 씻는 예식으로 이루어진다.",
+          "origin": "洗"
+        },
+        {
+          "target_code": "189776",
+          "word": "세",
+          "pos": "명사",
+          "definition": "제례(祭禮)에서 손이나 술잔을 씻던 그릇. 관세(盥洗)와 작세(爵洗)의 두 가지가 있다.",
+          "origin": "洗"
+        },
+        {
+          "target_code": "445278",
+          "word": "세",
+          "pos": "명사",
+          "definition": "국가 또는 지방 공공 단체가 필요한 경비로 사용하기 위하여 국민이나 주민으로부터 강제로 거두어들이는 금전. 국세와 지방세가 있다.",
+          "origin": "稅"
+        },
+        {
+          "target_code": "445279",
+          "word": "세",
+          "pos": "명사",
+          "definition": "남의 건물이나 물건 따위를 빌려 쓰고 그 값으로 내는 돈.",
+          "origin": "貰"
+        },
+        {
+          "target_code": "189777",
+          "word": "세",
+          "pos": "명사",
+          "definition": "권력이나 기세의 힘.",
+          "origin": "勢"
+        },
+        {
+          "target_code": "189778",
+          "word": "세",
+          "pos": "의존 명사",
+          "definition": "나이를 세는 단위.",
+          "origin": "歲"
+        },
+        {
+          "target_code": "189779",
+          "word": "세",
+          "pos": "명사",
+          "definition": "프랑스의 경제학자(1767~1832). 정부의 간섭을 배제한, 시장의 자기 조절 기능을 중시하였다. 저서에 ≪정치 경제학 개론≫ 따위가 있다.",
+          "origin": "Say, Jean Baptiste"
+        },
+        {
+          "target_code": "445280",
+          "word": "-세",
+          "pos": "어미",
+          "definition": "하게할 자리에 쓰여, 어떤 행동을 함께하자는 뜻을 나타내는 종결 어미.",
+          "origin": ""
+        }
+      ]
+    },
+    "네": {
+      "queried_at": "2026-11-08T13:09:25.688707+00:00",
+      "total": "7",
+      "items": [
+        {
+          "target_code": "64700",
+          "word": "네",
+          "pos": "대명사",
+          "definition": "‘너’에 주격 조사 ‘가’나 보격 조사 ‘가’ 가 붙을 때의 형태.",
+          "origin": ""
+        },
+        {
+          "target_code": "64701",
+          "word": "네",
+          "pos": "관형사",
+          "definition": "그 수량이 넷임을 나타내는 말.",
+          "origin": ""
+        },
+        {
+          "target_code": "65013",
+          "word": "네",
+          "pos": "감탄사",
+          "definition": "윗사람의 부름에 대답하거나 묻는 말에 긍정하여 대답할 때 쓰는 말.",
+          "origin": ""
+        },
+        {
+          "target_code": "407947",
+          "word": "네",
+          "pos": "명사",
+          "definition": "프랑스의 군인(1769~1815). 나폴레옹 일세의 원수(元帥)로 모스크바 퇴각 작전 때에 공이 컸으며, 백일천하(百日天下) 때 나폴레옹을 지지하여 반역죄로 처형되었다.",
+          "origin": "Ney, Michel"
+        },
+        {
+          "target_code": "407948",
+          "word": "-네",
+          "pos": "어미",
+          "definition": "하게할 자리에 쓰여, 단순한 서술의 뜻을 나타내는 종결 어미.",
+          "origin": ""
+        },
+        {
+          "target_code": "65016",
+          "word": "-네",
+          "pos": "접사",
+          "definition": "‘그러한 부류 또는 그러한 부류에 속하는 사람’의 뜻을 더하는 접미사.",
+          "origin": ""
+        },
+        {
+          "target_code": "65018",
+          "word": "네",
+          "pos": "품사 없음",
+          "definition": "‘너’에 관형격 조사 ‘의’가 결합하여 줄어든 말.",
+          "origin": ""
+        }
+      ]
+    },
+    "스무": {
+      "queried_at": "2026-11-08T13:09:25.904762+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "201944",
+          "word": "스무",
+          "pos": "관형사",
+          "definition": "그 수량이 스물임을 나타내는 말.",
+          "origin": ""
+        }
+      ]
+    },
+    "명": {
+      "queried_at": "2026-11-08T13:09:26.624426+00:00",
+      "total": "12",
+      "items": [
+        {
+          "target_code": "116094",
+          "word": "명",
+          "pos": "명사",
+          "definition": "무명실로 짠 피륙.",
+          "origin": ""
+        },
+        {
+          "target_code": "116095",
+          "word": "명",
+          "pos": "명사",
+          "definition": "다른 것과 구별하기 위하여 사물, 단체, 현상 따위에 붙여서 부르는 말.",
+          "origin": "名"
+        },
+        {
+          "target_code": "116096",
+          "word": "명",
+          "pos": "의존 명사",
+          "definition": "사람을 세는 단위.",
+          "origin": "名"
+        },
+        {
+          "target_code": "116482",
+          "word": "명",
+          "pos": "명사",
+          "definition": "사람이나 동물이 숨을 쉬며 살아 있는 힘.",
+          "origin": "命"
+        },
+        {
+          "target_code": "116483",
+          "word": "명",
+          "pos": "명사",
+          "definition": "윗사람이나 상위 조직이 아랫사람이나 하위 조직에 무엇을 하게 함. 또는 그런 내용.",
+          "origin": "命"
+        },
+        {
+          "target_code": "116485",
+          "word": "명",
+          "pos": "명사",
+          "definition": "어리석음의 어둠을 깨고 진리를 깨닫는 성스러운 지혜.",
+          "origin": "明"
+        },
+        {
+          "target_code": "116486",
+          "word": "명",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 서촉(西蜀), 연안(延安) 등이 현존한다.",
+          "origin": "明"
+        },
+        {
+          "target_code": "425295",
+          "word": "명",
+          "pos": "명사",
+          "definition": "1368년에 주원장이 강남(江南)에서 일어나 원(元)을 북쪽으로 몰아내고 세운 중국의 통일 왕조. 영락제 때 난징(南京)에서 베이징으로 도읍을 옮기고 몽고와 남해에 원정하여 전성기를 이루었으나, 뒤에 북로남왜에 시달리고 환관의 전횡과 당쟁, 농민의 반란이 끊이지 않아 1644년에 이자성(李自成)에게 망하였다.",
+          "origin": "明"
+        },
+        {
+          "target_code": "116487",
+          "word": "명",
+          "pos": "명사",
+          "definition": "금석(金石), 기물(器物), 비석 따위에 남의 공적을 찬양하는 내용이나 사물의 내력을 새김. 또는 그런 문구. 흔히 한문 문체 형식으로 하는데, 대개 운(韻)을 넣어 넉 자가 한 짝이 되어 구(句)를 이루게 한다.",
+          "origin": "銘"
+        },
+        {
+          "target_code": "116489",
+          "word": "명",
+          "pos": "명사",
+          "definition": "‘미’의 음역어.",
+          "origin": "鳴"
+        },
+        {
+          "target_code": "425486",
+          "word": "명-",
+          "pos": "접사",
+          "definition": "‘이름난’ 또는 ‘뛰어난’의 뜻을 더하는 접두사.",
+          "origin": "名"
+        },
+        {
+          "target_code": "535112",
+          "word": "-명",
+          "pos": "접사",
+          "definition": "‘이름’의 뜻을 더하는 접미사.",
+          "origin": "名"
+        }
+      ]
+    },
+    "개": {
+      "queried_at": "2026-11-08T13:09:27.814990+00:00",
+      "total": "10",
+      "items": [
+        {
+          "target_code": "11656",
+          "word": "개",
+          "pos": "명사",
+          "definition": "강이나 내에 바닷물이 드나드는 곳.",
+          "origin": ""
+        },
+        {
+          "target_code": "11657",
+          "word": "개",
+          "pos": "명사",
+          "definition": "꿀벌이 그 유충을 기르거나 꽃꿀, 꽃가루 따위를 저장하기 위하여 만든 벌집. 배마디에 있는 납선에서 밀을 분비해서 짓는다.",
+          "origin": ""
+        },
+        {
+          "target_code": "11865",
+          "word": "개",
+          "pos": "명사",
+          "definition": "갯과의 포유류. 가축으로 사람을 잘 따르고 영리하다. 일반적으로 늑대 따위와 비슷하게 생겼으며 날카로운 이빨이 있다. 냄새를 잘 맡으며 귀가 밝아 사냥이나 군용, 맹인 선도와 마약 및 폭약 탐지에 쓰인다. 전 세계에 걸쳐 모양, 크기, 색깔이 다양한 300여 품종이 있다.",
+          "origin": ""
+        },
+        {
+          "target_code": "392353",
+          "word": "개",
+          "pos": "명사",
+          "definition": "윷놀이에서, 윷짝의 두 개는 엎어지고 두 개는 젖혀진 경우를 이르는 말. 끗수는 두 끗으로 친다.",
+          "origin": ""
+        },
+        {
+          "target_code": "392354",
+          "word": "개",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 주요 본관은 여주(驪州)가 현존한다.",
+          "origin": "介"
+        },
+        {
+          "target_code": "11868",
+          "word": "개",
+          "pos": "명사",
+          "definition": "‘옴’을 한방에서 이르는 말.",
+          "origin": "疥"
+        },
+        {
+          "target_code": "11921",
+          "word": "개",
+          "pos": "의존 명사",
+          "definition": "낱으로 된 물건을 세는 단위.",
+          "origin": "個/箇/介"
+        },
+        {
+          "target_code": "392355",
+          "word": "개",
+          "pos": "명사",
+          "definition": "음식 그릇의 뚜껑.",
+          "origin": "蓋"
+        },
+        {
+          "target_code": "11922",
+          "word": "개-",
+          "pos": "접사",
+          "definition": "‘야생 상태의’ 또는 ‘질이 떨어지는’, ‘흡사하지만 다른’의 뜻을 더하는 접두사.",
+          "origin": ""
+        },
+        {
+          "target_code": "11923",
+          "word": "-개",
+          "pos": "접사",
+          "definition": "‘그러한 행위를 하는 간단한 도구’의 뜻을 더하고 명사를 만드는 접미사.",
+          "origin": ""
+        }
+      ]
+    },
+    "번": {
+      "queried_at": "2026-11-08T13:09:28.459845+00:00",
+      "total": "8",
+      "items": [
+        {
+          "target_code": "140523",
+          "word": "번",
+          "pos": "명사",
+          "definition": "시루를 솥에 안칠 때 그 틈에서 김이 새지 않도록 바르는 반죽.",
+          "origin": ""
+        },
+        {
+          "target_code": "140774",
+          "word": "번",
+          "pos": "명사",
+          "definition": "심마니들의 은어로, ‘말씀’을 이르는 말.",
+          "origin": ""
+        },
+        {
+          "target_code": "140775",
+          "word": "번",
+          "pos": "품사 없음",
+          "definition": "‘번하다’의 어근.",
+          "origin": ""
+        },
+        {
+          "target_code": "140777",
+          "word": "번",
+          "pos": "명사",
+          "definition": "차례로 숙직이나 당직을 하는 일.",
+          "origin": "番"
+        },
+        {
+          "target_code": "140778",
+          "word": "번",
+          "pos": "명사",
+          "definition": "몸과 마음이 답답하고 열이 나서 손과 발을 가만히 두지 못하는 짓.",
+          "origin": "煩"
+        },
+        {
+          "target_code": "140779",
+          "word": "번",
+          "pos": "명사",
+          "definition": "부처와 보살의 성덕(盛德)을 나타내는 깃발. 꼭대기에 종이나 비단 따위를 가늘게 오려서 단다.",
+          "origin": "幡"
+        },
+        {
+          "target_code": "140781",
+          "word": "번",
+          "pos": "명사",
+          "definition": "강인번(降引旛), 신번(信旛), 표미번(豹尾旛) 따위의 의장기.",
+          "origin": "旛"
+        },
+        {
+          "target_code": "140782",
+          "word": "번",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 기성(岐城), 광주(光州), 남평(南平) 등이 현존한다.",
+          "origin": "藩"
+        }
+      ]
+    },
+    "년": {
+      "queried_at": "2026-11-08T13:09:28.773941+00:00",
+      "total": "3",
+      "items": [
+        {
+          "target_code": "67505",
+          "word": "년",
+          "pos": "의존 명사",
+          "definition": "‘여자’를 낮잡아 이르는 말.",
+          "origin": ""
+        },
+        {
+          "target_code": "411192",
+          "word": "년",
+          "pos": "의존 명사",
+          "definition": "해를 세는 단위. 1년은 약 365.25일이다.",
+          "origin": "年"
+        },
+        {
+          "target_code": "67793",
+          "word": "-년",
+          "pos": "접사",
+          "definition": "‘해’의 뜻을 더하는 접미사.",
+          "origin": "年"
+        }
+      ]
+    },
+    "월": {
+      "queried_at": "2026-11-08T13:09:29.552268+00:00",
+      "total": "6",
+      "items": [
+        {
+          "target_code": "259598",
+          "word": "월",
+          "pos": "명사",
+          "definition": "생각이나 감정을 말과 글로 표현할 때 완결된 내용을 나타내는 최소의 단위. 주어와 서술어를 갖추고 있는 것이 원칙이나 때로 이런 것이 생략될 수도 있다. 글의 경우, 문장의 끝에 ‘.’, ‘?’, ‘!’ 따위의 문장 부호를 찍는다. ‘철수는 몇 살이니?’, ‘세 살.’, ‘정말?’ 따위이다.",
+          "origin": ""
+        },
+        {
+          "target_code": "259599",
+          "word": "월",
+          "pos": "명사",
+          "definition": "한 달 동안.",
+          "origin": "月"
+        },
+        {
+          "target_code": "258042",
+          "word": "월",
+          "pos": "명사",
+          "definition": "‘월요일’을 이르는 말.",
+          "origin": "月"
+        },
+        {
+          "target_code": "258043",
+          "word": "월",
+          "pos": "명사",
+          "definition": "휘파람 부는 방법의 하나.",
+          "origin": "越"
+        },
+        {
+          "target_code": "258044",
+          "word": "월",
+          "pos": "명사",
+          "definition": "중국 춘추 시대에 저장(浙江) 지방에 있던 나라. 회계(會稽)에 도읍하였으며 기원전 5세기 초기 구천(句踐) 때에 오나라를 멸하고 기원전 334년 초나라에 망하였다.",
+          "origin": "越"
+        },
+        {
+          "target_code": "258045",
+          "word": "월",
+          "pos": "명사",
+          "definition": "장수가 출정할 때 임금이 부신(符信)으로 주던 도끼 모양의 의장.",
+          "origin": "鉞"
+        }
+      ]
+    },
+    "시": {
+      "queried_at": "2026-11-08T13:09:30.294275+00:00",
+      "total": "22",
+      "items": [
+        {
+          "target_code": "201122",
+          "word": "시",
+          "pos": "감탄사",
+          "definition": "마음에 차지 않거나 못마땅할 때 내는 소리.",
+          "origin": ""
+        },
+        {
+          "target_code": "201127",
+          "word": "시",
+          "pos": "명사",
+          "definition": "도시를 중심으로 하는 지방 행정 구역의 하나.",
+          "origin": "市"
+        },
+        {
+          "target_code": "201128",
+          "word": "시",
+          "pos": "명사",
+          "definition": "활시위에 메겨서 당겼다가 놓으면 그 반동으로 멀리 날아가도록 만든 물건. 가는 대로 줄기를 삼고, 아래 끝에는 쇠로 만든 촉을 꽂으며 위쪽에는 세 줄로 새의 깃을 붙인다.",
+          "origin": "矢"
+        },
+        {
+          "target_code": "450830",
+          "word": "시",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 절강(浙江), 성주(星州) 등이 현존한다.",
+          "origin": "施"
+        },
+        {
+          "target_code": "201129",
+          "word": "시",
+          "pos": "명사",
+          "definition": "옳거나 맞는 것.",
+          "origin": "是"
+        },
+        {
+          "target_code": "450465",
+          "word": "시",
+          "pos": "명사",
+          "definition": "사람이 태어난 시각.",
+          "origin": "時"
+        },
+        {
+          "target_code": "201130",
+          "word": "시",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 태인(泰仁), 김화(金化) 등이 현존한다.",
+          "origin": "柴"
+        },
+        {
+          "target_code": "201131",
+          "word": "시",
+          "pos": "명사",
+          "definition": "거문고나 향비파를 타는 데 쓰는, 단단한 대나무로 만든 채.",
+          "origin": "匙"
+        },
+        {
+          "target_code": "201415",
+          "word": "시",
+          "pos": "명사",
+          "definition": "문학의 한 장르. 자연이나 인생에 대하여 일어나는 감흥과 사상 따위를 함축적이고 운율적인 언어로 표현한 글이다. 형식에 따라 정형시·자유시·산문시로 나누며, 내용에 따라 서정시·서사시·극시로 나눈다.",
+          "origin": "詩"
+        },
+        {
+          "target_code": "450466",
+          "word": "시",
+          "pos": "명사",
+          "definition": "유학 오경(五經)의 하나. 중국 최고(最古)의 시집으로 공자가 편찬하였다고 전하여지나 미상이다. 주나라 초부터 춘추 시대까지의 시 311편을 풍(風)·아(雅)·송(頌)의 세 부문으로 나누어 수록하였다. 오늘날 전하는 것은 305편이며 한나라 모형(毛亨)이 전하였다고 하여 ‘모시’(毛詩)라고도 한다.",
+          "origin": "詩"
+        },
+        {
+          "target_code": "201417",
+          "word": "시",
+          "pos": "명사",
+          "definition": "제왕이나 재상, 유현(儒賢) 들이 죽은 뒤에, 그들의 공덕을 칭송하여 붙인 이름.",
+          "origin": "諡"
+        },
+        {
+          "target_code": "450467",
+          "word": "시",
+          "pos": "명사",
+          "definition": "성적이나 사물의 단계를 나타내는 기호의 하나. A, B 다음가는 것을 나타낸다.",
+          "origin": "C"
+        },
+        {
+          "target_code": "201419",
+          "word": "시",
+          "pos": "명사",
+          "definition": "비타민의 한 종류.",
+          "origin": "C"
+        },
+        {
+          "target_code": "201418",
+          "word": "시",
+          "pos": "명사",
+          "definition": "섭씨온도를 나타내는 기호. ‘Celsius’의 머리글자를 딴 것이다.",
+          "origin": "C"
+        },
+        {
+          "target_code": "201420",
+          "word": "시",
+          "pos": "명사",
+          "definition": "영어 알파벳의 세 번째 자모 이름.",
+          "origin": "C / c"
+        },
+        {
+          "target_code": "201421",
+          "word": "시",
+          "pos": "명사",
+          "definition": "서양 음악의 칠음 체계에서, 첫 번째 음이름.",
+          "origin": "C / c"
+        },
+        {
+          "target_code": "450468",
+          "word": "시",
+          "pos": "명사",
+          "definition": "탄소의 원소 이름. ‘Carbon’의 머리글자를 딴 것이다.",
+          "origin": "C"
+        },
+        {
+          "target_code": "201422",
+          "word": "시",
+          "pos": "명사",
+          "definition": "서양 음악의 칠음 체계에서, 일곱 번째 계이름.",
+          "origin": "si"
+        },
+        {
+          "target_code": "450469",
+          "word": "-시-",
+          "pos": "어미",
+          "definition": "어떤 동작이나 상태의 주체가 화자에게 사회적인 상위자로 인식될 때 그와 관련된 동작이나 상태 기술에 결합하여 그것이 상위자와 관련됨을 나타내는 어미.",
+          "origin": ""
+        },
+        {
+          "target_code": "201437",
+          "word": "시-",
+          "pos": "접사",
+          "definition": "‘매우 짙고 선명하게’의 뜻을 더하는 접두사.",
+          "origin": ""
+        },
+        {
+          "target_code": "199673",
+          "word": "시-",
+          "pos": "접사",
+          "definition": "‘남편의’의 뜻을 나타내는 접두사.",
+          "origin": "媤"
+        },
+        {
+          "target_code": "199674",
+          "word": "-시",
+          "pos": "접사",
+          "definition": "‘그렇게 여김’ 또는 ‘그렇게 봄’의 뜻을 더하는 접미사.",
+          "origin": "視"
+        }
+      ]
+    },
+    "분": {
+      "queried_at": "2026-11-08T13:09:30.951871+00:00",
+      "total": "14",
+      "items": [
+        {
+          "target_code": "435919",
+          "word": "분",
+          "pos": "의존 명사",
+          "definition": "사람을 높여서 이르는 말.",
+          "origin": ""
+        },
+        {
+          "target_code": "151076",
+          "word": "분",
+          "pos": "명사",
+          "definition": "전체를 몇으로 나눈 부분.",
+          "origin": "分"
+        },
+        {
+          "target_code": "151078",
+          "word": "분",
+          "pos": "명사",
+          "definition": "자기 신분에 맞는 한도.",
+          "origin": "分"
+        },
+        {
+          "target_code": "435920",
+          "word": "분",
+          "pos": "명사",
+          "definition": "조선 시대에, 무과에서 성적을 매기던 단위.",
+          "origin": "分"
+        },
+        {
+          "target_code": "151079",
+          "word": "분",
+          "pos": "명사",
+          "definition": "물가에 따라 세율을 정하여 받던 잡세(雜稅).",
+          "origin": "分"
+        },
+        {
+          "target_code": "435921",
+          "word": "분",
+          "pos": "의존 명사",
+          "definition": "한 시간의 60분의 1에 해당하는 시간. 국제단위계에서 시간의 기본 단위인 초로 나타내면 60초와 같다.",
+          "origin": "分"
+        },
+        {
+          "target_code": "151080",
+          "word": "분",
+          "pos": "명사",
+          "definition": "등장인물의 성격, 나이, 특징 따위에 맞게 배우를 꾸밈. 또는 그런 차림새.",
+          "origin": "扮"
+        },
+        {
+          "target_code": "151082",
+          "word": "분",
+          "pos": "명사",
+          "definition": "흙을 담아 화초나 나무를 심는 그릇.",
+          "origin": "盆"
+        },
+        {
+          "target_code": "151083",
+          "word": "분",
+          "pos": "명사",
+          "definition": "대오리로 짜고 푸른 칠을 한 삼태기. 임금이 친경할 때 썼다.",
+          "origin": "畚"
+        },
+        {
+          "target_code": "153283",
+          "word": "분",
+          "pos": "명사",
+          "definition": "얼굴빛을 곱게 하기 위하여 얼굴에 바르는 화장품의 하나. 주로 밝은 살구색이나 흰색의 가루로 되어 있으나 고체나 액체 형태로 된 것도 있다.",
+          "origin": "粉"
+        },
+        {
+          "target_code": "153284",
+          "word": "분",
+          "pos": "명사",
+          "definition": "억울하고 원통한 마음.",
+          "origin": "憤/忿"
+        },
+        {
+          "target_code": "153286",
+          "word": "분",
+          "pos": "명사",
+          "definition": "사람이나 동물이 먹은 음식물을 소화하여 항문으로 내보내는 찌꺼기.",
+          "origin": "糞"
+        },
+        {
+          "target_code": "153292",
+          "word": "-분",
+          "pos": "접사",
+          "definition": "‘전체를 그 수만큼 나눈 부분’의 뜻을 더하는 접미사.",
+          "origin": "分"
+        },
+        {
+          "target_code": "511134",
+          "word": "-분",
+          "pos": "접사",
+          "definition": "앞의 명사에 ‘높임’의 뜻을 더하는 접미사.",
+          "origin": ""
+        }
+      ]
+    },
+    "초": {
+      "queried_at": "2026-11-08T13:09:32.165520+00:00",
+      "total": "23",
+      "items": [
+        {
+          "target_code": "488934",
+          "word": "초",
+          "pos": "명사",
+          "definition": "불빛을 내는 데 쓰는 물건의 하나. 밀, 백랍(白蠟), 쇠기름 따위의 지방을 끓인 뒤 원기둥 따위 같은 일정한 모양으로 굳히고 그 가운데에 실 따위로 심지를 만들어 박는다.",
+          "origin": ""
+        },
+        {
+          "target_code": "332571",
+          "word": "초",
+          "pos": "명사",
+          "definition": "무당의 은어로, ‘꽃’을 이르는 말.",
+          "origin": ""
+        },
+        {
+          "target_code": "332572",
+          "word": "초",
+          "pos": "의존 명사",
+          "definition": "어떤 기간의 처음이나 초기.",
+          "origin": "初"
+        },
+        {
+          "target_code": "332573",
+          "word": "초",
+          "pos": "명사",
+          "definition": "필요한 부분만을 뽑아서 적음. 또는 그런 기록.",
+          "origin": "抄"
+        },
+        {
+          "target_code": "332876",
+          "word": "초",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 제주(濟州) 하나뿐이다.",
+          "origin": "肖"
+        },
+        {
+          "target_code": "488935",
+          "word": "초",
+          "pos": "명사",
+          "definition": "노릇노릇하게 되도록 불에 약간 볶음. 주로 한의학에서 약재를 볶는 데 쓰는 방법이다.",
+          "origin": "炒"
+        },
+        {
+          "target_code": "488936",
+          "word": "초",
+          "pos": "의존 명사",
+          "definition": "한 시간의 3,600분의 1에 해당하는 시간. 국제단위계에서 시간의 기본 단위로, 세슘-133 원자의 섭동이 없는 바닥상태의 초미세 전이 주파수가 91억 9263만 1770헤르츠가 되도록 정의된 시간이다.",
+          "origin": "秒"
+        },
+        {
+          "target_code": "332878",
+          "word": "초",
+          "pos": "명사",
+          "definition": "약 백 명을 단위로 하던 군대의 편제.",
+          "origin": "哨"
+        },
+        {
+          "target_code": "333192",
+          "word": "초",
+          "pos": "명사",
+          "definition": "글의 초안을 잡음.",
+          "origin": "草"
+        },
+        {
+          "target_code": "333203",
+          "word": "초",
+          "pos": "명사",
+          "definition": "베어서 말린 풀. 주로 사료나 퇴비로 쓴다.",
+          "origin": "草"
+        },
+        {
+          "target_code": "333204",
+          "word": "초",
+          "pos": "명사",
+          "definition": "난초과의 식물을 통틀어 이르는 말. 뿌리가 굵고 잎은 홑잎이며, 꽃은 좌우 대칭이고 열매는 삭과(蒴果)이다. 450속 1만 5000여 종이 알려져 있다. 열대 지방이 원산지이다.",
+          "origin": "草"
+        },
+        {
+          "target_code": "333205",
+          "word": "초",
+          "pos": "명사",
+          "definition": "광범한 글과 뜻을 간추려 엮은 책.",
+          "origin": "鈔"
+        },
+        {
+          "target_code": "333206",
+          "word": "초",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 성주(星州), 청주(淸州), 강릉(江陵) 등이 현존한다.",
+          "origin": "楚"
+        },
+        {
+          "target_code": "492249",
+          "word": "초",
+          "pos": "명사",
+          "definition": "중국 춘추 오패(春秋五霸) 가운데 양쯔강(揚子江) 중류 지역을 차지한 나라. 뒤에 전국 칠웅의 하나가 되었으나 기원전 223년에 진(秦)나라에 망하였다.",
+          "origin": "楚"
+        },
+        {
+          "target_code": "333207",
+          "word": "초",
+          "pos": "명사",
+          "definition": "장기에서, 표면에 ‘楚’ 자를 새긴, 장수 격이 되는 궁. 주로 푸른색으로 글자를 칠하며 ‘漢’과 상대한다.",
+          "origin": "楚"
+        },
+        {
+          "target_code": "333208",
+          "word": "초",
+          "pos": "명사",
+          "definition": "생사(生絲)로 짠 얇은 비단을 통틀어 이르는 말.",
+          "origin": "綃"
+        },
+        {
+          "target_code": "333209",
+          "word": "초",
+          "pos": "품사 없음",
+          "definition": "‘초하다’의 어근.",
+          "origin": "憔"
+        },
+        {
+          "target_code": "333211",
+          "word": "초",
+          "pos": "명사",
+          "definition": "액체 조미료의 하나. 약간의 초산이 들어 있어 신맛이 난다.",
+          "origin": "醋"
+        },
+        {
+          "target_code": "333212",
+          "word": "초",
+          "pos": "명사",
+          "definition": "찹쌀이나 멥쌀 또는 보리쌀 따위를 찌거나 볶아서 가루로 만든 식품.",
+          "origin": "麨"
+        },
+        {
+          "target_code": "333213",
+          "word": "초",
+          "pos": "명사",
+          "definition": "물속에 잠겨 보이지 아니하는 바위나 산호.",
+          "origin": "礁"
+        },
+        {
+          "target_code": "492250",
+          "word": "초",
+          "pos": "명사",
+          "definition": "관례(冠禮)에서, 마지막으로 행하는 의식. 복건을 쓰고 난삼을 입고 신을 신는 의식인 삼가(三加)가 끝난 뒤에 행하는 축하연을 이른다.",
+          "origin": "醮"
+        },
+        {
+          "target_code": "517469",
+          "word": "초-",
+          "pos": "접사",
+          "definition": "‘처음’ 또는 ‘초기’의 뜻을 더하는 접두사.",
+          "origin": "初"
+        },
+        {
+          "target_code": "333214",
+          "word": "초-",
+          "pos": "접사",
+          "definition": "‘어떤 범위를 넘어선’ 또는 ‘정도가 심한’의 뜻을 더하는 접두사.",
+          "origin": "超"
+        }
+      ]
+    },
+    "원": {
+      "queried_at": "2026-11-08T13:09:33.263855+00:00",
+      "total": "20",
+      "items": [
+        {
+          "target_code": "465171",
+          "word": "원",
+          "pos": "의존 명사",
+          "definition": "우리나라의 화폐 단위. 1원은 1전의 100배이다. 1962년 6월 10일부터 시행되었다. 기호는 ￦.",
+          "origin": ""
+        },
+        {
+          "target_code": "253810",
+          "word": "원",
+          "pos": "감탄사",
+          "definition": "뜻밖의 일로 놀라거나 언짢을 때 내는 소리.",
+          "origin": ""
+        },
+        {
+          "target_code": "253811",
+          "word": "원",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 원주(原州), 대전(大田) 등이 현존한다.",
+          "origin": "元"
+        },
+        {
+          "target_code": "253812",
+          "word": "원",
+          "pos": "명사",
+          "definition": "대수 방정식의 미지수의 개수를 나타내는 말.",
+          "origin": "元"
+        },
+        {
+          "target_code": "465172",
+          "word": "원",
+          "pos": "명사",
+          "definition": "집합을 이루는 낱낱의 요소.",
+          "origin": "元"
+        },
+        {
+          "target_code": "468638",
+          "word": "원",
+          "pos": "명사",
+          "definition": "1271년에 몽고 제국의 제5대 황제 쿠빌라이가 대도(大都)에 도읍하고 세운 나라. 1279년에 남송을 멸망시키고, 중국 본토를 중심으로 몽고, 티베트를 영유하여 몽고 지상주의 입장에서 민족적 신분제를 세웠으나 1368년에 주원장을 중심으로 한 한족의 봉기로 망하였다.",
+          "origin": "元"
+        },
+        {
+          "target_code": "253823",
+          "word": "원",
+          "pos": "의존 명사",
+          "definition": "대한 제국 때의 화폐 단위.",
+          "origin": "元"
+        },
+        {
+          "target_code": "253824",
+          "word": "원",
+          "pos": "명사",
+          "definition": "못마땅하게 여기어 탓하거나 불평을 품고 미워함.",
+          "origin": "怨"
+        },
+        {
+          "target_code": "253826",
+          "word": "원",
+          "pos": "명사",
+          "definition": "고려·조선 시대에, 각 고을을 맡아 다스리던 지방관들을 통틀어 이르는 말. 절도사, 관찰사, 부윤, 목사, 부사, 군수, 현감, 현령 따위를 이른다.",
+          "origin": "員"
+        },
+        {
+          "target_code": "253827",
+          "word": "원",
+          "pos": "명사",
+          "definition": "우리나라 성(姓)의 하나. 본관은 비안(比安) 하나뿐이다.",
+          "origin": "袁"
+        },
+        {
+          "target_code": "468639",
+          "word": "원",
+          "pos": "명사",
+          "definition": "조선 시대에, 관원이 공무로 다닐 때에 숙식을 제공하던 곳.",
+          "origin": "院"
+        },
+        {
+          "target_code": "533733",
+          "word": "원",
+          "pos": "명사",
+          "definition": "사찰 또는 사찰에 있는 전각.",
+          "origin": "院"
+        },
+        {
+          "target_code": "253828",
+          "word": "원",
+          "pos": "명사",
+          "definition": "둥글게 그려진 모양이나 형태.",
+          "origin": "圓"
+        },
+        {
+          "target_code": "254151",
+          "word": "원",
+          "pos": "의존 명사",
+          "definition": "우리나라의 옛 화폐 단위. 1원은 1전의 100배이다. 1910년부터 1953년 2월 14일까지 통용되었다.",
+          "origin": "圓"
+        },
+        {
+          "target_code": "253250",
+          "word": "원",
+          "pos": "명사",
+          "definition": "왕세자나 세자빈 및 왕의 친척 등의 산소.",
+          "origin": "園"
+        },
+        {
+          "target_code": "254152",
+          "word": "원",
+          "pos": "명사",
+          "definition": "무엇을 바라거나 하고자 함. 또는 그런 일.",
+          "origin": "願"
+        },
+        {
+          "target_code": "254432",
+          "word": "원-",
+          "pos": "접사",
+          "definition": "‘본래의’ 또는 ‘바탕이 되는’의 뜻을 더하는 접두사.",
+          "origin": "元/原"
+        },
+        {
+          "target_code": "254433",
+          "word": "-원",
+          "pos": "접사",
+          "definition": "‘그 일에 종사하는 사람’의 뜻을 더하는 접미사.",
+          "origin": "員"
+        },
+        {
+          "target_code": "252675",
+          "word": "-원",
+          "pos": "접사",
+          "definition": "‘공공 기관’ 또는 ‘공공 단체’의 뜻을 더하는 접미사.",
+          "origin": "院"
+        },
+        {
+          "target_code": "252676",
+          "word": "-원",
+          "pos": "접사",
+          "definition": "보육 또는 생육을 위한 시설의 뜻을 더하는 접미사.",
+          "origin": "園"
+        }
+      ]
+    },
+    "퍼센트": {
+      "queried_at": "2026-11-08T13:09:34.639602+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "497971",
+          "word": "퍼센트",
+          "pos": "의존 명사",
+          "definition": "백분율을 나타내는 단위. 기호는 %.",
+          "origin": "percent"
+        }
+      ]
+    },
+    "이십": {
+      "queried_at": "2026-11-08T13:09:35.132014+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "263631",
+          "word": "이십",
+          "pos": "수사",
+          "definition": "십의 두 배가 되는 수.",
+          "origin": "二十"
+        }
+      ]
+    },
+    "사십": {
+      "queried_at": "2026-11-08T13:09:35.648202+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "440008",
+          "word": "사십",
+          "pos": "수사",
+          "definition": "십의 네 배가 되는 수.",
+          "origin": "四十"
+        }
+      ]
+    },
+    "오십": {
+      "queried_at": "2026-11-08T13:09:36.160063+00:00",
+      "total": "1",
+      "items": [
+        {
+          "target_code": "461815",
+          "word": "오십",
+          "pos": "수사",
+          "definition": "십의 다섯 배가 되는 수.",
+          "origin": "五十"
+        }
+      ]
+    },
+    "이십사": {
+      "queried_at": "2026-11-08T13:09:36.617244+00:00",
+      "total": "0",
+      "items": []
+    },
+    "이십오": {
+      "queried_at": "2026-11-08T13:09:36.852256+00:00",
+      "total": "0",
+      "items": []
+    },
+    "사십오": {
+      "queried_at": "2026-11-08T13:09:37.104265+00:00",
+      "total": "0",
+      "items": []
+    }
+  }
+}

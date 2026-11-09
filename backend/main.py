@@ -185,7 +185,15 @@ def apply_length_evidence(job: dict, occurrence: dict, evidence: dict, source: s
     positions = evidence["positions"]
     page = job["pages"][occurrence["page"] - 1]
     glyph_map = {g["id"]: g for g in page["glyphs"]}
-    ids = [gid for gid in occurrence["glyph_ids"] if re.fullmatch(r"[가-힣]", glyph_map[gid]["text"])]
+    if evidence.get("alignment_kind") == "original_characters":
+        ids = occurrence["glyph_ids"]
+        if (len(ids) != len(occurrence["text"]) or any(len(glyph_map[g]["text"]) != 1 for g in ids)
+                or "".join(glyph_map[g]["text"] for g in ids) != occurrence["text"]
+                or any(not glyph_map[ids[i]]["text"].isdigit() for i in positions if 0 <= i < len(ids))):
+            occurrence.update(status="unresolved", reason="숫자 읽기와 원문 숫자의 위치가 정확히 대응하지 않습니다.", reason_code="alignment", evidence_type=None)
+            return
+    else:
+        ids = [gid for gid in occurrence["glyph_ids"] if re.fullmatch(r"[가-힣]", glyph_map[gid]["text"])]
     if any(i < 0 or i >= len(ids) for i in positions) or not ids:
         occurrence.update(status="unresolved", reason="발음과 원문 음절 위치를 연결할 수 없습니다.", reason_code="alignment", evidence_type=None)
         return
@@ -246,6 +254,35 @@ def mark_candidate(job: dict, occurrence: dict, candidate: dict | None, user_sel
     apply_length_evidence(job, occurrence, evidence, source, reason, "length_consensus" if is_consensus else "verified", mark_source=automatic_source)
 
 
+def apply_number_result(job: dict, occurrence: dict, result: dict, *, user_selected: bool = False):
+    """Keep reading choice separate from dictionary and §6 length evidence."""
+    numeric = deepcopy(result["numeric"])
+    numeric["choice_source"] = "user" if user_selected else "automatic"
+    candidates = deepcopy(result.get("candidates", []))
+    occurrence.update(numeric=numeric, candidates=candidates, all_candidates=candidates,
+                      excluded_candidates=[], selected_candidate_id=None,
+                      lemma=result.get("pronunciation_scope") or occurrence["text"],
+                      evidence_candidates=result.get("evidence_candidates", []),
+                      meaning_status="user_selected" if user_selected else ("verified" if result["status"] != "unresolved" else "unresolved"))
+    evidence = {**deepcopy(result), "alignment_kind": "original_characters",
+                "evidence": result.get("length_evidence", []),
+                "evidence_type": result.get("evidence_type"),
+                "pronunciations": result.get("pronunciations", []),
+                "coverage": {**result.get("coverage", {"complete": False, "checked_ranges": [], "unresolved_ranges": [[0, len(occurrence["text"])]]}),
+                             "coordinate_system": "characters"}}
+    automatic_source = "rule" if "rule" in (evidence["evidence_type"] or "") else "dictionary"
+    reason = result["reason"] + (" · 사용자 읽기 선택" if user_selected else "")
+    apply_length_evidence(job, occurrence, evidence, "manual" if user_selected else automatic_source,
+                          reason, result["reason_code"], mark_source=automatic_source)
+    if result["status"] == "unresolved":
+        occurrence["status"] = "unresolved"
+
+
+def remember_number_result(job: dict, occurrence: dict, result: dict):
+    option = result["numeric"].get("selected_option_id") or ""
+    job.setdefault("_numeric_results", {}).setdefault(occurrence["id"], {})[option] = deepcopy(result)
+
+
 async def analyze_job(job: dict):
     from .linguistics import occurrence_plans, candidates_for_plan, form_consensus, compound_evidence
     client = job["_dictionary"]
@@ -269,7 +306,17 @@ async def analyze_job(job: dict):
                                   component_results=[], coverage={"complete": False, "checked_ranges": [],
                                                                  "unresolved_ranges": [[0, len(word)]]})
                 job["marks"] = [m for m in job["marks"] if m.get("occurrence_id") != occurrence["id"] or m["source"] == "manual"]
-                if plan["kind"] in ("number", "foreign") or occurrence["kind"] != "word":
+                if plan["kind"] == "number" or occurrence["kind"] == "number":
+                    from .numbers import number_plan, evaluate_number
+                    try:
+                        result = await evaluate_number(number_plan(word, occurrence.get("context", "")), client)
+                        remember_number_result(job, occurrence, result)
+                        apply_number_result(job, occurrence, result)
+                    except DictionaryError as error:
+                        failures += 1
+                        occurrence.update(status="unresolved", reason=str(error), reason_code="lookup_failed")
+                    continue
+                if plan["kind"] == "foreign" or occurrence["kind"] != "word":
                     occurrence.update(status="unresolved", reason="숫자·단위 또는 외래 표기의 실제 읽기를 확인해 주세요.", reason_code="reading_required")
                     continue
                 try:
@@ -419,8 +466,17 @@ class StatePatch(BaseModel):
     restore: bool = False
 
 
-def restore_length_evidence(original: dict, edited: dict) -> None:
+def restore_length_evidence(job: dict, original: dict, edited: dict) -> None:
     """Recompute history evidence from server-owned candidates and boundaries."""
+    if original.get("numeric") is not None:
+        selected = edited.get("numeric", {}).get("selected_option_id") or ""
+        cached = job.get("_numeric_results", {}).get(original["id"], {}).get(selected)
+        if cached is None:
+            raise HTTPException(422, "서버에서 검증한 숫자 읽기만 복원할 수 있습니다.")
+        apply_number_result(job, original, cached, user_selected=edited.get("numeric", {}).get("choice_source") == "user")
+        if edited.get("reason_code") == "manual":
+            original.update(source="manual", status=edited["status"], reason="사용자가 표시를 수정했습니다. 사전 자동 검증과 구별됩니다.", reason_code="manual")
+        return
     from .linguistics import form_evidence, form_consensus, compound_evidence
     selected = next((c for c in original["candidates"] if c["id"] == edited["selected_candidate_id"]), None)
     plan = original.get("morphology", {})
@@ -520,7 +576,7 @@ def patch_state(job_id: str, patch: StatePatch):
                 original["reason"] = "사용자가 검토 결과를 수정했습니다."
                 original["reason_code"] = "manual"
             if patch.restore and "selected_candidate_id" in edited:
-                restore_length_evidence(original, edited)
+                restore_length_evidence(job, original, edited)
     if patch.settings is not None:
         job["settings"] = patch.settings.model_dump()
     if validated_marks is not None:
@@ -538,7 +594,7 @@ def patch_state(job_id: str, patch: StatePatch):
                         and mark["dx"] == mark["dy"] == 0 and mark["scale"] == 1
                         and occurrence.get("evidence_type")):
                     kind = occurrence["evidence_type"]
-                    mark.update(source="rule" if kind.startswith("rule") else ("dictionary_consensus" if kind == "candidate_consensus" else "dictionary"),
+                    mark.update(source="rule" if "rule" in kind else ("dictionary_consensus" if kind == "candidate_consensus" else "dictionary"),
                                 evidence_type=kind)
         old = {m["glyph_id"]: m for m in job["marks"]}
         new = {m["glyph_id"]: m for m in validated_marks}
@@ -593,11 +649,43 @@ def choose_candidate(job_id: str, occurrence_id: str, choice: CandidateChoice):
     occurrence = next((o for o in job["occurrences"] if o["id"] == occurrence_id), None)
     if not occurrence:
         raise HTTPException(404, "원문 항목을 찾을 수 없습니다.")
+    if occurrence.get("numeric") is not None:
+        raise HTTPException(422, "숫자는 발음 후보의 뜻 대신 숫자 읽기를 선택해 주세요.")
     candidate = next((c for c in occurrence["candidates"] if c["id"] == choice.candidate_id), None)
     if not candidate:
         raise HTTPException(422, "이 항목에서 조회된 사전 후보를 선택해 주세요.")
     mark_candidate(job, occurrence, candidate, user_selected=True)
     history(job, f"{occurrence_id}의 사전 의미 선택")
+    return public(job)
+
+
+class ReadingChoice(BaseModel):
+    option_id: str = Field(min_length=1, max_length=100)
+
+
+@app.post("/api/jobs/{job_id}/occurrences/{occurrence_id}/reading")
+async def choose_reading(job_id: str, occurrence_id: str, choice: ReadingChoice):
+    from .numbers import evaluate_number
+    job = session_for(job_id)
+    idle_required(job)
+    occurrence = next((o for o in job["occurrences"] if o["id"] == occurrence_id), None)
+    if occurrence is None:
+        raise HTTPException(404, "원문 항목을 찾을 수 없습니다.")
+    plan = occurrence.get("numeric")
+    if not plan or choice.option_id not in {option["id"] for option in plan.get("options", [])}:
+        raise HTTPException(422, "이 항목에서 제안한 숫자 읽기만 선택할 수 있습니다.")
+    revision = job["revision"]
+    try:
+        result = await evaluate_number(deepcopy(plan), job["_dictionary"], choice.option_id)
+    except DictionaryError as error:
+        raise HTTPException(502, str(error)) from None
+    # A lookup must not overwrite an edit or analysis made while it awaited I/O.
+    if session_for(job_id) is not job or job["revision"] != revision:
+        raise HTTPException(409, "작업이 변경되었습니다. 최신 상태에서 읽기를 다시 선택해 주세요.")
+    idle_required(job)
+    remember_number_result(job, occurrence, result)
+    apply_number_result(job, occurrence, result, user_selected=True)
+    history(job, f"{occurrence_id}의 숫자 읽기 선택")
     return public(job)
 
 
@@ -607,7 +695,7 @@ def preview(job_id: str, page: int, marked: bool = True, scale: float = Query(de
     if page < 1 or page > len(job["pages"]):
         raise HTTPException(404, "페이지가 없습니다.")
     data = job["_path"].read_bytes()
-    document = marked_document(data, job) if marked else fitz.open(stream=data, filetype="pdf")
+    document = marked_document(data, job, page_numbers={page}) if marked else fitz.open(stream=data, filetype="pdf")
     pdf_page = document[page - 1]
     scale = min(scale, 2400 / max(pdf_page.rect.width, pdf_page.rect.height))
     png = pdf_page.get_pixmap(matrix=fitz.Matrix(scale, scale), alpha=False).tobytes("png")

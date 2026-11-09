@@ -79,6 +79,16 @@ const syllableRange = (text: string, start: number, end: number) => {
 };
 const queryTime = (candidate: Candidate) =>
   candidate.queried_at ? `조회 ${candidate.queried_at}` : "조회 시각 미기록";
+const originalRange = (o: Occurrence, start: number, end: number) => {
+  if (o.coverage?.coordinate_system !== "characters") return syllableRange(o.text, start, end);
+  const surface = Array.from(o.text).slice(start, end).join("");
+  return `${surface} (${start + 1}${end === start + 1 ? "" : `–${end}`}번째 글자)`;
+};
+const numericKind = (kind: string) => ({
+  integer: "수", bare: "숫자", year: "연도", date: "날짜", time: "시간",
+  money: "금액", amount: "금액", percent: "백분율", percentage: "백분율",
+  decimal: "소수", ordinal: "순번", phone: "전화번호", counter: "단위 명사",
+}[kind] || "숫자 표현");
 function Logo() {
   return (
     <a className="brand" href="/" aria-label="소리 홈">
@@ -124,12 +134,17 @@ export default function App() {
     [mobileTab, setMobileTab] = useState<"pdf" | "tools">("pdf"),
     [past, setPast] = useState<Snapshot[]>([]),
     [future, setFuture] = useState<Snapshot[]>([]);
+  const [loadedPreview, setLoadedPreview] = useState("");
   const changing = useRef(false);
   const input = useRef<HTMLInputElement>(null),
     dropDepth = useRef(0);
   const jobRef = useRef(job);
   jobRef.current = job;
   const current = job?.pages.find((p) => p.number === page);
+  const previewUrl = job
+    ? `/api/jobs/${job.id}/pages/${page}/preview.png?marked=true&scale=${Math.min(2, Math.max(1.5, zoom * 0.015)).toFixed(2)}&revision=${job.revision}`
+    : "";
+  const previewPending = !!previewUrl && loadedPreview !== previewUrl;
   useEffect(() => setGlyphFocus(0), [page, edit, job?.id]);
   const running = ["queued", "running"].includes(job?.analysis.state || "");
   useEffect(() => {
@@ -458,8 +473,30 @@ export default function App() {
       setSaving(false);
     }
   }
+  async function chooseReading(o: Occurrence, optionId: string) {
+    if (!job || changing.current) return;
+    changing.current = true;
+    const previous = copy(job);
+    setSaving(true);
+    setError("");
+    try {
+      const next = await request<Job>(
+        `/api/jobs/${job.id}/occurrences/${o.id}/reading`,
+        { method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ option_id: optionId }) },
+      );
+      setJob(next);
+      setPast((p) => [...p, previous].slice(-40));
+      setFuture([]);
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      changing.current = false;
+      setSaving(false);
+    }
+  }
   const toggleGlyph = (glyphId: string) => {
-    if (!job || saving || running) return;
+    if (!job || saving || running || previewPending) return;
     const found = job.marks.find((m) => m.glyph_id === glyphId);
     if (found) {
       setSelectedMark(found.id);
@@ -805,7 +842,7 @@ export default function App() {
                     >
                       <span className="thumbnail-paper">
                         <img
-                          src={`/api/jobs/${job.id}/pages/${p.number}/preview.png?marked=false`}
+                          src={`/api/jobs/${job.id}/pages/${p.number}/preview.png?marked=true&scale=0.3&revision=${job.revision}`}
                           alt={`${p.number}페이지 미리보기`}
                         />
                         {p.quality === "scan" && (
@@ -1004,14 +1041,17 @@ export default function App() {
                   {current && (
                     <div
                       className="pdf-paper"
+                      aria-busy={previewPending}
                       style={{
                         width: `${zoom}%`,
                         aspectRatio: `${current.width}/${current.height}`,
                       }}
                     >
                       <img
-                        src={`/api/jobs/${job.id}/pages/${page}/preview.png?marked=false`}
-                        alt={`${page}페이지 대본 원문`}
+                        src={previewUrl}
+                        alt={`${page}페이지 대본과 장음 표시`}
+                        onLoad={() => setLoadedPreview(previewUrl)}
+                        onError={() => setError("표시 미리보기를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.")}
                       />
                       <svg
                         className={`mark-layer ${edit ? "editing" : ""}`}
@@ -1031,9 +1071,11 @@ export default function App() {
                               key={m.id}
                               className="mark"
                               role="button"
-                              tabIndex={0}
+                              tabIndex={previewPending ? -1 : 0}
+                              aria-disabled={previewPending}
                               aria-label={`${g.text} 장음 표시 선택`}
                               onKeyDown={(event) => {
+                                if (previewPending) return;
                                 if (
                                   event.key === "Enter" ||
                                   event.key === " "
@@ -1045,6 +1087,7 @@ export default function App() {
                                 }
                               }}
                               onClick={() => {
+                                if (previewPending) return;
                                 setSelectedMark(m.id);
                                 setTab("settings");
                                 setMobileTab("tools");
@@ -1054,9 +1097,7 @@ export default function App() {
                                 cx={cx}
                                 cy={cy}
                                 r={r}
-                                fill={settings.color}
-                                opacity={settings.opacity}
-                                style={{ mixBlendMode: "multiply" }}
+                                fill="transparent"
                               />
                               {m.id === selectedMark && (
                                 <circle
@@ -1073,7 +1114,7 @@ export default function App() {
                                 {g.text} ·{" "}
                                 {m.source === "manual"
                                   ? "사용자 표시"
-                                  : "사전 근거 표시"}
+                                  : m.source.includes("rule") ? "규칙 근거 표시" : "사전 근거 표시"}
                               </title>
                             </g>
                           );
@@ -1090,8 +1131,10 @@ export default function App() {
                                   y={g.bbox[1]}
                                   width={g.bbox[2] - g.bbox[0]}
                                   height={g.bbox[3] - g.bbox[1]}
-                                  fill="#0071e3"
-                                  opacity="0.12"
+                                  fill="none"
+                                  stroke="#0071e3"
+                                  strokeWidth="0.6"
+                                  opacity="0.65"
                                   pointerEvents="none"
                                 />
                               )
@@ -1104,7 +1147,7 @@ export default function App() {
                               <rect
                                 className="glyph-target"
                                 role="button"
-                                tabIndex={index === glyphFocus ? 0 : -1}
+                                tabIndex={!previewPending && index === glyphFocus ? 0 : -1}
                                 data-glyph-id={g.id}
                                 aria-label={`${page}쪽 ${index + 1}번째 글자 ${g.text}, 장음 표시 추가 또는 선택`}
                                 onFocus={() => setGlyphFocus(index)}
@@ -1161,7 +1204,7 @@ export default function App() {
                   {job ? (
                     <>
                       <FileText size={13} />
-                      {job.marks.length}개 음절 표시{saving ? " · 저장 중" : ""}
+                      {job.marks.length}개 음절 표시{saving ? " · 저장 중" : previewPending ? " · 미리보기 갱신 중" : ""}
                     </>
                   ) : (
                     <>
@@ -1414,7 +1457,7 @@ export default function App() {
                       <span className="manual-label">
                         {selected.source === "manual"
                           ? "사용자 수정"
-                          : "사전 표시"}{" "}
+                          : selected.source.includes("rule") ? "규칙 표시" : "사전 표시"}{" "}
                         · {selected.page}쪽
                       </span>
                       <div className="position-controls">
@@ -1646,7 +1689,7 @@ export default function App() {
                             </span>
                             <span className={`result-badge ${o.status}`}>
                               {o.source === "manual"
-                                ? "직접 수정"
+                                ? o.numeric?.choice_source === "user" && o.reason_code !== "manual" ? "읽기 선택" : "직접 수정"
                                 : o.status === "long"
                                   ? "장음"
                                   : o.status === "none"
@@ -1660,7 +1703,7 @@ export default function App() {
                               뜻 선택 미확정
                             </span>
                           )}
-                          {o.evidence_type && o.source !== "manual" && (
+                          {o.evidence_type && (o.source !== "manual" || o.numeric?.choice_source === "user") && (
                             <span className="rule-badge">
                               {o.evidence_type.includes("rule") ? "규칙 판정" : "사전 직접 확인"}
                             </span>
@@ -1693,6 +1736,38 @@ export default function App() {
                               {o.context && (
                                 <blockquote>{o.context}</blockquote>
                               )}
+                              {o.numeric && (
+                                <section className="numeric-evidence" aria-label="숫자 읽기와 위치 대응">
+                                  <h4>숫자 읽기</h4>
+                                  <p>{numericKind(o.numeric.kind)}{o.numeric.reason ? ` · ${o.numeric.reason}` : ""}</p>
+                                  {o.numeric.choice_source === "user" && <p className="reading-choice-source">사용자가 선택한 읽기입니다. 사전 근거와 규칙 판정을 아래에 구분합니다.</p>}
+                                  {!o.numeric.selected_option_id && o.numeric.options.length > 1 && <p className="reading-choice-source">읽기가 여러 가지입니다. 문맥에 맞는 읽기를 선택해 주세요.</p>}
+                                  {o.numeric.options.map((option) => (
+                                    <div className={`numeric-option${o.numeric?.selected_option_id === option.id ? " chosen" : ""}`} key={option.id}>
+                                      <strong>{option.reading}</strong>
+                                      <span>{option.label} · {option.system === "sino" ? "한자어 수사" : option.system === "native" ? "고유어 수사" : "표현별 읽기"}</span>
+                                      <button disabled={saving || running} onClick={() => void chooseReading(o, option.id)}>
+                                        {o.numeric?.selected_option_id === option.id ? <><Check size={12} /> 선택된 읽기</> : "이 읽기 선택"}
+                                      </button>
+                                      <details>
+                                        <summary>원문 숫자와 발음 위치 대응</summary>
+                                        <p>발음 음절이 원문 한 글자에 명확히 대응할 때만 원형 표시를 넣습니다.</p>
+                                        <table>
+                                          <thead><tr><th>원문 위치</th><th>읽는 음절</th><th>대응</th></tr></thead>
+                                          <tbody>{option.alignment.map((mapping, index) => (
+                                            <tr key={index}>
+                                              <td>{Array.from(o.text).slice(mapping.source_start, mapping.source_end).join("")} ({mapping.source_start + 1}{mapping.source_end === mapping.source_start + 1 ? "" : `–${mapping.source_end}`}번째 글자)</td>
+                                              <td>{Array.from(option.reading).filter((letter) => /[가-힣]/.test(letter)).slice(mapping.reading_start, mapping.reading_end).join("")}</td>
+                                              <td>{mapping.exact ? "위치 확인" : "위치 검토 필요"}{mapping.reason ? ` · ${mapping.reason}` : ""}</td>
+                                            </tr>
+                                          ))}</tbody>
+                                        </table>
+                                      </details>
+                                    </div>
+                                  ))}
+                                  {o.numeric.options.length === 0 && <p>읽기를 확정할 근거가 부족합니다. 원문을 검토해 주세요.</p>}
+                                </section>
+                              )}
                               {o.morphology?.lemma &&
                                 o.morphology.lemma !== o.text && (
                                   <div className="morphology-note">
@@ -1712,18 +1787,18 @@ export default function App() {
                               )}
                               {o.coverage && (
                                 <div className={`coverage-note${o.coverage.complete ? "" : " incomplete"}`}>
-                                  <strong>{o.coverage.complete ? "전체 음절 범위 확인" : "일부 범위만 확인 · 전체 장단 미확정"}</strong>
+                                  <strong>{o.coverage.complete ? o.numeric ? "전체 숫자 범위 확인" : "전체 음절 범위 확인" : "일부 범위만 확인 · 전체 장단 미확정"}</strong>
                                   {o.coverage.checked_ranges.length > 0 && (
-                                    <p>확인: {o.coverage.checked_ranges.map(([start, end]) => syllableRange(o.text, start, end)).join(" · ")}</p>
+                                    <p>확인: {o.coverage.checked_ranges.map(([start, end]) => originalRange(o, start, end)).join(" · ")}</p>
                                   )}
                                   {o.coverage.unresolved_ranges.length > 0 && (
-                                    <p>미확정: {o.coverage.unresolved_ranges.map(([start, end]) => syllableRange(o.text, start, end)).join(" · ")}</p>
+                                    <p>미확정: {o.coverage.unresolved_ranges.map(([start, end]) => originalRange(o, start, end)).join(" · ")}</p>
                                   )}
                                 </div>
                               )}
                               {o.pronunciation_scope && o.pronunciation_scope !== o.text && (
                                 <div className="morphology-note">
-                                  아래 발음은 기본형·구성요소의 사전 발음입니다. 원문 전체의 직접 발음으로 간주하지 않습니다.
+                                  {o.numeric ? "숫자 읽기와 사전 발음의 대응 근거입니다. 원문 숫자의 장단은 위치 대응과 적용 규칙을 함께 확인합니다." : "아래 발음은 기본형·구성요소의 사전 발음입니다. 원문 전체의 직접 발음으로 간주하지 않습니다."}
                                 </div>
                               )}
                               {["candidate_consensus", "rule_consensus"].includes(o.evidence_type || "") && o.evidence_candidates &&
@@ -1806,7 +1881,7 @@ export default function App() {
                                         사전 근거
                                       </a>
                                     )}
-                                    <button
+                                    {!o.numeric && <button
                                       disabled={saving || running}
                                       onClick={() => void choose(o, c)}
                                     >
@@ -1818,7 +1893,7 @@ export default function App() {
                                       ) : (
                                         "이 의미 선택"
                                       )}
-                                    </button>
+                                    </button>}
                                   </div>
                                 </div>
                               ))}

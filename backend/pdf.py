@@ -9,7 +9,11 @@ from datetime import datetime, timezone
 
 import fitz
 
-TOKEN = re.compile(r"[가-힣A-Za-z0-9]+(?:[.·\-/][가-힣A-Za-z0-9]+)*")
+TOKEN = re.compile(
+    r"(?:[₩$€]?\d{1,2}:\d{2}(?::\d{2})?[가-힣]*"
+    r"|[₩$€]?\d{1,3}(?:,\d{3})+(?:\.\d+)?[가-힣]*"
+    r"|[₩$€]?[가-힣A-Za-z0-9]+(?:[.·\-/][가-힣A-Za-z0-9]+)*)[%％]?"
+)
 
 
 def extract(data: bytes) -> tuple[list[dict], list[dict]]:
@@ -94,9 +98,25 @@ def evidence_for(occurrence: dict) -> list[dict]:
 
 def syllable_range(occurrence: dict, start: int, end: int) -> str:
     """Describe original half-open syllable offsets without rewriting the PDF."""
-    surface = "".join(re.findall(r"[가-힣]", occurrence["text"])[start:end])
+    characters = occurrence.get("numeric") is not None or occurrence.get("coverage", {}).get("coordinate_system") == "characters"
+    surface = occurrence["text"][start:end] if characters else "".join(re.findall(r"[가-힣]", occurrence["text"])[start:end])
     extent = str(start + 1) if end == start + 1 else f"{start + 1}–{end}"
-    return f"{surface} ({extent}음절, 원문 [{start}:{end}])"
+    return f"{surface} ({extent}{'문자' if characters else '음절'}, 원문 [{start}:{end}])"
+
+
+def numeric_record(occurrence: dict) -> str:
+    numeric = occurrence.get("numeric")
+    if numeric is None:
+        return ""
+    selected = numeric.get("selected_option_id")
+    records = [f"{numeric.get('kind','')} · 읽기 선택 {selected or '미확정'} · {numeric.get('choice_source','automatic')}"]
+    for option in numeric.get("options", []):
+        records.append(f"{option.get('id','')} · {option.get('system','')} · {option.get('reading','')} · " + ("선택" if selected == option.get("id") else "미선택 후보"))
+        for item in option.get("alignment", []):
+            start, end = item["source_start"], item["source_end"]
+            records.append(f"원문 {occurrence['text'][start:end]} [{start}:{end}] → "
+                           f"발음 음절 [{item['reading_start']}:{item['reading_end']}] · exact={str(item.get('exact', False)).lower()}")
+    return "\n".join(records)
 
 
 def coverage_description(occurrence: dict) -> str:
@@ -150,6 +170,14 @@ def verification(job: dict) -> str:
                   f"{selected.get('definition','')} {occurrence['reason']}", sources + (" · " + rules if rules else ""),
                   coverage_description(occurrence), occurrence.get("note", "")]
         lines.append("|" + "|".join(esc(v) for v in values) + "|")
+    numbers = [o for o in job["occurrences"] if o.get("numeric") is not None]
+    if numbers:
+        lines.extend(["", "## 숫자 읽기와 원문 대응", "",
+                      "- 읽기 선택과 사전 직접 발음·규칙 판정은 별도로 기록합니다. exact=false인 대응에는 장음 원을 임의로 넣지 않습니다.",
+                      "- 원문 범위는 숫자·기호·단위를 포함한 0부터 시작하는 문자 반개방 범위입니다. 발음 범위는 읽기의 음절 범위입니다.", "",
+                      "|쪽|원문|숫자 용법·읽기 선택·대응 기록|", "|---|---|---|"])
+        for occurrence in numbers:
+            lines.append("|" + "|".join(esc(v) for v in (occurrence["page"], occurrence["text"], numeric_record(occurrence))) + "|")
     lookups = [(occurrence, candidate) for occurrence in job["occurrences"]
                for candidate in lookup_candidates(occurrence)]
     if lookups:
@@ -208,7 +236,7 @@ def counts(job: dict) -> dict:
 def csv_export(job: dict) -> bytes:
     output = io.StringIO()
     writer = csv.writer(output)
-    writer.writerow(["쪽", "원문", "표제어", "한자", "발음", "선택한 뜻", "장단 상태", "뜻 상태", "근거 유형", "사유", "출처", "조회 시각", "적용 규칙", "메모", "발음 범위", "검증 범위", "미확정 범위", "구성요소별 근거", "기본형·전체 단어 후보 조회 기록"])
+    writer.writerow(["쪽", "원문", "표제어", "한자", "발음", "선택한 뜻", "장단 상태", "뜻 상태", "근거 유형", "사유", "출처", "조회 시각", "적용 규칙", "메모", "발음 범위", "검증 범위", "미확정 범위", "구성요소별 근거", "기본형·전체 단어 후보 조회 기록", "숫자 읽기와 원문 대응"])
     for o in job["occurrences"]:
         evidence = evidence_for(o)
         c = next((c for c in evidence if c["id"] == o.get("selected_candidate_id")), {})
@@ -237,30 +265,260 @@ def csv_export(job: dict) -> bytes:
                " / ".join(" ".join(filter(None, (r.get("label"), r.get("explanation"), r.get("url")))) for r in o.get("applied_rules", [])), o.get("note"),
                o.get("pronunciation_scope", ""), coverage_description(o),
                "; ".join(syllable_range(o, start, end) for start, end in o.get("coverage", {}).get("unresolved_ranges", [])),
-               "\n".join(component_records), "\n".join(candidate_records)]
+               "\n".join(component_records), "\n".join(candidate_records), numeric_record(o)]
         writer.writerow([("'" + str(v)) if str(v or "").startswith(("=", "+", "-", "@", "\t", "\r")) else v for v in row])
     return ("\ufeff" + output.getvalue()).encode("utf-8")
 
 
-def marked_document(data: bytes, job: dict, attach_log: bool = False) -> fitz.Document:
+# Highlight paint is page vector content; Circle annotations below only retain
+# review metadata. In particular no viewer has to honor an annotation blend mode.
+_MASK_SCALE = 4
+_MASK_TILE = 64
+_MAX_MASK_TILES = 64
+_MAX_CLIP_RECTS = 1024
+_MAX_PAGE_CLIP_RECTS = 40000
+_MAX_MASK_MARKS = 256
+
+
+def _complement_rectangles(bounds: fitz.Rect, excluded: list[fitz.Rect]) -> list[fitz.Rect]:
+    """Nonoverlapping rectangles outside every protected glyph bounding box."""
+    if bounds.is_empty or _MAX_CLIP_RECTS <= 0:
+        return []
+    boxes = [r & bounds for r in excluded if r.intersects(bounds)]
+    if not boxes:
+        return [bounds]
+    if len(boxes) > 2000:
+        # Bound work for an unusually large manual circle. Protect the union
+        # box rather than risk painting over any original glyph.
+        union = fitz.Rect(boxes[0])
+        for rect in boxes[1:]:
+            union |= rect
+        boxes = [union]
+    ys = sorted({bounds.y0, bounds.y1, *(v for r in boxes for v in (r.y0, r.y1))})
+    result = []
+    for top, bottom in zip(ys, ys[1:]):
+        intervals = sorted((r.x0, r.x1) for r in boxes if r.y0 < bottom and r.y1 > top)
+        left = bounds.x0
+        for start, end in intervals:
+            if start > left:
+                result.append(fitz.Rect(left, top, start, bottom))
+            left = max(left, end)
+        if left < bounds.x1:
+            result.append(fitz.Rect(left, top, bounds.x1, bottom))
+    if len(result) > _MAX_CLIP_RECTS:
+        union = fitz.Rect(boxes[0])
+        for rect in boxes[1:]:
+            union |= rect
+        # A union leaves at most four safe strips. Do not recurse: a very small
+        # budget can still be lower than this conservative complement's size.
+        result = [fitz.Rect(bounds.x0, bounds.y0, bounds.x1, union.y0),
+                  fitz.Rect(bounds.x0, union.y1, bounds.x1, bounds.y1),
+                  fitz.Rect(bounds.x0, union.y0, union.x0, union.y1),
+                  fitz.Rect(union.x1, union.y0, bounds.x1, union.y1)]
+        result = sorted((rect for rect in result if not rect.is_empty),
+                        key=lambda rect: rect.get_area(), reverse=True)[:_MAX_CLIP_RECTS]
+    return result
+
+
+class _InkProtection:
+    """Bounded raster analysis produces vector clips, never a page image.
+
+    Small original tiles are reused only within this page. Flat-background tiles
+    protect actual ink plus a 1.5-point guard. Uncertain/image/gradient tiles
+    protect complete glyph boxes. No rendered pixels are embedded in the PDF.
+    """
+    def __init__(self, page: fitz.Page, glyphs: list[dict]):
+        self.page = page
+        self.glyphs = [fitz.Rect(g["pdf_bbox"]) for g in glyphs if g["text"].strip()]
+        self.bins = {}
+        self.wide = []
+        for index, rect in enumerate(self.glyphs):
+            xs = range(math.floor(rect.x0 / _MASK_TILE), math.floor(rect.x1 / _MASK_TILE) + 1)
+            ys = range(math.floor(rect.y0 / _MASK_TILE), math.floor(rect.y1 / _MASK_TILE) + 1)
+            if len(xs) * len(ys) > 1024:
+                self.wide.append(index)
+                continue
+            for x in xs:
+                for y in ys:
+                    self.bins.setdefault((x, y), []).append(index)
+        self.tiles = {}
+        self.used = 0
+        self.marks = 0
+
+    def _tile(self, x: int, y: int):
+        from collections import Counter
+        key = (x, y)
+        if key in self.tiles:
+            return self.tiles[key]
+        if len(self.tiles) >= _MAX_MASK_TILES:
+            return None  # cache/work bound: use conservative text-box protection
+        rect = fitz.Rect(x * _MASK_TILE, y * _MASK_TILE, (x + 1) * _MASK_TILE, (y + 1) * _MASK_TILE) & self.page.rect
+        if rect.is_empty:
+            return None
+        pix = self.page.get_pixmap(matrix=fitz.Matrix(_MASK_SCALE, _MASK_SCALE), clip=rect,
+                                   colorspace=fitz.csRGB, alpha=False, annots=True)
+        data = pix.samples
+        color, count = Counter(data[i:i+3] for i in range(0, len(data), 3)).most_common(1)[0]
+        tile = (pix.x, pix.y, pix.width, pix.height, data, color, count >= pix.width * pix.height * .4)
+        if len(self.tiles) < _MAX_MASK_TILES:
+            self.tiles[key] = tile
+        return tile
+
+    def rectangles(self, circle: fitz.Rect) -> list[fitz.Rect]:
+        bounds = circle & self.page.rect
+        nearby = set(self.wide)
+        for x in range(math.floor((bounds.x0 - 1) / _MASK_TILE), math.floor((bounds.x1 + 1) / _MASK_TILE) + 1):
+            for y in range(math.floor((bounds.y0 - 1) / _MASK_TILE), math.floor((bounds.y1 + 1) / _MASK_TILE) + 1):
+                nearby.update(self.bins.get((x, y), []))
+        boxes = [self.glyphs[i] + (-.5, -.5, .5, .5) for i in nearby
+                 if (self.glyphs[i] + (-.5, -.5, .5, .5)).intersects(bounds)]
+        self.marks += 1
+        width = math.ceil(bounds.x1 * _MASK_SCALE) - math.floor(bounds.x0 * _MASK_SCALE)
+        height = math.ceil(bounds.y1 * _MASK_SCALE) - math.floor(bounds.y0 * _MASK_SCALE)
+        if (bounds.is_empty or width * height > 160000 or self.marks > _MAX_MASK_MARKS
+                or self.used >= _MAX_PAGE_CLIP_RECTS):
+            return _complement_rectangles(bounds, boxes)
+        x0, y0 = math.floor(bounds.x0 * _MASK_SCALE), math.floor(bounds.y0 * _MASK_SCALE)
+        protected = bytearray(width * height)
+        for box in boxes:
+            box &= bounds
+            sx, ex = max(x0, math.floor(box.x0 * _MASK_SCALE)), min(x0 + width, math.ceil(box.x1 * _MASK_SCALE))
+            sy, ey = max(y0, math.floor(box.y0 * _MASK_SCALE)), min(y0 + height, math.ceil(box.y1 * _MASK_SCALE))
+            found_ink = False
+            uncertain = False
+            for py in range(sy, ey):
+                for px in range(sx, ex):
+                    tile = self._tile(px // (_MASK_TILE * _MASK_SCALE), py // (_MASK_TILE * _MASK_SCALE))
+                    if tile is None or not tile[-1]:
+                        uncertain = True
+                        break
+                    tx, ty, tw, th, samples, background, stable = tile
+                    offset = ((py - ty) * tw + px - tx) * 3
+                    ink = samples[offset:offset+3] != background
+                    if ink:
+                        found_ink = True
+                        # Guard both antialias edges and the tiny differences
+                        # between PDF engines' glyph rasterization.
+                        for yy in range(max(y0, py - 6), min(y0 + height, py + 7)):
+                            start, stop = max(x0, px - 6), min(x0 + width, px + 7)
+                            protected[(yy - y0) * width + start - x0:(yy - y0) * width + stop - x0] = b'\1' * (stop - start)
+                if uncertain:
+                    break
+            if uncertain or not found_ink:
+                # Font substitution can differ between engines: extracted text
+                # which MuPDF cannot paint may still be visible in a viewer.
+                for py in range(sy, ey):
+                    protected[(py - y0) * width + sx - x0:(py - y0) * width + ex - x0] = b'\1' * (ex - sx)
+        # Merge identical horizontal runs vertically; path complexity is capped.
+        active, finished = {}, []
+        for y in range(height):
+            runs, x = [], 0
+            while x < width:
+                if protected[y * width + x]:
+                    x += 1
+                    continue
+                start = x
+                while x < width and not protected[y * width + x]:
+                    x += 1
+                runs.append((start, x))
+            next_active = {}
+            for run in runs:
+                next_active[run] = active.pop(run, y)
+            finished.extend((start, top, end, y) for (start, end), top in active.items())
+            active = next_active
+            if len(finished) + len(active) > _MAX_CLIP_RECTS:
+                return _complement_rectangles(bounds, boxes)
+        finished.extend((start, top, end, height) for (start, end), top in active.items())
+        self.used += len(finished)
+        return [fitz.Rect((x0 + a) / _MASK_SCALE, (y0 + b) / _MASK_SCALE,
+                          (x0 + c) / _MASK_SCALE, (y0 + d) / _MASK_SCALE) for a, b, c, d in finished]
+
+
+def _paint_circle(page: fitz.Page, circle: fitz.Rect, rgb: tuple, opacity: float,
+                  *, overlay: bool, clip_rects: list[fitz.Rect] | None = None):
+    # PyMuPDF's Shape matrix on a rotated, cropped page can omit the crop
+    # translation. Paint in unrotated coordinates and restore /Rotate without
+    # changing the original content, crop box or glyph coordinates.
+    rotation = page.rotation
+    if rotation:
+        page.set_rotation(0)
+    try:
+        shape = page.new_shape()
+        shape.draw_oval(circle)
+        shape.finish(color=None, fill=rgb, fill_opacity=opacity)
+        if clip_rects is not None:
+            transform = ~page.transformation_matrix
+            path = []
+            for rect in clip_rects:
+                pdf_rect = rect * transform
+                path.append(f"{pdf_rect.x0:.5f} {pdf_rect.y0:.5f} {pdf_rect.width:.5f} {pdf_rect.height:.5f} re")
+            # Empty clip is intentional if the circle is entirely protected.
+            # Disjoint positive runs prevent overlaps reopening original ink.
+            shape.totalcont = "q\nn\n" + "\n".join(path) + "\nW n\n" + shape.totalcont + "\nQ\n"
+        shape.commit(overlay=overlay)
+    finally:
+        if rotation:
+            page.set_rotation(rotation)
+
+
+def _paint_marks(document: fitz.Document, data: bytes, job: dict, rgb: tuple,
+                 page_numbers: set[int] | None = None):
+    original = None
+    try:
+        for page_data in job["pages"]:
+            if page_numbers is not None and page_data["number"] not in page_numbers:
+                continue
+            marks = [m for m in job["marks"] if m["page"] == page_data["number"]]
+            if not marks:
+                continue
+            page = document[page_data["number"] - 1]
+            glyphs = {g["id"]: g for g in page_data["glyphs"]}
+            # Drawing logs use unrotated page coordinates, like pdf_bbox.
+            fills = [fitz.Rect(box) for kind, box in page.get_bboxlog()
+                     if kind in ("fill-path", "fill-image", "fill-shade")]
+            protector = None
+            for mark in marks:
+                circle = circle_for(glyphs[mark["glyph_id"]], mark, job["settings"], page)
+                blocked = any(box.intersects(circle) for box in fills)
+                clip_rects = None
+                if blocked:
+                    if original is None:
+                        original = fitz.open(stream=data, filetype="pdf")
+                    if protector is None:
+                        source_page = original[page.number]
+                        source_page.set_rotation(0)
+                        protector = _InkProtection(source_page, page_data["glyphs"])
+                    clip_rects = protector.rectangles(circle)
+                _paint_circle(page, circle, rgb, job["settings"]["opacity"],
+                              overlay=blocked, clip_rects=clip_rects)
+    finally:
+        if original is not None:
+            original.close()
+
+
+def marked_document(data: bytes, job: dict, attach_log: bool = False,
+                    *, page_numbers: set[int] | None = None) -> fitz.Document:
+    """Paint selected one-based pages for previews, or every page for export."""
     document = fitz.open(stream=data, filetype="pdf")
     color = job["settings"]["color"].lstrip("#")
     rgb = tuple(int(color[i:i+2], 16) / 255 for i in (0, 2, 4))
     glyphs = {g["id"]: g for p in job["pages"] for g in p["glyphs"]}
     occurrences = {o["id"]: o for o in job["occurrences"]}
+    _paint_marks(document, data, job, rgb, page_numbers)
     for mark in job["marks"]:
+        if page_numbers is not None and mark["page"] not in page_numbers:
+            continue
         page = document[mark["page"] - 1]
         glyph = glyphs[mark["glyph_id"]]
         circle = circle_for(glyph, mark, job["settings"], page)
-        # Circle annotations retain searchable original text and existing
-        # annotations. Multiply prevents covering the glyphs with pale fill.
+        # A nonpainting Circle preserves the original review rectangle, color,
+        # opacity and popup metadata. All visible paint is common page content.
         annotation = page.add_circle_annot(circle)
         # None means "leave unchanged" in PyMuPDF and would preserve the
         # circle annotation's default red stroke. An empty sequence removes it.
         annotation.set_colors(stroke=[], fill=rgb)
         annotation.set_border(width=0)
         annotation.set_opacity(job["settings"]["opacity"])
-        annotation.set_blendmode("Multiply")
         occurrence = occurrences.get(mark.get("occurrence_id"))
         evidence = evidence_for(occurrence) if occurrence else []
         dictionary_urls = list(dict.fromkeys(c["url"] for c in evidence if c.get("url")))
@@ -277,6 +535,12 @@ def marked_document(data: bytes, job: dict, attach_log: bool = False) -> fitz.Do
         annotation.set_info(title="장음 표시", content=description + ("\n" + "\n".join(urls) if urls else ""))
         annotation.set_flags(fitz.PDF_ANNOT_IS_PRINT)
         annotation.update()
+        ap_type, ap_value = document.xref_get_key(annotation.xref, "AP/N")
+        if ap_type != "xref":
+            raise ValueError("표시의 출처 주석 모양을 안전하게 만들 수 없습니다.")
+        # Keep a valid, explicit empty appearance. Merely clearing /IC or
+        # removing /AP can make a viewer regenerate a painted Circle.
+        document.update_stream(int(ap_value.split()[0]), b"q\nQ\n")
         # A single URI is safe only when all evidence points to the same entry.
         # Multi-entry consensus retains every URL in the annotation and attached log.
         if len(urls) == 1:

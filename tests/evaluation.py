@@ -60,11 +60,23 @@ def fraction(numerator: int, denominator: int):
     return round(numerator / denominator, 6) if denominator else None
 
 
+def load_dictionary_snapshot(corpus_path: Path, corpus: dict) -> tuple[dict, dict]:
+    """Merge explicitly declared, dated API captures, never assumed results."""
+    words, hashes = {}, {}
+    for name in [corpus["snapshot"], *corpus.get("supplemental_snapshots", [])]:
+        path = corpus_path.parent / name
+        raw = path.read_bytes()
+        data = json.loads(raw)
+        words.update(data.get("entries", data))
+        hashes[name] = hashlib.sha256(raw).hexdigest()
+    return words, hashes
+
+
 async def evaluate(corpus_path: Path, output: Path, live: bool = False):
     corpus = json.loads(corpus_path.read_text(encoding="utf-8"))
     cases = corpus["cases"]
     snapshot_path = corpus_path.parent / corpus["snapshot"]
-    snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+    snapshot, snapshot_hashes = load_dictionary_snapshot(corpus_path, corpus)
     dictionary = DictionaryClient() if live else AuditedSnapshot(snapshot)
     original = make_document(cases)
     pages, all_occurrences = extract(original)
@@ -131,6 +143,7 @@ async def evaluate(corpus_path: Path, output: Path, live: bool = False):
         "corpus_title": corpus["title"], "scope": corpus["scope"],
         "annotation_method": corpus["annotation_method"], "metrics_policy": corpus["metrics_policy"],
         "snapshot_sha256": hashlib.sha256(snapshot_path.read_bytes()).hexdigest(),
+        "snapshot_sha256_by_file": snapshot_hashes,
         "backend_file_sha256": {str(p.relative_to(REPOSITORY)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((REPOSITORY / "backend").glob("*.py"))},
         "analysis": job["analysis"], "metrics": metrics, "cases": rows,
         "missing_snapshot_queries": sorted(getattr(dictionary, "missing_queries", [])),
@@ -151,13 +164,13 @@ async def evaluate(corpus_path: Path, output: Path, live: bool = False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--corpus", type=Path, default=FIXTURES / "audited_corpus.json")
+    parser.add_argument("--corpus", type=Path, default=FIXTURES / "audited_corpus_numbers_2026-11-09.json")
     parser.add_argument("--output", type=Path, default=REPOSITORY / "test-results/evaluation")
     parser.add_argument("--live", action="store_true")
     parser.add_argument("--strict", action="store_true", help="Fail on false marks, missing audited queries, or required-abstention violations")
     args = parser.parse_args()
     report = asyncio.run(evaluate(args.corpus, args.output, args.live))
-    if args.strict and (report["metrics"]["false_positive_syllables"] or report["missing_snapshot_queries"] or
+    if args.strict and (report["analysis"]["state"] != "complete" or report["metrics"]["false_positive_syllables"] or report["missing_snapshot_queries"] or
                         report["metrics"]["correct_required_abstentions"] != report["metrics"]["required_abstention_targets"]):
         raise SystemExit(1)
 

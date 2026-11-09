@@ -5,6 +5,7 @@ Requires Playwright Python and an installed Chromium. No external website is use
 """
 import argparse
 from pathlib import Path
+import re
 
 import fitz
 from playwright.sync_api import sync_playwright, expect
@@ -55,7 +56,11 @@ def main():
         color.fill("#F2D4DC")
         with page.expect_response(lambda response: "/state" in response.url and response.request.method == "PATCH"):
             color.press("Tab")
-        expect(page.locator(".mark-layer .mark circle").first).to_have_attribute("fill", "#F2D4DC")
+        # The server-rendered PNG now paints the same vector markers as export.
+        # SVG circles are transparent interaction targets and must not repaint
+        # the glyphs or apply the selected opacity for a second time.
+        expect(page.locator(".mark-layer .mark circle").first).to_have_attribute("fill", "transparent")
+        expect(page.locator(".pdf-paper img")).to_have_attribute("src", re.compile(r"marked=true.*revision="))
         page.screenshot(path=str(output / "desktop-document.png"), full_page=True)
         page.get_by_role("button", name="장음 분석", exact=True).click()
         expect(page.get_by_text("사전 연결을 기다리고 있어요", exact=True)).to_be_visible()

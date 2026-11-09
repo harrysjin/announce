@@ -59,16 +59,41 @@ export type Occurrence = {
   };
   pronunciation_scope?: string;
   component_results?: ComponentResult[];
+  numeric?: NumericPlan;
   coverage?: {
     complete: boolean;
     checked_ranges: [number, number][];
     unresolved_ranges: [number, number][];
+    coordinate_system?: "characters" | "syllables";
   };
   candidates: Candidate[];
   selected_candidate_id?: string | null;
   note?: string;
   context?: string;
   group?: string;
+};
+export type NumericAlignment = {
+  reading_start: number;
+  reading_end: number;
+  source_start: number;
+  source_end: number;
+  exact: boolean;
+  reason?: string;
+};
+export type NumericOption = {
+  id: string;
+  system: string;
+  label: string;
+  reading: string;
+  alignment: NumericAlignment[];
+};
+export type NumericPlan = {
+  kind: string;
+  options: NumericOption[];
+  default_option_id?: string | null;
+  selected_option_id?: string | null;
+  choice_source?: "auto" | "user";
+  reason?: string;
 };
 export type MorphologyComponent = {
   lemma: string;
@@ -109,6 +134,7 @@ export type Job = {
   occurrences: Occurrence[];
   marks: Mark[];
   settings: Settings;
+  revision: number;
   analysis: { state: string; done: number; total: number; message: string };
   [key: string]: unknown;
 };

@@ -101,13 +101,14 @@ class AnalysisTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(job["occurrences"][0]["status"], "unresolved")
         self.assertEqual(job["marks"], [])
 
-    async def test_numbers_keep_reading_required_and_decimal_not_split(self):
+    async def test_numbers_discover_readings_without_inventing_marks_or_splitting_decimal(self):
         job = make_job("4개 0.35초", {"4개": [candidate("4개", "네ː개")]})
         await analyze_job(job)
         self.assertEqual([o["text"] for o in job["occurrences"]], ["4개", "0.35초"])
-        self.assertTrue(all(o["reason_code"] == "reading_required" for o in job["occurrences"]))
+        self.assertTrue(all(o["status"] == "unresolved" for o in job["occurrences"]))
         self.assertEqual(job["marks"], [])
-        self.assertEqual(job["_dictionary"].queries, [])
+        self.assertTrue(all(o.get("numeric") for o in job["occurrences"]), "Numbers need reviewable reading plans")
+        self.assertTrue(job["_dictionary"].queries, "Numeric readings must consult official word pronunciations")
 
     async def test_lookup_error_has_failed_state_not_short_result(self):
         job = make_job("가상", failing=True)
