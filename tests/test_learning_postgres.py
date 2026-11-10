@@ -56,7 +56,7 @@ class LearningPostgresTests(unittest.TestCase):
     def setUp(self):
         with db.connection() as conn:
             conn.execute('TRUNCATE learning_consents CASCADE')
-        self.client = TestClient(app)
+        self.client = TestClient(app, client=("learning-" + uuid4().hex, 50000))
         self.client.get('/api/learning/status')
         self.job, self.occurrence = setup_job(self.client)
         self.admin_headers = {'Authorization': 'Bearer ' + 'r' * 64}

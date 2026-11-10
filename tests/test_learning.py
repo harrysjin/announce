@@ -42,7 +42,7 @@ def request_for(subject_cookie='a' * 64):
 
 class LearningOfflineTests(unittest.TestCase):
     def setUp(self):
-        self.client = TestClient(app)
+        self.client = TestClient(app, client=("learning-" + uuid4().hex, 50000))
         self.job, self.occurrence = setup_job(self.client)
 
     def tearDown(self):
@@ -162,6 +162,33 @@ class LearningOfflineTests(unittest.TestCase):
         self.assertEqual(editable(self.job), before)
         self.assertEqual(self.job['revision'], 0)
         self.assertNotEqual(self.job.get('_learning_receipt', {}).get('state'), 'saved')
+
+
+
+
+class DictionaryFailureMetadataTests(unittest.IsolatedAsyncioTestCase):
+    async def test_real_adapter_preserves_timeout_category_and_hides_transport_url(self):
+        import httpx
+        from unittest.mock import AsyncMock
+        from backend.dictionary import DictionaryClient, DictionaryError
+        with patch.dict(os.environ, {'STDICT_API_KEY': 'fixture-only'}), patch('backend.dictionary.httpx.AsyncClient'), patch.object(DictionaryClient, '_get', AsyncMock(side_effect=httpx.ReadTimeout('private-url-and-key'))):
+            with self.assertRaises(DictionaryError) as raised:
+                await DictionaryClient().lookup('fixture')
+        self.assertEqual(raised.exception.failure_kind, 'lookup_timeout')
+        self.assertNotIn('private-url-and-key', str(raised.exception))
+
+    async def test_analysis_retains_old_policy_and_new_timeout_metadata(self):
+        from backend.dictionary import DictionaryError
+        from backend.main import analyze_job
+        from test_numeric_api import numeric_job
+        class TimeoutReplay:
+            async def lookup(self, word):
+                raise DictionaryError('fixture timeout', failure_kind='lookup_timeout')
+        _, job = numeric_job('낭독')
+        job['_dictionary'] = TimeoutReplay()
+        await analyze_job(job)
+        self.assertEqual(job['occurrences'][0]['reason_code'], 'lookup_failed')
+        self.assertEqual(unresolved_reason(job['occurrences'][0]), 'lookup_timeout')
 
 
 if __name__ == '__main__':
