@@ -32,6 +32,7 @@ def main():
            'STDICT_API_KEY': '', 'LEARNING_PUBLIC_ORIGIN': ''}
     server = None
     errors = []
+    page = None
     try:
         subprocess.run([sys.executable, '-m', 'backend.learning_db'], env=env, check=True, capture_output=True)
         log = (output / 'server.log').open('w')
@@ -52,7 +53,8 @@ def main():
             page.goto('http://127.0.0.1:8765', wait_until='networkidle')
             page.get_by_role('button', name='장음 학습 관리', exact=True).click()
             consent = page.get_by_label('안내를 확인했으며 이후 수정 기록 제공에 동의합니다.')
-            expect(consent).to_be_enabled(); consent.check()
+            expect(consent).to_be_enabled(); consent.click()
+            expect(consent).to_be_checked()
             expect(page.get_by_text('이후의 선택·수정 기록을 제공합니다.', exact=False)).to_be_visible()
             page.get_by_role('button', name='작업 공간으로 돌아가기').click()
             page.locator('input[type=file]').set_input_files({'name': 'browser-synthetic.pdf', 'mimeType': 'application/pdf', 'buffer': numeric_pdf('낭독 연습')})
@@ -90,7 +92,8 @@ def main():
             page.screenshot(path=str(output / 'mobile.png'), full_page=True)
             assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth'), 'Mobile horizontal overflow'
             page.set_viewport_size({'width': 1440, 'height': 1100})
-            consent.uncheck()
+            consent.click()
+            expect(consent).not_to_be_checked()
             expect(page.get_by_text('제공 동의를 철회했습니다.', exact=False)).to_be_visible()
             page.get_by_label('내 학습 기록 전체를 삭제하겠습니다.').check()
             page.get_by_role('button', name='내 기록 전체 삭제', exact=True).click()
@@ -99,6 +102,14 @@ def main():
             assert not errors, errors
             browser.close()
         print(json.dumps({'flow': 'consent/manual/undo/redo/export/submit/review/withdraw/delete', 'page_errors': errors, 'result': 'passed'}, ensure_ascii=False))
+    except Exception:
+        if page:
+            try:
+                page.screenshot(path=str(output / 'failure.png'), full_page=True)
+                print(json.dumps({'visible_errors': page.locator('[role=alert]').all_text_contents()}, ensure_ascii=False))
+            except Exception:
+                pass
+        raise
     finally:
         if server:
             server.terminate(); server.wait(timeout=10)
