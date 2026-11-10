@@ -183,7 +183,8 @@ def get_job(job_id: str):
 
 @app.get("/api/jobs/{job_id}/progress")
 def get_progress(job_id: str):
-    return progress_snapshot(session_for(job_id), gate=GATE)
+    job = session_for(job_id)
+    return progress_snapshot({**job, **job.get("_uncommitted_snapshot", {})}, gate=GATE)
 
 
 def apply_length_evidence(job: dict, occurrence: dict, evidence: dict, source: str, reason: str, reason_code: str, mark_source: str | None = None):
@@ -732,6 +733,7 @@ async def choose_reading(job_id: str, occurrence_id: str, choice: ReadingChoice,
 @app.get("/api/jobs/{job_id}/pages/{page}/preview.png")
 def preview(job_id: str, page: int, marked: bool = True, scale: float = Query(default=1.5, ge=0.2, le=2)):
     job = session_for(job_id)
+    job = {**job, **job.get("_uncommitted_snapshot", {})}
     if page < 1 or page > len(job["pages"]):
         raise HTTPException(404, "페이지가 없습니다.")
     data = job["_path"].read_bytes()
@@ -746,6 +748,7 @@ def preview(job_id: str, page: int, marked: bool = True, scale: float = Query(de
 @app.get("/api/jobs/{job_id}/export/{kind}")
 def export(job_id: str, kind: str):
     job = session_for(job_id)
+    job = {**job, **job.get("_uncommitted_snapshot", {})}
     idle_required(job)
     base = job["filename"].rsplit(".", 1)[0]
     if kind == "pdf":

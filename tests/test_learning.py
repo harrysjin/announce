@@ -71,6 +71,14 @@ class LearningOfflineTests(unittest.TestCase):
     def test_cross_origin_consent_and_edits_are_forbidden(self):
         r = self.client.put('/api/learning/consent', headers={'Origin': 'https://foreign.example'}, json={'enabled': True, 'policy_version': POLICY_VERSION})
         self.assertEqual(r.status_code, 403)
+
+    def test_reverse_proxy_origin_and_secure_cookie_configuration(self):
+        with patch.dict(os.environ, {'DATABASE_URL': '', 'LEARNING_PUBLIC_ORIGIN': 'https://testserver'}):
+            client = TestClient(app, base_url='https://testserver')
+            result = client.get('/api/learning/status')
+            self.assertIn('Secure', result.headers['set-cookie'])
+            result = self.client.patch(f"/api/jobs/{self.job['id']}/state", headers={'Origin': 'https://testserver'}, json={'marks': []})
+            self.assertEqual(result.status_code, 200, result.text)
         r = self.client.patch(f"/api/jobs/{self.job['id']}/state", headers={'Origin': 'https://foreign.example'}, json={'marks': []})
         self.assertEqual(r.status_code, 403)
 

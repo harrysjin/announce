@@ -86,8 +86,12 @@ def snapshot(job: dict, occurrence: dict) -> dict:
         candidates.update({c["id"]: c for c in component.get("candidates", [])})
     records = [{k: deepcopy(c[k]) for k in CANDIDATE_FIELDS if k in c} for c in candidates.values()]
     glyph_ids = occurrence["glyph_ids"]
-    actual = sorted(glyph_ids.index(m["glyph_id"]) for m in job["marks"] if m["glyph_id"] in glyph_ids)
-    expected = sorted(glyph_ids.index(g) for g in occurrence.get("long_glyph_ids", []) if g in glyph_ids)
+    marked = job.get("_learning_mark_index")
+    if marked is None:
+        marked = {m["glyph_id"]: m for m in job["marks"]}
+    expected_glyphs = set(occurrence.get("long_glyph_ids", []))
+    actual = [i for i, gid in enumerate(glyph_ids) if gid in marked]
+    expected = [i for i, gid in enumerate(glyph_ids) if gid in expected_glyphs]
     selected = next((c for c in records if c["id"] == occurrence.get("selected_candidate_id")), None)
     numeric = occurrence.get("numeric") or {}
     option = next((o for o in numeric.get("options", []) if o["id"] == numeric.get("selected_option_id")), None)
@@ -133,25 +137,30 @@ def semantic_signature(occurrence: dict, marks: list[dict], include_status: bool
 def persist(conn, subject: str, job: dict, before: dict, meta: MutationMeta, request_hash: str,
             event_type: str, target: str | None, payload: dict, compensation: dict | None = None) -> dict:
     from psycopg.types.json import Jsonb
-    before_job = {**job, **before}
+    old_marks = {m["glyph_id"]: m for m in before["marks"]}
+    new_marks = {m["glyph_id"]: m for m in job["marks"]}
+    before_job = {**job, **before, "_learning_mark_index": old_marks}
+    after_job = {**job, "_learning_mark_index": new_marks}
     old_occurrences = {o["id"]: o for o in before["occurrences"]}
+    requested = {o.get("id"): o for o in payload.get("occurrences") or []}
+    compensation_targets = {c["occurrence_id"] for c in compensation["changes"]} if compensation is not None else None
     changes = []
     for occurrence in job["occurrences"]:
-        if compensation is not None and occurrence["id"] not in {c["occurrence_id"] for c in compensation["changes"]}:
+        if compensation_targets is not None and occurrence["id"] not in compensation_targets:
             continue
         old = old_occurrences[occurrence["id"]]
-        explicit_status = any(o.get("id") == occurrence["id"] and o.get("status", old.get("status")) != old.get("status") for o in payload.get("occurrences") or [])
+        explicit_status = requested.get(occurrence["id"], {}).get("status", old.get("status")) != old.get("status")
         include_status = event_type != "manual_edit" or explicit_status
-        changed = semantic_signature(old, before["marks"], include_status) != semantic_signature(occurrence, job["marks"], include_status)
+        old_local = [old_marks[gid] for gid in old["glyph_ids"] if gid in old_marks]
+        new_local = [new_marks[gid] for gid in occurrence["glyph_ids"] if gid in new_marks]
+        changed = semantic_signature(old, old_local, include_status) != semantic_signature(occurrence, new_local, include_status)
         if changed or (target == occurrence["id"] and event_type in ("meaning_selected", "reading_selected")):
-            changes.append({"occurrence_id": occurrence["id"], "before": snapshot(before_job, old), "after": snapshot(job, occurrence)})
+            changes.append({"occurrence_id": occurrence["id"], "before": snapshot(before_job, old), "after": snapshot(after_job, occurrence)})
     if event_type == "manual_edit" and not changes:
         event_type = "visual_edit" if before["settings"] != job["settings"] or before["marks"] != job["marks"] else "note_edit"
     group = document_group(job["sha256"])
     # Geometry is logged separately by character index; never store the page or full extraction.
     visual = {"settings_before": before["settings"], "settings_after": job["settings"], "marks": []}
-    old_marks = {m["glyph_id"]: m for m in before["marks"]}
-    new_marks = {m["glyph_id"]: m for m in job["marks"]}
     for gid in old_marks.keys() | new_marks.keys():
         a, b = old_marks.get(gid), new_marks.get(gid)
         if a != b:
@@ -163,14 +172,18 @@ def persist(conn, subject: str, job: dict, before: dict, meta: MutationMeta, req
                  (meta.event_id, subject, meta.idempotency_key, request_hash, job["id"], group, event_type,
                   meta.target_event_id, ENGINE_VERSION, release_identity()["build_commit"], before["revision"], job["revision"],
                   Jsonb(changes), Jsonb(visual), POLICY_VERSION))
+    if changes:
+        conn.execute("UPDATE learning_cases SET active=false WHERE subject_id=%s AND job_id=%s AND occurrence_id=ANY(%s) AND active",
+                     (subject, job["id"], [c["occurrence_id"] for c in changes]))
+    rows = []
     for change in changes:
         after = change["after"]
-        conn.execute("UPDATE learning_cases SET active=false WHERE subject_id=%s AND job_id=%s AND occurrence_id=%s AND active",
-                     (subject, job["id"], change["occurrence_id"]))
-        conn.execute("""INSERT INTO learning_cases(case_id,event_id,subject_id,job_id,occurrence_id,document_group,surface,lemma,pos,context,
-                      snapshot,unresolved_reason,meaning_supported,length_supported) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""",
-                     (uuid4(), meta.event_id, subject, job["id"], change["occurrence_id"], group, after["surface"], after["lemma"],
-                      after["pos"], after["context"], Jsonb(after), after["unresolved_reason"], after["meaning_supported"], after["length_supported"]))
+        rows.append((uuid4(), meta.event_id, subject, job["id"], change["occurrence_id"], group, after["surface"], after["lemma"],
+                     after["pos"], after["context"], Jsonb(after), after["unresolved_reason"], after["meaning_supported"], after["length_supported"]))
+    if rows:
+        with conn.cursor() as cursor:
+            cursor.executemany("""INSERT INTO learning_cases(case_id,event_id,subject_id,job_id,occurrence_id,document_group,surface,lemma,pos,context,
+                               snapshot,unresolved_reason,meaning_supported,length_supported) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""", rows)
     return {"state": "saved", "event_id": str(meta.event_id), "replayed": False}
 
 
@@ -219,6 +232,8 @@ def mutation(job: dict, request: Request | None, meta: MutationMeta, payload: di
         record = bool(request and request.headers.get("x-learning-record") == "true")
         if request:
             same_origin(request)
+        if meta.target_event_id is not None and event_type not in ("undo", "redo"):
+            raise HTTPException(422, "상쇄 대상 사건은 취소·다시 실행에만 지정할 수 있습니다.")
         if event_type in ("undo", "redo") and record and meta.target_event_id is None:
             raise HTTPException(422, "취소·다시 실행의 대상 사건 ID가 필요합니다.")
         if not record:

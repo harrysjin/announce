@@ -222,13 +222,20 @@ def export_jsonl(request: Request, scope: Literal["mine", "approved"] = "mine",
                         "dataset_split": split_for(r["document_group"])} for r in shown]
             cursor_field = "event_id"
         else:
-            rows = conn.execute("""SELECT c.* FROM learning_cases c JOIN learning_consents cons USING(subject_id)
+            rows = conn.execute("""SELECT c.*,e.engine_version,e.build_commit FROM learning_cases c JOIN learning_consents cons USING(subject_id)
+                                  JOIN learning_events e ON e.event_id=c.event_id
                                   WHERE c.active AND c.status='approved' AND cons.enabled AND cons.policy_version=%s
                                   AND (%s::uuid IS NULL OR c.case_id>%s::uuid) ORDER BY c.case_id LIMIT %s""",
                                 (POLICY_VERSION, after, after, limit + 1)).fetchall()
             shown = rows[:limit]
+            reviews = conn.execute("SELECT * FROM learning_reviews WHERE case_id=ANY(%s::uuid[]) ORDER BY reviewed_at,review_id",
+                                   ([r["case_id"] for r in shown],)).fetchall() if shown else []
+            by_case = defaultdict(list)
+            for item in reviews:
+                by_case[item["case_id"]].append(item)
             records = [{"schema_version": 1, "record_type": "approved_case", **{k: v for k, v in r.items() if k not in ("subject_id", "job_id")},
-                        "dataset_split": split_for(r["document_group"]), "label_source": "human_review_with_dictionary_evidence"} for r in shown]
+                        "reviews": by_case[r["case_id"]], "dataset_split": split_for(r["document_group"]),
+                        "label_source": "human_review_with_dictionary_evidence"} for r in shown]
             cursor_field = "case_id"
     next_cursor = str(shown[-1][cursor_field]) if len(rows) > limit else ""
     return Response("".join(encode(r) + "\n" for r in records), media_type="application/x-ndjson",
