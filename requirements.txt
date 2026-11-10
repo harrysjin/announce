@@ -5,3 +5,5 @@ PyMuPDF==1.26.6
 httpx==0.28.1
 kiwipiepy==0.24.1
 kiwipiepy_model==0.24.0
+
+psycopg[binary]==3.2.13

@@ -140,6 +140,8 @@ export type Job = {
   settings: Settings;
   revision: number;
   analysis: { state: string; done: number; total: number; message: string };
+  learning?: { state: "saved" | "not_requested"; event_id: string | null; replayed?: boolean };
   [key: string]: unknown;
 };
 export type Snapshot = Pick<Job, "settings" | "marks" | "occurrences">;
+export type HistoryEntry = { snapshot: Snapshot; eventId: string | null };
