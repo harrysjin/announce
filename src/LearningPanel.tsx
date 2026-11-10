@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowDownToLine, RefreshCw, ShieldCheck, Trash2, X } from 'lucide-react';
 import { LABELS, learningRequest, type LearningCase, type LearningEvent, type LearningStatus } from './learningClient';
+import LearningEvidence, { reasonNames, recordSummary } from './LearningEvidence';
 
 export default function LearningPanel({ onConsentChange, onClose }: {
   onConsentChange: (enabled: boolean) => void; onClose: () => void;
@@ -86,7 +87,8 @@ export default function LearningPanel({ onConsentChange, onClose }: {
       <p>의미·숫자 읽기 선택, 표시 수정, 실행 취소·다시 실행과 시각 설정 변경을 기록합니다. 대상 표현과 최대 160자의 주변 문맥, 사전 후보·출처·조회 시각, 변경 전후 상태를 저장합니다. 메모 내용과 원본 PDF는 저장하지 않습니다.</p>
       <p>미동의 상태에서도 PDF 분석을 이용할 수 있습니다. 철회 시 기존 기록의 검수·추천 활용을 중단하며, 기록 삭제로 학습 데이터와 검수 내역을 모두 지울 수 있습니다. 이 브라우저의 식별 쿠키가 삭제되면 본인 기록에 다시 접근하기 어렵습니다.</p>
       <label><input type="checkbox" checked={!!status?.consent} disabled={!status?.available || busy} onChange={(event) => void run(() => setConsent(event.target.checked))} /> 안내를 확인했으며 이후 수정 기록 제공에 동의합니다.</label>
-      {!status?.available && <p role="status">학습 저장소가 아직 연결되지 않았습니다. 작업 공간에서 PDF 분석을 계속 이용할 수 있습니다.</p>}
+      {!status && <p role="status">{error ? '학습 저장소의 상태를 확인하지 못했습니다.' : '학습 저장소의 연결 상태를 확인하고 있습니다.'}</p>}
+      {status && !status.available && <p role="status">학습 저장소가 아직 연결되지 않았습니다. 작업 공간에서 PDF 분석을 계속 이용할 수 있습니다.</p>}
       <small>동의 정책 {status?.policy_version || '확인 중'} · 문맥 추천 및 자동 판정 확대는 비활성 상태입니다.</small>
     </div>
     {error && <p className="error-banner" role="alert">{error}</p>}
@@ -103,21 +105,24 @@ export default function LearningPanel({ onConsentChange, onClose }: {
       <select aria-label="검수 상태" value={state} onChange={(event) => { setState(event.target.value); setOffset(0); }}><option value="">모든 상태</option>{['selected', 'pending_review', 'approved', 'rejected', 'needs_review'].map((value) => <option key={value} value={value}>{LABELS[value]}</option>)}</select>
     </form>}
     <div className="learning-list" aria-busy={busy}>
-      {view === 'events' ? events.map((event) => <article className="learning-card" key={event.event_id}><h3>{LABELS[event.event_type] || event.event_type}</h3><p>{new Date(event.recorded_at).toLocaleString()} · 수정 버전 {event.before_revision} → {event.after_revision}</p><small>사건 {event.event_id}{event.compensates_event_id && ` · 상쇄 대상 ${event.compensates_event_id}`}</small><details><summary>변경 전후 근거 보기</summary><pre>{JSON.stringify({ changes: event.changes, visual_changes: event.visual_changes }, null, 2)}</pre></details></article>) : cases.map((item) => <article className="learning-card" key={item.case_id}>
+      {view === 'events' ? events.map((event) => <article className="learning-card" key={event.event_id}><h3>{LABELS[event.event_type] || event.event_type}</h3><p>{new Date(event.recorded_at).toLocaleString()} · 수정 버전 {event.before_revision} → {event.after_revision}</p>
+        {event.changes.map((change) => <div className="learning-event-change" key={change.occurrence_id}><h4>{change.after.surface}</h4><p><span>변경 전</span>{recordSummary(change.before)}</p><p><span>변경 후</span>{recordSummary(change.after)}</p></div>)}
+        {!event.changes.length && <p className="learning-event-note">표시 설정·메모 변경 이력입니다. 언어적 정답 사례로 사용하지 않습니다.</p>}
+        <details><summary>사건 식별·상세 변경 기록</summary><small>사건 {event.event_id}{event.compensates_event_id && ` · 상쇄 대상 ${event.compensates_event_id}`}</small><pre>{JSON.stringify({ changes: event.changes, visual_changes: event.visual_changes }, null, 2)}</pre></details></article>) : cases.map((item) => <article className="learning-card" key={item.case_id}>
         <div className="learning-case-title"><h3>{item.surface} <small>{item.lemma} · {item.pos || '품사 미확정'}</small></h3><span className={`learning-badge ${item.status}`}>{LABELS[item.status]}{!item.active && ' · 이전 상태'}</span></div>
         <p className="learning-context">{item.context}</p>
         <p>의미: {LABELS[item.meaning_status]} · 발음·장음 위치: {LABELS[item.length_status]}</p>
-        <small>미확정 사유: {item.unresolved_reason} · {new Date(item.created_at).toLocaleString()}</small>
-        <details><summary>사전 후보·선택·숫자 대응·근거 확인</summary><pre>{JSON.stringify(item.snapshot, null, 2)}</pre></details>
+        <small>기록 상태: {item.unresolved_reason === 'resolved' && !item.length_supported ? '공식 발음·표시 위치 검수 필요' : reasonNames[item.unresolved_reason] || '근거 재확인 필요'} · {new Date(item.created_at).toLocaleString()}</small>
+        <details><summary>사전 후보·선택·숫자 대응·근거 확인</summary><LearningEvidence snapshot={item.snapshot} /></details>
         {!!item.reviews.length && <details><summary>검수 내역 {item.reviews.length}건</summary>{item.reviews.map((review, index) => <p key={index}>{review.reason}<small> · {review.reviewer_id} · {new Date(review.reviewed_at).toLocaleString()}</small></p>)}</details>}
         {view === 'mine' && item.active && status?.consent && ['selected', 'needs_review'].includes(item.status) && <button disabled={busy} onClick={() => void run(async () => { await learningRequest(`/api/learning/cases/${item.case_id}/submit`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ expected_version: item.review_version }) }); await load(); })}>검수 요청</button>}
         {view === 'review' && <ReviewForm item={item} disabled={busy} onReview={(meaning, length, reason) => run(async () => { await learningRequest(`/api/learning/cases/${item.case_id}/review`, { method: 'POST', headers: { ...adminHeaders(), 'Content-Type': 'application/json' }, body: JSON.stringify({ meaning_status: meaning, length_status: length, reason, expected_version: item.review_version }) }); await load(); setMessage('검수 상태와 근거를 저장했습니다.'); })} />}
       </article>)}
-      {status?.available && !(view === 'events' ? events.length : cases.length) && <p className="learning-empty">표시할 기록이 없습니다.</p>}
+      {status?.available && !(view === 'events' ? events.length : cases.length) && <div className="learning-empty"><p>표시할 기록이 없습니다.</p>{!query && !state && view === 'mine' && <p>{status.consent ? '작업 공간에서 뜻·읽기를 선택하거나 표시를 수정하면 이곳에 기록됩니다.' : '기록을 제공하려면 위의 동의 설정을 켠 뒤 대본을 수정해 주세요. 이전 수정은 소급 수집하지 않습니다.'}</p>}</div>}
     </div>
     <div className="learning-pagination"><button disabled={!offset || busy} onClick={() => setOffset(Math.max(0, offset - 40))}>이전</button><span>{offset + 1}번부터</span><button disabled={!hasMore || busy} onClick={() => setOffset(offset + 40)}>다음</button></div>
     <details className="learning-admin"><summary><ShieldCheck size={16} /> 관리자 인증</summary>{adminToken ? <p>검수자: {reviewer} <button onClick={() => { setAdminToken(''); setReviewer(''); setView('mine'); setCases([]); }}>관리자 로그아웃</button></p> : <form onSubmit={(event) => { event.preventDefault(); void run(async () => { const result = await learningRequest<{ reviewer_id: string }>('/api/learning/admin', { headers: { Authorization: `Bearer ${tokenInput}` } }); setAdminToken(tokenInput); setTokenInput(''); setReviewer(result.reviewer_id); setView('review'); setOffset(0); }); }}><label>관리자 토큰 <input type="password" autoComplete="off" value={tokenInput} onChange={(event) => setTokenInput(event.target.value)} required /></label><button disabled={busy}>인증</button></form>}<p>토큰은 이 화면 메모리에서만 사용되며, 새로고침·화면 닫기 시 해제됩니다.</p></details>
-    <div className="learning-privacy"><h3>내 기록 삭제</h3><p>승인·반려 내역과 선택·취소 이력을 모두 삭제하고 제공 동의를 해제합니다. 이미 내려받은 내보내기 파일과 운영자가 관리하는 백업은 별도로 삭제해야 합니다.</p><label><input type="checkbox" checked={deleteConfirmed} onChange={(event) => setDeleteConfirmed(event.target.checked)} /> 내 학습 기록 전체를 삭제하겠습니다.</label><button className="danger" disabled={busy || !deleteConfirmed || !status?.available} onClick={() => void run(async () => { await learningRequest('/api/learning/records', { method: 'DELETE' }); await refreshStatus(); setCases([]); setEvents([]); setDeleteConfirmed(false); setMessage('학습 기록과 검수 내역을 삭제하고 제공 동의를 해제했습니다.'); })}><Trash2 size={15} /> 내 기록 전체 삭제</button></div>
+    <div className="learning-privacy"><h3>내 기록 삭제</h3><p>승인·반려 내역과 선택·취소 이력을 모두 삭제하고 제공 동의를 해제합니다. 이미 내려받은 내보내기 파일과 운영자가 관리하는 백업은 별도로 삭제해야 합니다.</p><label><input type="checkbox" checked={deleteConfirmed} onChange={(event) => setDeleteConfirmed(event.target.checked)} /> 내 학습 기록 전체를 삭제하겠습니다.</label><button className="danger" disabled={busy || !deleteConfirmed || !status?.available} onClick={() => void run(async () => { await learningRequest('/api/learning/records', { method: 'DELETE' }); ++loadVersion.current; await refreshStatus(); setCases([]); setEvents([]); setDeleteConfirmed(false); setMessage('학습 기록과 검수 내역을 삭제하고 제공 동의를 해제했습니다.'); })}><Trash2 size={15} /> 내 기록 전체 삭제</button></div>
   </section>;
 }
 

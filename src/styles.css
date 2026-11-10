@@ -2871,3 +2871,26 @@ input[type="range"]::-moz-range-thumb {
 .learning-privacy { border-top: 1px solid #e0e7e8; padding-top: 22px; }
 .learning-privacy .danger { border-color: #e1bdba; color: #945455; }
 @media (max-width: 700px) { .learning-panel { padding: 17px; } .learning-case-title { flex-direction: column; gap: 7px; } .learning-search { flex-direction: column; } .header-tag { display: none; } .learning-consent { padding: 16px; } .site-header nav { gap: 8px; } }
+
+.learning-evidence { padding: 5px 0 12px; }
+.learning-evidence h4, .learning-event-change h4 { margin: 16px 0 9px; font-size: 13px; color: #425e64; }
+.learning-evidence-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; margin: 8px 0 18px; }
+.learning-evidence-facts > div { padding: 14px; background: #f4f8f8; border-radius: 9px; }
+.learning-evidence-facts dt { color: #698087; font-size: 11px; margin-bottom: 6px; }
+.learning-evidence-facts dd { margin: 0; font-size: 13px; line-height: 1.7; overflow-wrap: anywhere; }
+.learning-evidence-facts dd span, .learning-rule-list p span { display: block; color: #718287; font-size: 12px; margin-top: 4px; }
+.learning-candidate-list article { padding: 14px 0; border-top: 1px solid #e5ecec; }
+.learning-candidate-list article.chosen { border-left: 3px solid #94bec1; padding-left: 13px; }
+.learning-candidate-list article > div { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.learning-candidate-list p, .learning-numeric-map li { font-size: 13px; }
+.learning-candidate-list .learning-pronunciation { color: #526e74; }
+.learning-evidence a { color: #386d76; text-decoration: underline; text-underline-offset: 3px; }
+.learning-evidence-hold { color: #886d46; background: #faf5eb; padding: 11px 13px; border-radius: 8px; font-size: 12px; }
+.learning-numeric-map ul { padding-left: 20px; line-height: 1.9; }
+.learning-numeric-map small { display: block; }
+.learning-raw-record { border-top: 1px solid #e5ecec; margin-top: 14px; }
+.learning-event-change { padding: 2px 13px 10px; border-radius: 8px; background: #f5f8f9; margin-top: 12px; }
+.learning-event-change p { display: flex; gap: 12px; font-size: 12px; overflow-wrap: anywhere; }
+.learning-event-change p > span { flex: 0 0 42px; color: #7b8f94; }
+.learning-event-note { font-size: 12px; color: #6c8086; }
+@media (max-width: 600px) { .learning-evidence-facts { grid-template-columns: minmax(0, 1fr); } }

@@ -122,7 +122,17 @@ function Logo() {
 }
 
 export default function App() {
-  const [learningOpen, setLearningOpen] = useState(false);
+  const [learningOpen, setLearningOpen] = useState(() => window.location.pathname.replace(/\/$/, "") === "/learning");
+  const navigateLearning = useCallback((open: boolean) => {
+    const path = open ? "/learning" : "/";
+    if (window.location.pathname !== path) window.history.pushState(null, "", path);
+    setLearningOpen(open);
+  }, []);
+  useEffect(() => {
+    const onBack = () => setLearningOpen(window.location.pathname.replace(/\/$/, "") === "/learning");
+    window.addEventListener("popstate", onBack);
+    return () => window.removeEventListener("popstate", onBack);
+  }, []);
   const [learningConsent, setLearningConsent] = useState(false);
   const [job, setJob] = useState<Job | null>(null),
     [settings, setSettings] = useState<Settings>(DEFAULT),
@@ -661,8 +671,8 @@ export default function App() {
         <div className="header-inner">
           <Logo />
           <nav>
-            <button className={!learningOpen ? "nav-current" : ""} onClick={() => setLearningOpen(false)}>작업 공간</button>
-            <button className={learningOpen ? "nav-current" : ""} onClick={() => setLearningOpen(true)}>장음 학습 관리</button>
+            <button className={!learningOpen ? "nav-current" : ""} onClick={() => navigateLearning(false)}>작업 공간</button>
+            <button className={learningOpen ? "nav-current" : ""} onClick={() => navigateLearning(true)}>장음 학습 관리</button>
             <button onClick={() => setHelp(true)}>
               이용 가이드 <CircleHelp size={14} />
             </button>
@@ -701,7 +711,7 @@ export default function App() {
             </button>
           </div>
         )}
-        {learningOpen && <LearningPanel onConsentChange={consentChanged} onClose={() => setLearningOpen(false)} />}
+        {learningOpen && <LearningPanel onConsentChange={consentChanged} onClose={() => navigateLearning(false)} />}
         {!learningOpen && job?.learning?.state === "saved" && <p className="learning-save-state" role="status">학습 기록 저장 완료 · 사건 {job.learning.event_id}</p>}
         <section
           className="workspace"

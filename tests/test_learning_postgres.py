@@ -83,6 +83,18 @@ class LearningPostgresTests(unittest.TestCase):
         self.assertEqual(r.status_code, 200, r.text)
         return r.json()['items'][0]
 
+    def test_deployment_check_reads_schema_and_detects_version_drift(self):
+        from backend.learning_setup import check_setup, migration_manifest
+        with patch.dict(os.environ, {'LEARNING_PUBLIC_ORIGIN': 'https://sori.example'}):
+            report = check_setup()
+            self.assertTrue(report['ready'], report)
+            expected = migration_manifest()
+            changed = {name: 'outdated-checksum' for name in expected}
+            with patch('backend.learning_setup.migration_manifest', return_value=changed):
+                self.assertFalse(check_setup()['ready'])
+        with db.connection() as conn:
+            self.assertEqual({row['version']: row['checksum'] for row in conn.execute('SELECT version,checksum FROM learning_schema_migrations').fetchall()}, expected)
+
     def test_migrations_are_versioned_and_repeatable(self):
         self.assertEqual(self.first_migration, ['001_learning.sql'])
         self.assertEqual(self.second_migration, [])

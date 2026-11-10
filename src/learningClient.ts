@@ -1,4 +1,11 @@
-import type { Job } from './types';
+import type { Candidate, Job, Occurrence } from './types';
+
+export type LearningSnapshot = {
+  surface: string; lemma: string; pos: string; context: string;
+  state: Partial<Pick<Occurrence, 'selected_candidate_id' | 'numeric' | 'status' | 'evidence_type' | 'pronunciations' | 'coverage' | 'applied_rules'>>;
+  candidates: Candidate[]; marked_character_indices: number[]; engine_character_indices: number[];
+  meaning_supported: boolean; length_supported: boolean;
+};
 
 export type LearningStatus = {
   available: boolean; consent: boolean; policy_version: string;
@@ -8,12 +15,13 @@ export type LearningCase = {
   case_id: string; event_id: string; surface: string; lemma: string; pos: string; context: string;
   active: boolean; status: string; meaning_status: string; length_status: string;
   meaning_supported: boolean; length_supported: boolean; unresolved_reason: string;
-  review_version: number; created_at: string; snapshot: Record<string, unknown>;
+  review_version: number; created_at: string; snapshot: LearningSnapshot;
   reviews: { reviewer_id: string; reason: string; reviewed_at: string; after_status: Record<string, unknown> }[];
 };
 export type LearningEvent = {
   event_id: string; event_type: string; recorded_at: string; compensates_event_id?: string;
-  before_revision: number; after_revision: number; changes: unknown[]; visual_changes: unknown;
+  before_revision: number; after_revision: number;
+  changes: { occurrence_id: string; before: LearningSnapshot; after: LearningSnapshot }[]; visual_changes: unknown;
 };
 export const LABELS: Record<string, string> = {
   selected: '선택 기록', pending_review: '검수 대기', approved: '승인', rejected: '반려', needs_review: '추가 검수',
