@@ -229,6 +229,8 @@ def mutation(job: dict, request: Request | None, meta: MutationMeta, payload: di
         raise HTTPException(409, "다른 수정이 진행 중입니다. 다시 시도해 주세요.")
     saved = None
     try:
+        if job["analysis"]["state"] in ("running", "queued"):
+            raise HTTPException(409, "분석을 중단한 뒤 수정해 주세요.")
         record = bool(request and request.headers.get("x-learning-record") == "true")
         if request:
             same_origin(request)
