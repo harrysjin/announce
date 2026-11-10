@@ -44,12 +44,21 @@ import type {
   Occurrence,
   Settings,
   Snapshot,
+  HistoryEntry,
 } from "./types";
+import LearningPanel from "./LearningPanel";
+import { initializeLearning, mutationRequest } from "./learningClient";
 
 const DEFAULT: Settings = { color: "#CEE4F5", opacity: 0.6, size: 1 };
 const SWATCHES = ["#CEE4F5", "#D7E8D1", "#F9E5B5", "#F2D4DC", "#DFD6F3"];
 async function request<T>(url: string, init?: RequestInit): Promise<T> {
-  const r = await fetch(url, init);
+  let r: Response;
+  try { r = await fetch(url, init); }
+  catch (failure) {
+    // A lost response can be retried with the exact same durable idempotency key.
+    if (new Headers(init?.headers).get("X-Learning-Record") !== "true" || (failure as Error).name === "AbortError") throw failure;
+    r = await fetch(url, init);
+  }
   if (!r.ok) {
     let detail = "요청을 처리하지 못했습니다.";
     try {
@@ -113,6 +122,18 @@ function Logo() {
 }
 
 export default function App() {
+  const [learningOpen, setLearningOpen] = useState(() => window.location.pathname.replace(/\/$/, "") === "/learning");
+  const navigateLearning = useCallback((open: boolean) => {
+    const path = open ? "/learning" : "/";
+    if (window.location.pathname !== path) window.history.pushState(null, "", path);
+    setLearningOpen(open);
+  }, []);
+  useEffect(() => {
+    const onBack = () => setLearningOpen(window.location.pathname.replace(/\/$/, "") === "/learning");
+    window.addEventListener("popstate", onBack);
+    return () => window.removeEventListener("popstate", onBack);
+  }, []);
+  const [learningConsent, setLearningConsent] = useState(false);
   const [job, setJob] = useState<Job | null>(null),
     [settings, setSettings] = useState<Settings>(DEFAULT),
     [tab, setTab] = useState<"settings" | "review">("settings");
@@ -141,8 +162,19 @@ export default function App() {
     [query, setQuery] = useState(""),
     [grouped, setGrouped] = useState(false),
     [mobileTab, setMobileTab] = useState<"pdf" | "tools">("pdf"),
-    [past, setPast] = useState<Snapshot[]>([]),
-    [future, setFuture] = useState<Snapshot[]>([]);
+    [past, setPast] = useState<HistoryEntry[]>([]),
+    [future, setFuture] = useState<HistoryEntry[]>([]);
+  const consentRef = useRef(learningConsent);
+  consentRef.current = learningConsent;
+  const consentChanged = useCallback((enabled: boolean) => {
+    if (consentRef.current !== enabled) {
+      setPast([]); setFuture([]);
+      setJob((current) => current ? { ...current, learning: undefined } : current);
+    }
+    consentRef.current = enabled;
+    setLearningConsent(enabled);
+  }, []);
+  useEffect(() => { void initializeLearning().then((status) => consentChanged(status.consent)).catch(() => {}); }, [consentChanged]);
   const [loadedPreview, setLoadedPreview] = useState("");
   const changing = useRef(false);
   const input = useRef<HTMLInputElement>(null),
@@ -277,7 +309,7 @@ export default function App() {
     const t = setTimeout(() => setNotice(""), 4000);
     return () => clearTimeout(t);
   }, [notice]);
-  const patch = useCallback(async (snap: Snapshot, history = true) => {
+  const patch = useCallback(async (snap: Snapshot, history = true, action: "edit" | "undo" | "redo" = "edit", targetEventId?: string | null): Promise<Job | false> => {
     const j = jobRef.current;
     if (!j || changing.current) return false;
     changing.current = true;
@@ -285,19 +317,20 @@ export default function App() {
     setSaving(true);
     setError("");
     try {
+      const operation = mutationRequest(j, consentRef.current, targetEventId);
       const next = await request<Job>(`/api/jobs/${j.id}/state`, {
         method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...snap, restore: !history }),
+        headers: operation.headers,
+        body: JSON.stringify({ ...snap, restore: !history, action, ...operation.metadata }),
       });
       if (jobRef.current?.id !== j.id) return false;
       setJob(next);
       setSettings(next.settings);
       if (history) {
-        setPast((p) => [...p, previous].slice(-40));
+        setPast((p) => [...p, { snapshot: previous, eventId: next.learning?.event_id || null }].slice(-40));
         setFuture([]);
       }
-      return true;
+      return next;
     } catch (e) {
       if (jobRef.current?.id === j.id) setSettings(j.settings);
       setError((e as Error).message);
@@ -314,16 +347,18 @@ export default function App() {
   const undo = useCallback(async () => {
     if (!job || !past.length || saving) return;
     const prev = past[past.length - 1];
-    if (await patch(prev, false)) {
-      setFuture((f) => [copy(job), ...f]);
+    const result = await patch(prev.snapshot, false, "undo", prev.eventId);
+    if (result) {
+      setFuture((f) => [{ snapshot: copy(job), eventId: result.learning?.event_id || null }, ...f]);
       setPast((p) => p.slice(0, -1));
     }
   }, [job, past, saving, patch]);
   const redo = useCallback(async () => {
     if (!job || !future.length || saving) return;
     const next = future[0];
-    if (await patch(next, false)) {
-      setPast((p) => [...p, copy(job)]);
+    const result = await patch(next.snapshot, false, "redo", next.eventId);
+    if (result) {
+      setPast((p) => [...p, { snapshot: copy(job), eventId: result.learning?.event_id || null }]);
       setFuture((f) => f.slice(1));
     }
   }, [job, future, saving, patch]);
@@ -362,6 +397,7 @@ export default function App() {
     setUploading(true);
     setError("");
     try {
+      await initializeLearning().catch(() => {});
       const data = new FormData();
       data.append("file", file);
       let j = await request<Job>("/api/jobs", { method: "POST", body: data });
@@ -453,7 +489,7 @@ export default function App() {
       setPage(1);
       setPast([]);
       setFuture([]);
-      setNotice("파일과 작업을 삭제했습니다.");
+      setNotice("파일과 임시 작업을 삭제했습니다. 제공한 학습 기록은 학습 관리에서 삭제할 수 있습니다.");
     } catch (e) {
       setError((e as Error).message);
     }
@@ -464,17 +500,17 @@ export default function App() {
     const previous = copy(job);
     setSaving(true);
     try {
-      setJob(
-        await request<Job>(
+      const operation = mutationRequest(job, consentRef.current);
+      const next = await request<Job>(
           `/api/jobs/${job.id}/occurrences/${o.id}/candidate`,
           {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ candidate_id: c.id }),
+            headers: operation.headers,
+            body: JSON.stringify({ candidate_id: c.id, ...operation.metadata }),
           },
-        ),
-      );
-      setPast((p) => [...p, previous].slice(-40));
+        );
+      setJob(next);
+      setPast((p) => [...p, { snapshot: previous, eventId: next.learning?.event_id || null }].slice(-40));
       setFuture([]);
     } catch (e) {
       setError((e as Error).message);
@@ -490,13 +526,14 @@ export default function App() {
     setSaving(true);
     setError("");
     try {
+      const operation = mutationRequest(job, consentRef.current);
       const next = await request<Job>(
         `/api/jobs/${job.id}/occurrences/${o.id}/reading`,
-        { method: "POST", headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ option_id: optionId }) },
+        { method: "POST", headers: operation.headers,
+          body: JSON.stringify({ option_id: optionId, ...operation.metadata }) },
       );
       setJob(next);
-      setPast((p) => [...p, previous].slice(-40));
+      setPast((p) => [...p, { snapshot: previous, eventId: next.learning?.event_id || null }].slice(-40));
       setFuture([]);
     } catch (e) {
       setError((e as Error).message);
@@ -634,7 +671,8 @@ export default function App() {
         <div className="header-inner">
           <Logo />
           <nav>
-            <span className="nav-current">작업 공간</span>
+            <button className={!learningOpen ? "nav-current" : ""} onClick={() => navigateLearning(false)}>작업 공간</button>
+            <button className={learningOpen ? "nav-current" : ""} onClick={() => navigateLearning(true)}>장음 학습 관리</button>
             <button onClick={() => setHelp(true)}>
               이용 가이드 <CircleHelp size={14} />
             </button>
@@ -673,8 +711,11 @@ export default function App() {
             </button>
           </div>
         )}
+        {learningOpen && <LearningPanel onConsentChange={consentChanged} onClose={() => navigateLearning(false)} />}
+        {!learningOpen && job?.learning?.state === "saved" && <p className="learning-save-state" role="status">학습 기록 저장 완료 · 사건 {job.learning.event_id}</p>}
         <section
           className="workspace"
+          hidden={learningOpen}
           onDragEnter={(e) => {
             if (!Array.from(e.dataTransfer.types).includes("Files")) return;
             e.preventDefault();

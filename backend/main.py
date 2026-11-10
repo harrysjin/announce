@@ -19,12 +19,16 @@ import fitz
 from fastapi import FastAPI, HTTPException, UploadFile, File, Query, Request
 from fastapi.responses import Response, FileResponse
 from fastapi.staticfiles import StaticFiles
+from starlette.concurrency import run_in_threadpool
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from .dictionary import DictionaryClient, DictionaryError
 from .pdf import extract, counts, marked_document, output_pdf, csv_export, verification, sample_pdf, circle_for
 from .runtime import ACTIVE_STATES, AnalysisGate, SlidingWindowLimiter, progress_snapshot
 from .release import VERSION, release_identity
+from .learning_auth import ensure_identity
+from .learning_events import MutationMeta, mutation
+from .learning_api import router as learning_router
 
 MAX_BYTES = 20 * 1024 * 1024
 TTL_SECONDS = 2 * 60 * 60
@@ -66,6 +70,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="장음 · PDF 낭독 작업 공간", version=VERSION, lifespan=lifespan)
+app.include_router(learning_router)
 
 
 @app.middleware("http")
@@ -95,6 +100,7 @@ def session_for(job_id: str) -> dict:
 
 
 def public(job: dict) -> dict:
+    job = {**job, **job.get("_uncommitted_snapshot", {})}
     result = {key: value for key, value in job.items() if not key.startswith("_")}
     result["counts"] = counts(job)
     result["dictionary_configured"] = bool(os.environ.get("STDICT_API_KEY"))
@@ -126,7 +132,7 @@ def sample():
 
 
 @app.post("/api/jobs", status_code=201)
-async def upload(request: Request, file: UploadFile = File(...)):
+async def upload(request: Request, response: Response, file: UploadFile = File(...)):
     limit_request(request, UPLOAD_LIMIT)
     cleanup()
     if len(SESSIONS) >= 30:
@@ -164,7 +170,8 @@ async def upload(request: Request, file: UploadFile = File(...)):
            "settings": {"color": "#CEE4F5", "opacity": 0.6, "size": 1.0},
            "analysis": {"state": "idle", "done": 0, "total": len({o['text'] for o in occurrences}), "message": "PDF를 읽었습니다. 사전 분석을 시작하거나 직접 표시해 보세요."},
            "warnings": warnings, "history": [], "revision": 0, "created_at": timestamp(),
-           "_path": path, "_touched": time.time(), "_dictionary": DictionaryClient()}
+           "_path": path, "_touched": time.time(), "_dictionary": DictionaryClient(),
+           "_learning_owner": ensure_identity(request, response)}
     SESSIONS[job_id] = job
     return public(job)
 
@@ -176,7 +183,8 @@ def get_job(job_id: str):
 
 @app.get("/api/jobs/{job_id}/progress")
 def get_progress(job_id: str):
-    return progress_snapshot(session_for(job_id), gate=GATE)
+    job = session_for(job_id)
+    return progress_snapshot({**job, **job.get("_uncommitted_snapshot", {})}, gate=GATE)
 
 
 def apply_length_evidence(job: dict, occurrence: dict, evidence: dict, source: str, reason: str, reason_code: str, mark_source: str | None = None):
@@ -301,7 +309,7 @@ async def analyze_job(job: dict):
                 # silently turn a user's edit into an automatic judgment.
                 if occurrence.get("source") == "manual":
                     continue
-                occurrence.update(meaning_status="unresolved", selected_candidate_id=None,
+                occurrence.update(meaning_status="unresolved", selected_candidate_id=None, lookup_failure_kind=None,
                                   evidence_type=None, evidence_candidates=[], applied_rules=[],
                                   long_glyph_ids=[], length_evidence=[], pronunciations=[],
                                   component_results=[], coverage={"complete": False, "checked_ranges": [],
@@ -315,7 +323,8 @@ async def analyze_job(job: dict):
                         apply_number_result(job, occurrence, result)
                     except DictionaryError as error:
                         failures += 1
-                        occurrence.update(status="unresolved", reason=str(error), reason_code="lookup_failed")
+                        occurrence.update(status="unresolved", reason=str(error), reason_code="lookup_failed",
+                                          lookup_failure_kind=error.failure_kind)
                     continue
                 if plan["kind"] == "foreign" or occurrence["kind"] != "word":
                     occurrence.update(status="unresolved", reason="숫자·단위 또는 외래 표기의 실제 읽기를 확인해 주세요.", reason_code="reading_required")
@@ -388,7 +397,8 @@ async def analyze_job(job: dict):
                         occurrence.update(status="unresolved", reason="문법·형태에 맞는 공식 표제어를 찾지 못했습니다. 단음으로 판정하지 않습니다.", reason_code="proper_name" if plan["kind"] == "proper" else "not_found")
                 except DictionaryError as error:
                     failures += 1
-                    occurrence.update(status="unresolved", reason=str(error), reason_code="lookup_failed")
+                    occurrence.update(status="unresolved", reason=str(error), reason_code="lookup_failed",
+                                      lookup_failure_kind=error.failure_kind)
             job["analysis"].update(done=index + 1, message=f"사전 조회 {index+1}/{len(words)} · 원문 형태와 직접 발음을 연결하고 있습니다.")
             await asyncio.sleep(0)
         unresolved = counts(job)["unresolved"]
@@ -417,6 +427,8 @@ async def analyze_job(job: dict):
 @app.post("/api/jobs/{job_id}/analyze")
 async def analyze(job_id: str, request: Request):
     job = session_for(job_id)
+    if job.get("_edit_lock") and job["_edit_lock"].locked():
+        raise HTTPException(409, "수정 저장이 완료된 뒤 분석을 시작해 주세요.")
     if job["analysis"]["state"] in ACTIVE_STATES:
         return public(job)
     limit_request(request, ANALYZE_LIMIT)
@@ -460,11 +472,12 @@ class Settings(BaseModel):
         return value.upper()
 
 
-class StatePatch(BaseModel):
+class StatePatch(MutationMeta):
     settings: Settings | None = None
     marks: list[dict] | None = None
     occurrences: list[dict] | None = None
     restore: bool = False
+    action: str = Field(default="edit", pattern="^(edit|undo|redo)$")
 
 
 def restore_length_evidence(job: dict, original: dict, edited: dict) -> None:
@@ -522,7 +535,21 @@ def restore_length_evidence(job: dict, original: dict, edited: dict) -> None:
 
 
 @app.patch("/api/jobs/{job_id}/state")
-def patch_state(job_id: str, patch: StatePatch):
+def patch_state(job_id: str, patch: StatePatch, request: Request = None):
+    job = session_for(job_id)
+    idle_required(job)
+    if patch.action in ("undo", "redo") and not patch.restore:
+        raise HTTPException(422, "취소·다시 실행은 상태 복원 요청이어야 합니다.")
+    if patch.restore and patch.action == "edit" and request and request.headers.get("x-learning-record") == "true":
+        raise HTTPException(422, "학습 기록의 상태 복원에는 취소·다시 실행 구분이 필요합니다.")
+    with mutation(job, request, patch, patch.model_dump(mode="json"),
+                  patch.action if patch.action != "edit" else "manual_edit") as apply:
+        if apply:
+            _patch_state(job_id, patch)
+    return {**public(job), "learning": job.get("_learning_receipt")}
+
+
+def _patch_state(job_id: str, patch: StatePatch):
     job = session_for(job_id)
     idle_required(job)
     glyphs = {g["id"]: (p["number"], g) for p in job["pages"] for g in p["glyphs"]}
@@ -639,12 +666,21 @@ def patch_state(job_id: str, patch: StatePatch):
     return public(job)
 
 
-class CandidateChoice(BaseModel):
+class CandidateChoice(MutationMeta):
     candidate_id: str
 
 
 @app.post("/api/jobs/{job_id}/occurrences/{occurrence_id}/candidate")
-def choose_candidate(job_id: str, occurrence_id: str, choice: CandidateChoice):
+def choose_candidate(job_id: str, occurrence_id: str, choice: CandidateChoice, request: Request = None):
+    job = session_for(job_id)
+    idle_required(job)
+    with mutation(job, request, choice, choice.model_dump(mode="json"), "meaning_selected", occurrence_id) as apply:
+        if apply:
+            _choose_candidate(job_id, occurrence_id, choice)
+    return {**public(job), "learning": job.get("_learning_receipt")}
+
+
+def _choose_candidate(job_id: str, occurrence_id: str, choice: CandidateChoice):
     job = session_for(job_id)
     idle_required(job)
     occurrence = next((o for o in job["occurrences"] if o["id"] == occurrence_id), None)
@@ -660,12 +696,12 @@ def choose_candidate(job_id: str, occurrence_id: str, choice: CandidateChoice):
     return public(job)
 
 
-class ReadingChoice(BaseModel):
+class ReadingChoice(MutationMeta):
     option_id: str = Field(min_length=1, max_length=100)
 
 
 @app.post("/api/jobs/{job_id}/occurrences/{occurrence_id}/reading")
-async def choose_reading(job_id: str, occurrence_id: str, choice: ReadingChoice):
+async def choose_reading(job_id: str, occurrence_id: str, choice: ReadingChoice, request: Request = None):
     from .numbers import evaluate_number
     job = session_for(job_id)
     idle_required(job)
@@ -684,15 +720,20 @@ async def choose_reading(job_id: str, occurrence_id: str, choice: ReadingChoice)
     if session_for(job_id) is not job or job["revision"] != revision:
         raise HTTPException(409, "작업이 변경되었습니다. 최신 상태에서 읽기를 다시 선택해 주세요.")
     idle_required(job)
-    remember_number_result(job, occurrence, result)
-    apply_number_result(job, occurrence, result, user_selected=True)
-    history(job, f"{occurrence_id}의 숫자 읽기 선택")
-    return public(job)
+    def commit_reading():
+        with mutation(job, request, choice, choice.model_dump(mode="json"), "reading_selected", occurrence_id) as apply:
+            if apply:
+                remember_number_result(job, occurrence, result)
+                apply_number_result(job, occurrence, result, user_selected=True)
+                history(job, f"{occurrence_id}의 숫자 읽기 선택")
+        return {**public(job), "learning": job.get("_learning_receipt")}
+    return await run_in_threadpool(commit_reading)
 
 
 @app.get("/api/jobs/{job_id}/pages/{page}/preview.png")
 def preview(job_id: str, page: int, marked: bool = True, scale: float = Query(default=1.5, ge=0.2, le=2)):
     job = session_for(job_id)
+    job = {**job, **job.get("_uncommitted_snapshot", {})}
     if page < 1 or page > len(job["pages"]):
         raise HTTPException(404, "페이지가 없습니다.")
     data = job["_path"].read_bytes()
@@ -707,6 +748,7 @@ def preview(job_id: str, page: int, marked: bool = True, scale: float = Query(de
 @app.get("/api/jobs/{job_id}/export/{kind}")
 def export(job_id: str, kind: str):
     job = session_for(job_id)
+    job = {**job, **job.get("_uncommitted_snapshot", {})}
     idle_required(job)
     base = job["filename"].rsplit(".", 1)[0]
     if kind == "pdf":
@@ -728,7 +770,9 @@ def export(job_id: str, kind: str):
 
 @app.delete("/api/jobs/{job_id}")
 async def delete(job_id: str):
-    session_for(job_id)
+    job = session_for(job_id)
+    if job.get("_edit_lock") and job["_edit_lock"].locked():
+        raise HTTPException(409, "수정 저장이 완료된 뒤 작업을 삭제해 주세요.")
     task = TASKS.pop(job_id, None)
     if task:
         task.cancel()

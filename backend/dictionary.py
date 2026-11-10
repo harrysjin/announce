@@ -17,7 +17,9 @@ BASE = "https://stdict.korean.go.kr/api"
 
 
 class DictionaryError(Exception):
-    pass
+    def __init__(self, message: str, *, failure_kind: str = "lookup_failed"):
+        super().__init__(message)
+        self.failure_kind = failure_kind
 
 
 def value(node: ET.Element, path: str) -> str:
@@ -222,6 +224,9 @@ class DictionaryClient:
                             "target": 5 if inflections else 1,
                         }
                         candidates.append(candidate)
+        except httpx.TimeoutException:
+            raise DictionaryError("사전 연결에 실패했습니다. 네트워크·인증키·응답 형식을 확인해 주세요.",
+                                  failure_kind="lookup_timeout") from None
         except (httpx.HTTPError, ValueError):
             # Never propagate exception URLs: they can contain the API key.
             raise DictionaryError("사전 연결에 실패했습니다. 네트워크·인증키·응답 형식을 확인해 주세요.") from None
